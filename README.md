@@ -29,7 +29,8 @@ Notes and practice material for CAT quant prep. Start with [Index.md](https://gi
 |---|---|
 | [Algebra-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Algebra-Practice.md) | Algebra practice sets |
 | [Means-and-Weighted-Averages-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Means-and-Weighted-Averages-Practice.md) | Means & Weighted Averages practice sets |
-| [CAT-Quant-Test.html](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/CAT-Quant-Test.html) | Interactive quant practice test |
+| [Mixtures-and-Alligation-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Mixtures-and-Alligation-Practice.md) | Mixtures & Alligation practice sets |
+| [CAT-Quant-Test.html](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/CAT-Quant-Test.html) | Interactive quant practice test — Algebra, Means & Weighted Averages, Mixtures & Alligation (129 questions) |
 
 ### Quant/Reference
 
