@@ -407,6 +407,152 @@ const BANK = {
           s:"Total now = 100; other four = 90. Ten years ago they totalled 90 − 40 = 50 ⟹ average = <b>12.5 years</b>." }
       ]}
     }
+  },
+  mixtures: {
+    name: "Mixtures & Alligation",
+    perQ: 90,
+    sets: {
+      A: { name: "The alligation cross", qs: [
+        { id:"A1", t:"mcq", q:"In what ratio must rice at ₹62/kg be mixed with rice at ₹72/kg so that the mixture is worth ₹64.50/kg?", o:["3 : 1","1 : 3","2 : 1","5 : 3"], a:0,
+          h:"§2 — the difference computed on the dearer side belongs to the cheaper quantity.",
+          s:"d − m = 7.5, m − c = 2.5 ⟹ cheap : dear = 7.5 : 2.5 = <b>3 : 1</b>. (64.5 is close to 62, so the cheap variety must dominate ✓)" },
+        { id:"A2", t:"tita", q:"Two varieties of sugar costing ₹28/kg and ₹40/kg are mixed in the ratio 5 : 3. Find the cost (₹) per kg of the mixture.", a:32.5,
+          h:"§2 run forwards — a plain weighted average, no cross needed.",
+          s:"(5×28 + 3×40)/8 = 260/8 = <b>₹32.50</b>." },
+        { id:"A3", t:"tita", q:"In what ratio must water be mixed with milk costing ₹32/litre so the seller gains 25% selling the mixture at ₹32/litre? The ratio water : milk is 1 : k — find k.", a:4,
+          h:"§4 — convert the 25% gain into the mixture's CP first, then set c = 0 for water.",
+          s:"CP of mixture = 32/1.25 = 25.6. Water : Milk = (32 − 25.6) : 25.6 = 6.4 : 25.6 = 1 : <b>4</b>." },
+        { id:"A4", t:"mcq", q:"In what ratio should pulses worth ₹15/kg and ₹20/kg be mixed to get a mixture worth ₹16.50/kg?", o:["7 : 3","3 : 7","5 : 2","2 : 5"], a:0,
+          h:"§2 — the mean is much closer to 15, so the ₹15 variety must dominate heavily.",
+          s:"(20 − 16.5) : (16.5 − 15) = 3.5 : 1.5 = <b>7 : 3</b>." },
+        { id:"A5", t:"tita", q:"8 kg of a variety costing ₹40/kg is mixed with 12 kg costing ₹65/kg. Find the price (₹) per kg of the mixture.", a:55,
+          h:"§2 forwards — total cost over total weight.",
+          s:"(320 + 780)/20 = 1100/20 = <b>₹55</b>." }
+      ]},
+      B: { name: "Concentration, water & adulteration", qs: [
+        { id:"B1", t:"tita", q:"How much water (litres) must be added to 60 litres of a 20% acid solution to bring it down to 15%?", a:20,
+          h:"§4 — water is 0%. The cross gives a ratio; the 60 litres anchors it.",
+          s:"water : solution = (20−15) : 15 = 1 : 3. Solution = 60 = 3 parts ⟹ <b>20 litres</b>." },
+        { id:"B2", t:"mcq", q:"A 30% alcohol solution is mixed with a 60% alcohol solution to obtain a 50% solution. The ratio (30% : 60%) is", o:["1 : 2","2 : 1","1 : 3","3 : 1"], a:0,
+          h:"§4 — treat concentration exactly as you would a price.",
+          s:"(60 − 50) : (50 − 30) = 10 : 20 = <b>1 : 2</b>." },
+        { id:"B3", t:"tita", q:"A 50-litre solution contains 8% salt. How much water (litres) must evaporate so the solution becomes 10% salt?", a:10,
+          h:"§7 — the salt is unchanged. Anchor on the fixed component instead of using the cross.",
+          s:"Salt = 4 litres, fixed. For 10%, total = 40 ⟹ evaporate <b>10 litres</b>." },
+        { id:"B4", t:"mcq", q:"A vessel holds 80 litres of a milk–water mixture containing 12.5% water. How much milk must be added to reduce the water to 10% of the mixture?", o:["15 litres","20 litres","25 litres","30 litres"], a:1,
+          h:"§7 — the water quantity never changes; find the total that makes it 10%.",
+          s:"Water = 10 litres, fixed ⟹ total = 100 ⟹ add <b>20 litres</b> of milk." },
+        { id:"B5", t:"tita", q:"A milkman mixes water with milk costing ₹45/litre and sells the mixture at ₹45/litre, gaining 12.5%. How many litres of water per 100 litres of milk?", a:12.5,
+          h:"§4 — SP = CP of milk, so the whole gain comes from the water.",
+          s:"CP of mixture = 45/1.125 = 40. Water : Milk = 5 : 40 = 1 : 8 ⟹ <b>12.5 litres</b>." }
+      ]},
+      C: { name: "Repeated replacement", qs: [
+        { id:"C1", t:"tita", q:"A vessel contains 50 litres of pure milk. 10 litres are removed and replaced with water; this is done twice in all. Find the milk (litres) remaining.", a:32,
+          h:"§5 — final pure liquid = L(1 − x/L)ⁿ.",
+          s:"50 × (4/5)² = 50 × 16/25 = <b>32 litres</b>." },
+        { id:"C2", t:"mcq", q:"From a cask of 64 litres of wine, 8 litres are drawn out and replaced by water. This is done three times in all. The ratio of wine to water is now", o:["343 : 169","512 : 343","343 : 512","7 : 1"], a:0,
+          h:"§5 — compute the wine first, then subtract from 64 to get the water.",
+          s:"Wine = 64 × (7/8)³ = 42.875; water = 21.125 ⟹ <b>343 : 169</b>. (Option (c) is the same numbers inverted.)" },
+        { id:"C3", t:"tita", q:"From 729 litres of pure milk, 243 litres are drawn off and replaced with water each time. After how many operations is the milk down to 216 litres?", a:3,
+          h:"§5 — find the factor per operation; the ratio will be a clean power.",
+          s:"Factor = 486/729 = 2/3. (2/3)ⁿ = 216/729 = 8/27 ⟹ n = <b>3</b>." },
+        { id:"C4", t:"tita", q:"A container has 40 litres of milk. 4 litres are withdrawn and replaced by water, twice. Find the amount of water (litres) in the final mixture.", a:7.6,
+          h:"§5 — the formula gives the milk. The question asks for the water.",
+          s:"Milk = 40 × (9/10)² = 32.4 ⟹ water = <b>7.6 litres</b>." },
+        { id:"C5", t:"mcq", q:"A 20-litre vessel is full of pure spirit. 5 litres are removed and replaced with water; then 5 litres of the mixture are removed and replaced with water. What fraction of the final mixture is spirit?", o:["9/16","3/4","1/2","7/16"], a:0,
+          h:"§5 — as a ratio the formula is ((L − x)/L)ⁿ; no absolute volume needed.",
+          s:"(3/4)² = <b>9/16</b>." },
+        { id:"C6", t:"tita", q:"A 90-litre mixture is 80% milk. 18 litres of the mixture are removed and replaced with water. Find the percentage of milk in the new mixture.", a:64,
+          h:"§5, the variant at the end — apply the factor to the milk you actually have.",
+          s:"Milk = 72 × (72/90) = 72 × 4/5 = 57.6 ⟹ 57.6/90 = <b>64%</b>. (Applying the factor to 90 is the trap.)" }
+      ]},
+      D: { name: "Mixing two mixtures", qs: [
+        { id:"D1", t:"mcq", q:"Vessel A has milk : water = 5 : 1 and vessel B has 3 : 2. In what ratio (A : B) must they be mixed to get milk : water = 2 : 1?", o:["2 : 5","5 : 2","1 : 2","3 : 2"], a:0,
+          h:"§7 — convert all three to milk fractions before touching the cross.",
+          s:"Fractions 5/6, 3/5, target 2/3. B : A = (1/6) : (1/15) = 5 : 2 ⟹ A : B = <b>2 : 5</b>." },
+        { id:"D2", t:"tita", q:"A 60-litre mixture has milk and water in the ratio 7 : 3. How much water (litres) must be added to make the ratio 3 : 2?", a:10,
+          h:"§7, last worked example — the milk is fixed, so anchor on it.",
+          s:"Milk = 42, fixed. For 3 : 2 milk is 3/5 of the total ⟹ total = 70 ⟹ add <b>10 litres</b>." },
+        { id:"D3", t:"mcq", q:"Two vessels contain spirit and water in the ratios 8 : 3 and 5 : 1. In what ratio (first : second) must they be mixed to get spirit : water = 4 : 1?", o:["11 : 24","24 : 11","3 : 2","2 : 3"], a:0,
+          h:"§7 — spirit fractions are 8/11, 5/6 and 4/5. Keep exact values, don't round.",
+          s:"d − m = 5/6 − 4/5 = 1/30; m − c = 4/5 − 8/11 = 4/55 ⟹ first : second = <b>11 : 24</b>." },
+        { id:"D4", t:"tita", q:"20 litres of a mixture with milk : water = 3 : 1 is mixed with 30 litres of a mixture with milk : water = 2 : 3. Find the percentage of milk in the result.", a:54,
+          h:"§7 — total milk over total volume beats the cross when both quantities are given.",
+          s:"Milk = 15 + 12 = 27 out of 50 ⟹ <b>54%</b>." },
+        { id:"D5", t:"tita", q:"A 40-litre mixture has milk : water = 3 : 2. How many litres of the mixture must be removed and replaced with pure milk so that milk : water becomes 4 : 1?", a:20,
+          h:"§5 logic in reverse — the volume stays 40, so track the water.",
+          s:"Water = 16; target water = 8. Removing x removes 0.4x of water ⟹ 16 − 0.4x = 8 ⟹ x = <b>20 litres</b>." }
+      ]},
+      E: { name: "Profit, interest, ages & speed", qs: [
+        { id:"E1", t:"tita", q:"A man invests ₹12,000, part at 10% and the rest at 14%, earning 11.5% overall. Find the amount (₹) invested at 10%.", a:7500, alt:["7,500"],
+          h:"§8 — interest rates are weighted by principal.",
+          s:"(14 − 11.5) : (11.5 − 10) = 5 : 3 ⟹ 12000 × 5/8 = <b>₹7,500</b>." },
+        { id:"E2", t:"mcq", q:"A shopkeeper sells part of 100 kg of sugar at 12% profit and the rest at 20% profit, making 15% overall. The quantity sold at 20% profit is", o:["30 kg","37.5 kg","40 kg","62.5 kg"], a:1,
+          h:"§8 — profit % is weighted by cost price. Watch which branch belongs to which quantity.",
+          s:"qty@12 : qty@20 = (20 − 15) : (15 − 12) = 5 : 3 ⟹ 100 × 3/8 = <b>37.5 kg</b>." },
+        { id:"E3", t:"tita", q:"The average age of 40 students is 15 years. The boys average 16 and the girls average 12. Find the number of girls.", a:10,
+          h:"§8, second worked example. Run the integer check.",
+          s:"Girls : Boys = (16 − 15) : (15 − 12) = 1 : 3 ⟹ girls = 40/4 = <b>10</b>." },
+        { id:"E4", t:"mcq", q:"A trader buys 30 litres of oil at ₹80/litre and some at ₹95/litre. He sells the lot at ₹99/litre, making 10% profit. The quantity bought at ₹95/litre is", o:["45 litres","50 litres","60 litres","75 litres"], a:2,
+          h:"§8 — back out the mixture's CP from the 10% profit, then alligate.",
+          s:"CP = 99/1.1 = 90. ₹80 : ₹95 = (95−90) : (90−80) = 1 : 2 ⟹ 30 litres at 80 ⟹ <b>60 litres</b> at 95." },
+        { id:"E5", t:"tita", q:"A car covers a 5-hour journey partly at 40 km/h and partly at 60 km/h, averaging 46 km/h. For how many hours did it travel at 60 km/h?", a:1.5,
+          h:"§3 — alligation on speed is legal only when weighted by time, and the total given is a time.",
+          s:"t₄₀ : t₆₀ = (60 − 46) : (46 − 40) = 7 : 3. Total 5 h ⟹ t₆₀ = <b>1.5 hours</b>." }
+      ]},
+      F: { name: "Harder blends & three ingredients", qs: [
+        { id:"F1", t:"tita", q:"Three varieties of tea costing ₹126, ₹135 and ₹175 per kg are mixed in the ratio 1 : 1 : 2. Find the cost (₹) per kg of the mixture.", a:152.75,
+          h:"§6 — with the ratio given, the weighted-average equation beats forcing the cross.",
+          s:"(126 + 135 + 350)/4 = 611/4 = <b>₹152.75</b>." },
+        { id:"F2", t:"mcq", q:"In what ratio must pulses at ₹15/kg and ₹20/kg be mixed so that selling the mixture at ₹21.60/kg gives a 20% gain?", o:["2 : 3","3 : 2","1 : 2","4 : 5"], a:0,
+          h:"§8 — the SP is a distractor until you convert it to the mixture's CP.",
+          s:"CP = 21.60/1.2 = 18 ⟹ (20 − 18) : (18 − 15) = <b>2 : 3</b>." },
+        { id:"F3", t:"tita", q:"A mixture of 80 litres contains milk and water in the ratio 3 : 1. How much milk (litres) must be added so the ratio becomes 4 : 1?", a:20,
+          h:"§7 — the water is the fixed component this time.",
+          s:"Water = 20, fixed. For 4 : 1 water is 1/5 of the total ⟹ total = 100 ⟹ add <b>20 litres</b>." },
+        { id:"F4", t:"mcq", q:"A dishonest milkman sells milk at cost price but mixes in water and gains 25%. Water as a percentage of the mixture is", o:["20%","25%","16.67%","33.33%"], a:0,
+          h:"§4 and the last Traps row — \"water : milk\" and \"water as a share of the mixture\" differ.",
+          s:"water : milk = 1 : 4 ⟹ water = 1/5 = <b>20%</b> of the mixture. (25% is water as a % of the milk.)" },
+        { id:"F5", t:"tita", q:"A vessel contains liquids A and B in the ratio 7 : 5. When 9 litres of the mixture are drawn off and replaced with B, the ratio becomes 7 : 9. Find the initial quantity (litres) of A.", a:21,
+          h:"§5 conditions — the replacement liquid is B, not water, so the formula does not apply.",
+          s:"Total = 12k. (7k − 21/4)/(5k + 21/4) = 7/9 ⟹ 28k = 84 ⟹ k = 3 ⟹ A = <b>21 litres</b>." },
+        { id:"F6", t:"mcq", q:"Can 1 holds a mixture that is 25% water, can 2 one that is 50% water. How much should be taken from each to fill a 12-litre can that is 40% water?", o:["4.8 L and 7.2 L","6 L and 6 L","7.2 L and 4.8 L","5 L and 7 L"], a:0,
+          h:"§4 — alligate on the water %, then split the 12 litres. Check which can gets which branch.",
+          s:"can1 : can2 = (50 − 40) : (40 − 25) = 2 : 3 ⟹ <b>4.8 L and 7.2 L</b>." }
+      ]},
+      M: { name: "Mixed Set — exam feel", block: 900, qs: [
+        { id:"M1", t:"mcq", q:"In what ratio must wheat at ₹24/kg be mixed with wheat at ₹36/kg to get a mixture worth ₹30.50/kg?", o:["11 : 13","13 : 11","1 : 2","2 : 1"], a:0,
+          h:"Straight cross.",
+          s:"(36 − 30.5) : (30.5 − 24) = 5.5 : 6.5 = <b>11 : 13</b>." },
+        { id:"M2", t:"tita", q:"A 27-litre vessel is full of pure milk. 9 litres are drawn off and replaced with water; this is done three times in all. Find the milk (litres) remaining.", a:8,
+          h:"Replacement formula.",
+          s:"27 × (2/3)³ = 27 × 8/27 = <b>8 litres</b>." },
+        { id:"M3", t:"mcq", q:"Two alloys contain gold and copper in the ratios 5 : 3 and 5 : 11. In what ratio must they be melted to get gold : copper = 5 : 7?", o:["1 : 2","2 : 1","3 : 5","5 : 3"], a:0,
+          h:"Convert to gold fractions first.",
+          s:"5/8, 5/16, target 5/12. second : first = (5/24) : (5/48) = 2 : 1 ⟹ first : second = <b>1 : 2</b>." },
+        { id:"M4", t:"tita", q:"How much water (litres) must be added to 24 litres of milk costing ₹32/litre so the mixture costs ₹24/litre?", a:8,
+          h:"Water = 0.",
+          s:"water : milk = 8 : 24 = 1 : 3 ⟹ <b>8 litres</b>." },
+        { id:"M5", t:"mcq", q:"₹1,600 is lent partly at 5% and partly at 8% simple interest, and the total annual interest is ₹104. The amount lent at 5% is", o:["₹600","₹800","₹1,000","₹1,200"], a:1,
+          h:"Find the overall rate first.",
+          s:"Rate = 104/1600 = 6.5% ⟹ (8 − 6.5) : (6.5 − 5) = 1 : 1 ⟹ <b>₹800</b>." },
+        { id:"M6", t:"tita", q:"A 50-litre mixture of milk and water contains 20% water. How much milk (litres) must be added so water becomes 10% of the new mixture?", a:50,
+          h:"The water is fixed.",
+          s:"Water = 10 ⟹ total must be 100 ⟹ add <b>50 litres</b>." },
+        { id:"M7", t:"mcq", q:"A jar contains liquids A and B in the ratio 4 : 1. When 10 litres of the mixture is replaced with B, the ratio becomes 2 : 3. The initial quantity of A was", o:["12 litres","16 litres","20 litres","24 litres"], a:1,
+          h:"Replacement liquid is B — track each liquid separately.",
+          s:"Total = 5k. (4k − 8)/(k + 8) = 2/3 ⟹ k = 4 ⟹ A = <b>16 litres</b>." },
+        { id:"M8", t:"tita", q:"A class of 48 averages 60 marks. The boys average 55 and the girls average 71. Find the number of girls.", a:15,
+          h:"Alligation about 60, then the integer check.",
+          s:"boys : girls = (71 − 60) : (60 − 55) = 11 : 5 ⟹ girls = 48 × 5/16 = <b>15</b>." },
+        { id:"M9", t:"mcq", q:"A container full of pure milk loses 20% of its contents, replaced by water, in each of two successive operations. The percentage of milk in the final mixture is", o:["60%","64%","68%","80%"], a:1,
+          h:"Each operation multiplies the milk by the same factor.",
+          s:"(0.8)² = <b>64%</b>." },
+        { id:"M10", t:"tita", q:"Sugar at ₹7.20/kg is mixed with sugar at ₹5.70/kg so the mixture, sold at ₹7.20/kg, yields a 20% profit. The ratio ₹7.20 : ₹5.70 is 1 : k. Find k.", a:4,
+          h:"Convert the SP to the mixture's CP first.",
+          s:"CP = 7.20/1.2 = 6. cheap : dear = (7.2 − 6) : (6 − 5.7) = 4 : 1 ⟹ k = <b>4</b>." }
+      ]}
+    }
   }
 };
 
@@ -452,7 +598,7 @@ function home(){
   clearInterval(timerId);
   let h = `<div class="wrap">
     <h1>CAT Quant — Interactive Practice</h1>
-    <div class="sub">Built from your Algebra and Means &amp; Weighted Averages practice sets. 87 questions.</div>
+    <div class="sub">Built from your Algebra, Means &amp; Weighted Averages, and Mixtures &amp; Alligation practice sets. 129 questions.</div>
     <div class="card">
       <div class="row" style="margin-bottom:4px">
         <strong style="font-size:14px">Mode</strong>
