@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAT Quant — Interactive Practice Test</title>
+<style>
+:root{
+  --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2b303b;
+  --tx:#e6e8ec; --dim:#9aa2b1; --acc:#5b9cff; --ok:#3ecf8e; --bad:#ff6b6b;
+  --warn:#f6c453; --mark:#a97bff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;}
+.wrap{max-width:900px;margin:0 auto;padding:24px 18px 80px}
+h1{font-size:24px;margin:0 0 4px} h2{font-size:17px;margin:26px 0 10px}
+.sub{color:var(--dim);font-size:13px;margin-bottom:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.setbtn{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+  cursor:pointer;text-align:left;color:var(--tx);font:inherit;transition:.12s}
+.setbtn:hover{border-color:var(--acc);transform:translateY(-1px)}
+.setbtn .k{font-weight:640;font-size:14px} .setbtn .m{color:var(--dim);font-size:12px;margin-top:3px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.seg button{background:transparent;border:0;color:var(--dim);padding:8px 14px;cursor:pointer;font:inherit}
+.seg button.on{background:var(--acc);color:#0b0d11;font-weight:600}
+.btn{background:var(--acc);color:#0b0d11;border:0;border-radius:9px;padding:10px 18px;
+  font:inherit;font-weight:620;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--tx);border:1px solid var(--line);font-weight:500}
+.btn.ghost:hover{border-color:var(--acc)}
+.btn:disabled{opacity:.4;cursor:default}
+.hide{display:none!important}
+
+/* topbar */
+.top{position:sticky;top:0;z-index:5;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:18px}
+.top .wrap{padding-top:0;padding-bottom:0}
+.timer{font-variant-numeric:tabular-nums;font-weight:640;font-size:16px}
+.timer.low{color:var(--bad)}
+.pill{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;color:var(--dim)}
+
+/* question */
+.qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.qno{font-size:12px;color:var(--dim);letter-spacing:.04em;text-transform:uppercase}
+.qtext{font-size:17px;line-height:1.6;margin:6px 0 18px}
+.opt{display:flex;gap:11px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);
+  border-radius:10px;padding:12px 14px;margin-bottom:9px;cursor:pointer;transition:.1s}
+.opt:hover{border-color:#3c4557}
+.opt.sel{border-color:var(--acc);background:#1b2434}
+.opt.correct{border-color:var(--ok);background:#14291f}
+.opt.wrong{border-color:var(--bad);background:#2b1919}
+.opt .lab{width:22px;height:22px;flex:0 0 22px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;font-size:12px;color:var(--dim)}
+.opt.sel .lab{background:var(--acc);color:#0b0d11;border-color:var(--acc)}
+.opt.correct .lab{background:var(--ok);color:#0b0d11;border-color:var(--ok)}
+.opt.wrong .lab{background:var(--bad);color:#0b0d11;border-color:var(--bad)}
+input[type=text]{background:var(--panel2);border:1px solid var(--line);border-radius:9px;color:var(--tx);
+  padding:11px 13px;font:inherit;width:220px}
+input[type=text]:focus{outline:0;border-color:var(--acc)}
+.note{background:var(--panel2);border-left:3px solid var(--warn);border-radius:0 8px 8px 0;
+  padding:11px 14px;margin-top:14px;font-size:14px;color:#dfe3ea}
+.note.sol{border-left-color:var(--acc)}
+.note.good{border-left-color:var(--ok)}
+.note.bad{border-left-color:var(--bad)}
+.note b{color:#fff}
+
+/* palette */
+.pal{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.pal button{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);
+  color:var(--dim);cursor:pointer;font:inherit;font-size:12px}
+.pal button.cur{outline:2px solid var(--acc);outline-offset:1px;color:var(--tx)}
+.pal button.ans{background:#1d3a2c;border-color:var(--ok);color:#bff0d8}
+.pal button.mk{background:#2a2040;border-color:var(--mark);color:#dccdff}
+.pal button.ok{background:#14291f;border-color:var(--ok);color:#7ee0b0}
+.pal button.no{background:#2b1919;border-color:var(--bad);color:#ff9d9d}
+
+/* results */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0 22px}
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:13px}
+.stat .v{font-size:24px;font-weight:660} .stat .l{font-size:12px;color:var(--dim);margin-top:2px}
+.rev{border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px;background:var(--panel)}
+.rev.c{border-left:3px solid var(--ok)} .rev.w{border-left:3px solid var(--bad)} .rev.s{border-left:3px solid var(--dim)}
+.tag{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
+.foot{position:fixed;bottom:0;left:0;right:0;background:rgba(15,17,21,.95);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);padding:11px 0}
+.foot .wrap{padding:0 18px;display:flex;gap:9px;align-items:center}
+.sp{flex:1}
+small.k{color:var(--dim);font-size:12px}
+@media(max-width:600px){.qtext{font-size:16px}.wrap{padding:16px 12px 90px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// Question bank — generated from Algebra-Practice.md and Means-and-Weighted-Averages-Practice.md
+// q: text, t: 'mcq'|'tita', o: options, a: correct index (mcq) or numeric answer (tita),
+// alt: accepted alternate string answers, h: hint, s: solution
+const BANK = {
+  algebra: {
+    name: "Algebra",
+    perQ: 120,
+    sets: {
+      A: { name: "Identities & the x + 1/x chain", qs: [
+        { id:"A1", t:"tita", q:"If x + 1/x = 4, find x² + 1/x².", a:14,
+          h:"§1, the x + 1/x family, first link.",
+          s:"x² + 1/x² = (x + 1/x)² − 2 = 16 − 2 = <b>14</b>." },
+        { id:"A2", t:"mcq", q:"If x − 1/x = 3 and x > 0, then x + 1/x =", o:["√11","√13","5","√5"], a:1,
+          h:"§1, the last line of the x + 1/x family — the two squares differ by 4.",
+          s:"(x + 1/x)² = (x − 1/x)² + 4 = 9 + 4 = 13. Since x > 0, x + 1/x is positive, so it equals <b>√13</b>." },
+        { id:"A3", t:"tita", q:"If x + 1/x = 3, find x⁴ + 1/x⁴.", a:47,
+          h:"§1 — go one link at a time; you cannot jump from x + 1/x to x⁴ + 1/x⁴ directly.",
+          s:"x² + 1/x² = 3² − 2 = 7. Then x⁴ + 1/x⁴ = 7² − 2 = <b>47</b>." },
+        { id:"A4", t:"mcq", q:"If a + b = 7 and ab = 10, then a³ + b³ =", o:["91","133","189","243"], a:1,
+          h:"§1, the rearranged cube identity (a + b)³ = a³ + b³ + 3ab(a + b).",
+          s:"a³ + b³ = (a+b)³ − 3ab(a+b) = 343 − 3(10)(7) = 343 − 210 = <b>133</b>." },
+        { id:"A5", t:"tita", q:"If x² − 5x + 1 = 0, find x³ + 1/x³.", a:110,
+          h:"§1 + §2 — divide the whole equation by x before you do anything else.",
+          s:"Divide by x: x − 5 + 1/x = 0, so x + 1/x = 5. Then x³ + 1/x³ = 5³ − 3(5) = 125 − 15 = <b>110</b>." }
+      ]},
+      B: { name: "Quadratics", qs: [
+        { id:"B1", t:"mcq", q:"If α and β are the roots of x² − 7x + 12 = 0, then α² + β² =", o:["13","25","37","49"], a:1,
+          h:"§2, sum/product of roots and α² + β² = (α+β)² − 2αβ.",
+          s:"α + β = 7, αβ = 12. α² + β² = 49 − 24 = <b>25</b>." },
+        { id:"B2", t:"tita", q:"If α and β are the roots of 2x² − 5x + 3 = 0, find 1/α + 1/β.", a:5/3, alt:["5/3"],
+          h:"§2, 1/α + 1/β = (α+β)/αβ. Don't find the roots.",
+          s:"α + β = 5/2, αβ = 3/2. So 1/α + 1/β = (5/2)/(3/2) = <b>5/3</b> ≈ 1.67." },
+        { id:"B3", t:"tita", q:"Find the maximum value of −2x² + 12x − 7.", a:11,
+          h:"§2, Vertex — x = −b/2a. Do not differentiate.",
+          s:"a = −2 < 0, so maximum at x = −b/2a = −12/(−4) = 3. Value = −2(9) + 36 − 7 = <b>11</b>." },
+        { id:"B4", t:"mcq", q:"The equation x² + kx + 9 = 0 has equal roots for", o:["k = 6 only","k = ±6","k = ±3","k = ±9"], a:1,
+          h:"§2, discriminant D = 0. Watch the sign — the trap in the options is dropping the negative root.",
+          s:"D = k² − 36 = 0 ⟹ k = <b>±6</b>. Both work; discarding −6 is the trap." },
+        { id:"B5", t:"tita", q:"For how many values of k are both roots of x² − 6x + k = 0 positive integers?", a:3,
+          h:"§2, sum and product of roots. List the integer pairs summing to 6.",
+          s:"Pairs summing to 6: (1,5), (2,4), (3,3). Products give k = 5, 8, 9 — <b>3</b> values." }
+      ]},
+      C: { name: "Symmetric sums & cubics", qs: [
+        { id:"C1", t:"tita", q:"If a + b + c = 10 and ab + bc + ca = 31, find a² + b² + c².", a:38,
+          h:"§1, (a + b + c)² identity — the converter between the two symmetric sums.",
+          s:"100 = Σa² + 2(31) ⟹ Σa² = <b>38</b>." },
+        { id:"C2", t:"mcq", q:"If p, q, r are the roots of x³ − 6x² + 11x − 6 = 0, then 1/p + 1/q + 1/r =", o:["6/11","11/6","6","11"], a:1,
+          h:"§3, cubic coefficient relations. Write the target as (pq + qr + rp)/pqr.",
+          s:"pq + qr + rp = 11, pqr = 6. So the sum = <b>11/6</b>." },
+        { id:"C3", t:"tita", q:"If a + b + c = 6, ab + bc + ca = 11 and abc = 6, find a³ + b³ + c³.", a:36,
+          h:"§5, the workhorse identity used forwards — a³+b³+c³ = 3abc + (a+b+c)(Σa² − Σab).",
+          s:"Σa² = 36 − 22 = 14. a³+b³+c³ − 3abc = 6(14 − 11) = 18, so the sum = 18 + 18 = <b>36</b>. (Roots are 1, 2, 3.)" },
+        { id:"C4", t:"tita", q:"If a + b + c = 0, ab + bc + ca = −7 and abc = 6, find a⁴ + b⁴ + c⁴.", a:98,
+          h:"§1 and §3 — get Σa², then Σa²b² from (Σab)² = Σa²b² + 2abc·Σa, then (Σa²)² = Σa⁴ + 2Σa²b².",
+          s:"Σa² = 0 − 2(−7) = 14. Σa²b² = 49 − 0 = 49. Σa⁴ = 196 − 98 = <b>98</b>." }
+      ]},
+      D: { name: "Surds", qs: [
+        { id:"D1", t:"mcq", q:"√(9 + 2√20) =", o:["3 + √2","√6 + √3","√5 + 2","√7 + √2"], a:2,
+          h:"§4, Nested surds — find m + n = 9 and mn = 20.",
+          s:"m + n = 9, mn = 20 ⟹ 5 and 4 ⟹ √5 + √4 = <b>√5 + 2</b>." },
+        { id:"D2", t:"tita", q:"If √x + √y = 9 and √x − √y = 5, find x + y.", a:53,
+          h:"§4, the sum-and-difference shortcut: x + y = (p² + q²)/2.",
+          s:"x + y = (81 + 25)/2 = <b>53</b>. (Longhand: √x = 7, √y = 2 ⟹ 49 + 4 = 53.)" },
+        { id:"D3", t:"tita", q:"If √(x + 9) + √x = 9, find x.", a:16,
+          h:"§4, single-equation worked example — isolate one surd, square, then substitute back to check.",
+          s:"√(x+9) = 9 − √x ⟹ x + 9 = 81 − 18√x + x ⟹ 18√x = 72 ⟹ √x = 4 ⟹ x = <b>16</b>. Check: √25 + √16 = 9 ✓" },
+        { id:"D4", t:"mcq", q:"If x = 1/(2 − √3), then x³ + 1/x³ =", o:["40","52","64","76"], a:1,
+          h:"§4 — rationalise first, then notice the conjugate pair multiplies to 1, which puts you in §1's x + 1/x chain.",
+          s:"x = 2 + √3, 1/x = 2 − √3, so x + 1/x = 4. Then x³ + 1/x³ = 64 − 12 = <b>52</b>." },
+        { id:"D5", t:"mcq", q:"If (3 + √5)/(3 − √5) = a + b√5 where a and b are rational, then a + b =", o:["7/2","4","5","10"], a:2,
+          h:"§4, \"compare parts\" — rationalise, then match rational and irrational parts separately.",
+          s:"Multiply by (3+√5)/(3+√5): (14 + 6√5)/4 = 7/2 + (3/2)√5. So a + b = 7/2 + 3/2 = <b>5</b>." }
+      ]},
+      E: { name: "The a + b + c = 0 identity", qs: [
+        { id:"E1", t:"tita", q:"Find the value of (5 − 8)³ + (8 − 11)³ + (11 − 5)³.", a:162,
+          h:"§5, the recognition cue. Check what the three brackets add up to before expanding anything.",
+          s:"Brackets are −3, −3, 6, summing to 0. Value = 3(−3)(−3)(6) = <b>162</b>." },
+        { id:"E2", t:"mcq", q:"If a + b + c = 0 and abc = 12, then a³ + b³ + c³ =", o:["0","4","12","36"], a:3,
+          h:"§5, the one-line consequence of the workhorse identity.",
+          s:"a + b + c = 0 ⟹ a³ + b³ + c³ = 3abc = <b>36</b>." },
+        { id:"E3", t:"tita", q:"Find the value of 7³ + 3³ − 10³.", a:-630,
+          h:"§5 — rewrite the third term as (−10)³ and check the sum of the three bases.",
+          s:"7 + 3 + (−10) = 0, so the value = 3(7)(3)(−10) = <b>−630</b>." },
+        { id:"E4", t:"mcq", q:"If a³ + b³ + c³ = 3abc, which of the following must be true?", o:["a + b + c = 0","a = b = c","a + b + c = 0 or a = b = c","abc = 0"], a:2,
+          h:"§5, \"The converse matters too\" — and the Traps table.",
+          s:"(a+b+c)(a² + b² + c² − ab − bc − ca) = 0. Either the first factor is 0, or the second — and the second vanishes exactly when a = b = c. So <b>(c)</b>." }
+      ]},
+      F: { name: "Inequalities, max–min, modulus", qs: [
+        { id:"F1", t:"tita", q:"Find the minimum value of 9x + 4/x for x > 0.", a:12,
+          h:"§6, AM ≥ GM applied to the two terms.",
+          s:"(9x + 4/x)/2 ≥ √(9x · 4/x) = 6 ⟹ minimum <b>12</b>, at x = 2/3." },
+        { id:"F2", t:"mcq", q:"If |2x − 5| < 7, then", o:["−1 < x < 6","−6 < x < 1","x < −1 or x > 6","0 < x < 6"], a:0,
+          h:"§6, Modulus: |x| < a ⟺ −a < x < a.",
+          s:"−7 < 2x − 5 < 7 ⟹ −2 < 2x < 12 ⟹ <b>−1 < x < 6</b>." },
+        { id:"F3", t:"tita", q:"Two positive numbers have a sum of 20. Find their maximum possible product.", a:100,
+          h:"§6, fixed sum ⟹ product is maximum when the terms are equal.",
+          s:"10 × 10 = <b>100</b>." },
+        { id:"F4", t:"mcq", q:"The number of real values of x satisfying |x − 3| + |x + 2| = 5 is", o:["0","1","2","infinitely many"], a:3,
+          h:"§6, case-split at every sign change — x = −2 and x = 3. Look carefully at the middle case.",
+          s:"The critical points −2 and 3 are exactly 5 apart. Every x with −2 ≤ x ≤ 3 works, so <b>infinitely many</b>." },
+        { id:"F5", t:"tita", q:"If |x − 1| + |x − 4| = 7, find the sum of all values of x.", a:5,
+          h:"§6 — three cases, and discard any solution that falls outside its own case's range.",
+          s:"x < 1: (1−x)+(4−x) = 7 ⟹ x = −1 ✓. 1 ≤ x ≤ 4: gives 3 = 7, none. x > 4: 2x − 5 = 7 ⟹ x = 6 ✓. Sum = <b>5</b>." }
+      ]},
+      G: { name: "Functions", qs: [
+        { id:"G1", t:"mcq", q:"If f(x) = 2x + 3 and g(x) = x², then f(g(2)) =", o:["11","14","25","49"], a:0,
+          h:"§7, Composite — work from the inside out.",
+          s:"g(2) = 4, f(4) = 8 + 3 = <b>11</b>." },
+        { id:"G2", t:"tita", q:"If f(x) + 3f(1/x) = 4x for all x ≠ 0, find f(3).", a:-1,
+          h:"§7, the substitute-the-reciprocal move — put x = 3, then x = 1/3, and eliminate.",
+          s:"x = 3: f(3) + 3f(1/3) = 12. x = 1/3: f(1/3) + 3f(3) = 4/3 ⟹ ×3: 3f(1/3) + 9f(3) = 4. Subtract: 8f(3) = −8 ⟹ f(3) = <b>−1</b>." },
+        { id:"G3", t:"tita", q:"If f(x) = (x − 1)/(x + 1), find f applied five times to 2.", a:1/3, alt:["1/3"],
+          h:"§7, Composite. Simplify f(f(x)) in general first; the pattern repeats faster than you'd expect.",
+          s:"f(f(x)) = −1/x, so f⁴(x) = x. Five applications = one: f(2) = <b>1/3</b> ≈ 0.33." }
+      ]},
+      H: { name: "Linear equations", qs: [
+        { id:"H1", t:"tita", q:"If 3x + 5y = 31 and 5x + 3y = 33, find x + y.", a:8,
+          h:"§8, \"the habit that saves time\" — the question asks for x + y, so don't solve separately.",
+          s:"Add: 8x + 8y = 64 ⟹ x + y = <b>8</b>." },
+        { id:"H2", t:"mcq", q:"The system 2x + 3y = 7 and 4x + ky = 14 has infinitely many solutions when k =", o:["3","5","6","12"], a:2,
+          h:"§8, the three-ratio condition a₁/a₂ = b₁/b₂ = c₁/c₂.",
+          s:"2/4 = 3/k = 7/14 ⟹ 3/k = 1/2 ⟹ k = <b>6</b>." },
+        { id:"H3", t:"tita", q:"Four pens and three notebooks cost ₹270. Three pens and four notebooks cost ₹220. Find the combined cost (in ₹) of one pen and one notebook.", a:70,
+          h:"§8 — add the two equations. You never need the individual prices.",
+          s:"Adding: 7p + 7n = 490 ⟹ p + n = <b>70</b>." }
+      ]},
+      M: { name: "Mixed Set — exam feel", block: 960, qs: [
+        { id:"M1", t:"mcq", q:"If x + 1/x = 6, then (x − 1/x)² =", o:["28","32","34","40"], a:1,
+          h:"The two squares differ by 4.",
+          s:"(x − 1/x)² = 36 − 4 = <b>32</b>." },
+        { id:"M2", t:"tita", q:"Find the value of (11 − 4)³ + (4 − 15)³ + (15 − 11)³.", a:-924,
+          h:"Check whether the three brackets sum to 0.",
+          s:"7 − 11 + 4 = 0 ⟹ value = 3(7)(−11)(4) = <b>−924</b>." },
+        { id:"M3", t:"mcq", q:"The maximum value of 5 + 4x − x² is", o:["4","5","9","13"], a:2,
+          h:"Vertex: x = −b/2a.",
+          s:"Max at x = 2; value = 5 + 8 − 4 = <b>9</b>." },
+        { id:"M4", t:"mcq", q:"√(11 + 2√30) − √(11 − 2√30) =", o:["2","√5","2√5","2√6"], a:2,
+          h:"Nested surds: m + n = 11, mn = 30.",
+          s:"(√6 + √5) − (√6 − √5) = <b>2√5</b>." },
+        { id:"M5", t:"tita", q:"If a + b + c = 9 and a² + b² + c² = 35, find ab + bc + ca.", a:23,
+          h:"(a+b+c)² = Σa² + 2Σab.",
+          s:"81 = 35 + 2Σab ⟹ Σab = <b>23</b>." },
+        { id:"M6", t:"mcq", q:"The roots of x² − px + 10 = 0 differ by 3. If p > 0, then p =", o:["6","7","9","13"], a:1,
+          h:"(α − β)² = (α + β)² − 4αβ.",
+          s:"p² − 40 = 9 ⟹ p² = 49 ⟹ p = <b>7</b>." },
+        { id:"M7", t:"tita", q:"Find the minimum value of x² + 25/x² for x ≠ 0.", a:10,
+          h:"AM ≥ GM on the two terms.",
+          s:"Minimum = 2√25 = <b>10</b>, at x² = 5." },
+        { id:"M8", t:"mcq", q:"If √(x + 3) − √(x − 2) = 1, then x =", o:["2","6","7","11"], a:1,
+          h:"Isolate one surd, square, then check.",
+          s:"x + 3 = 1 + 2√(x−2) + x − 2 ⟹ 2√(x−2) = 4 ⟹ x = <b>6</b>. Check: 3 − 2 = 1 ✓" }
+      ]}
+    }
+  },
+  averages: {
+    name: "Means & Weighted Averages",
+    perQ: 90,
+    sets: {
+      A: { name: "Core: sums, deviations, properties", qs: [
+        { id:"A1", t:"tita", q:"Find the average of 102, 107, 99, 104, 98.", a:102,
+          h:"§1, deviation method — take A = 100 and average the deviations.",
+          s:"Deviations from 100: +2, +7, −1, +4, −2 ⟹ sum 10. Average = 100 + 10/5 = <b>102</b>." },
+        { id:"A2", t:"mcq", q:"The average of 5 numbers is 27. Each number is increased by 4 and the result is then doubled. The new average is", o:["54","58","62","68"], a:2,
+          h:"§2, the two transformation properties. Apply them in the stated order.",
+          s:"27 + 4 = 31; 31 × 2 = <b>62</b>." },
+        { id:"A3", t:"tita", q:"The average of 11 consecutive integers is 17. Find the largest of them.", a:22,
+          h:"§2, last bullet — for an AP the average is the middle term.",
+          s:"Middle (6th) term = 17, so the run is 12…22; largest = <b>22</b>." },
+        { id:"A4", t:"tita", q:"The average of five distinct positive integers is 10. What is the largest possible value of any one of them?", a:40,
+          h:"§1, Sum = Average × Count. Minimise the other four — and note \"distinct\".",
+          s:"Total = 50. Smallest four distinct positives: 1+2+3+4 = 10. Largest = <b>40</b>." },
+        { id:"A5", t:"mcq", q:"The average of 20 numbers is 45. If the average of the first 12 of them is 42, the average of the remaining 8 is", o:["48","49.5","51","52.5"], a:1,
+          h:"§13, the two-line method — convert both averages to sums, subtract, divide once.",
+          s:"Total 900; first twelve 504; rest 396 over 8 = <b>49.5</b>." }
+      ]},
+      B: { name: "Weighted average & alligation", qs: [
+        { id:"B1", t:"tita", q:"In a class, 30 boys average 55 marks and 20 girls average 70 marks. Find the class average.", a:61,
+          h:"§3, the central formula. The answer must lie closer to 55.",
+          s:"(30×55 + 20×70)/50 = 3050/50 = <b>61</b>." },
+        { id:"B2", t:"mcq", q:"A shopkeeper sells 40 kg of rice at ₹25/kg and 60 kg at ₹35/kg. The average selling price per kg is", o:["₹30","₹30.50","₹31","₹32"], a:2,
+          h:"§3 — the two quantities are unequal, so a plain mean of 25 and 35 is wrong.",
+          s:"(1000 + 2100)/100 = <b>₹31</b>." },
+        { id:"B3", t:"tita", q:"In a class of 60 students, boys average 62 marks and girls average 74, while the class averages 71. Find the number of boys.", a:15,
+          h:"§4, the backward direction — use alligation to get the boys : girls ratio first.",
+          s:"boys : girls = (74−71) : (71−62) = 3 : 9 = 1 : 3 ⟹ boys = 60/4 = <b>15</b>." },
+        { id:"B4", t:"mcq", q:"In a company, 40% of employees are women. Men average ₹50,000 and women ₹60,000 per month. The company average is", o:["₹53,000","₹54,000","₹55,000","₹56,000"], a:1,
+          h:"§3 — the percentages are the weights. You do not need the head count.",
+          s:"(60×50 + 40×60)/100 = 5400/100 = <b>₹54,000</b>." },
+        { id:"B5", t:"tita", q:"Sections A, B, C have 25, 35 and 40 students averaging 70, 65 and 60 marks. Find the overall average.", a:64.25,
+          h:"§3 extended to three groups, or §13's Total = Σ(size × average).",
+          s:"(1750 + 2275 + 2400)/100 = <b>64.25</b>." }
+      ]},
+      C: { name: "Replacement & addition", qs: [
+        { id:"C1", t:"tita", q:"The average weight of 10 people increases by 1.5 kg when a new person replaces one weighing 58 kg. Find the new person's weight (kg).", a:73,
+          h:"§5 — new value = old value + (n × change in average).",
+          s:"Total increase = 10 × 1.5 = 15 ⟹ 58 + 15 = <b>73 kg</b>." },
+        { id:"C2", t:"mcq", q:"The average of 12 numbers is 25. When one number is removed, the average of the rest is 24. The removed number is", o:["13","25","34","36"], a:3,
+          h:"§5 — work with totals: 12 × 25 minus 11 × 24.",
+          s:"300 − 264 = <b>36</b>." },
+        { id:"C3", t:"tita", q:"The average age of 15 students is 14 years. Including the teacher, the average becomes 15. Find the teacher's age.", a:30,
+          h:"§5, the adding variant — new member = (n+1)A′ − nA. It is not 15.",
+          s:"16×15 − 15×14 = 240 − 210 = <b>30 years</b>." },
+        { id:"C4", t:"mcq", q:"The average score of 11 players is 32. The captain, who scored 50, leaves and a new player joins; the average becomes 31. The new player's score is", o:["28","39","41","43"], a:1,
+          h:"§5 — total before, total after, and the 50 that left.",
+          s:"352 − 50 = 302; new total 341 ⟹ new player = <b>39</b>." },
+        { id:"C5", t:"tita", q:"In a group of 8, two members weighing 55 kg and 60 kg are replaced by two new members and the average rises by 3 kg. Find the combined weight (kg) of the new members.", a:139,
+          h:"§5 — total change is still n × (change in average), however many were swapped.",
+          s:"Increase = 8 × 3 = 24 ⟹ 115 + 24 = <b>139 kg</b>." }
+      ]},
+      D: { name: "Correction problems", qs: [
+        { id:"D1", t:"tita", q:"The average of 25 numbers was computed as 40, but one number was read as 36 instead of 63. Find the correct average.", a:41.08,
+          h:"§6 — adjust the sum by the error first, then divide once.",
+          s:"Sum understated by 27. Correct average = 40 + 27/25 = <b>41.08</b>." },
+        { id:"D2", t:"tita", q:"The average of 10 numbers is 62. Later it is found 85 was read as 58, and 45 was read as 54. Find the correct average.", a:63.8,
+          h:"§6 — the two errors go in opposite directions. Compute the net correction.",
+          s:"+27 and −9 ⟹ net +18. Average = 62 + 1.8 = <b>63.8</b>." },
+        { id:"D3", t:"mcq", q:"The average marks of 50 students was 72. Two students' marks were entered as 48 and 55 instead of the correct 84 and 45. The correct average is", o:["71.48","72.48","72.52","73.52"], a:2,
+          h:"§6 — net error = (84 − 48) + (45 − 55). Watch the sign of the second.",
+          s:"Net +26. Average = 72 + 26/50 = <b>72.52</b>." }
+      ]},
+      E: { name: "Average speed", qs: [
+        { id:"E1", t:"tita", q:"A car travels from A to B at 30 km/h and returns at 70 km/h. Find the average speed (km/h).", a:42,
+          h:"§7, equal distances ⟹ harmonic mean 2ab/(a+b). It is not 50.",
+          s:"2(30)(70)/100 = <b>42 km/h</b>." },
+        { id:"E2", t:"mcq", q:"A man cycles at 12 km/h for 3 hours and then at 18 km/h for 3 hours. His average speed is", o:["14 km/h","14.4 km/h","15 km/h","16 km/h"], a:2,
+          h:"§7 — read for whether time or distance is equal. Here it is time.",
+          s:"Equal times ⟹ plain average = <b>15 km/h</b>." },
+        { id:"E3", t:"tita", q:"A man covers three equal stretches at 20, 30 and 60 km/h. Find his average speed (km/h).", a:30,
+          h:"§7, last line — average = 3/(1/a + 1/b + 1/c).",
+          s:"3/(1/20 + 1/30 + 1/60) = 3/(1/10) = <b>30 km/h</b>." },
+        { id:"E4", t:"tita", q:"A person travels 60 km at 30 km/h and the next 90 km at 45 km/h. Find the average speed (km/h).", a:37.5,
+          h:"§7, the definition — total distance / total time.",
+          s:"2 h + 2 h = 4 h for 150 km ⟹ <b>37.5 km/h</b>." }
+      ]},
+      F: { name: "AM, GM, HM and max–min", qs: [
+        { id:"F1", t:"mcq", q:"The AM of two positive numbers is 10 and their GM is 8. Their HM is", o:["5","6","6.4","12.5"], a:2,
+          h:"§8 — GM² = AM × HM.",
+          s:"64 = 10 × HM ⟹ HM = <b>6.4</b>." },
+        { id:"F2", t:"tita", q:"Two positive numbers have a sum of 30. Find their maximum possible product.", a:225,
+          h:"§8 — for a fixed sum the product is maximised when the terms are equal.",
+          s:"15 × 15 = <b>225</b>." },
+        { id:"F3", t:"tita", q:"The AM of two positive numbers is 13 and their GM is 12. Find the positive difference between them.", a:10,
+          h:"§8 with §1 of Algebra — (a − b)² = (a + b)² − 4ab.",
+          s:"a + b = 26, ab = 144. (a−b)² = 676 − 576 = 100 ⟹ <b>10</b>. (Numbers 18 and 8.)" },
+        { id:"F4", t:"mcq", q:"A quantity grows by 25% in the first year and by 80% in the second. The average annual growth rate is", o:["45%","50%","52.5%","55%"], a:1,
+          h:"§9 — the quantities multiply, so take the geometric mean of the growth factors.",
+          s:"1.25 × 1.80 = 2.25; √2.25 = 1.5 ⟹ <b>50%</b>. (52.5% is the arithmetic-mean trap.)" },
+        { id:"F5", t:"tita", q:"For positive reals a and b, find the minimum value of (a + b)(1/a + 1/b).", a:4,
+          h:"§8 — expand first; you'll be left with 2 + (a/b + b/a), and x + 1/x ≥ 2.",
+          s:"= 2 + a/b + b/a ≥ 2 + 2 = <b>4</b>, equality at a = b." }
+      ]},
+      G: { name: "AP-type averages, median, mode", qs: [
+        { id:"G1", t:"tita", q:"Find the average of the first 75 natural numbers.", a:38,
+          h:"§10, first bullet — (n+1)/2.",
+          s:"76/2 = <b>38</b>." },
+        { id:"G2", t:"mcq", q:"The average of the first 20 odd natural numbers is", o:["19","20","21","40"], a:1,
+          h:"§10 — the sum of the first n odd numbers is n².",
+          s:"400/20 = <b>20</b>." },
+        { id:"G3", t:"tita", q:"The average of the first n even natural numbers is 31. Find n.", a:30,
+          h:"§10 — the average of the first n even numbers is n + 1.",
+          s:"n + 1 = 31 ⟹ n = <b>30</b>." },
+        { id:"G4", t:"mcq", q:"For the data set 4, 7, 7, 9, 13, 100, the median is", o:["7","8","9","23.33"], a:1,
+          h:"§11 — with an even count the median is the average of the two middle terms.",
+          s:"Middle terms 7 and 9 ⟹ median <b>8</b>. The mean (≈23.33) is dragged up by the outlier." }
+      ]},
+      H: { name: "Unknown counts & sub-groups", qs: [
+        { id:"H1", t:"tita", q:"A class of 50 students averages 60 marks. A sub-group of 20 averages 45. Find the average of the remaining 30.", a:70,
+          h:"§13 — totals, subtract, divide once.",
+          s:"3000 − 900 = 2100 over 30 = <b>70</b>." },
+        { id:"H2", t:"tita", q:"The average age of a group is 25. When 6 people of average age 32 join, the average becomes 27. Find the original number of people.", a:15,
+          h:"§12, the alligation shortcut — get original : new as a ratio, then scale using the 6.",
+          s:"original : new = (32−27) : (27−25) = 5 : 2. New = 6 ⟹ original = <b>15</b>." },
+        { id:"H3", t:"mcq", q:"A class averages 72 marks. The 15 girls average 80 and the boys average 66. The number of boys is", o:["18","20","24","25"], a:1,
+          h:"§13, missing sub-group size — alligation gives boys : girls directly.",
+          s:"boys : girls = (80−72) : (72−66) = 4 : 3. Girls = 15 ⟹ boys = <b>20</b>." },
+        { id:"H4", t:"tita", q:"Of five numbers, the average of the first three is 14 and the average of the last three is 18. If the third number is 16, find the average of all five.", a:16,
+          h:"§13 — the two stated groups overlap in the third number, so subtract it once.",
+          s:"42 + 54 = 96 counts the third twice ⟹ total = 80 ⟹ average = <b>16</b>." },
+        { id:"H5", t:"tita", q:"A firm has three departments. A has 12 people averaging ₹30,000; B has 18 averaging ₹45,000. All 40 employees average ₹42,000. Find C's average salary (in ₹).", a:51000, alt:["51","51,000"],
+          h:"§13, master relation — Total = Σ(size × average). First find how many are in C.",
+          s:"Total = 1680k. A + B = 1170k. C has 10 people totalling 510k ⟹ <b>₹51,000</b>." },
+        { id:"H6", t:"mcq", q:"The average of 7 numbers is 40. The average of the first four is 35 and of the last four is 47. The fourth number is", o:["42","44","48","52"], a:2,
+          h:"§13 — the two groups of four overlap in exactly one number.",
+          s:"140 + 188 = 328; all seven = 280 ⟹ fourth = <b>48</b>." }
+      ]},
+      M: { name: "Mixed Set — exam feel", block: 840, qs: [
+        { id:"M1", t:"mcq", q:"A group of 60 students averages 55 marks. The boys average 50 and the girls 65. The number of girls is", o:["20","25","30","40"], a:0,
+          h:"Alligation about 55.",
+          s:"boys : girls = (65−55) : (55−50) = 2 : 1 ⟹ girls = <b>20</b>." },
+        { id:"M2", t:"tita", q:"A cyclist covers 40 km at 40 km/h and the next 40 km at 60 km/h. Find the average speed (km/h).", a:48,
+          h:"Equal distances ⟹ harmonic mean.",
+          s:"2(40)(60)/100 = <b>48 km/h</b>." },
+        { id:"M3", t:"mcq", q:"The average of 15 numbers is 18. If 3 is added to each and the result multiplied by 2, the new average is", o:["21","36","39","42"], a:3,
+          h:"Apply the transformations in order.",
+          s:"18 + 3 = 21; ×2 = <b>42</b>." },
+        { id:"M4", t:"tita", q:"The average weight of 6 people is 68 kg. One person weighing 75 kg leaves. Find the average weight (kg) of the remaining five.", a:66.6,
+          h:"Totals.",
+          s:"408 − 75 = 333 over 5 = <b>66.6 kg</b>." },
+        { id:"M5", t:"mcq", q:"The AM of two positive numbers is 15 and their HM is 9.6. Their GM is", o:["10","11","12","12.5"], a:2,
+          h:"GM² = AM × HM.",
+          s:"√(15 × 9.6) = √144 = <b>12</b>." },
+        { id:"M6", t:"tita", q:"The average of 11 results is 50. The average of the first six is 49 and of the last six is 52. Find the sixth result.", a:56,
+          h:"The two groups of six overlap in the sixth result.",
+          s:"294 + 312 = 606; all eleven = 550 ⟹ sixth = <b>56</b>." },
+        { id:"M7", t:"mcq", q:"The average of 30 numbers was computed as 24. Two numbers had been read as 15 and 32 instead of 51 and 23. The correct average is", o:["23.1","24.6","24.9","25.2"], a:2,
+          h:"Net error, then divide once.",
+          s:"(51−15) + (23−32) = +27 ⟹ 24 + 27/30 = <b>24.9</b>." },
+        { id:"M8", t:"tita", q:"The average age of a family of 5 is 20 years. The youngest is 10 years old. What was the average age (years) of the family when the youngest was born?", a:12.5,
+          h:"Only the other four existed then — and each was 10 years younger.",
+          s:"Total now = 100; other four = 90. Ten years ago they totalled 90 − 40 = 50 ⟹ average = <b>12.5 years</b>." }
+      ]}
+    }
+  }
+};
+
+</script>
+<script>
+const $ = (s,r=document)=>r.querySelector(s);
+const app = $("#app");
+const LET = ["a","b","c","d","e"];
+let S = null; // session state
+let mode = "practice"; // or exam
+let timerId = null;
+
+/* ---------- answer checking ---------- */
+function parseNum(str){
+  if(str==null) return NaN;
+  let s = String(str).trim().replace(/[₹,\s]/g,"").replace(/kmph|km\/h|kg|yrs?|years?|rs\.?/gi,"");
+  if(s==="") return NaN;
+  const f = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  if(f) return parseFloat(f[1])/parseFloat(f[2]);
+  const n = parseFloat(s);
+  return isNaN(n)?NaN:n;
+}
+function isRight(q, val){
+  if(val===undefined||val===null||val==="") return false;
+  if(q.t==="mcq") return val===q.a;
+  const s = String(val).trim();
+  if(q.alt && q.alt.some(a=>a.replace(/[\s,]/g,"").toLowerCase()===s.replace(/[\s,]/g,"").toLowerCase())) return true;
+  const n = parseNum(s);
+  if(isNaN(n)) return false;
+  const tol = Math.max(0.011, Math.abs(q.a)*0.001);
+  return Math.abs(n-q.a)<=tol;
+}
+function fmtAns(q){
+  if(q.t==="mcq") return "("+LET[q.a]+") "+q.o[q.a];
+  if(q.alt&&q.alt.length) return q.alt[0];
+  return String(q.a);
+}
+function mmss(t){const m=Math.floor(Math.abs(t)/60),s=Math.abs(t)%60;
+  return (t<0?"-":"")+m+":"+String(s).padStart(2,"0");}
+
+/* ---------- home ---------- */
+function home(){
+  clearInterval(timerId);
+  let h = `<div class="wrap">
+    <h1>CAT Quant — Interactive Practice</h1>
+    <div class="sub">Built from your Algebra and Means &amp; Weighted Averages practice sets. 87 questions.</div>
+    <div class="card">
+      <div class="row" style="margin-bottom:4px">
+        <strong style="font-size:14px">Mode</strong>
+        <div class="seg" id="modeseg">
+          <button data-m="practice" class="${mode==='practice'?'on':''}">Practice</button>
+          <button data-m="exam" class="${mode==='exam'?'on':''}">Exam</button>
+        </div>
+        <small class="k" id="modehelp"></small>
+      </div>
+    </div>`;
+  for(const tk in BANK){
+    const T = BANK[tk];
+    const all = Object.keys(T.sets).reduce((n,k)=>n+T.sets[k].qs.length,0);
+    h += `<h2>${T.name}</h2><div class="grid">`;
+    h += `<button class="setbtn" data-t="${tk}" data-s="ALL"><div class="k">▶ Full topic test</div>
+           <div class="m">${all} questions · ${Math.round(all*T.perQ/60)} min</div></button>`;
+    for(const sk in T.sets){
+      const st = T.sets[sk], n = st.qs.length;
+      const secs = st.block || n*T.perQ;
+      h += `<button class="setbtn" data-t="${tk}" data-s="${sk}"><div class="k">Set ${sk} — ${st.name}</div>
+             <div class="m">${n} questions · ${Math.round(secs/60)} min</div></button>`;
+    }
+    h += `</div>`;
+  }
+  const grand = Object.keys(BANK).reduce((n,tk)=>n+Object.keys(BANK[tk].sets).reduce((m,k)=>m+BANK[tk].sets[k].qs.length,0),0);
+  h += `<h2>Everything</h2><div class="grid">
+    <button class="setbtn" data-t="ALL" data-s="ALL"><div class="k">▶ Full mock — both topics</div>
+    <div class="m">${grand} questions · shuffled · ~150 min</div></button>
+    <button class="setbtn" data-t="ALL" data-s="MIX"><div class="k">▶ Mixed sets only</div>
+    <div class="m">16 questions · 30 min · exam feel</div></button>
+   </div></div>`;
+  app.innerHTML = h;
+  updModeHelp();
+  $("#modeseg").onclick = e=>{const b=e.target.closest("button"); if(!b)return;
+    mode=b.dataset.m; [...e.currentTarget.children].forEach(c=>c.classList.toggle("on",c===b)); updModeHelp();};
+  app.querySelectorAll(".setbtn").forEach(b=>b.onclick=()=>start(b.dataset.t,b.dataset.s));
+}
+function updModeHelp(){
+  $("#modehelp").textContent = mode==="practice"
+    ? "Check each answer as you go; hints available; timer counts up."
+    : "No feedback until you submit; hints locked; timer counts down.";
+}
+
+/* ---------- start ---------- */
+function start(tk, sk){
+  let qs=[], label="", secs=0;
+  const push=(topic,setKey)=>{
+    const T=BANK[topic], st=T.sets[setKey];
+    st.qs.forEach(q=>qs.push({...q, topic:T.name, set:setKey, uid:topic+"-"+setKey+"-"+q.id}));
+    secs += st.block || st.qs.length*T.perQ;
+  };
+  if(tk==="ALL"){
+    for(const t in BANK) for(const s in BANK[t].sets){ if(sk==="MIX"&&s!=="M") continue; push(t,s); }
+    label = sk==="MIX" ? "Mixed Sets — both topics" : "Full Mock — all topics";
+    if(sk==="ALL") shuffle(qs);
+  } else if(sk==="ALL"){
+    for(const s in BANK[tk].sets) push(tk,s);
+    label = BANK[tk].name + " — full topic test";
+  } else {
+    push(tk,sk);
+    label = BANK[tk].name + " · Set " + sk + " — " + BANK[tk].sets[sk].name;
+  }
+  S = { qs, label, i:0, ans:{}, marks:{}, hints:{}, checked:{}, done:false,
+        limit:secs, elapsed:0, t0:Date.now(), mode };
+  render();
+  timerId = setInterval(tick, 1000);
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}}
+function tick(){
+  if(S.done) return;
+  S.elapsed = Math.round((Date.now()-S.t0)/1000);
+  const el=$("#timer"); if(!el) return;
+  if(S.mode==="exam"){
+    const left = S.limit - S.elapsed;
+    el.textContent = mmss(left);
+    el.classList.toggle("low", left<=60);
+    if(left<=0){ finish(); }
+  } else el.textContent = mmss(S.elapsed);
+}
+
+/* ---------- test view ---------- */
+function render(){
+  const q = S.qs[S.i], n = S.qs.length;
+  const showFB = S.mode==="practice" && S.checked[S.i];
+  let h = `<div class="top"><div class="wrap"><div class="row">
+      <strong style="font-size:14px">${S.label}</strong>
+      <span class="pill">${S.mode==="exam"?"Exam":"Practice"}</span>
+      <div class="sp" style="flex:1"></div>
+      <span class="timer" id="timer">${S.mode==="exam"?mmss(S.limit):"0:00"}</span>
+      <button class="btn ghost" id="quit">Exit</button>
+    </div></div></div>
+   <div class="wrap"><div class="card">
+    <div class="qhead"><div class="qno">Question ${S.i+1} of ${n} &nbsp;·&nbsp; ${q.topic} · ${q.id} · ${q.t.toUpperCase()}</div>
+      <button class="btn ghost" id="mark" style="padding:5px 11px;font-size:13px">${S.marks[S.i]?"★ Marked":"☆ Mark"}</button></div>
+    <div class="qtext">${q.q}</div>`;
+  if(q.t==="mcq"){
+    q.o.forEach((o,i)=>{
+      let cls="opt"+(S.ans[S.i]===i?" sel":"");
+      if(showFB){ if(i===q.a) cls="opt correct"; else if(S.ans[S.i]===i) cls="opt wrong"; }
+      h+=`<div class="${cls}" data-i="${i}"><div class="lab">${LET[i]}</div><div>${o}</div></div>`;
+    });
+  } else {
+    h+=`<div class="row"><input type="text" id="tita" placeholder="Type your answer"
+        value="${S.ans[S.i]!==undefined?String(S.ans[S.i]).replace(/"/g,'&quot;'):''}"
+        ${showFB?"disabled":""} autocomplete="off">
+        <small class="k">Decimals or fractions both fine (e.g. 5/3 or 1.67)</small></div>`;
+  }
+  if(S.hints[S.i]) h+=`<div class="note"><b>Hint:</b> ${q.h}</div>`;
+  if(showFB){
+    const ok = isRight(q, S.ans[S.i]);
+    h+=`<div class="note ${ok?'good':'bad'}"><b>${ok?"Correct":"Incorrect"}</b> — answer: ${fmtAns(q)}</div>
+        <div class="note sol">${q.s}</div>`;
+  }
+  h+=`<div class="pal" id="pal">`;
+  S.qs.forEach((_,i)=>{
+    let c=""; if(i===S.i)c+=" cur";
+    if(S.mode==="practice"&&S.checked[i]) c+= isRight(S.qs[i],S.ans[i])?" ok":" no";
+    else if(S.ans[i]!==undefined&&S.ans[i]!=="") c+=" ans";
+    if(S.marks[i]) c+=" mk";
+    h+=`<button class="${c.trim()}" data-i="${i}">${i+1}</button>`;
+  });
+  h+=`</div></div></div>
+   <div class="foot"><div class="wrap">
+     <button class="btn ghost" id="prev" ${S.i===0?"disabled":""}>← Prev</button>
+     <button class="btn ghost" id="hint" ${S.mode==="exam"?"disabled":""}>${S.hints[S.i]?"Hint shown":"Hint"}</button>
+     ${S.mode==="practice"&&!S.checked[S.i]?`<button class="btn" id="check">Check</button>`:""}
+     <div class="sp"></div>
+     <button class="btn ghost" id="submit">Submit test</button>
+     <button class="btn" id="next">${S.i===S.qs.length-1?"Review →":"Next →"}</button>
+   </div></div>`;
+  app.innerHTML = h;
+  wire();
+}
+function wire(){
+  const q = S.qs[S.i];
+  app.querySelectorAll(".opt").forEach(o=>o.onclick=()=>{
+    if(S.mode==="practice"&&S.checked[S.i])return;
+    S.ans[S.i]=+o.dataset.i; render();
+  });
+  const ti=$("#tita");
+  if(ti){ ti.oninput=()=>{S.ans[S.i]=ti.value;};
+    ti.onkeydown=e=>{ if(e.key==="Enter"){ S.ans[S.i]=ti.value;
+      if(S.mode==="practice"&&!S.checked[S.i]) S.checked[S.i]=true; else nav(1); render(); } };
+    setTimeout(()=>ti.focus(),0); }
+  $("#prev").onclick=()=>{save();nav(-1);render();};
+  $("#next").onclick=()=>{save(); if(S.i===S.qs.length-1) finish(); else {nav(1);render();}};
+  $("#hint").onclick=()=>{S.hints[S.i]=true;save();render();};
+  const ck=$("#check"); if(ck) ck.onclick=()=>{save();S.checked[S.i]=true;render();};
+  $("#mark").onclick=()=>{save();S.marks[S.i]=!S.marks[S.i];render();};
+  $("#submit").onclick=()=>{save(); if(confirm("Submit and see your report?")) finish();};
+  $("#quit").onclick=()=>{ if(confirm("Leave this test? Progress is lost.")) home(); };
+  $("#pal").onclick=e=>{const b=e.target.closest("button");if(!b)return;save();S.i=+b.dataset.i;render();};
+}
+function save(){ const ti=$("#tita"); if(ti) S.ans[S.i]=ti.value; }
+function nav(d){ S.i=Math.min(S.qs.length-1,Math.max(0,S.i+d)); }
+
+/* ---------- results ---------- */
+function finish(){
+  S.done=true; clearInterval(timerId);
+  const n=S.qs.length; let c=0,w=0,sk=0;
+  const res = S.qs.map((q,i)=>{
+    const v=S.ans[i];
+    const blank = v===undefined||v===null||v==="";
+    const ok = !blank && isRight(q,v);
+    if(blank) sk++; else if(ok) c++; else w++;
+    return {q,i,v,blank,ok};
+  });
+  const acc = (c+w)? Math.round(c/(c+w)*100):0;
+  const t = S.mode==="exam" ? Math.min(S.elapsed,S.limit) : S.elapsed;
+  let h=`<div class="wrap"><h1>Report — ${S.label}</h1>
+   <div class="sub">${S.mode==="exam"?"Exam":"Practice"} mode · ${mmss(t)} taken · ${(t/n).toFixed(0)}s per question</div>
+   <div class="stats">
+     <div class="stat"><div class="v" style="color:var(--ok)">${c}</div><div class="l">Correct</div></div>
+     <div class="stat"><div class="v" style="color:var(--bad)">${w}</div><div class="l">Wrong</div></div>
+     <div class="stat"><div class="v" style="color:var(--dim)">${sk}</div><div class="l">Unattempted</div></div>
+     <div class="stat"><div class="v">${acc}%</div><div class="l">Accuracy</div></div>
+     <div class="stat"><div class="v">${c}/${n}</div><div class="l">Score</div></div>
+   </div>`;
+  // per-set breakdown
+  const bySet={};
+  res.forEach(r=>{const k=r.q.topic+" · Set "+r.q.set; (bySet[k]=bySet[k]||{c:0,n:0}); bySet[k].n++; if(r.ok)bySet[k].c++;});
+  if(Object.keys(bySet).length>1){
+    h+=`<h2>By set</h2><div class="card"><table style="width:100%;border-collapse:collapse;font-size:14px">`;
+    for(const k in bySet){const b=bySet[k];const p=Math.round(b.c/b.n*100);
+      h+=`<tr><td style="padding:6px 0">${k}</td><td style="text-align:right;color:var(--dim)">${b.c}/${b.n}</td>
+      <td style="width:120px;padding-left:14px"><div style="background:var(--panel2);height:7px;border-radius:4px;overflow:hidden">
+      <div style="width:${p}%;height:100%;background:${p>=70?'var(--ok)':p>=40?'var(--warn)':'var(--bad)'}"></div></div></td></tr>`;}
+    h+=`</table></div>`;
+  }
+  h+=`<h2>Review</h2><div class="row" style="margin-bottom:12px">
+      <div class="seg" id="filt">
+        <button data-f="all" class="on">All</button>
+        <button data-f="wrong">Wrong only</button>
+        <button data-f="skip">Unattempted</button>
+        <button data-f="mark">Marked</button>
+      </div></div><div id="revlist">`;
+  res.forEach(r=>{
+    const cls = r.blank?"s":(r.ok?"c":"w");
+    const f = r.blank?"skip":(r.ok?"right":"wrong");
+    const yours = r.blank ? "<i style='color:var(--dim)'>not attempted</i>"
+      : (r.q.t==="mcq" ? "("+LET[r.v]+") "+r.q.o[r.v] : String(r.v));
+    h+=`<div class="rev ${cls}" data-f="${f}" data-m="${S.marks[r.i]?1:0}">
+      <div class="row" style="margin-bottom:6px">
+        <span class="tag">Q${r.i+1} · ${r.q.topic} · ${r.q.id}</span>
+        ${S.marks[r.i]?'<span class="tag" style="color:var(--mark);border-color:var(--mark)">marked</span>':''}
+        <span class="tag" style="color:${r.blank?'var(--dim)':r.ok?'var(--ok)':'var(--bad)'};border-color:currentColor">
+          ${r.blank?"skipped":r.ok?"correct":"wrong"}</span></div>
+      <div style="margin-bottom:8px">${r.q.q}</div>
+      <div style="font-size:14px;color:var(--dim)">Your answer: <span style="color:var(--tx)">${yours}</span>
+        &nbsp;·&nbsp; Correct: <span style="color:var(--ok)">${fmtAns(r.q)}</span></div>
+      <div class="note sol" style="margin-top:10px">${r.q.s}</div>
+      <div class="note" style="margin-top:8px"><b>Method:</b> ${r.q.h}</div>
+    </div>`;
+  });
+  h+=`</div><div class="row" style="margin-top:20px">
+      <button class="btn" id="again">Retry this set</button>
+      <button class="btn ghost" id="hm">Back to menu</button></div></div>`;
+  app.innerHTML=h; window.scrollTo(0,0);
+  $("#hm").onclick=home;
+  $("#again").onclick=()=>{ S.i=0;S.ans={};S.marks={};S.hints={};S.checked={};S.done=false;
+    S.elapsed=0;S.t0=Date.now();S.mode=mode; render(); timerId=setInterval(tick,1000); };
+  $("#filt").onclick=e=>{const b=e.target.closest("button");if(!b)return;
+    [...e.currentTarget.children].forEach(c=>c.classList.toggle("on",c===b));
+    const f=b.dataset.f;
+    app.querySelectorAll("#revlist .rev").forEach(d=>{
+      const show = f==="all" || (f==="mark" ? d.dataset.m==="1" : d.dataset.f===(f==="wrong"?"wrong":"skip"));
+      d.classList.toggle("hide", !show);
+    });};
+}
+home();
+</script>
+</body>
+</html>

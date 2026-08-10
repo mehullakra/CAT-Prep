@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAT Calculation Drill</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
+    --fg:#e6e9ef; --dim:#8b93a3; --acc:#7aa2f7; --ok:#7bd88f; --bad:#f7768e; --warn:#e0af68;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:15px;line-height:1.5}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:19px;margin:0 0 4px;font-weight:600;letter-spacing:.2px}
+  .sub{color:var(--dim);font-size:13px;margin-bottom:24px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px}
+  .lbl{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+  .decks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+  .deck{display:flex;align-items:center;gap:9px;background:var(--panel2);border:1px solid var(--line);
+        border-radius:7px;padding:9px 11px;cursor:pointer;user-select:none;transition:.12s}
+  .deck:hover{border-color:var(--acc)}
+  .deck.on{border-color:var(--acc);background:#1b2434}
+  .deck .box{width:15px;height:15px;border:1.5px solid var(--dim);border-radius:3px;flex:none;position:relative}
+  .deck.on .box{border-color:var(--acc);background:var(--acc)}
+  .deck.on .box:after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;
+        border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .deck .nm{flex:1;font-size:13px}
+  .deck .ct{color:var(--dim);font-size:11px}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  button{font-family:var(--mono);font-size:13px;background:var(--panel2);color:var(--fg);
+        border:1px solid var(--line);border-radius:7px;padding:8px 14px;cursor:pointer;transition:.12s}
+  button:hover{border-color:var(--acc)}
+  button.pri{background:var(--acc);color:#0f1115;border-color:var(--acc);font-weight:600}
+  button.pri:hover{opacity:.88}
+  button.sm{padding:5px 10px;font-size:12px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:12px;cursor:pointer}
+  .chip.on{border-color:var(--acc);color:var(--acc)}
+  /* drill */
+  .bar{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--dim);margin-bottom:14px}
+  .prog{height:3px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:18px}
+  .prog i{display:block;height:100%;background:var(--acc);transition:width .2s}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:44px 24px;text-align:center;margin-bottom:14px}
+  .qsub{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.9px;margin-bottom:16px}
+  .q{font-size:38px;font-weight:600;letter-spacing:.5px;word-break:break-word}
+  .q small{font-size:20px;color:var(--dim);font-weight:400}
+  .ans{margin-top:22px;font-size:30px;font-weight:600;color:var(--ok);min-height:38px}
+  .ans.bad{color:var(--bad)}
+  .note{margin-top:10px;color:var(--dim);font-size:13px}
+  input[type=text]{width:100%;font-family:var(--mono);font-size:26px;text-align:center;background:var(--panel2);
+        color:var(--fg);border:1px solid var(--line);border-radius:9px;padding:13px;outline:none}
+  input[type=text]:focus{border-color:var(--acc)}
+  input.ok{border-color:var(--ok)} input.no{border-color:var(--bad)}
+  .hintline{text-align:center;color:var(--dim);font-size:12px;margin-top:12px}
+  kbd{background:var(--panel2);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:1px 5px;font-size:11px}
+  /* results */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}
+  .stat{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+  .stat b{display:block;font-size:26px;font-weight:600}
+  .stat span{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.7px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.7px;font-weight:500}
+  td.r{text-align:right;color:var(--dim)}
+  .tagbad{color:var(--bad)} .tagslow{color:var(--warn)}
+  .hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>CAT Calculation Drill</h1>
+<div class="sub">Flashcards for <span style="color:var(--acc)">Calculation-Toolkit.md</span> — tables, squares, cubes, powers, fractions, shortcuts. Keyboard only. Wrong cards come back.</div>
+
+<!-- ============ SETUP ============ -->
+<div id="setup">
+  <div class="panel">
+    <div class="lbl">Decks</div>
+    <div class="decks" id="deckList"></div>
+    <div class="row" style="margin-top:12px">
+      <button class="sm" onclick="pickAll(1)">select all</button>
+      <button class="sm" onclick="pickAll(0)">clear</button>
+      <button class="sm" onclick="pickCore()">core 5</button>
+      <button class="sm" onclick="pickWeak()">my weak cards</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="lbl">Session length</div>
+    <div class="row" id="lenRow"></div>
+    <div class="lbl" style="margin-top:18px">Mode</div>
+    <div class="row" id="modeRow"></div>
+    <div class="hintline" style="text-align:left;margin-top:12px" id="modeHelp"></div>
+  </div>
+
+  <div class="row">
+    <button class="pri" onclick="start()">Start drill &nbsp;<kbd>↵</kbd></button>
+    <button class="sm" onclick="wipe()">reset saved stats</button>
+  </div>
+
+  <div class="panel" id="histPanel" style="margin-top:16px"></div>
+</div>
+
+<!-- ============ DRILL ============ -->
+<div id="drill" class="hide">
+  <div class="bar">
+    <span id="bLeft"></span>
+    <span id="bMid"></span>
+    <span id="bRight"></span>
+  </div>
+  <div class="prog"><i id="progBar" style="width:0%"></i></div>
+
+  <div class="card">
+    <div class="qsub" id="qsub"></div>
+    <div class="q" id="q"></div>
+    <div class="ans" id="ans"></div>
+    <div class="note" id="note"></div>
+  </div>
+
+  <div id="inputWrap">
+    <input type="text" id="inp" autocomplete="off" autocapitalize="off" spellcheck="false">
+  </div>
+  <div id="selfWrap" class="row hide" style="justify-content:center">
+    <button class="pri" onclick="selfGrade(1)">Got it &nbsp;<kbd>1</kbd></button>
+    <button onclick="selfGrade(0)">Missed &nbsp;<kbd>2</kbd></button>
+  </div>
+
+  <div class="hintline" id="foot"></div>
+  <div class="row" style="justify-content:center;margin-top:18px">
+    <button class="sm" onclick="finish()">end session &nbsp;<kbd>esc</kbd></button>
+  </div>
+</div>
+
+<!-- ============ RESULTS ============ -->
+<div id="results" class="hide">
+  <div class="stats" id="statRow"></div>
+  <div class="panel">
+    <div class="lbl">Cards to revisit</div>
+    <div id="revisit"></div>
+  </div>
+  <div class="row">
+    <button class="pri" onclick="again()">Run again &nbsp;<kbd>↵</kbd></button>
+    <button onclick="drillWrong()">Drill only the misses</button>
+    <button onclick="home()">Change decks</button>
+  </div>
+</div>
+
+</div>
+<script>
+/* ============================================================
+   DECK DATA  — generated, so the numbers can't be mistyped
+   card: {q, a, alt[], sub, type:'num'|'text'|'self', note}
+   ============================================================ */
+const D = {};
+const card = (q,a,o={}) => Object.assign({q,a:String(a),type:'num',alt:[]},o);
+
+/* 1. tables */
+D.tables = {name:'Tables 11–25', cards:[]};
+for(let r=11;r<=25;r++) for(let c=2;c<=15;c++)
+  D.tables.cards.push(card(`${r} × ${c}`, r*c, {sub:'multiplication'}));
+
+/* 2. squares */
+D.squares = {name:'Squares 1–40', cards:[]};
+for(let n=11;n<=40;n++) D.squares.cards.push(card(`${n}²`, n*n, {sub:'square'}));
+[45,50,55,60,65,70,75,80,85,90,95,100,105,125].forEach(n=>
+  D.squares.cards.push(card(`${n}²`, n*n, {sub:'square'})));
+
+/* 2b. reverse squares */
+D.sqroots = {name:'Square roots (perfect)', cards:[]};
+for(let n=11;n<=40;n++) D.sqroots.cards.push(card(`√${n*n}`, n, {sub:'exact root'}));
+
+/* 3. cubes */
+D.cubes = {name:'Cubes 1–20', cards:[]};
+for(let n=2;n<=20;n++) D.cubes.cards.push(card(`${n}³`, n**3, {sub:'cube'}));
+for(let n=11;n<=25;n++) D.cubes.cards.push(card(`∛${n**3}`, n, {sub:'cube root'}));
+
+/* 4. powers */
+D.powers = {name:'Powers of 2, 3, 5, 7', cards:[]};
+for(let n=5;n<=20;n++) D.powers.cards.push(card(`2^${n}`, 2**n, {sub:'power'}));
+for(let n=3;n<=9;n++)  D.powers.cards.push(card(`3^${n}`, 3**n, {sub:'power'}));
+for(let n=3;n<=8;n++)  D.powers.cards.push(card(`5^${n}`, 5**n, {sub:'power'}));
+for(let n=2;n<=6;n++)  D.powers.cards.push(card(`7^${n}`, 7**n, {sub:'power'}));
+
+/* 5. fraction -> percent */
+const F2P = [[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[1,10],[1,11],[1,12],[1,13],[1,14],[1,15],
+             [1,16],[1,17],[1,18],[1,19],[1,20],[1,24],[1,25],[1,30],[1,40],[1,50],[1,60],[1,80],
+             [2,3],[3,4],[2,5],[3,5],[4,5],[5,6],[2,7],[3,7],[4,7],[5,7],[6,7],[3,8],[5,8],[7,8],
+             [2,9],[4,9],[5,9],[7,9],[2,11],[3,11],[5,12],[7,12],[11,12],[3,16],[5,16],[7,16],[9,16],[3,40],[7,40]];
+D.f2p = {name:'Fraction → %', cards: F2P.map(([n,d])=>{
+  const v = n*100/d;
+  const exact = Number.isInteger(v) ? String(v) : v.toFixed(2);
+  return card(`${n}/${d}`, exact, {sub:'as a percentage', type:'num', tol:0.06, unit:'%'});
+})};
+
+/* 6. percent -> fraction */
+const P2F = [['6.25','1/16'],['8.33','1/12'],['11.11','1/9'],['12.5','1/8'],['14.28','1/7'],['16.67','1/6'],
+             ['18.18','2/11'],['20','1/5'],['22.22','2/9'],['25','1/4'],['28.57','2/7'],['31.25','5/16'],
+             ['33.33','1/3'],['37.5','3/8'],['40','2/5'],['41.67','5/12'],['42.85','3/7'],['44.44','4/9'],
+             ['50','1/2'],['55.55','5/9'],['57.14','4/7'],['60','3/5'],['62.5','5/8'],['66.67','2/3'],
+             ['71.43','5/7'],['75','3/4'],['80','4/5'],['83.33','5/6'],['85.71','6/7'],['87.5','7/8'],['91.67','11/12']];
+D.p2f = {name:'% → Fraction', cards: P2F.map(([p,f])=>
+  card(`${p}%`, f, {sub:'in lowest terms', type:'text'}))};
+
+/* 7. surds & constants */
+D.surds = {name:'Surds, π, logs', cards:[
+  card('√2', '1.414',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('√3', '1.732',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('√5', '2.236',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('√6', '2.449',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('√7', '2.646',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('√10','3.162',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('1/√2','0.707',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('π',  '3.1416',{type:'num',tol:0.0006,sub:'to 4 decimals'}),
+  card('π²', '9.87',{type:'num',tol:0.01,sub:'to 2 decimals'}),
+  card('e',  '2.718',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('log₁₀ 2','0.3010',{type:'num',tol:0.0006,sub:'to 4 decimals'}),
+  card('log₁₀ 3','0.4771',{type:'num',tol:0.0006,sub:'to 4 decimals'}),
+  card('log₁₀ 5','0.6990',{type:'num',tol:0.0006,sub:'to 4 decimals'}),
+  card('log₁₀ 7','0.8451',{type:'num',tol:0.0006,sub:'to 4 decimals'}),
+  card('log₁₀ 6','0.7781',{type:'num',tol:0.0006,sub:'log2 + log3'}),
+  card('log₁₀ 8','0.9031',{type:'num',tol:0.0006,sub:'3 × log2'}),
+  card('log₁₀ 9','0.9542',{type:'num',tol:0.0006,sub:'2 × log3'}),
+  card('ln 2','0.693',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+  card('ln 10','2.303',{type:'num',tol:0.002,sub:'to 3 decimals'}),
+]};
+
+/* 8. factorials & nCr */
+D.comb = {name:'Factorials & nCr', cards:[]};
+{ let f=1; for(let n=1;n<=10;n++){ f*=n; if(n>=4) D.comb.cards.push(card(`${n}!`, f, {sub:'factorial'})); } }
+const C=(n,r)=>{let x=1;for(let i=0;i<r;i++)x=x*(n-i)/(i+1);return Math.round(x)};
+[[6,2],[6,3],[7,2],[7,3],[8,2],[8,3],[8,4],[9,3],[10,2],[10,3],[10,4],[10,5],[12,2],[12,3],[20,2],[52,2]]
+  .forEach(([n,r])=>D.comb.cards.push(card(`${n}C${r}`, C(n,r), {sub:'combination'})));
+
+/* 9. cyclicity — units digit */
+D.cyc = {name:'Units digit (cyclicity)', cards:[]};
+[[2,7],[2,14],[3,9],[3,20],[4,11],[7,13],[7,22],[8,15],[9,17],[6,25],[13,17],[14,10],[17,23],[19,9],[12,18],[21,33],[23,11],[24,14]]
+  .forEach(([a,n])=>{
+    const u=a%10; let d;
+    const cyc={0:[0],1:[1],5:[5],6:[6],4:[4,6],9:[9,1],2:[2,4,8,6],3:[3,9,7,1],7:[7,9,3,1],8:[8,4,2,6]}[u];
+    d = cyc[(n % cyc.length + cyc.length - 1) % cyc.length];
+    D.cyc.cards.push(card(`units digit of ${a}^${n}`, d, {sub:'exponent mod cycle length'}));
+  });
+
+/* 10. series sums */
+D.series = {name:'Series sums', cards:[
+  card('1+2+…+20', 210,{sub:'n(n+1)/2'}), card('1+2+…+30', 465,{sub:'n(n+1)/2'}),
+  card('1+2+…+50', 1275,{sub:'n(n+1)/2'}), card('1+2+…+100', 5050,{sub:'n(n+1)/2'}),
+  card('1²+2²+…+10', 385,{sub:'n(n+1)(2n+1)/6'}), card('1²+2²+…+20', 2870,{sub:'n(n+1)(2n+1)/6'}),
+  card('1³+2³+…+10', 3025,{sub:'[n(n+1)/2]²'}), card('1³+2³+…+15', 14400,{sub:'[n(n+1)/2]²'}),
+  card('sum of first 25 odd numbers', 625,{sub:'n²'}),
+  card('sum of first 30 odd numbers', 900,{sub:'n²'}),
+  card('sum of first 20 even numbers', 420,{sub:'n(n+1)'}),
+  card('average of first 60 natural numbers','30.5',{type:'num',tol:0.01,sub:'(n+1)/2'}),
+  card('average of first 40 odd numbers', 40,{sub:'= n'}),
+  card('average of first 40 even numbers', 41,{sub:'= n+1'}),
+]};
+
+/* 11. percentage shortcuts */
+D.pct = {name:'Percentage shortcuts', cards:[
+  card('+20% then +20%: net %', 44,{sub:'a + b + ab/100', unit:'%'}),
+  card('+20% then −20%: net %', -4,{sub:'a + b + ab/100', unit:'%'}),
+  card('+10% then +10%: net %', 21,{sub:'a + b + ab/100', unit:'%'}),
+  card('+50% then −50%: net %', -25,{sub:'a + b + ab/100', unit:'%'}),
+  card('+30% then −20%: net %', 4,{sub:'a + b + ab/100', unit:'%'}),
+  card('price up 25% → cut use by ?%', 20,{sub:'100x/(100+x)', unit:'%'}),
+  card('price up 50% → cut use by ?%', '33.33',{type:'num',tol:0.06,sub:'100x/(100+x)', unit:'%'}),
+  card('price up 100% → cut use by ?%', 50,{sub:'100x/(100+x)', unit:'%'}),
+  card('price down 20% → raise use by ?%', 25,{sub:'100x/(100−x)', unit:'%'}),
+  card('price down 25% → raise use by ?%', '33.33',{type:'num',tol:0.06,sub:'100x/(100−x)', unit:'%'}),
+  card('increase by 1/6 = ? %', '16.67',{type:'num',tol:0.06,sub:'100/n', unit:'%'}),
+  card('increase by 1/n, reverse is a decrease of 1/?', 'n+1',{type:'text',sub:'the pairing rule'}),
+  card('16% of 25', 4,{sub:'x% of y = y% of x'}),
+  card('24% of 50', 12,{sub:'x% of y = y% of x'}),
+  card('years to double at 12% (rule of 72)', 6,{sub:'72/r'}),
+  card('years to double at 8% (rule of 72)', 9,{sub:'72/r'}),
+]};
+
+/* 12. growth multipliers */
+D.growth = {name:'Growth multipliers', cards:[
+  card('1.10² (10%, 2 yr)','1.21',{type:'num',tol:0.002}),
+  card('1.10³ (10%, 3 yr)','1.331',{type:'num',tol:0.002}),
+  card('1.10⁵ (10%, 5 yr)','1.6105',{type:'num',tol:0.003}),
+  card('1.20² (20%, 2 yr)','1.44',{type:'num',tol:0.002}),
+  card('1.20³ (20%, 3 yr)','1.728',{type:'num',tol:0.002}),
+  card('1.05² (5%, 2 yr)','1.1025',{type:'num',tol:0.002}),
+  card('1.05³ (5%, 3 yr)','1.1576',{type:'num',tol:0.003}),
+  card('1.15² (15%, 2 yr)','1.3225',{type:'num',tol:0.002}),
+  card('1.12² (12%, 2 yr)','1.2544',{type:'num',tol:0.002}),
+  card('1.08³ (8%, 3 yr)','1.2597',{type:'num',tol:0.003}),
+]};
+
+/* 13. speed conversions */
+D.conv = {name:'Speed & unit conversions', cards:[
+  card('km/h → m/s: multiply by', '5/18',{type:'text'}),
+  card('m/s → km/h: multiply by', '18/5',{type:'text'}),
+  card('36 km/h in m/s', 10), card('54 km/h in m/s', 15),
+  card('72 km/h in m/s', 20), card('90 km/h in m/s', 25),
+  card('108 km/h in m/s', 30), card('15 m/s in km/h', 54),
+  card('25 m/s in km/h', 90),
+  card('avg speed: 40 and 60 km/h, equal distances', 48,{sub:'2ab/(a+b)'}),
+  card('avg speed: 30 and 60 km/h, equal distances', 40,{sub:'2ab/(a+b)'}),
+  card('avg speed: 20 and 80 km/h, equal distances', 32,{sub:'2ab/(a+b)'}),
+  card('avg speed: 40 and 60 km/h, equal times', 50,{sub:'(a+b)/2'}),
+]};
+
+/* 14. primes & factorisations */
+D.primes = {name:'Primes & factorisations', cards:[
+  card('1001 = ? × ? × ?','7×11×13',{type:'text',alt:['7*11*13','7 x 11 x 13','11×7×13','7·11·13']}),
+  card('143 = ? × ?','11×13',{type:'text',alt:['11*13','13×11','11 x 13']}),
+  card('187 = ? × ?','11×17',{type:'text',alt:['11*17','17×11','11 x 17']}),
+  card('221 = ? × ?','13×17',{type:'text',alt:['13*17','17×13','13 x 17']}),
+  card('323 = ? × ?','17×19',{type:'text',alt:['17*19','19×17','17 x 19']}),
+  card('111 = ? × ?','3×37',{type:'text',alt:['3*37','37×3','3 x 37']}),
+  card('how many primes below 100', 25),
+  card('largest prime below 100', 97),
+  card('number of factors of 2³·3²·5', 24,{sub:'(a+1)(b+1)(c+1)'}),
+  card('number of factors of 360', 24,{sub:'360 = 2³·3²·5'}),
+  card('number of factors of 100', 9,{sub:'2²·5²'}),
+  card('number of factors of 144', 15,{sub:'2⁴·3²'}),
+  card('is 91 prime? (y/n)','n',{type:'text',sub:'91 = 7 × 13',alt:['no']}),
+  card('is 97 prime? (y/n)','y',{type:'text',alt:['yes']}),
+  card('is 143 prime? (y/n)','n',{type:'text',sub:'11 × 13',alt:['no']}),
+]};
+
+/* 15. rules — self-graded recall */
+D.rules = {name:'Rules (self-graded)', cards:[
+  card('Divisibility by 7','Drop the last digit, subtract twice it from the rest; repeat. 343 → 34 − 6 = 28 ✓',{type:'self'}),
+  card('Divisibility by 11','Alternating digit sum is divisible by 11. 4917 → 4 − 9 + 1 − 7 = −11 ✓',{type:'self'}),
+  card('Divisibility by 13','Drop the last digit, add 4× it to the rest; repeat.',{type:'self'}),
+  card('Divisibility by 8','Last three digits divisible by 8.',{type:'self'}),
+  card('Squares ending in 5','n5² = [n × (n+1)] then 25. 75² → 7×8=56 → 5625',{type:'self'}),
+  card('Base method: 96 × 97','Deficits −4, −3 → left 96−3 = 93, right 4×3 = 12 → 9312',{type:'self'}),
+  card('Multiplying by 11','Split the digits, insert adjacent sums, carry. 78×11 → 7|15|8 → 858',{type:'self'}),
+  card('Same tens digit, units summing to 10','43 × 47 → 4×5 = 20, 3×7 = 21 → 2021',{type:'self'}),
+  card('Number of factors of N = pᵃqᵇrᶜ','(a+1)(b+1)(c+1)',{type:'self'}),
+  card('Sum of factors of N = pᵃqᵇ','[(p^(a+1)−1)/(p−1)] × [(q^(b+1)−1)/(q−1)]',{type:'self'}),
+  card('Product of all factors of N','N^(number of factors / 2)',{type:'self'}),
+  card('Which numbers have an odd factor count?','Perfect squares only.',{type:'self'}),
+  card('Cube-root last digit map','1→1, 8→2, 7→3, 4→4, 5→5, 6→6, 3→7, 2→8, 9→9, 0→0. Only 2↔8 and 3↔7 swap.',{type:'self'}),
+  card('AM, GM, HM ordering','AM ≥ GM ≥ HM, equality only when all terms are equal. Also GM² = AM × HM for two numbers.',{type:'self'}),
+  card('Average speed: equal distances vs equal times','Equal distances → 2ab/(a+b). Equal times → (a+b)/2.',{type:'self'}),
+  card('1/7 decimal cycle','142857 — and 2/7…6/7 are rotations of it.',{type:'self'}),
+]};
+
+const CORE = ['squares','f2p','tables','powers','pct'];
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const KEY = 'catdrill.v1';
+let store = JSON.parse(localStorage.getItem(KEY) || '{}');
+if(!store.cards) store.cards = {};      // id -> {seen,wrong,best}
+if(!store.runs) store.runs = [];
+const save = () => localStorage.setItem(KEY, JSON.stringify(store));
+const cid = c => c.q;
+
+let picked = new Set(JSON.parse(localStorage.getItem(KEY+'.picked') || '["squares","f2p"]'));
+let sessLen = 25, mode = 'type';
+let queue = [], cur = null, idx = 0, total = 0, done = 0;
+let right = 0, wrong = 0, streak = 0, bestStreak = 0, revealed = false;
+let t0 = 0, log = [], lastWrong = [];
+
+/* ============================================================
+   SETUP UI
+   ============================================================ */
+function renderDecks(){
+  document.getElementById('deckList').innerHTML = Object.keys(D).map(k=>
+    `<div class="deck ${picked.has(k)?'on':''}" onclick="toggle('${k}')">
+       <div class="box"></div><div class="nm">${D[k].name}</div><div class="ct">${D[k].cards.length}</div>
+     </div>`).join('');
+}
+function toggle(k){ picked.has(k)?picked.delete(k):picked.add(k);
+  localStorage.setItem(KEY+'.picked', JSON.stringify([...picked])); renderDecks(); }
+function pickAll(on){ picked = on ? new Set(Object.keys(D)) : new Set();
+  localStorage.setItem(KEY+'.picked', JSON.stringify([...picked])); renderDecks(); }
+function pickCore(){ picked = new Set(CORE);
+  localStorage.setItem(KEY+'.picked', JSON.stringify([...picked])); renderDecks(); }
+function pickWeak(){
+  const weak = Object.entries(store.cards).filter(([,v])=>v.wrong>0);
+  if(!weak.length){ alert('No weak cards recorded yet — run a session first.'); return; }
+  picked = new Set(Object.keys(D)); localStorage.setItem(KEY+'.picked', JSON.stringify([...picked]));
+  renderDecks(); weakOnly = true; start();
+}
+let weakOnly = false;
+
+function renderOpts(){
+  document.getElementById('lenRow').innerHTML =
+    [10,25,50,100,0].map(n=>`<span class="chip ${sessLen===n?'on':''}" onclick="setLen(${n})">${n||'all'}</span>`).join('');
+  document.getElementById('modeRow').innerHTML =
+    [['type','Type the answer'],['flip','Flip only (self-graded)']]
+      .map(([k,l])=>`<span class="chip ${mode===k?'on':''}" onclick="setMode('${k}')">${l}</span>`).join('');
+  document.getElementById('modeHelp').textContent = mode==='type'
+    ? 'Type it, press Enter. Numeric answers accept small rounding differences. Wrong cards are re-inserted three places later.'
+    : 'Card shows, you recall it in your head, press Enter to reveal, then 1 (got it) or 2 (missed).';
+}
+function setLen(n){ sessLen=n; renderOpts(); }
+function setMode(m){ mode=m; renderOpts(); }
+
+function renderHist(){
+  const h = document.getElementById('histPanel');
+  if(!store.runs.length){ h.innerHTML = '<div class="lbl">History</div><div style="color:var(--dim);font-size:13px">No sessions yet.</div>'; return; }
+  const rows = store.runs.slice(-8).reverse().map(r=>
+    `<tr><td>${r.when}</td><td>${r.decks}</td><td class="r">${r.n}</td>
+     <td class="r" style="color:${r.acc>=90?'var(--ok)':r.acc>=75?'var(--warn)':'var(--bad)'}">${r.acc}%</td>
+     <td class="r">${r.avg}s</td></tr>`).join('');
+  h.innerHTML = `<div class="lbl">Recent sessions</div>
+    <table><tr><th>when</th><th>decks</th><th class="r">cards</th><th class="r">acc</th><th class="r">avg</th></tr>${rows}</table>`;
+}
+
+/* ============================================================
+   DRILL
+   ============================================================ */
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function start(){
+  let pool = [];
+  picked.forEach(k => D[k].cards.forEach(c => pool.push(Object.assign({deck:k},c))));
+  if(weakOnly){ pool = pool.filter(c => (store.cards[cid(c)]||{}).wrong > 0); weakOnly = false; }
+  if(!pool.length){ alert('Pick at least one deck.'); return; }
+  shuffle(pool);
+  if(sessLen) pool = pool.slice(0, sessLen);
+  queue = pool; total = pool.length; done = 0; right = 0; wrong = 0;
+  streak = 0; bestStreak = 0; log = []; lastWrong = [];
+  show('drill'); next();
+}
+function again(){ start(); }
+function drillWrong(){
+  if(!lastWrong.length){ alert('Nothing missed — run something harder.'); return; }
+  queue = shuffle(lastWrong.slice()); total = queue.length; done = 0;
+  right = 0; wrong = 0; streak = 0; bestStreak = 0; log = []; lastWrong = [];
+  show('drill'); next();
+}
+function home(){ show('setup'); renderHist(); }
+function show(id){ ['setup','drill','results'].forEach(s=>
+  document.getElementById(s).classList.toggle('hide', s!==id)); }
+
+function next(){
+  if(!queue.length){ finish(); return; }
+  cur = queue.shift(); revealed = false; t0 = performance.now();
+  const selfMode = (mode==='flip' || cur.type==='self');
+  document.getElementById('qsub').textContent = cur.sub || D[cur.deck].name;
+  document.getElementById('q').innerHTML = cur.q + (cur.unit? ' <small>('+cur.unit+')</small>':'');
+  document.getElementById('ans').textContent = '';
+  document.getElementById('ans').className = 'ans';
+  document.getElementById('note').textContent = '';
+  document.getElementById('inputWrap').classList.toggle('hide', selfMode);
+  document.getElementById('selfWrap').classList.add('hide');
+  const inp = document.getElementById('inp');
+  inp.value=''; inp.className=''; inp.disabled=false;
+  if(!selfMode) inp.focus();
+  document.getElementById('foot').innerHTML = selfMode
+    ? '<kbd>↵</kbd> reveal'
+    : '<kbd>↵</kbd> submit &nbsp;·&nbsp; <kbd>esc</kbd> end';
+  updateBar();
+}
+
+function updateBar(){
+  const pct = total? Math.round(done/total*100) : 0;
+  document.getElementById('progBar').style.width = pct+'%';
+  document.getElementById('bLeft').textContent = `${done} / ${total}`;
+  document.getElementById('bMid').textContent = `streak ${streak}`;
+  const acc = (right+wrong)? Math.round(right/(right+wrong)*100) : 100;
+  document.getElementById('bRight').textContent = `${acc}% accurate`;
+}
+
+const norm = s => String(s).trim().toLowerCase().replace(/\s+/g,'').replace(/[*·x]/g,'×');
+
+function check(input){
+  if(cur.type==='num'){
+    const v = parseFloat(String(input).replace(/[%,\s]/g,''));
+    if(isNaN(v)) return false;
+    return Math.abs(v - parseFloat(cur.a)) <= (cur.tol ?? 0.0001);
+  }
+  const n = norm(input);
+  return n===norm(cur.a) || (cur.alt||[]).some(a=>norm(a)===n);
+}
+
+function submit(){
+  if(revealed){ next(); return; }
+  const inp = document.getElementById('inp');
+  const ok = check(inp.value);
+  grade(ok, (performance.now()-t0)/1000);
+  inp.className = ok?'ok':'no'; inp.disabled = true;
+  const a = document.getElementById('ans');
+  a.textContent = (ok?'✓ ':'✗ ') + cur.a + (cur.unit||'');
+  a.className = 'ans' + (ok?'':' bad');
+  if(cur.sub && !ok) document.getElementById('note').textContent = cur.sub;
+  revealed = true;
+  document.getElementById('foot').innerHTML = '<kbd>↵</kbd> next';
+  if(ok) setTimeout(()=>{ if(revealed) next(); }, 420);
+}
+
+function reveal(){
+  revealed = true;
+  const a = document.getElementById('ans');
+  a.textContent = cur.a; a.className='ans';
+  document.getElementById('selfWrap').classList.remove('hide');
+  document.getElementById('foot').innerHTML = '<kbd>1</kbd> got it &nbsp;·&nbsp; <kbd>2</kbd> missed';
+}
+function selfGrade(ok){
+  grade(!!ok, (performance.now()-t0)/1000);
+  next();
+}
+
+function grade(ok, secs){
+  done++;
+  const id = cid(cur);
+  const rec = store.cards[id] || (store.cards[id] = {seen:0, wrong:0, best:null});
+  rec.seen++;
+  log.push({q:cur.q, a:cur.a, ok, secs, deck:cur.deck});
+  if(ok){
+    right++; streak++; bestStreak = Math.max(bestStreak, streak);
+    rec.best = rec.best==null ? secs : Math.min(rec.best, secs);
+  }else{
+    wrong++; streak = 0; rec.wrong++;
+    lastWrong.push(cur);
+    const at = Math.min(3, queue.length);
+    queue.splice(at, 0, cur);     // it comes back
+    total++;
+  }
+  save(); updateBar();
+}
+
+function finish(){
+  const n = log.length;
+  if(!n){ home(); return; }
+  const acc = Math.round(right/(right+wrong)*100);
+  const avg = (log.reduce((s,l)=>s+l.secs,0)/n);
+  document.getElementById('statRow').innerHTML = `
+    <div class="stat"><b style="color:${acc>=90?'var(--ok)':acc>=75?'var(--warn)':'var(--bad)'}">${acc}%</b><span>accuracy</span></div>
+    <div class="stat"><b>${n}</b><span>answered</span></div>
+    <div class="stat"><b class="tagbad">${wrong}</b><span>missed</span></div>
+    <div class="stat"><b>${avg.toFixed(1)}s</b><span>avg / card</span></div>
+    <div class="stat"><b>${bestStreak}</b><span>best streak</span></div>`;
+
+  const misses = log.filter(l=>!l.ok);
+  const slow = log.filter(l=>l.ok && l.secs > Math.max(4, avg*1.8)).sort((a,b)=>b.secs-a.secs).slice(0,8);
+  let html = '';
+  if(misses.length){
+    html += `<table><tr><th>missed</th><th>answer</th><th class="r">time</th></tr>` +
+      misses.slice(0,15).map(m=>`<tr><td class="tagbad">${m.q}</td><td>${m.a}</td><td class="r">${m.secs.toFixed(1)}s</td></tr>`).join('') +
+      `</table>`;
+  }
+  if(slow.length){
+    html += `<div class="lbl" style="margin-top:16px">Right but slow</div><table>` +
+      slow.map(m=>`<tr><td class="tagslow">${m.q}</td><td>${m.a}</td><td class="r">${m.secs.toFixed(1)}s</td></tr>`).join('') +
+      `</table>`;
+  }
+  if(!html) html = '<div style="color:var(--ok);font-size:14px">Clean run — every card correct and quick. Add a harder deck.</div>';
+  document.getElementById('revisit').innerHTML = html;
+
+  store.runs.push({ when:new Date().toLocaleString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}),
+    decks:[...picked].map(k=>D[k].name.split(' ')[0]).join(', ').slice(0,28),
+    n, acc, avg:avg.toFixed(1) });
+  store.runs = store.runs.slice(-40);
+  save();
+  show('results');
+}
+
+function wipe(){
+  if(!confirm('Delete all saved stats and history?')) return;
+  store = {cards:{}, runs:[]}; save(); renderHist();
+}
+
+/* ============================================================
+   KEYS
+   ============================================================ */
+document.addEventListener('keydown', e=>{
+  const at = id => !document.getElementById(id).classList.contains('hide');
+  if(at('setup') && e.key==='Enter'){ e.preventDefault(); start(); return; }
+  if(at('results') && e.key==='Enter'){ e.preventDefault(); again(); return; }
+  if(!at('drill')) return;
+  if(e.key==='Escape'){ e.preventDefault(); finish(); return; }
+  const selfMode = (mode==='flip' || (cur && cur.type==='self'));
+  if(e.key==='Enter'){
+    e.preventDefault();
+    if(selfMode){ revealed ? null : reveal(); }
+    else { submit(); }
+    return;
+  }
+  if(selfMode && revealed && (e.key==='1'||e.key==='2')){ e.preventDefault(); selfGrade(e.key==='1'); }
+});
+
+renderDecks(); renderOpts(); renderHist();
+</script>
+</body>
+</html>
