@@ -7,6 +7,7 @@ Notes and practice material for CAT quant prep. Start with [Index.md](https://gi
 | File | Topic |
 |---|---|
 | [Algebra.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Algebra.md) | Algebra |
+| [Calendars.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Calendars.md) | Calendars |
 | [Clocks.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Clocks.md) | Clocks |
 | [Geometry-Mensuration.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Geometry-Mensuration.md) | Geometry & Mensuration |
 | [Logarithms.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Logarithms.md) | Logarithms |
