@@ -95,7 +95,8 @@ small.k{color:var(--dim);font-size:12px}
 <body>
 <div id="app"></div>
 <script>
-// Question bank — generated from Algebra-Practice.md and Means-and-Weighted-Averages-Practice.md
+// Question bank — generated from Algebra-Practice.md, Means-and-Weighted-Averages-Practice.md,
+// Mixtures-and-Alligation-Practice.md and Ratio-Proportion-Variation-Practice.md
 // q: text, t: 'mcq'|'tita', o: options, a: correct index (mcq) or numeric answer (tita),
 // alt: accepted alternate string answers, h: hint, s: solution
 const BANK = {
@@ -553,6 +554,172 @@ const BANK = {
           s:"CP = 7.20/1.2 = 6. cheap : dear = (7.2 − 6) : (6 − 5.7) = 4 : 1 ⟹ k = <b>4</b>." }
       ]}
     }
+  },
+  ratios: {
+    name: "Ratio, Proportion & Variation",
+    perQ: 90,
+    sets: {
+      A: { name: "Forming & combining ratios", qs: [
+        { id:"A1", t:"mcq", q:"The ratio of ₹3 to 75 paise is", o:["1 : 25","3 : 75","4 : 1","1 : 4"], a:2,
+          h:"Convert to a common unit before forming the ratio.",
+          s:"300 paise : 75 paise = <b>4 : 1</b>. Option (b) is the unconverted ratio — the standard trap." },
+        { id:"A2", t:"tita", q:"If A : B = 3 : 4 and B : C = 6 : 7, express A : B : C in lowest terms and give the sum of the three terms.", a:35,
+          h:"Equalise B using the LCM of 4 and 6, then reduce.",
+          s:"LCM(4,6) = 12 ⟹ A : B = 9 : 12, B : C = 12 : 14 ⟹ A : B : C = 9 : 12 : 14. Sum = <b>35</b>." },
+        { id:"A3", t:"mcq", q:"If 3 is added to both terms of the ratio 5 : 7, the new ratio is", o:["4 : 5","8 : 7","2 : 3","5 : 10"], a:0,
+          h:"Adding the same number to both terms moves a ratio towards 1 : 1 — that kills two options instantly.",
+          s:"8 : 10 = <b>4 : 5</b>. Check: 5/7 ≈ 0.71 → 4/5 = 0.80, closer to 1 ✓" },
+        { id:"A4", t:"tita", q:"The sub-duplicate ratio of x : 49 is 3 : 7. Find x.", a:9,
+          h:"Sub-duplicate of a : b is √a : √b.",
+          s:"√x : 7 = 3 : 7 ⟹ √x = 3 ⟹ x = <b>9</b>." },
+        { id:"A5", t:"mcq", q:"If A : B = 2 : 3, B : C = 4 : 5 and C : D = 6 : 7, then A : D is", o:["16 : 35","8 : 35","4 : 7","35 : 16"], a:0,
+          h:"Extend the chain one link at a time; never combine three ratios in one step.",
+          s:"A : B : C = 8 : 12 : 15. LCM(15,6) = 30 ⟹ A : B : C : D = 16 : 24 : 30 : 35 ⟹ A : D = <b>16 : 35</b>." }
+      ]},
+      B: { name: "Proportion, componendo & dividendo", qs: [
+        { id:"B1", t:"tita", q:"Find the fourth proportional to 4, 6 and 14.", a:21,
+          h:"4 : 6 = 14 : x. Note where the unknown sits before cross-multiplying.",
+          s:"x = 6 × 14 / 4 = <b>21</b>." },
+        { id:"B2", t:"tita", q:"Find the third proportional to 9 and 12.", a:16,
+          h:"Third proportional to a, b is b²/a.",
+          s:"x = 144/9 = <b>16</b>." },
+        { id:"B3", t:"mcq", q:"The mean proportional between 8 and 32 is", o:["16","20","24","40"], a:0,
+          h:"Mean proportional is the geometric mean, not the arithmetic one.",
+          s:"√(8 × 32) = √256 = <b>16</b>. (20 is the arithmetic mean — the trap.)" },
+        { id:"B4", t:"tita", q:"If (4x + 3y)/(4x − 3y) = 5/3, find x/y.", a:3,
+          h:"Reverse componendo–dividendo: set a = 4x, b = 3y first.",
+          s:"a/b = (5+3)/(5−3) = 4 ⟹ 4x/3y = 4 ⟹ x/y = <b>3</b>." },
+        { id:"B5", t:"mcq", q:"If a : b = c : d = 3 : 4, then (2a + 3c)/(2b + 3d) equals", o:["3/4","5/7","6/7","cannot be determined"], a:0,
+          h:"The weighted form of the k-theorem — any weights return the same ratio.",
+          s:"With a/b = c/d = k, (2a + 3c)/(2b + 3d) = k = <b>3/4</b>. 'Cannot be determined' is the trap." }
+      ]},
+      C: { name: "Ratio changes after adding/removing", qs: [
+        { id:"C1", t:"tita", q:"The ratio of boys to girls in a class is 7 : 5. If 8 more girls join, the ratio becomes 7 : 6. Find the number of boys.", a:56,
+          h:"The boys do not change, so their term keeps the same k on both sides.",
+          s:"7k/(5k + 8) = 7/6 ⟹ 42k = 35k + 56 ⟹ k = 8 ⟹ boys = <b>56</b>. Check: 56 : 48 = 7 : 6 ✓" },
+        { id:"C2", t:"mcq", q:"The present ages of A and B are in the ratio 7 : 5. After 6 years the ratio will be 4 : 3. A's present age is", o:["30 years","36 years","42 years","48 years"], a:2,
+          h:"Add 6 to both terms. Sanity check: 4 : 3 is closer to 1 : 1 than 7 : 5, as it must be.",
+          s:"(7k + 6)/(5k + 6) = 4/3 ⟹ 21k + 18 = 20k + 24 ⟹ k = 6 ⟹ A = <b>42</b>. Check: 48 : 36 = 4 : 3 ✓" },
+        { id:"C3", t:"tita", q:"Two numbers are in the ratio 3 : 4. If each is increased by 8, the ratio becomes 4 : 5. Find the larger number.", a:32,
+          h:"One variable k, one equation, cross-multiply.",
+          s:"(3k + 8)/(4k + 8) = 4/5 ⟹ 15k + 40 = 16k + 32 ⟹ k = 8 ⟹ numbers 24 and <b>32</b>." },
+        { id:"C4", t:"mcq", q:"Two numbers are in the ratio 5 : 9. If 3 is subtracted from each, the ratio becomes 1 : 2. The sum of the numbers is", o:["28","42","56","70"], a:1,
+          h:"Subtracting moves a ratio away from 1 : 1 — consistent with 1 : 2 being further out.",
+          s:"(5k − 3)/(9k − 3) = 1/2 ⟹ 10k − 6 = 9k − 3 ⟹ k = 3 ⟹ 15 and 27 ⟹ sum <b>42</b>." },
+        { id:"C5", t:"tita", q:"The ratio of A's to B's present age is 4 : 3. Eight years ago it was 3 : 2. Find B's present age.", a:24,
+          h:"Subtract 8 from both terms; going backwards moves the ratio away from 1 : 1.",
+          s:"(4k − 8)/(3k − 8) = 3/2 ⟹ 8k − 16 = 9k − 24 ⟹ k = 8 ⟹ B = <b>24</b>. Check: 24 : 16 = 3 : 2 ✓" }
+      ]},
+      D: { name: "Dividing a sum & partnership", qs: [
+        { id:"D1", t:"tita", q:"₹1,800 is divided among A, B and C such that A : B = 2 : 3 and B : C = 3 : 4. Find C's share (in ₹).", a:800,
+          h:"B is already 3 in both ratios, so no LCM step is needed.",
+          s:"A : B : C = 2 : 3 : 4, sum 9 ⟹ each part 200 ⟹ C = <b>₹800</b>." },
+        { id:"D2", t:"mcq", q:"₹1,860 is divided among three people in the inverse ratio 2 : 3 : 5. The smallest share is", o:["₹300","₹360","₹400","₹600"], a:1,
+          h:"Inverse ratio means take reciprocals and clear them with the LCM first.",
+          s:"1/2 : 1/3 : 1/5 = 15 : 10 : 6, sum 31 ⟹ each part 60 ⟹ shares 900, 600, <b>360</b>." },
+        { id:"D3", t:"tita", q:"A invests ₹15,000 for 8 months and B invests ₹18,000 for 10 months. A profit of ₹12,000 is divided between them. Find A's share (in ₹).", a:4800,
+          h:"Profit ∝ capital × time. Reduce the products before dividing.",
+          s:"120000 : 180000 = 2 : 3, sum 5 ⟹ A = 12000 × 2/5 = <b>₹4,800</b>." },
+        { id:"D4", t:"mcq", q:"A, B and C invest capitals in the ratio 3 : 4 : 5 for periods in the ratio 4 : 3 : 2. Out of a profit of ₹17,000, C receives", o:["₹4,000","₹5,000","₹6,000","₹6,800"], a:1,
+          h:"Multiply the two ratios term by term, then reduce before splitting.",
+          s:"12 : 12 : 10 = 6 : 6 : 5, sum 17 ⟹ C = 17000 × 5/17 = <b>₹5,000</b>." },
+        { id:"D5", t:"tita", q:"₹3,600 is divided among A, B and C so that A gets half of what B gets and B gets one-third of what C gets. Find C's share (in ₹).", a:2400,
+          h:"Write everything in terms of B, then clear fractions.",
+          s:"A : B : C = 1/2 : 1 : 3 = 1 : 2 : 6, sum 9 ⟹ each part 400 ⟹ C = <b>₹2,400</b>." },
+        { id:"D6", t:"mcq", q:"A invests ₹20,000 and B invests ₹30,000. A is the working partner and receives 10% of the profit as salary; the remainder is divided in the ratio of capital. Out of a total profit of ₹22,000, A receives in all", o:["₹8,800","₹10,120","₹11,000","₹9,900"], a:1,
+          h:"The working partner's salary comes off the top before anything is split.",
+          s:"Salary = 2200. Remainder 19800 in 2 : 3 ⟹ 7920. Total = <b>₹10,120</b>. (₹8,800 ignores the salary — the trap.)" }
+      ]},
+      E: { name: "Variation", qs: [
+        { id:"E1", t:"tita", q:"x varies directly as y². When y = 3, x = 45. Find x when y = 5.", a:125,
+          h:"Write x = ky², find k, then substitute.",
+          s:"45 = 9k ⟹ k = 5 ⟹ x = 5 × 25 = <b>125</b>." },
+        { id:"E2", t:"mcq", q:"a varies inversely as b. When b = 5, a = 12. When b = 15, a equals", o:["4","6","20","36"], a:0,
+          h:"Inverse variation means ab = k, a constant product.",
+          s:"k = 60 ⟹ a = 60/15 = <b>4</b>. Sanity check: b tripled, so a fell to a third ✓" },
+        { id:"E3", t:"tita", q:"The cost of a gem varies as the cube of its weight. A gem weighing 8 g costs ₹6,400. It breaks into pieces of 3 g and 5 g. Find the loss (in ₹).", a:4500,
+          h:"The power is 3, so the w² loss shortcut does not apply. Find k explicitly.",
+          s:"k = 6400/512 = 12.5. New value = 12.5(27 + 125) = 1900 ⟹ loss = <b>₹4,500</b>." },
+        { id:"E4", t:"mcq", q:"The value of a diamond varies as the square of its weight. A diamond worth ₹16,000 breaks into two pieces whose weights are in the ratio 1 : 3. The loss is", o:["₹4,000","₹6,000","₹8,000","₹10,000"], a:1,
+          h:"Loss fraction = 2ab/(a + b)². The actual weight is not needed.",
+          s:"2(1)(3)/16 = 3/8 ⟹ 16000 × 3/8 = <b>₹6,000</b>." },
+        { id:"E5", t:"tita", q:"x is partly constant and partly varies as y. When y = 10, x = 250; when y = 20, x = 400. Find x when y = 30.", a:550,
+          h:"Partial variation: x = m + ny. Two data points, two equations.",
+          s:"10n = 150 ⟹ n = 15, m = 100 ⟹ x = 100 + 450 = <b>550</b>." },
+        { id:"E6", t:"mcq", q:"If a ∝ b and b ∝ 1/c, then", o:["a ∝ c","a ∝ 1/c","a ∝ c²","no relation exists between a and c"], a:1,
+          h:"Chain the constants: a = k₁b and b = k₂/c.",
+          s:"a = k₁k₂/c ⟹ <b>a ∝ 1/c</b>." }
+      ]},
+      F: { name: "Equal ratios & the k-theorem", qs: [
+        { id:"F1", t:"tita", q:"If a/3 = b/4 = c/7, find (a + b + c)/c.", a:2,
+          h:"Set the common value to k and write a, b, c in terms of k.",
+          s:"(3k + 4k + 7k)/7k = 14k/7k = <b>2</b>." },
+        { id:"F2", t:"mcq", q:"If x : y : z = 2 : 3 : 5, then (x² + y² + z²)/(xy + yz + zx) equals", o:["31/38","19/16","38/31","2"], a:2,
+          h:"Both parts are homogeneous of degree 2, so every k² cancels.",
+          s:"(4 + 9 + 25)k² / (6 + 15 + 10)k² = <b>38/31</b>." },
+        { id:"F3", t:"tita", q:"If a : b = 3 : 5 and b : c = 2 : 3, find (a + c)/b.", a:2.1, alt:["21/10"],
+          h:"Build a : b : c first (LCM on b), then substitute k.",
+          s:"a : b : c = 6 : 10 : 15 ⟹ (6k + 15k)/10k = 21/10 = <b>2.1</b>." },
+        { id:"F4", t:"mcq", q:"If a/2 = b/3 = c/4, then (3a + 2b + c)/(a + b + c) equals", o:["9/16","4/3","16/9","2"], a:2,
+          h:"Substitute a = 2k, b = 3k, c = 4k and cancel k.",
+          s:"(6k + 6k + 4k)/9k = <b>16/9</b>." },
+        { id:"F5", t:"tita", q:"Three numbers are in the ratio 3 : 4 : 5 and the sum of their squares is 1250. Find the largest number.", a:25,
+          h:"Write them as 3k, 4k, 5k — the equation becomes one in k².",
+          s:"50k² = 1250 ⟹ k = 5 ⟹ numbers 15, 20, <b>25</b>." }
+      ]},
+      G: { name: "Redistribution, exchange & savings", qs: [
+        { id:"G1", t:"tita", q:"A and B have money in the ratio 4 : 3. If A gives ₹50 to B, the ratio becomes 6 : 5. Find A's original amount (in ₹).", a:1100,
+          h:"What A loses, B gains. Check afterwards that the total is unchanged.",
+          s:"(4k − 50)/(3k + 50) = 6/5 ⟹ 2k = 550 ⟹ k = 275 ⟹ A = <b>₹1,100</b>. Total 1925 before and after ✓" },
+        { id:"G2", t:"mcq", q:"The salaries of A and B are in the ratio 5 : 4. A's salary rises by 15% and B's rises by ₹1,000, after which the ratio is 23 : 20. B's new salary is", o:["₹4,600","₹5,000","₹5,750","₹4,000"], a:1,
+          h:"This is an increase, not a transfer — the total is not conserved. And the question asks for the NEW salary.",
+          s:"5.75k/(4k + 1000) = 23/20 ⟹ 23k = 23000 ⟹ k = 1000. B: 4000 → <b>₹5,000</b>. (₹4,000 is B's old salary — the trap.)" },
+        { id:"G3", t:"tita", q:"A, B and C have amounts in the ratio 3 : 4 : 5. A gives ₹50 to B, and B gives ₹100 to C. The final ratio is 2 : 3 : 7. Find the total amount (in ₹).", a:600,
+          h:"B both receives and gives — write both movements. The third comparison is a free check.",
+          s:"(3k − 50)/(4k − 50) = 2/3 ⟹ k = 50 ⟹ 150, 200, 250 ⟹ total = <b>₹600</b>. Check: after = 100, 150, 350 = 2 : 3 : 7 ✓" },
+        { id:"G4", t:"mcq", q:"The savings of A and B are in the ratio 7 : 5. A spends ₹1,000 and B spends ₹800, after which the ratio becomes 2 : 1. B's original savings were", o:["₹800","₹1,000","₹1,200","₹1,400"], a:1,
+          h:"Different amounts are removed, so nothing is conserved — set up one equation in k.",
+          s:"(7k − 1000)/(5k − 800) = 2 ⟹ 3k = 600 ⟹ k = 200 ⟹ B = <b>₹1,000</b>. Check: 400 : 200 = 2 : 1 ✓" },
+        { id:"G5", t:"tita", q:"The incomes of A and B are in the ratio 5 : 4 and their expenditures in the ratio 3 : 2. If each saves ₹6,000, find A's income (in ₹).", a:15000,
+          h:"Two independent ratios means two variables x and y, not one k.",
+          s:"5x − 3y = 6000, 4x − 2y = 6000 ⟹ x = 3000 ⟹ A's income = <b>₹15,000</b>. Check: 15000 − 9000 = 6000 ✓" },
+        { id:"G6", t:"mcq", q:"A bag contains ₹1, 50-paise and 25-paise coins in the ratio 5 : 6 : 8, totalling ₹210. The number of 25-paise coins is", o:["105","126","168","210"], a:2,
+          h:"The ratio is of the NUMBER of coins — convert each count to value before summing.",
+          s:"5k + 3k + 2k = 10k = 210 ⟹ k = 21 ⟹ 25p coins = 8 × 21 = <b>168</b>." }
+      ]},
+      M: { name: "Mixed Set — exam feel", block: 900, qs: [
+        { id:"M1", t:"mcq", q:"₹8,500 is divided among A, B and C such that A : B = 3 : 4 and B : C = 2 : 5. C's share is", o:["₹1,500","₹2,000","₹5,000","₹3,500"], a:2,
+          h:"Equalise B with the LCM before splitting.",
+          s:"A : B : C = 3 : 4 : 10, sum 17 ⟹ each part 500 ⟹ C = <b>₹5,000</b>." },
+        { id:"M2", t:"tita", q:"If (5x − 3y)/(5x + 3y) = 1/3, find x/y.", a:1.2, alt:["6/5"],
+          h:"Invert first, then apply reverse componendo–dividendo.",
+          s:"(a+b)/(a−b) = 3 ⟹ a/b = 2 ⟹ 5x/3y = 2 ⟹ x/y = 6/5 = <b>1.2</b>." },
+        { id:"M3", t:"mcq", q:"Two numbers are in the ratio 5 : 8. If each is increased by 9, the ratio becomes 8 : 11. The smaller number is", o:["15","20","24","30"], a:0,
+          h:"One k, cross-multiply.",
+          s:"(5k+9)/(8k+9) = 8/11 ⟹ 9k = 27 ⟹ k = 3 ⟹ numbers <b>15</b> and 24." },
+        { id:"M4", t:"tita", q:"The cost of a stone varies as the square of its weight. A stone worth ₹5,000 breaks into two pieces whose weights are in the ratio 3 : 2. Find the loss (in ₹).", a:2400,
+          h:"Loss fraction = 2ab/(a + b)².",
+          s:"2(3)(2)/25 = 12/25 ⟹ 5000 × 12/25 = <b>₹2,400</b>." },
+        { id:"M5", t:"mcq", q:"A, B and C invest ₹8,000, ₹10,000 and ₹12,000 for 6, 8 and 10 months respectively. Out of a profit of ₹15,500, B's share is", o:["₹3,000","₹5,000","₹4,500","₹7,500"], a:1,
+          h:"Capital × time, then reduce.",
+          s:"48 : 80 : 120 = 6 : 10 : 15, sum 31 ⟹ each part 500 ⟹ B = <b>₹5,000</b>." },
+        { id:"M6", t:"tita", q:"Three numbers are in the ratio 1 : 2 : 3 and the sum of their squares is 504. Find the sum of the numbers.", a:36,
+          h:"14k² = 504. Then answer the sum, not k.",
+          s:"k² = 36 ⟹ k = 6 ⟹ 6, 12, 18 ⟹ sum = <b>36</b>." },
+        { id:"M7", t:"mcq", q:"A and B have money in the ratio 3 : 2. If A gives ₹100 to B, both have equal amounts. B originally had", o:["₹300","₹400","₹500","₹600"], a:1,
+          h:"A transfer conserves the total, so each ends with half of 5k.",
+          s:"3k − 100 = 2.5k ⟹ k = 200 ⟹ B = <b>₹400</b>. Check: 500 and 500 ✓" },
+        { id:"M8", t:"tita", q:"x varies inversely as the square of y. When y = 3, x = 8. Find x when y = 6.", a:2,
+          h:"xy² = k.",
+          s:"k = 8 × 9 = 72 ⟹ x = 72/36 = <b>2</b>." },
+        { id:"M9", t:"mcq", q:"₹1,800 is divided among three people in the inverse ratio 3 : 4 : 6. The largest share is", o:["₹400","₹600","₹800","₹900"], a:2,
+          h:"Reciprocals, cleared by the LCM.",
+          s:"1/3 : 1/4 : 1/6 = 4 : 3 : 2, sum 9 ⟹ each part 200 ⟹ largest = <b>₹800</b>." },
+        { id:"M10", t:"tita", q:"The incomes of two persons are in the ratio 9 : 7 and their expenditures in the ratio 4 : 3. If each saves ₹2,000, find the income of the first person (in ₹).", a:18000,
+          h:"Two ratios, two variables. Eliminate the expenditure variable.",
+          s:"9x − 4y = 2000, 7x − 3y = 2000 ⟹ x = 2000 ⟹ income = <b>₹18,000</b>. Check: 18000 − 16000 = 2000 ✓" }
+      ]}
+    }
   }
 };
 
@@ -625,7 +792,7 @@ function home(){
   }
   const grand = Object.keys(BANK).reduce((n,tk)=>n+Object.keys(BANK[tk].sets).reduce((m,k)=>m+BANK[tk].sets[k].qs.length,0),0);
   h += `<h2>Everything</h2><div class="grid">
-    <button class="setbtn" data-t="ALL" data-s="ALL"><div class="k">▶ Full mock — both topics</div>
+    <button class="setbtn" data-t="ALL" data-s="ALL"><div class="k">▶ Full mock — all topics</div>
     <div class="m">${grand} questions · shuffled · ~150 min</div></button>
     <button class="setbtn" data-t="ALL" data-s="MIX"><div class="k">▶ Mixed sets only</div>
     <div class="m">16 questions · 30 min · exam feel</div></button>
@@ -652,7 +819,7 @@ function start(tk, sk){
   };
   if(tk==="ALL"){
     for(const t in BANK) for(const s in BANK[t].sets){ if(sk==="MIX"&&s!=="M") continue; push(t,s); }
-    label = sk==="MIX" ? "Mixed Sets — both topics" : "Full Mock — all topics";
+    label = sk==="MIX" ? "Mixed Sets — all topics" : "Full Mock — all topics";
     if(sk==="ALL") shuffle(qs);
   } else if(sk==="ALL"){
     for(const s in BANK[tk].sets) push(tk,s);
