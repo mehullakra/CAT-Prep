@@ -1,0 +1,137 @@
+{
+ "key": "circles",
+ "order": 102,
+ "name": "Circles",
+ "notes": "Circles.md",
+ "file": "Circles-Practice.md",
+ "perQ": 105,
+ "intro": [
+  "**Join the centre to everything.** Radii are free equal lengths, and most circle figures open up once three or four are drawn (§2).",
+  "A diameter means a right angle; a tangent with a chord means the alternate segment angle. Mark both on sight (§2, §3)."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "Chords, tangents and cyclic quadrilaterals",
+   "qs": [
+    {
+     "id": "A1",
+     "t": "tita",
+     "q": "A chord of length 16 cm lies 6 cm from the centre of a circle. Find the radius (in cm).",
+     "a": 10,
+     "check": "(64+36)**0.5",
+     "h": "§2 — the perpendicular from the centre bisects the chord, giving a right triangle with legs 8 and 6.",
+     "s": "√(8² + 6²) = <b>10 cm</b>."
+    },
+    {
+     "id": "A2",
+     "t": "mcq",
+     "q": "Two circles of radii 5 and 3 touch externally. The distance between their centres is",
+     "o": [
+      "2",
+      "4",
+      "8",
+      "15"
+     ],
+     "a": 2,
+     "h": "§6 — external touching means the centre distance is the sum; internal would be the difference.",
+     "s": "5 + 3 = <b>8</b>. (2 is the internal-touching answer, planted.)"
+    },
+    {
+     "id": "A3",
+     "t": "tita",
+     "q": "From an external point 13 cm from the centre of a circle of radius 5 cm, find the length of a tangent (in cm).",
+     "a": 12,
+     "check": "(169-25)**0.5",
+     "h": "§3, tangents — the tangent is perpendicular to the radius, so use Pythagoras. Look for the 5-12-13 triple.",
+     "s": "√(13² − 5²) = <b>12 cm</b>."
+    },
+    {
+     "id": "A4",
+     "t": "mcq",
+     "q": "In a cyclic quadrilateral ABCD, angle A = 80°. Then angle C is",
+     "o": [
+      "80°",
+      "90°",
+      "100°",
+      "110°"
+     ],
+     "a": 2,
+     "h": "§4, cyclic quadrilaterals — opposite angles are supplementary.",
+     "s": "180 − 80 = <b>100°</b>."
+    },
+    {
+     "id": "A5",
+     "t": "mcq",
+     "q": "The area of a quarter-circle sector of radius 14 cm (π = 22/7) is",
+     "o": [
+      "77 cm²",
+      "154 cm²",
+      "196 cm²",
+      "308 cm²"
+     ],
+     "a": 1,
+     "h": "§1 — a quarter of πr².",
+     "s": "¼ × (22/7) × 196 = <b>154 cm²</b>."
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (4 minutes)",
+   "block": 210,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "mcq",
+     "q": "The circumference of a circle is 44 cm (π = 22/7). Its area is",
+     "o": [
+      "77 cm²",
+      "154 cm²",
+      "308 cm²",
+      "616 cm²"
+     ],
+     "a": 1,
+     "h": "Find r first.",
+     "s": "2πr = 44 ⟹ r = 7 ⟹ area = (22/7)(49) = <b>154 cm²</b>."
+    },
+    {
+     "id": "M2",
+     "t": "mcq",
+     "q": "A circle is inscribed in a square of side 14. The area between them (π = 22/7) is",
+     "o": [
+      "42",
+      "49",
+      "56",
+      "63"
+     ],
+     "a": 0,
+     "h": "The inscribed circle has diameter equal to the side.",
+     "s": "196 − (22/7)(49) = 196 − 154 = <b>42</b>."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A1, A3",
+   "grinding through algebra where a Pythagorean triple was staring at you (§2, §3)"
+  ],
+  [
+   "A2",
+   "using the difference of the radii for externally touching circles — externally means the sum (§6)"
+  ],
+  [
+   "A4",
+   "forgetting that opposite angles of a cyclic quadrilateral are supplementary (§4)"
+  ],
+  [
+   "A5, M1",
+   "confusing sector with segment, or circumference with area (§1)"
+  ],
+  [
+   "M2",
+   "taking the square's diagonal as the inscribed circle's diameter — it is the side (§5, §7)"
+  ]
+ ]
+}

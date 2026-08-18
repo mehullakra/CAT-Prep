@@ -1,0 +1,480 @@
+{
+  "key": "interest",
+  "order": 50,
+  "name": "Simple & Compound Interest",
+  "notes": "Simple-Compound-Interest.md",
+  "file": "Simple-Compound-Interest-Practice.md",
+  "perQ": 90,
+  "intro": [
+    "**Before computing anything, write down whether the question wants the interest or the amount.** That single misread costs more marks in this topic than every formula error combined (§2).",
+    "For CI, always work in growth factors — 12.5% is ×9/8, not \"a formula\"."
+  ],
+  "sets": [
+    {
+      "id": "A",
+      "name": "Simple interest fundamentals",
+      "qs": [
+        {
+          "id": "A1", "t": "tita",
+          "q": "Find the simple interest on ₹7,200 at 8.5% p.a. for 3 years (in ₹).",
+          "a": 1836, "ad": "₹1,836", "check": "7200*8.5*3/100",
+          "h": "§1 — SI = Prn/100. One line, no traps.",
+          "s": "7200 × 8.5 × 3/100. Take 8.5% of 7200 = 612, then ×3 = <b>₹1,836</b>."
+        },
+        {
+          "id": "A2", "t": "mcq",
+          "q": "A sum of ₹6,000 amounts to ₹7,440 in 4 years under SI. The rate per annum is",
+          "o": ["5%", "6%", "7.5%", "8%"], "a": 1,
+          "h": "§2 — the ₹7,440 is the amount, not the interest. Subtract first.",
+          "s": "SI = 7440 − 6000 = 1440 over 4 years ⟹ ₹360/year ⟹ r = 360/6000 × 100 = <b>6%</b>."
+        },
+        {
+          "id": "A3", "t": "tita",
+          "q": "At what rate percent per annum will ₹1,200 yield ₹216 as simple interest in 2 years and 3 months?",
+          "a": 8, "ad": "8%", "check": "216*100/(1200*2.25)",
+          "h": "Traps table — convert 3 months to a fraction of a year before touching the formula.",
+          "s": "t = 2¼ = 9/4 years. 1200 × r × (9/4)/100 = 216 ⟹ 27r = 216 ⟹ r = <b>8%</b>."
+        },
+        {
+          "id": "A4", "t": "mcq",
+          "q": "A sum triples itself in 12 years under simple interest. The rate per annum is",
+          "o": ["12.5%", "16.67%", "20%", "25%"], "a": 1,
+          "h": "§6 — tripling means the interest earned equals 2P, not 3P. Then rt = 200.",
+          "s": "Tripling ⟹ interest = 2P ⟹ rt = 200 ⟹ r = 200/12 = <b>16.67%</b>. (Using rt = 300 gives 25% — the trap.)"
+        },
+        {
+          "id": "A5", "t": "tita",
+          "q": "The SI on a sum for 4 years at 6% p.a. exceeds the SI on the same sum for 3 years at 5% p.a. by ₹540. Find the sum (in ₹).",
+          "a": 6000, "ad": "₹6,000", "check": "540/(4*0.06-3*0.05)",
+          "h": "§1 — both interests are linear in P, so the difference is P times a single number.",
+          "s": "P(4 × 0.06 − 3 × 0.05) = 540 ⟹ 0.09P = 540 ⟹ P = <b>₹6,000</b>."
+        },
+        {
+          "id": "A6", "t": "mcq",
+          "q": "₹800 becomes ₹956 in 3 years under SI. If the rate is increased by 4 percentage points, the same sum over the same period becomes",
+          "o": ["₹1,020", "₹1,052", "₹1,076", "₹1,112"], "a": 1,
+          "h": "§1 — find the original rate first. Under SI, 4 extra percentage points for 3 years adds exactly 12% of P.",
+          "s": "SI = 156 over 3 years ⟹ r = 156/(800 × 3) × 100 = 6.5%. New rate 10.5% ⟹ SI = 800 × 0.105 × 3 = 252 ⟹ amount = <b>₹1,052</b>. Shortcut: 4 extra points for 3 years adds 12% of 800 = ₹96, and 956 + 96 = 1052 ✓"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Compound interest and the factor form",
+      "qs": [
+        {
+          "id": "B1", "t": "tita",
+          "q": "Find the compound interest on ₹12,500 at 8% p.a. for 2 years (in ₹).",
+          "a": 2080, "ad": "₹2,080", "check": "12500*1.08**2-12500",
+          "h": "§1 — multiply by 1.08 twice, then subtract P. The question asks for interest.",
+          "s": "12500 × 1.08² = 12500 × 1.1664 = 14,580 ⟹ CI = <b>₹2,080</b>. (₹14,580 is the amount — read the question.)"
+        },
+        {
+          "id": "B2", "t": "mcq",
+          "q": "₹6,250 at 4% p.a. compounded annually for 2 years amounts to",
+          "o": ["₹6,720", "₹6,750", "₹6,760", "₹6,800"], "a": 2,
+          "h": "§1 — 1.04² = 1.0816. Note that ₹6,750 is the SI answer, planted as a decoy.",
+          "s": "6250 × 1.0816 = <b>₹6,760</b>. (SI would give 6250 + 500 = ₹6,750.)"
+        },
+        {
+          "id": "B3", "t": "tita",
+          "q": "Find the compound interest on ₹16,000 at 12.5% p.a. for 2 years (in ₹).",
+          "a": 4250, "ad": "₹4,250", "check": "16000*(9/8)**2-16000",
+          "h": "Practical exam habits — 12.5% is the growth factor 9/8. Two multiplications by 9/8 beat any decimal.",
+          "s": "Factor 9/8: 16000 × 9/8 = 18,000; 18000 × 9/8 = 20,250 ⟹ CI = <b>₹4,250</b>."
+        },
+        {
+          "id": "B4", "t": "mcq",
+          "q": "The CI on a sum for 2 years at 10% p.a. is ₹2,100. The SI on the same sum for the same period is",
+          "o": ["₹1,900", "₹2,000", "₹2,050", "₹2,110"], "a": 1,
+          "h": "§1 — recover P from the CI factor (1.21 − 1), then apply SI. Or use §4 backwards.",
+          "s": "P(1.21 − 1) = 2100 ⟹ P = 10,000. SI = 10000 × 0.10 × 2 = <b>₹2,000</b>. Check with §4: CI − SI = 10000(0.1)² = 100, and 2100 − 2000 = 100 ✓"
+        },
+        {
+          "id": "B5", "t": "tita",
+          "q": "A sum amounts to ₹9,261 in 3 years at 5% p.a. CI. Find the sum (in ₹).",
+          "a": 8000, "ad": "₹8,000", "check": "9261/1.05**3",
+          "h": "§2 — divide by the factor, don't subtract. 9261 is a cube, which is the hint CAT is giving you.",
+          "s": "1.05³ = 1.157625 ⟹ P = 9261/1.157625 = <b>₹8,000</b>. Spotting 9261 = 21³ and 1.05³ = (21/20)³ makes this instant: P = 20³ = 8000."
+        },
+        {
+          "id": "B6", "t": "tita",
+          "q": "₹25,000 is invested at 4% in the first year, 5% in the second and 10% in the third, compounded annually. Find the amount at the end of 3 years (in ₹).",
+          "a": 30030, "ad": "₹30,030", "check": "25000*1.04*1.05*1.10",
+          "h": "§8 — just chain the three factors. Do not average the rates.",
+          "s": "25000 × 1.04 = 26,000; × 1.05 = 27,300; × 1.10 = <b>₹30,030</b>. Order is irrelevant — the factors commute."
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Compounding more than once a year",
+      "qs": [
+        {
+          "id": "C1", "t": "tita",
+          "q": "Find the amount on ₹8,000 at 10% p.a. compounded half-yearly for 1 year (in ₹).",
+          "a": 8820, "ad": "₹8,820", "check": "8000*1.05**2",
+          "h": "§3 — rate per period 5%, number of periods 2. The rate halves and the periods double.",
+          "s": "8000 × 1.05² = 8000 × 1.1025 = <b>₹8,820</b>."
+        },
+        {
+          "id": "C2", "t": "mcq",
+          "q": "₹16,000 at 20% p.a. compounded quarterly for 9 months amounts to",
+          "o": ["₹18,150", "₹18,522", "₹18,816", "₹19,200"], "a": 1,
+          "h": "§3 — 9 months is 3 quarters, so 5% for 3 periods.",
+          "s": "16000 × 1.05³ = 16000 × 1.157625 = <b>₹18,522</b>."
+        },
+        {
+          "id": "C3", "t": "tita",
+          "q": "Find the compound interest on ₹10,000 at 4% p.a. compounded half-yearly for 1½ years (in ₹).",
+          "a": 612.08, "ad": "₹612.08", "check": "10000*1.02**3-10000",
+          "h": "§3 — 2% for 3 periods. Then §2: subtract the principal.",
+          "s": "10000 × 1.02³ = 10,612.08 ⟹ CI = <b>₹612.08</b>."
+        },
+        {
+          "id": "C4", "t": "mcq",
+          "q": "₹4,000 is invested for 1 year at 10% p.a. The amount under half-yearly compounding exceeds the amount under annual compounding by",
+          "o": ["₹10", "₹20", "₹25", "₹40"], "a": 0,
+          "h": "§3 — you know the sign before computing: more frequent compounding always wins. Compute both amounts and subtract.",
+          "s": "Half-yearly: 4000 × 1.05² = ₹4,410. Annual: 4000 × 1.1 = ₹4,400. Difference = <b>₹10</b>. Equivalently by §4, the gap is 4000 × 0.05² = 10."
+        },
+        {
+          "id": "C5", "t": "tita",
+          "q": "At what rate percent per annum, compounded half-yearly, will ₹6,400 amount to ₹6,724 in 1 year?",
+          "a": 5, "ad": "5%", "check": "2*100*((6724/6400)**0.5-1)",
+          "h": "§3 read backwards — 6724/6400 is a perfect square of the half-yearly factor. Double the half-yearly rate at the end.",
+          "s": "6724/6400 = 1.050625 = 1.025² ⟹ half-yearly rate 2.5% ⟹ annual rate = <b>5%</b>. (Answering 2.5% is the trap: the question asks per annum.)"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "The CI − SI gap",
+      "qs": [
+        {
+          "id": "D1", "t": "tita",
+          "q": "The difference between CI and SI on a sum for 2 years at 8% p.a. is ₹64. Find the sum (in ₹).",
+          "a": 10000, "ad": "₹10,000", "check": "64/0.08**2",
+          "h": "§4 — CI − SI = P(r/100)² for 2 years. One division.",
+          "s": "P(0.08)² = 64 ⟹ 0.0064P = 64 ⟹ P = <b>₹10,000</b>."
+        },
+        {
+          "id": "D2", "t": "mcq",
+          "q": "The difference between CI and SI on ₹15,000 for 2 years at 6% p.a. is",
+          "o": ["₹36", "₹54", "₹90", "₹108"], "a": 1,
+          "h": "§4 — the same formula forwards.",
+          "s": "15000 × (0.06)² = 15000 × 0.0036 = <b>₹54</b>."
+        },
+        {
+          "id": "D3", "t": "tita",
+          "q": "The difference between CI and SI on a sum for 3 years at 10% p.a. is ₹93. Find the sum (in ₹).",
+          "a": 3000, "ad": "₹3,000", "check": "93/(100*310/1e6)",
+          "h": "§4 — the 3-year formula Pr²(300 + r)/10⁶. Using the 2-year formula here is the planted error.",
+          "s": "P × 100 × 310/10⁶ = 0.031P = 93 ⟹ P = <b>₹3,000</b>. (The 2-year formula would give ₹9,300 — wrong.)"
+        },
+        {
+          "id": "D4", "t": "mcq",
+          "q": "The SI on a sum for 2 years at 12% p.a. is ₹1,200. The CI on the same sum, same rate, same period is",
+          "o": ["₹1,236", "₹1,260", "₹1,272", "₹1,344"], "a": 2,
+          "h": "§4 — find P from the SI, then add P(r/100)² to ₹1,200. Sanity check: CI must exceed SI.",
+          "s": "SI 1200 over 2 years ⟹ ₹600/year ⟹ P = ₹5,000. CI − SI = 5000(0.12)² = 72 ⟹ CI = <b>₹1,272</b>. Direct check: 5000 × 1.2544 − 5000 = 1272 ✓"
+        },
+        {
+          "id": "D5", "t": "tita",
+          "q": "For a certain sum, the difference between CI and SI over 2 years is ₹40, and the SI for 1 year is ₹500. Find the rate percent per annum.",
+          "a": 8, "ad": "8%", "check": "40*100/500",
+          "h": "§4, the \"also useful\" line — CI − SI over 2 years = (SI for 1 year) × r/100. P never appears.",
+          "s": "40 = 500 × r/100 ⟹ r = <b>8%</b>. P is never needed (it happens to be ₹6,250)."
+        },
+        {
+          "id": "D6", "t": "mcq",
+          "q": "₹20,000 is lent for 3 years at 5% p.a. The difference between CI (compounded annually) and SI is",
+          "o": ["₹50", "₹125", "₹152.50", "₹200"], "a": 2,
+          "h": "§4, 3-year formula. One of the options is what you get from the 2-year formula — that's the trap.",
+          "s": "20000 × 25 × 305/10⁶ = 20000 × 0.007625 = <b>₹152.50</b>. (The 2-year formula gives ₹50.)"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Finding rate, time or principal from amounts",
+      "qs": [
+        {
+          "id": "E1", "t": "tita",
+          "q": "Under CI a sum amounts to ₹2,420 in 2 years and ₹2,662 in 3 years. Find the rate percent per annum.",
+          "a": 10, "ad": "10%", "check": "100*(2662/2420-1)",
+          "h": "§5 — consecutive years, so the ratio of the amounts is the growth factor itself.",
+          "s": "2662/2420 = 1.1 ⟹ r = <b>10%</b>."
+        },
+        {
+          "id": "E2", "t": "tita",
+          "q": "A sum amounts to ₹4,840 in 2 years and ₹5,324 in 3 years under CI. Find the principal (in ₹).",
+          "a": 4000, "ad": "₹4,000", "check": "4840/(5324/4840)**2",
+          "h": "§5 — get r from the ratio, then divide the 2-year amount by the factor squared.",
+          "s": "5324/4840 = 1.1 ⟹ r = 10%. P = 4840/1.21 = <b>₹4,000</b>."
+        },
+        {
+          "id": "E3", "t": "mcq",
+          "q": "Under SI a sum amounts to ₹2,240 in 3 years and ₹2,600 in 6 years. The principal is",
+          "o": ["₹1,760", "₹1,820", "₹1,880", "₹1,920"], "a": 2,
+          "h": "§5, SI case — the yearly interest is constant, so take the difference over the gap in years and work backwards.",
+          "s": "Interest per year = (2600 − 2240)/3 = ₹120. P = 2240 − 3(120) = <b>₹1,880</b>. Check: 1880 + 6(120) = 2600 ✓"
+        },
+        {
+          "id": "E4", "t": "tita",
+          "q": "Under CI, the interest earned in the second year is ₹660 and in the third year is ₹726. Find the rate percent per annum.",
+          "a": 10, "ad": "10%", "check": "100*(726/660-1)",
+          "h": "§4, last line — consecutive years' CI are in the ratio of the growth factor.",
+          "s": "726/660 = 1.1 ⟹ r = <b>10%</b>. A one-division question once you see the structure."
+        },
+        {
+          "id": "E5", "t": "mcq",
+          "q": "In how many years will ₹5,000 amount to ₹6,655 at 10% p.a. compounded annually?",
+          "o": ["2", "3", "4", "5"], "a": 1,
+          "h": "§1 — divide, then recognise the power of 1.1. Don't take logs.",
+          "s": "6655/5000 = 1.331 = 1.1³ ⟹ <b>3 years</b>."
+        },
+        {
+          "id": "E6", "t": "tita",
+          "q": "At what rate percent per annum CI will ₹4,096 amount to ₹4,913 in 3 years?",
+          "a": 6.25, "ad": "6.25%", "check": "100*((4913/4096)**(1/3)-1)",
+          "h": "Practical exam habits — both numbers are perfect cubes. That is the whole question.",
+          "s": "4096 = 16³ and 4913 = 17³ ⟹ factor = 17/16 = 1.0625 ⟹ r = <b>6.25%</b>."
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Doubling and multiplying",
+      "qs": [
+        {
+          "id": "F1", "t": "mcq",
+          "q": "A sum doubles in 8 years under CI. In how many years does it become 16 times?",
+          "o": ["24", "32", "48", "64"], "a": 1,
+          "h": "§6 — CI multiplies. Write 16 as a power of 2.",
+          "s": "16 = 2⁴ ⟹ 4 doubling periods ⟹ 4 × 8 = <b>32 years</b>."
+        },
+        {
+          "id": "F2", "t": "tita",
+          "q": "A sum doubles in 4 years under SI. In how many years does it become 6 times?",
+          "a": 20, "ad": "20 years", "check": "5*4",
+          "h": "§6 — SI adds. Doubling in 4 years means the sum earns P of interest every 4 years.",
+          "s": "Interest of P is earned every 4 years. Becoming 6 times needs interest 5P ⟹ <b>20 years</b>."
+        },
+        {
+          "id": "F3", "t": "mcq",
+          "q": "A sum becomes 3 times in 6 years at CI. In how many years does it become 81 times?",
+          "o": ["18", "24", "30", "36"], "a": 1,
+          "h": "§6 — 81 = 3⁴.",
+          "s": "81 = 3⁴ ⟹ 4 × 6 = <b>24 years</b>."
+        },
+        {
+          "id": "F4", "t": "tita",
+          "q": "At what rate of simple interest will a sum double itself in 16 years?",
+          "a": 6.25, "ad": "6.25%", "check": "100/16",
+          "h": "§6 — doubling under SI means rt = 100.",
+          "s": "rt = 100 ⟹ r = 100/16 = <b>6.25%</b>."
+        },
+        {
+          "id": "F5", "t": "mcq",
+          "q": "A sum becomes 8 times in 12 years under CI. It becomes 2 times in",
+          "o": ["3 years", "4 years", "6 years", "9 years"], "a": 1,
+          "h": "§6 run backwards — 8 = 2³, so 12 years is three doubling periods.",
+          "s": "8 = 2³ ⟹ 12 years contains 3 doubling periods ⟹ <b>4 years</b> each."
+        },
+        {
+          "id": "F6", "t": "tita",
+          "q": "Under SI a sum becomes 5 times in 20 years. In how many years does it become 9 times at the same rate?",
+          "a": 40, "ad": "40 years", "check": "8*(20/4)",
+          "h": "§6 — 5 times means interest of 4P. Find how long one P of interest takes, then scale.",
+          "s": "Interest 4P in 20 years ⟹ P every 5 years. 9 times needs interest 8P ⟹ <b>40 years</b>."
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "name": "Instalments",
+      "qs": [
+        {
+          "id": "G1", "t": "tita",
+          "q": "A loan of ₹2,550 is repaid in 2 equal annual instalments at 4% p.a. CI. Find each instalment (in ₹).",
+          "a": 1352, "ad": "₹1,352", "check": "2550*1.04**2/2.04",
+          "h": "§7 — discount each instalment back, or use the shortcut X = P(1 + r)²/(2 + r).",
+          "s": "X = 2550 × 1.0816/2.04 = <b>₹1,352</b>. Check: 1352/1.04 = 1300 and 1352/1.0816 = 1250, sum 2550 ✓"
+        },
+        {
+          "id": "G2", "t": "mcq",
+          "q": "₹820 borrowed at 5% p.a. CI is repaid in 2 equal annual instalments. Each instalment is",
+          "o": ["₹420", "₹430.50", "₹441", "₹451"], "a": 2,
+          "h": "§7 — the two instalments are discounted by 1.05 and 1.05², not by 1.05 both times.",
+          "s": "820 = X/1.05 + X/1.1025. Multiply by 1.1025: 904.05 = 2.05X ⟹ X = <b>₹441</b>. Check: 420 + 400 = 820 ✓ (₹420 is the present value of the first instalment only.)"
+        },
+        {
+          "id": "G3", "t": "tita",
+          "q": "A sum borrowed at 10% p.a. CI is repaid in 3 equal annual instalments of ₹1,331 each. Find the sum borrowed (in ₹).",
+          "a": 3310, "ad": "₹3,310", "check": "1331/1.1+1331/1.21+1331/1.331",
+          "h": "§7 — discount 1331 by 1.1, 1.1² and 1.1³ and add. The numbers are chosen to come out whole.",
+          "s": "1210 + 1100 + 1000 = <b>₹3,310</b>. (Answering ₹3,993 = 3 × 1331 ignores discounting entirely.)"
+        },
+        {
+          "id": "G4", "t": "mcq",
+          "q": "Three equal annual instalments, each paid at the end of a year, clear a debt at 12% p.a. simple interest. If the accumulated value of the three instalments at the end of year 3 is ₹1,092, each instalment is",
+          "o": ["₹300", "₹325", "₹350", "₹364"], "a": 1,
+          "h": "§7, SI version — accumulate forward instead of discounting back. The first instalment earns SI for 2 years, the second for 1, the third for none.",
+          "s": "X(1.24) + X(1.12) + X = 3.36X = 1092 ⟹ X = <b>₹325</b>."
+        },
+        {
+          "id": "G5", "t": "tita",
+          "q": "A man borrows ₹6,000 at 5% p.a. CI and repays ₹2,300 at the end of the first year. What must he pay at the end of the second year to clear the debt (in ₹)?",
+          "a": 4200, "ad": "₹4,200", "check": "(6000*1.05-2300)*1.05",
+          "h": "§7 — grow, subtract the payment, grow again. Order matters: interest accrues before the payment lands.",
+          "s": "End of year 1: 6000 × 1.05 = 6,300; minus 2,300 leaves 4,000. End of year 2: 4000 × 1.05 = <b>₹4,200</b>."
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "name": "Depreciation, population and split principals",
+      "qs": [
+        {
+          "id": "H1", "t": "tita",
+          "q": "A machine worth ₹6,25,000 depreciates at 20% p.a. Find its value after 3 years (in ₹).",
+          "a": 320000, "ad": "₹3,20,000", "check": "625000*0.8**3",
+          "h": "§9 — the factor is 0.8, and 0.8³ = 0.512.",
+          "s": "625000 × 0.512 = <b>₹3,20,000</b>."
+        },
+        {
+          "id": "H2", "t": "mcq",
+          "q": "The population of a town is 1,05,800 now and has been growing at 15% p.a. Its population 2 years ago was",
+          "o": ["76,000", "80,000", "84,000", "92,000"], "a": 1,
+          "h": "§9 — \"n years ago\" means divide by the factor, not subtract 15% twice.",
+          "s": "105800/1.3225 = <b>80,000</b>. (Subtracting 15% twice gives ≈76,441 — the planted decoy.)"
+        },
+        {
+          "id": "H3", "t": "tita",
+          "q": "A village population rises 10% in the first year and falls 10% in the second. If the final population is 29,700, find the original population.",
+          "a": 30000, "ad": "30,000", "check": "29700/(1.1*0.9)",
+          "h": "§9, mixed direction — 1.1 × 0.9 = 0.99, not 1.",
+          "s": "Net factor 0.99 ⟹ P = 29700/0.99 = <b>30,000</b>. (Assuming the rise and fall cancel gives 29,700 — wrong.)"
+        },
+        {
+          "id": "H4", "t": "mcq",
+          "q": "₹15,000 is split between two schemes offering 10% and 15% simple interest. If the total interest in one year is ₹1,950, the amount at 15% is",
+          "o": ["₹6,000", "₹7,500", "₹9,000", "₹10,000"], "a": 2,
+          "h": "§10 — find the overall rate first, then apply alligation. Watch which side of the cross belongs to which scheme.",
+          "s": "Overall rate = 1950/15000 = 13%. Alligation (15 − 13) : (13 − 10) = 2 : 3 attaches to the 10% : 15% parts ⟹ 15% amount = (3/5)(15000) = <b>₹9,000</b>. Check: 600 + 1350 = 1950 ✓"
+        },
+        {
+          "id": "H5", "t": "tita",
+          "q": "₹8,000 is invested partly at 6% and partly at 10% SI. The total interest in one year is ₹640. Find the amount invested at 10% (in ₹).",
+          "a": 4000, "ad": "₹4,000", "check": "8000/2",
+          "h": "§10 — the overall rate sits exactly halfway, so no arithmetic is needed after that observation.",
+          "s": "Overall rate = 640/8000 = 8%, exactly midway between 6% and 10% ⟹ equal split ⟹ <b>₹4,000</b> at 10%."
+        },
+        {
+          "id": "H6", "t": "mcq",
+          "q": "A car depreciates 10% in the first year and 20% in the second. If it is worth ₹2,88,000 after two years, its original price was",
+          "o": ["₹3,60,000", "₹4,00,000", "₹4,20,000", "₹4,50,000"], "a": 1,
+          "h": "§8 + §9 — chain 0.9 × 0.8, then divide.",
+          "s": "0.9 × 0.8 = 0.72 ⟹ P = 288000/0.72 = <b>₹4,00,000</b>."
+        }
+      ]
+    },
+    {
+      "id": "M",
+      "name": "exam feel (15 minutes)",
+      "block": 900,
+      "qs": [
+        {
+          "id": "M1", "t": "mcq",
+          "q": "₹5,000 is invested at 20% p.a. CI. The interest for the third year alone is",
+          "o": ["₹1,000", "₹1,200", "₹1,440", "₹1,728"], "a": 2,
+          "h": "Grow to the start of year 3 first.",
+          "s": "Amount after 2 years = 5000 × 1.44 = ₹7,200. Third-year interest = 7200 × 0.2 = <b>₹1,440</b>. (₹1,000 is the first-year interest.)"
+        },
+        {
+          "id": "M2", "t": "tita",
+          "q": "The difference between CI and SI on a sum for 2 years at 15% p.a. is ₹450. Find the sum (in ₹).",
+          "a": 20000, "ad": "₹20,000", "check": "450/0.15**2",
+          "h": "The 2-year gap formula.",
+          "s": "P(0.15)² = 450 ⟹ 0.0225P = 450 ⟹ P = <b>₹20,000</b>."
+        },
+        {
+          "id": "M3", "t": "mcq",
+          "q": "A sum at CI doubles in 5 years. In how many years will it become 32 times?",
+          "o": ["20", "25", "30", "40"], "a": 1,
+          "h": "Write 32 as a power of 2.",
+          "s": "32 = 2⁵ ⟹ 5 × 5 = <b>25 years</b>."
+        },
+        {
+          "id": "M4", "t": "tita",
+          "q": "₹6,000 amounts to ₹6,615 in 2 years at CI. Find the rate percent per annum.",
+          "a": 5, "ad": "5%", "check": "100*((6615/6000)**0.5-1)",
+          "h": "The ratio is a perfect square.",
+          "s": "6615/6000 = 1.1025 = 1.05² ⟹ r = <b>5%</b>."
+        },
+        {
+          "id": "M5", "t": "mcq",
+          "q": "The SI on a sum for 3 years at 8% p.a. is ₹1,200. The CI on the same sum at 4% p.a. for 2 years is",
+          "o": ["₹400", "₹408", "₹416", "₹424"], "a": 1,
+          "h": "Recover P from the SI leg, then switch rate and period.",
+          "s": "P × 0.08 × 3 = 1200 ⟹ P = ₹5,000. CI = 5000(1.0816 − 1) = <b>₹408</b>. (₹400 is the SI at 4% for 2 years.)"
+        },
+        {
+          "id": "M6", "t": "tita",
+          "q": "At what rate percent per annum, compounded annually, will ₹10,000 amount to ₹13,310 in 3 years?",
+          "a": 10, "ad": "10%", "check": "100*((13310/10000)**(1/3)-1)",
+          "h": "1.331 should be instantly recognisable.",
+          "s": "13310/10000 = 1.331 = 1.1³ ⟹ r = <b>10%</b>."
+        },
+        {
+          "id": "M7", "t": "mcq",
+          "q": "A machine costing ₹1,00,000 depreciates 25% in the first year and 20% in each year after that. Its value after 3 years is",
+          "o": ["₹45,000", "₹48,000", "₹50,000", "₹52,500"], "a": 1,
+          "h": "Three factors, not three identical ones.",
+          "s": "100000 × 0.75 × 0.8 × 0.8 = <b>₹48,000</b>. (0.75 throughout gives ₹42,187.50; 0.8 throughout gives ₹51,200.)"
+        },
+        {
+          "id": "M8", "t": "tita",
+          "q": "₹3,000 is lent partly at 5% and partly at 8% SI. The total interest after one year is ₹210. Find the amount lent at 8% (in ₹).",
+          "a": 2000, "ad": "₹2,000", "check": "3000*2/3",
+          "h": "Overall rate, then alligation.",
+          "s": "Overall rate = 210/3000 = 7%. Alligation (8 − 7) : (7 − 5) = 1 : 2 attaches to the 5% : 8% parts ⟹ 8% amount = <b>₹2,000</b>. Check: 50 + 160 = 210 ✓"
+        },
+        {
+          "id": "M9", "t": "mcq",
+          "q": "₹10,000 at 8% p.a. compounded half-yearly for 1 year amounts to",
+          "o": ["₹10,800", "₹10,816", "₹10,824", "₹10,832"], "a": 1,
+          "h": "4% for 2 periods.",
+          "s": "10000 × 1.0816 = <b>₹10,816</b>. (₹10,800 is annual compounding — the decoy.)"
+        },
+        {
+          "id": "M10", "t": "tita",
+          "q": "A loan of ₹1,050 is repaid in 2 equal annual instalments at 10% p.a. CI. Find each instalment (in ₹).",
+          "a": 605, "ad": "₹605", "check": "1050*1.21/2.1",
+          "h": "The two-instalment shortcut.",
+          "s": "X = 1050 × 1.21/2.1 = <b>₹605</b>. Check: 550 + 500 = 1050 ✓"
+        }
+      ]
+    }
+  ],
+  "audit": [
+    ["A2, B1", "reporting the amount where the interest was asked, or vice versa (§2)"],
+    ["A3", "using a period in months directly as if it were years"],
+    ["A4, F2, F6", "tripling/quintupling read as rt = 300 instead of rt = 200; SI multiples are additive"],
+    ["B2, B5, M5, M9", "applying SI machinery where CI was asked — each has an SI decoy in the options"],
+    ["B6, H6, M7", "averaging different-year rates instead of chaining the factors (§8)"],
+    ["C1, C2, C3, M9", "halving the rate but not doubling the number of periods (§3)"],
+    ["C5", "reporting the per-period rate where the annual rate was asked"],
+    ["D3, D6", "using the 2-year CI − SI formula on a 3-year question (§4)"],
+    ["D5", "hunting for P when the shortcut removes it entirely"],
+    ["E1, E2, E4", "dividing the wrong way round, or subtracting amounts instead of dividing them (§5)"],
+    ["E3", "applying the CI ratio method to an SI question"],
+    ["F1, F3, F5, M3", "treating CI multiples as additive — CI compounds, SI accumulates (§6)"],
+    ["G1, G2, G3, M10", "discounting every instalment by the same factor instead of by 1, 2, … n years"],
+    ["G4", "discounting back where the SI convention accumulates forward"],
+    ["G5", "subtracting the repayment before applying the year's interest"],
+    ["H2, H3", "subtracting r% n times instead of dividing by (1 + r/100)ⁿ, or assuming +10% then −10% cancels (§9)"],
+    ["H4, H5, M8", "reading the alligation cross backwards — the ratio attaches to the opposite scheme"]
+  ]
+}

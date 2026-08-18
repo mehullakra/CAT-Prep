@@ -1,0 +1,373 @@
+{
+  "key": "numbers",
+  "order": 10,
+  "name": "Number System",
+  "notes": "Number-System.md",
+  "file": "Number-System-Practice.md",
+  "perQ": 90,
+  "intro": [
+    "**Prime-factorise first, ask the question second.** Factor counts, HCF, LCM, perfect-power conditions and trailing zeroes all fall straight out of the factorisation (§3).",
+    "For remainders, look for the small power that is ≡ 1 or ≡ −1. That collapses the exponent immediately (§6)."
+  ],
+  "sets": [
+    {
+      "id": "A",
+      "name": "Divisibility, factors and factorials",
+      "qs": [
+        {
+          "id": "A1", "t": "tita",
+          "q": "Find the number of factors of 720.",
+          "a": 30, "check": "5*3*2",
+          "h": "§3 — factorise, then multiply (exponent + 1) across the primes.",
+          "s": "720 = 2⁴ × 3² × 5 ⟹ (4+1)(2+1)(1+1) = <b>30 factors</b>."
+        },
+        {
+          "id": "A2", "t": "mcq",
+          "q": "The number of even factors of 360 is",
+          "o": ["12", "16", "18", "24"], "a": 2,
+          "h": "§3 — an even factor must take at least one 2, so the exponent of 2 has 3 choices, not 4.",
+          "s": "360 = 2³ × 3² × 5 ⟹ even factors = 3 × 3 × 2 = <b>18</b>. (Total 24, odd 6, and 24 − 6 = 18 ✓)"
+        },
+        {
+          "id": "A3", "t": "tita",
+          "q": "Find the sum of all factors of 200.",
+          "a": 465, "check": "(1+2+4+8)*(1+5+25)",
+          "h": "§3 — the sum of factors is the product of the geometric sums over each prime.",
+          "s": "200 = 2³ × 5² ⟹ (1+2+4+8)(1+5+25) = 15 × 31 = <b>465</b>."
+        },
+        {
+          "id": "A4", "t": "mcq",
+          "q": "The largest 3-digit number divisible by both 8 and 12 is",
+          "o": ["960", "972", "984", "996"], "a": 2,
+          "h": "§4 — divisible by both means divisible by their LCM, which is 24, not 96.",
+          "s": "LCM(8, 12) = 24 ⟹ 999 ÷ 24 = 41 remainder 15 ⟹ 41 × 24 = <b>984</b>."
+        },
+        {
+          "id": "A5", "t": "tita",
+          "q": "How many trailing zeroes does 100! have?",
+          "a": 24, "check": "20+4",
+          "h": "§12 — count the 5s, not the 2s, and don't forget that 25, 50, 75 and 100 each contribute an extra one.",
+          "s": "⌊100/5⌋ + ⌊100/25⌋ = 20 + 4 = <b>24</b>."
+        },
+        {
+          "id": "A6", "t": "mcq",
+          "q": "The number of factors of 1800 that are perfect squares is",
+          "o": ["4", "6", "8", "12"], "a": 2,
+          "h": "§10 — a perfect-square factor needs every exponent even, so count the even choices for each prime.",
+          "s": "1800 = 2³ × 3² × 5². Even exponents: 2 has {0,2}, 3 has {0,2}, 5 has {0,2} ⟹ 2 × 2 × 2 = <b>8</b>."
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "HCF and LCM",
+      "qs": [
+        {
+          "id": "B1", "t": "tita",
+          "q": "Find the HCF of 108 and 144.",
+          "a": 36, "check": "36",
+          "h": "§4 — take the lowest power of each shared prime.",
+          "s": "108 = 2²·3³ and 144 = 2⁴·3² ⟹ HCF = 2²·3² = <b>36</b>."
+        },
+        {
+          "id": "B2", "t": "mcq",
+          "q": "The LCM of two numbers is 495 and their HCF is 5. If their sum is 100, the numbers are",
+          "o": ["45 and 55", "40 and 60", "35 and 65", "25 and 75"], "a": 0,
+          "h": "§4 — the product of the numbers is HCF × LCM. With the sum known, they are the roots of a quadratic.",
+          "s": "Product = 5 × 495 = 2475 with sum 100 ⟹ x² − 100x + 2475 = 0 ⟹ x = <b>45 and 55</b>. (Check: HCF 5, LCM 495 ✓ — the other options fail the HCF test.)"
+        },
+        {
+          "id": "B3", "t": "tita",
+          "q": "Find the greatest number that divides 43, 91 and 183 leaving the same remainder in each case.",
+          "a": 4, "check": "4",
+          "h": "§4 — if the remainder is equal but unknown, it cancels in the differences. Take the HCF of the differences.",
+          "s": "Differences 48, 92 and 140 ⟹ HCF = <b>4</b>. (Each of 43, 91, 183 leaves remainder 3 on division by 4 ✓)"
+        },
+        {
+          "id": "B4", "t": "mcq",
+          "q": "The least number which, when divided by 5, 6, 7 and 8, leaves remainder 3 in each case is",
+          "o": ["803", "843", "863", "1683"], "a": 1,
+          "h": "§4 — a common remainder means LCM + remainder.",
+          "s": "LCM(5, 6, 7, 8) = 840 ⟹ answer = 840 + 3 = <b>843</b>."
+        },
+        {
+          "id": "B5", "t": "tita",
+          "q": "Three bells toll at intervals of 9, 12 and 15 minutes. If they toll together at 9:00 a.m., after how many minutes do they next toll together?",
+          "a": 180, "check": "180",
+          "h": "§4 — simultaneous events recur at the LCM of the intervals.",
+          "s": "LCM(9, 12, 15) = <b>180 minutes</b> (at noon)."
+        },
+        {
+          "id": "B6", "t": "mcq",
+          "q": "The HCF of two numbers is 12 and their LCM is 336. If one number is 84, the other is",
+          "o": ["24", "48", "56", "72"], "a": 1,
+          "h": "§4 — HCF × LCM = product of the two numbers.",
+          "s": "12 × 336 / 84 = <b>48</b>. (Check: HCF(84, 48) = 12 ✓)"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Unit digit and cyclicity",
+      "qs": [
+        {
+          "id": "C1", "t": "tita",
+          "q": "Find the unit digit of 7¹⁰⁵.",
+          "a": 7, "check": "7",
+          "h": "§5 — 7 has a cycle of 4: 7, 9, 3, 1. Reduce the exponent modulo 4.",
+          "s": "105 mod 4 = 1 ⟹ the first entry of the cycle ⟹ unit digit <b>7</b>."
+        },
+        {
+          "id": "C2", "t": "mcq",
+          "q": "The unit digit of 2⁶⁴ is",
+          "o": ["2", "4", "6", "8"], "a": 2,
+          "h": "§5 — cycle 2, 4, 8, 6. A remainder of 0 means the last entry, not the first.",
+          "s": "64 mod 4 = 0 ⟹ the fourth entry ⟹ unit digit <b>6</b>."
+        },
+        {
+          "id": "C3", "t": "tita",
+          "q": "Find the unit digit of 13⁴⁷ × 17²³.",
+          "a": 1, "check": "(7*3)%10",
+          "h": "§5 — only the unit digits 3 and 7 matter; handle each cycle separately, then multiply.",
+          "s": "3⁴⁷: 47 mod 4 = 3 ⟹ 7. 7²³: 23 mod 4 = 3 ⟹ 3. Then 7 × 3 = 21 ⟹ unit digit <b>1</b>."
+        },
+        {
+          "id": "C4", "t": "mcq",
+          "q": "The unit digit of 1! + 2! + 3! + … + 100! is",
+          "o": ["1", "3", "5", "7"], "a": 1,
+          "h": "§12 — every factorial from 5! onward ends in 0, so only four terms matter.",
+          "s": "1 + 2 + 6 + 24 = 33 ⟹ unit digit <b>3</b>."
+        },
+        {
+          "id": "C5", "t": "tita",
+          "q": "Find the unit digit of 4³⁷³.",
+          "a": 4, "check": "4",
+          "h": "§5 — 4 has a cycle of length 2: odd powers end in 4, even powers in 6.",
+          "s": "373 is odd ⟹ unit digit <b>4</b>."
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Remainders",
+      "qs": [
+        {
+          "id": "D1", "t": "tita",
+          "q": "Find the remainder when 2⁵¹ is divided by 7.",
+          "a": 1, "check": "pow(2,51,7)",
+          "h": "§6 — hunt for the small power ≡ 1. Here 2³ = 8 ≡ 1 (mod 7).",
+          "s": "2³ ≡ 1 (mod 7) and 51 = 3 × 17 ⟹ 2⁵¹ ≡ 1³⁷ ≡ <b>1</b>."
+        },
+        {
+          "id": "D2", "t": "mcq",
+          "q": "The remainder when 15²³ is divided by 16 is",
+          "o": ["1", "7", "14", "15"], "a": 3,
+          "h": "§6 — write 15 as −1 modulo 16. An odd power keeps the sign.",
+          "s": "15 ≡ −1 ⟹ (−1)²³ = −1 ≡ <b>15</b> (mod 16)."
+        },
+        {
+          "id": "D3", "t": "tita",
+          "q": "Find the remainder when 7¹⁰⁰ is divided by 100.",
+          "a": 1, "check": "pow(7,100,100)",
+          "h": "§6 — 7⁴ = 2401 ends in 01.",
+          "s": "7⁴ ≡ 1 (mod 100) ⟹ 7¹⁰⁰ = (7⁴)²⁵ ≡ <b>1</b>."
+        },
+        {
+          "id": "D4", "t": "mcq",
+          "q": "The remainder when 16! is divided by 17 is",
+          "o": ["0", "1", "16", "17"], "a": 2,
+          "h": "§6 — Wilson's theorem: (p − 1)! ≡ −1 (mod p) for a prime p.",
+          "s": "17 is prime ⟹ 16! ≡ −1 ≡ <b>16</b> (mod 17). (A remainder can never equal the divisor, which rules out option (d) instantly.)"
+        },
+        {
+          "id": "D5", "t": "tita",
+          "q": "A number divided by 296 leaves remainder 75. What remainder does it leave when divided by 37?",
+          "a": 1, "check": "75%37",
+          "h": "§6 — 296 is a multiple of 37, so that part vanishes and only the remainder needs reducing.",
+          "s": "296 = 8 × 37 ⟹ N = 296k + 75 ≡ 75 (mod 37), and 75 = 2(37) + 1 ⟹ remainder <b>1</b>."
+        },
+        {
+          "id": "D6", "t": "mcq",
+          "q": "The remainder when 3⁵⁷ is divided by 8 is",
+          "o": ["1", "3", "5", "7"], "a": 1,
+          "h": "§6 — 3² = 9 ≡ 1 (mod 8), so only the parity of the exponent matters.",
+          "s": "3⁵⁷ = (3²)²⁸ × 3 ≡ 1 × 3 = <b>3</b>."
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Perfect squares, cubes and least multipliers",
+      "qs": [
+        {
+          "id": "E1", "t": "tita",
+          "q": "Find the least positive integer n such that 1176n is a perfect square.",
+          "a": 6, "check": "6",
+          "h": "§10 — factorise, then supply exactly what is missing to make every exponent even.",
+          "s": "1176 = 2³ × 3 × 7². The 2 and the 3 have odd exponents ⟹ n = 2 × 3 = <b>6</b>. (1176 × 6 = 7056 = 84² ✓)"
+        },
+        {
+          "id": "E2", "t": "mcq",
+          "q": "The least number by which 8232 must be divided to give a perfect cube is",
+          "o": ["3", "6", "7", "21"], "a": 0,
+          "h": "§10 — for a cube, every exponent must be a multiple of 3. Here you remove rather than add.",
+          "s": "8232 = 2³ × 3 × 7³ ⟹ divide by <b>3</b> to leave 2744 = 14³."
+        },
+        {
+          "id": "E3", "t": "tita",
+          "q": "How many perfect squares lie strictly between 100 and 1000?",
+          "a": 21, "check": "31-11+1",
+          "h": "§10 — find the first and last integer whose square lies in range, then count inclusively.",
+          "s": "11² = 121 through 31² = 961 ⟹ 31 − 11 + 1 = <b>21</b>. (100 = 10² and 1024 = 32² are both outside.)"
+        },
+        {
+          "id": "E4", "t": "mcq",
+          "q": "The smallest number that must be added to 1780 to make it a perfect square is",
+          "o": ["21", "49", "69", "89"], "a": 2,
+          "h": "§10 — locate the nearest squares on either side: 42² and 43².",
+          "s": "42² = 1764 and 43² = 1849 ⟹ 1849 − 1780 = <b>69</b>."
+        },
+        {
+          "id": "E5", "t": "tita",
+          "q": "Find the smallest positive integer by which 2925 must be multiplied to become a perfect square.",
+          "a": 13, "check": "13",
+          "h": "§10 — factorise and look for the lone prime.",
+          "s": "2925 = 3² × 5² × 13 ⟹ multiply by <b>13</b> (giving 195²)."
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Integer solutions",
+      "qs": [
+        {
+          "id": "F1", "t": "tita",
+          "q": "How many solutions in positive integers does 3x + 5y = 100 have?",
+          "a": 6, "check": "sum(1 for y in range(1,20) if (100-5*y)>0 and (100-5*y)%3==0)",
+          "h": "§11 — reduce modulo the smaller coefficient to pin down y, then step by 3.",
+          "s": "5y ≡ 100 (mod 3) ⟹ 2y ≡ 1 ⟹ y ≡ 2 (mod 3) ⟹ y = 2, 5, 8, 11, 14, 17 ⟹ <b>6 solutions</b>. (y = 20 gives x = 0, which is not positive.)"
+        },
+        {
+          "id": "F2", "t": "mcq",
+          "q": "The number of non-negative integer solutions of 2x + 3y = 30 is",
+          "o": ["5", "6", "7", "11"], "a": 1,
+          "h": "§11 — 3y must be even, so y must be even. Note that here 0 is allowed.",
+          "s": "y ∈ {0, 2, 4, 6, 8, 10} ⟹ <b>6 solutions</b>."
+        },
+        {
+          "id": "F3", "t": "tita",
+          "q": "If x and y are positive integers satisfying 7x + 11y = 100, find x + y.",
+          "a": 12, "check": "8+4",
+          "h": "§11 — reduce modulo 7 to fix y, then check that only one value stays in range.",
+          "s": "4y ≡ 2 (mod 7) ⟹ y ≡ 4 (mod 7). Only y = 4 keeps 11y below 100 ⟹ x = 8 ⟹ x + y = <b>12</b>."
+        },
+        {
+          "id": "F4", "t": "mcq",
+          "q": "The number of solutions of x + y + z = 10 in positive integers is",
+          "o": ["28", "36", "45", "66"], "a": 1,
+          "h": "§11 — stars and bars: C(n − 1, r − 1) for positive solutions.",
+          "s": "C(9, 2) = <b>36</b>. (66 = C(12, 2) is the non-negative count — the planted decoy.)"
+        },
+        {
+          "id": "F5", "t": "tita",
+          "q": "Pens cost ₹7 each and notebooks ₹9 each. A man spends exactly ₹62 and buys at least one of each. Find the number of notebooks.",
+          "a": 3, "check": "3",
+          "h": "§11 — reduce modulo 7 to fix the number of notebooks; the range does the rest.",
+          "s": "2y ≡ 6 (mod 7) ⟹ y ≡ 3 (mod 7). y = 10 already exceeds ₹62 ⟹ y = <b>3 notebooks</b> (and 5 pens: 35 + 27 = 62 ✓)."
+        }
+      ]
+    },
+    {
+      "id": "M",
+      "name": "exam feel (15 minutes)",
+      "block": 900,
+      "qs": [
+        {
+          "id": "M1", "t": "tita",
+          "q": "Find the number of factors of 2520.",
+          "a": 48, "check": "4*3*2*2",
+          "h": "Factorise first.",
+          "s": "2520 = 2³ × 3² × 5 × 7 ⟹ 4 × 3 × 2 × 2 = <b>48</b>."
+        },
+        {
+          "id": "M2", "t": "mcq",
+          "q": "The unit digit of 3²⁰²⁰ is",
+          "o": ["1", "3", "7", "9"], "a": 0,
+          "h": "Cycle of 4; a remainder of 0 points to the last entry.",
+          "s": "2020 mod 4 = 0 ⟹ the fourth entry of 3, 9, 7, 1 ⟹ <b>1</b>."
+        },
+        {
+          "id": "M3", "t": "tita",
+          "q": "Find the remainder when 5⁹⁹ is divided by 13.",
+          "a": 8, "check": "pow(5,99,13)",
+          "h": "5⁴ ≡ 1 (mod 13).",
+          "s": "5⁴ = 625 = 48(13) + 1 ⟹ period 4. 99 mod 4 = 3 ⟹ 5³ = 125 ≡ <b>8</b> (mod 13)."
+        },
+        {
+          "id": "M4", "t": "mcq",
+          "q": "The HCF of 391, 425 and 527 is",
+          "o": ["13", "17", "19", "23"], "a": 1,
+          "h": "All three are products of a common two-digit prime.",
+          "s": "391 = 17 × 23, 425 = 17 × 25, 527 = 17 × 31 ⟹ HCF = <b>17</b>."
+        },
+        {
+          "id": "M5", "t": "tita",
+          "q": "How many zeroes are at the end of 50!?",
+          "a": 12, "check": "10+2",
+          "h": "Count the 5s.",
+          "s": "⌊50/5⌋ + ⌊50/25⌋ = 10 + 2 = <b>12</b>."
+        },
+        {
+          "id": "M6", "t": "mcq",
+          "q": "The least number which when divided by 12, 15 and 20 leaves remainders 5, 8 and 13 respectively is",
+          "o": ["53", "55", "60", "67"], "a": 0,
+          "h": "Each remainder falls short of its divisor by the same amount.",
+          "s": "12 − 5 = 15 − 8 = 20 − 13 = 7 ⟹ answer = LCM(12, 15, 20) − 7 = 60 − 7 = <b>53</b>."
+        },
+        {
+          "id": "M7", "t": "tita",
+          "q": "Find the smallest positive integer n such that 720n is a perfect cube.",
+          "a": 300, "check": "4*3*25",
+          "h": "Bring every exponent up to the next multiple of 3.",
+          "s": "720 = 2⁴ × 3² × 5 ⟹ needs 2² × 3 × 5² = <b>300</b>. (720 × 300 = 216000 = 60³ ✓)"
+        },
+        {
+          "id": "M8", "t": "mcq",
+          "q": "The number of even factors of 2⁴ × 3³ × 5² is",
+          "o": ["36", "45", "48", "60"], "a": 2,
+          "h": "The exponent of 2 must be at least 1.",
+          "s": "4 × 4 × 3 = <b>48</b>. (Total 60 minus the 12 odd factors ✓)"
+        },
+        {
+          "id": "M9", "t": "tita",
+          "q": "The sum of two numbers is 528 and their HCF is 33. How many such pairs of numbers exist?",
+          "a": 4, "check": "4",
+          "h": "Write them as 33a and 33b with a and b coprime.",
+          "s": "a + b = 16 with gcd(a, b) = 1 ⟹ (1,15), (3,13), (5,11), (7,9) ⟹ <b>4 pairs</b>."
+        },
+        {
+          "id": "M10", "t": "mcq",
+          "q": "The remainder when 32^(32^32) is divided by 7 is",
+          "o": ["1", "2", "4", "6"], "a": 2,
+          "h": "Reduce the base mod 7 first, then reduce the tower exponent mod the cycle length.",
+          "s": "32 ≡ 4 (mod 7), and 4 has cycle 4, 2, 1 of length 3. 32³² ≡ 2³² ≡ (−1)³² ≡ 1 (mod 3) ⟹ 4¹ = <b>4</b>."
+        }
+      ]
+    }
+  ],
+  "audit": [
+    ["A1, A2, A6, M1, M8", "counting factors without first prime-factorising, or forgetting the constraint that makes a factor even or square (§3, §10)"],
+    ["A4, B4, B6, M6", "using the product instead of the LCM, or the wrong direction of HCF × LCM = product (§4)"],
+    ["A5, M5", "counting 2s instead of 5s, or missing the second-order terms ⌊n/25⌋"],
+    ["B3", "not realising an unknown common remainder cancels in the differences"],
+    ["C1, C2, M2", "reading a remainder of 0 as the first entry of the cycle rather than the last (§5)"],
+    ["C4", "summing all 100 factorials instead of stopping at 4!"],
+    ["D1, D3, D6, M3", "brute-forcing the exponent instead of finding the small power ≡ 1 (§6)"],
+    ["D2", "not using the ≡ −1 shortcut, which handles odd exponents in one line"],
+    ["D5", "reducing modulo the wrong number — 296 is already a multiple of 37"],
+    ["E1, E2, E5, M7", "adding when the question says divide, or stopping before every exponent is fixed (§10)"],
+    ["F1, F2", "confusing positive with non-negative solutions — the endpoints are exactly what differ (§11)"],
+    ["F4", "using C(n + r − 1, r − 1) where positive solutions need C(n − 1, r − 1)"],
+    ["M9", "forgetting the coprimality condition on the co-factors"]
+  ]
+}

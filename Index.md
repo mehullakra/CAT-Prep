@@ -35,9 +35,17 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | `Quant/Clocks.md` | angle formula, faulty clocks, mirror images |
 | `Quant/Calendars.md` | odd days, day of the week, repeating calendars |
 | `Quant/Time-Work-Pipes-Cisterns.md` | LCM method, M-D-H, wages, pipes |
-| `Quant/Geometry-Mensuration.md` | triangles, circles, solids, polygons |
+| `Quant/Triangles.md` | angles, triangle essentials, similarity and area ratios, centres, trigonometry, folding |
+| `Quant/Circles.md` | chords, tangents, segments, cyclic quadrilaterals, two-circle configurations |
+| `Quant/Quadrilaterals-and-Polygons.md` | parallelograms, trapezium, kites, polygons, regular-polygon metrics, optimisation |
+| `Quant/Mensuration.md` | solids, scaling, recasting, combined solids, painted cube, unfolding |
+| `Quant/Coordinate-Geometry.md` | distance, section formula, lines, shoelace area, circles on axes |
 | `Quant/PnC-Probability.md` | arrangements, selections, probability, expected value |
+| `Quant/Set-Theory-Venn.md` | two/three-set formulas, 2×2 tables, max–min of overlaps |
 | `Quant/Reference/Calculation-Toolkit.md` | tables, squares, cubes, fast arithmetic |
+| `VARC/Vocabulary.md` | 127 words grouped by meaning, with synonyms and antonyms |
+
+Every topic file above has a companion set at `Quant/Practice/<same name>-Practice.md`, except `Set-Theory-Venn.md` and `Coordinate-Geometry.md`, which have notes but no practice set yet.
 
 ---
 
@@ -57,8 +65,11 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Counting numbers under divisibility + digit-sum constraints | §8 Divisibility + digit-sum counting |
 | Surd and exponent ratio simplification | §9 Surd and exponent ratios |
 | Perfect squares/cubes, smallest n to make a perfect power | §10 Perfect squares, cubes, least n |
+| Perfect square / cube / 6th power deduced from the factor count | §10a Reading N's structure back from its factor count |
+| Equation between products of prime powers; equate exponents per prime | §9a Equations in exponents |
 | Integer solutions of ax + by = c | §11 Diophantine equations |
 | Base systems, trailing zeros in factorials | §12 Base systems and factorials |
+| Repunits Rₓ = (10ˣ − 1)/9, digit-pattern numbers | §12a Repunits and digit-pattern numbers |
 
 ### Algebra — `Quant/Algebra.md`
 
@@ -67,12 +78,16 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Standard identities, x + 1/x chain | §1 The identities that actually appear |
 | Roots, discriminant, sum/product of roots | §2 Quadratics |
 | Symmetric systems, cubics | §3 Higher-degree and symmetric systems |
+| Finite differences P(x+1) − P(x), telescoping to P(b) − P(a) | §3a Finite differences |
 | Rationalisation, surd equations | §4 Surds |
 | a + b + c = 0 ⟹ a³ + b³ + c³ = 3abc | §5 The a + b + c = 0 identity |
 | AM–GM, maxima and minima, modulus inequalities | §6 Inequalities and maxima–minima |
+| Maximise xᵃyᵇzᶜ under a linear constraint (split by exponents) | §6a AM–GM with split terms |
+| Sum-of-moduli inequality, counting integer solutions | §6b Inequalities with a sum of moduli |
 | Functions, composition, f(x) + f(1/x) tricks | §7 Functions |
 | Word problems into linear equations | §8 Linear equations in word problems |
-| Practice sets | `Quant/Practice/Algebra-Practice.md` |
+| "Needs ₹x more to buy one" — name the leftover, not the prices | §8b The shortfall trick |
+| Symmetric system ax+by=k, bx+ay=k with a parameter; sign constraints | §8a Symmetric linear systems with a parameter |
 
 ### Logarithms — `Quant/Logarithms.md`
 
@@ -98,6 +113,7 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | GP: nth term, finite and infinite sum | §5 Geometric Progression |
 | HP and its AP reciprocal | §6 Harmonic Progression |
 | AGP and telescoping series | §7 Type 3 |
+| Telescoping 1/(n(n+1)(n+2)) — the ½ factor | §7a Telescoping with three consecutive factors |
 
 ### Percentages — `Quant/Percentages.md`
 
@@ -108,13 +124,19 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Percentage change and which base to use | §3 Percentage change and the base |
 | Reciprocal relationship (x% increase ↔ y% decrease) | §4 The reciprocal relationship |
 | Successive percentage changes | §5 Successive changes |
+| % change in a dimension → area/volume (square/cube it) | §5 Successive changes |
+| Absolute +1 cm to a side ⟹ area up 100/l %; recovering l from the % | §5a An absolute change in a dimension |
 | Population/price after successive changes | §6 Type 1 |
 | Price–consumption, expenditure constant | §7 Type 2 |
+| Price–consumption when expenditure also changes | §7a Generalised price–consumption |
+| "n more/fewer items for the same money" → find the price | §7b Recovering the actual price |
 | Percentage points vs percentage | §8 Type 3 |
 | Successive percentage of a remainder | §9 Type 4 |
+| Remainder chain with money added back; closing equation | §9a Chains with money added back |
 | Election, exam and pass-mark problems | §10 Type 5 |
 | Growth rates in DI | §11 Type 6 |
 | Percentage of a percentage | §12 Percentage of a percentage |
+| Overall % change of a composite/portfolio; swapped rates | §13 Type 7 |
 
 ### Ratio, Proportion & Variation — `Quant/Ratio-Proportion-Variation.md`
 
@@ -132,6 +154,7 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Partnership profit sharing | §10 Type 5 |
 | Ratio of ratios, chained comparisons | §11 Type 6 |
 | Redistribution and exchange word problems | §12 Type 7 |
+| Incomes in a band, multiples of 100, whole expenditures — "which cannot be" | §12a Type 8 — Ratios pinned by integrality and a range |
 
 ### Means & Weighted Averages — `Quant/Means-and-Weighted-Averages.md`
 
@@ -150,20 +173,21 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Median, mode, when the mean misleads | §11 Type 6 |
 | Averages with unknown counts | §12 Type 7 |
 | Reconstructing sub-group values from group averages | §13 Type 8 |
-| Practice sets | `Quant/Practice/Means-and-Weighted-Averages-Practice.md` |
+| Average shifts by d when a sub-group is removed; solving for n and A | §13a Type 9 — When removing a sub-group shifts the average |
 
 ### Mixtures & Alligation — `Quant/Mixtures-and-Alligation.md`
 
 | Topic / keyword | Section |
 |---|---|
+| Why quantities are the *inverse* of the distances from the mean | §1 Core idea |
 | Alligation cross, cheap/dear mixing ratio | §2 The alligation cross |
 | What alligation can and can't be applied to | §3 What alligation works on |
 | Concentration (alcohol %, milk %, purity), adulteration ratio | §4 Type 1 |
 | Repeated replacement, (1 − x/V)ⁿ | §5 Type 2 |
 | Three or more ingredients | §6 Type 3 |
 | Mixing two existing mixtures | §7 Type 4 |
+| Solving for the poured amounts from what is left in the vessel | §7a Type 4b — Component accounting |
 | Alligation on profit %, interest rates, ages, speeds | §8 Type 5 |
-| Practice sets | `Quant/Practice/Mixtures-and-Alligation-Practice.md` |
 
 ### Profit, Loss & Discount — `Quant/Profit-Loss-Discount.md`
 
@@ -194,6 +218,7 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Instalments and EMIs | §7 Type 3 |
 | Different rates in different years | §8 Type 4 |
 | Depreciation and population growth | §9 Type 5 |
+| "g% of the initial value" = simple growth; integrality pinning the rate | §9a Type 5b — Growth as a percentage of the initial value |
 | Splitting a sum between two rates | §10 Type 6 |
 | Fast CI approximation | §11 Useful approximation |
 
@@ -210,6 +235,7 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Trains crossing pole/platform/each other | §5 Trains |
 | Boats and streams, upstream/downstream | §6 Boats and streams |
 | Two people bouncing between two points, nth meeting | §7 Two-body meeting |
+| Same, but the two swap speeds on meeting | §7a Two-body meeting when the speeds are swapped |
 | √(t₁t₂) trick | §8 The √ trick |
 | Circular tracks, meeting points, meeting at start | §9 Circular tracks |
 
@@ -217,6 +243,7 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 
 | Topic / keyword | Section |
 |---|---|
+| Same time ⟹ speed ratio = distance ratio; rewrite as "A : L, B : (L − x)" | §1 Core idea |
 | "Beats by x m / x sec" language | §2 Reading the language |
 | Beat given as a distance | §3 Type 1 |
 | Beat given as a time (or both) | §4 Type 2 |
@@ -261,6 +288,7 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Men-Days-Hours (M-D-H) formula | §3 The M-D-H formula |
 | Alternate-day work, cycle method | §4 Alternate days |
 | People joining or leaving midway | §5 People joining or leaving |
+| "Leaves k days before completion" — departure pegged to an unknown finish | §5a Departures defined backwards from the finish |
 | Splitting wages by work done | §6 Wages |
 | Pipes filling/emptying, leaks, staggered opening | §7 Pipes and cisterns |
 | Fractions of the work | §8 Fractions of the work |
@@ -268,18 +296,88 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Ratio of work rates | §10 Ratio of work rates |
 | Partial work then remainder by one worker | §11 Partial work |
 
-### Geometry & Mensuration — `Quant/Geometry-Mensuration.md`
+### Triangles — `Quant/Triangles.md`
 
 | Topic / keyword | Section |
 |---|---|
-| How to approach any geometry question | §1 How to approach |
-| Triangles: similarity, area, centres, Pythagorean triples | §2 Triangles |
-| Folding and crease problems | §3 Type 1 |
-| Circles: chords, tangents, cyclic quadrilaterals | §4 Circles |
-| Tangential quadrilaterals, incircle radius | §5 Type 2 |
-| Optimisation: fixed area, minimum perimeter | §6 Type 3 |
-| Solids: cylinder, cone, sphere, frustum | §7 Mensuration — solids |
-| Polygons, interior/exterior angles, diagonals | §8 Polygons |
+| How to approach any plane-geometry question | §1 How to approach |
+| Parallel lines, transversals, angle chasing | §2 Lines and angles |
+| Area formulas, Heron, Pythagorean triples, 13-14-15 | §3 Triangles — the essential set |
+| Acute / right / obtuse from the largest side | §3 Triangles — the essential set |
+| Similarity, AA, areas in ratio k² | §4 Similarity, congruence and area ratios |
+| Line parallel to a side (BPT / Thales) | §4 Similarity, congruence and area ratios |
+| Same height ⟹ area ratio = base ratio | §4 Similarity, congruence and area ratios |
+| Centroid, incentre, circumcentre, orthocentre; where each sits | §5 The four centres |
+| r and R for a right triangle | §5 The four centres |
+| Angle bisector theorem, midpoint theorem, medial triangle | §6 Medians, bisectors and the midpoint theorem |
+| Median length (Apollonius) | §6 Medians, bisectors and the midpoint theorem |
+| Obtuse triangle: altitude foot outside the base, X–M–N ordering | §7 Type 1 — Altitudes |
+| Altitude on the hypotenuse, CD² = AD·DB, geometric means | §7 Type 1 — Altitudes |
+| Point on a circle, perpendicular to the diameter | §7 Type 1 — Altitudes |
+| Cevians and area splitting | §8 Type 2 — Splitting area with cevians |
+| Sine rule (and = 2R), cosine rule | §9 Sine rule and cosine rule |
+| Angles of elevation and depression | §10 Type 3 — Heights and distances |
+| Folding and crease problems | §11 Type 4 — Folding and creases |
+
+### Circles — `Quant/Circles.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Circumference, area, arc, sector | §1 The essential set |
+| Segment area = sector − triangle | §1 The essential set |
+| Angle at the centre, angle in a semicircle, same segment | §2 Chords and angles |
+| Chord length from the distance to the centre | §2 Chords and angles |
+| Tangent length, equal tangents, power of a point | §3 Tangents |
+| Tangent–chord (alternate segment) theorem | §3 Tangents |
+| Cyclic quadrilaterals, Brahmagupta, Ptolemy | §4 Cyclic quadrilaterals |
+| Shaded regions, overlapping areas, leaf/petal | §5 Type 1 — Segments and shaded regions |
+| Two circles: touching, intersecting, common tangents, common chord | §6 Type 2 — Two circles |
+| Circles inscribed in and circumscribing figures; packed circles | §7 Type 3 — Inscribed and circumscribing |
+
+### Quadrilaterals & Polygons — `Quant/Quadrilaterals-and-Polygons.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Which shape has which property | §1 The quadrilateral family |
+| Perpendicular diagonals ⟹ area ½d₁d₂; Varignon midpoint parallelogram | §1 The quadrilateral family |
+| Parallelogram law, rhombus and square relations | §2 Parallelogram, rhombus, rectangle, square |
+| Trapezium area, midsegment, isosceles trapezium | §3 Trapezium |
+| Tangential quadrilaterals (Pitot), incircle radius, kites | §4 Type 1 — Tangential quadrilaterals |
+| Interior/exterior angles, number of diagonals | §5 Polygons — angles and diagonals |
+| Regular polygon inradius, circumradius, area | §6 Regular polygons — the metric formulas |
+| Optimisation: fixed area or perimeter; the wall variant | §7 Type 2 — Optimisation |
+
+### Mensuration — `Quant/Mensuration.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Volume and surface area of every standard solid | §1 The solid formula table |
+| Cone : sphere : cylinder = 1 : 2 : 3 | §1 The solid formula table |
+| Linear ×k ⟹ area ×k², volume ×k³ | §2 The scaling rule |
+| Melting and recasting, wire drawing, volume conservation | §3 Type 1 — Recasting |
+| Combined solids and the faces that disappear | §4 Type 2 — Combined solids |
+| Hollow cylinders, pipes, shells, open tanks | §5 Type 3 — Hollow solids |
+| Frustum; cone cut parallel to the base (1 : 7 halfway) | §6 Frustum and cones cut parallel |
+| Painted cube cut into n³ pieces | §7 Type 4 — The painted cube |
+| Cube/cuboid cut by a plane, volume ratio of the two parts | §8 Type 5 — Cutting a solid with a plane |
+| Ant on a box, shortest path across a surface | §9 Type 6 — Unfolding |
+| Sphere in a cube, cube in a sphere, sphere in a cylinder | §10 Inscribed and circumscribed solids |
+| Liquid level, immersion, partly filled cone | §11 Type 7 — Liquid level and immersion |
+
+### Coordinate Geometry — `Quant/Coordinate-Geometry.md`
+
+| Topic / keyword | Section |
+|---|---|
+| When coordinates beat a synthetic argument; choosing the origin | §1 When to reach for coordinates |
+| Distance, midpoint, section formula, centroid | §2 Points |
+| Slope, the five forms of a line, axis intercepts | §3 Straight lines |
+| Parallel, perpendicular, angle, distance from a point to a line | §4 Parallel, perpendicular, angle, distance |
+| Missing vertex of a parallelogram, D = A + C − B | §5 Type 1 — Quadrilaterals from their vertices |
+| Identifying rhombus / rectangle / square from vertices | §5 Type 1 |
+| Where a diagonal meets an axis | §5 Type 1 |
+| Shoelace area, collinearity test | §6 Area from coordinates |
+| Circle equations, centre and radius, tangency | §7 Circles in coordinates |
+| Reflections and shortest-path-touching-a-line | §8 Type 2 — Reflections and shortest paths |
 
 ### Permutations, Combinations & Probability — `Quant/PnC-Probability.md`
 
@@ -295,6 +393,7 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Number formation | §7 Number formation |
 | Selections and committees | §8 Selections and committees |
 | Distribution: identical vs distinct objects | §9 Distribution |
+| Non-decreasing / non-increasing digit sequences, choosing with repetition | §9a Monotone sequences |
 | Derangements | §10 Derangements |
 | Grid paths, handshakes, diagonals | §11 Grid paths, handshakes |
 | Dictionary rank of a word | §12 Dictionary rank |
@@ -303,6 +402,20 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Conditional probability | §15 Conditional probability |
 | Repeated trials, expected value | §16 Repeated trials |
 
+### Set Theory & Venn Diagrams — `Quant/Set-Theory-Venn.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Fixed totals, degrees of freedom | §1 The core idea |
+| Two sets: union, both, exactly one, neither | §2 Two sets |
+| Three sets: inclusion–exclusion, exactly one/two/three | §3 Three sets |
+| Two independent attributes → 2×2 grid, one free cell | §4 The 2×2 classification table |
+| Percentages in a 2×2 table, choosing the total | §5 Type 1 |
+| Checking a question is self-consistent | §5 Type 1 (consistency trap) |
+| "At least / at most" → maximise or minimise a cell | §6 Type 2 |
+| Max and min of an overlap | §7 Type 3 |
+| Set questions inside DI caselets | §8 Type 4 |
+
 ### Reference and practice
 
 | Resource | File |
@@ -310,12 +423,12 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Tables 11–25, squares, cubes, roots, powers | `Quant/Reference/Calculation-Toolkit.md` §1–5 |
 | Fraction ↔ percentage table | `Quant/Reference/Calculation-Toolkit.md` §6 |
 | Primes, divisibility, cyclicity, factorials | `Quant/Reference/Calculation-Toolkit.md` §7–9 |
+| Reciprocal decimals (1/7, 1/13 families) worth recognising | `Quant/Reference/Calculation-Toolkit.md` §10 |
+| Constants and unit conversions | `Quant/Reference/Calculation-Toolkit.md` §11 |
 | Fast-arithmetic techniques, % shortcuts, growth multipliers, series sums | `Quant/Reference/Calculation-Toolkit.md` §12–15 |
 | Interactive calculation drill | `Quant/Reference/Flashcard-Drill.html` |
-| Algebra practice sets + answer key | `Quant/Practice/Algebra-Practice.md` |
-| Means & weighted averages practice sets | `Quant/Practice/Means-and-Weighted-Averages-Practice.md` |
-| Mixtures & alligation practice sets | `Quant/Practice/Mixtures-and-Alligation-Practice.md` |
-| Interactive mock test (129 questions) | `Quant/Practice/CAT-Quant-Test.html` |
+| Practice set for any topic (all 20) | `Quant/Practice/<Topic>-Practice.md` |
+| Interactive mock test (692 questions, all 20 topics) | `Quant/Practice/CAT-Quant-Test.html` |
 
 ---
 
@@ -331,6 +444,64 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | Calendars ↔ Remainders | odd days are just mod 7 (Number System §6) |
 | Percentages ↔ CI | successive % change and compound interest are the same multiplier |
 | Progressions ↔ Logarithms | logs of a GP form an AP |
+| Set theory ↔ Percentages | survey percentages become whole numbers once the total is the LCM (Set Theory §5) |
+| Set theory ↔ PnC | inclusion–exclusion is one identity used for both counting and P(A∪B) |
+| Algebra ↔ Progressions | polynomial differences telescope, so P(b) − P(a) is a series sum (Algebra §3a, Progressions §7) |
+| Coordinate ↔ Triangles | folding is reflection; the same figure is often faster on axes (Coordinate §8, Triangles §11) |
+| Triangles ↔ Circles | a diameter creates a right angle, so circle questions become triangle questions (Circles §2, Triangles §7) |
+| Mensuration ↔ Percentages | a % change in a dimension cubes for volume (Mensuration §2, Percentages §5) |
+| Coordinate ↔ Weighted averages | the section formula *is* a weighted average (Coordinate §2) |
+| Interest ↔ Number System | integer-rate questions become divisibility conditions (SCI §9a, Number System §11) |
+| Number System ↔ Progressions | repunits and digit patterns are geometric sums (Number System §12a, Progressions §5) |
+| Ratio ↔ Number System | "whole rupees" turns a ratio into a divisibility condition (Ratio §12a, Number System §11) |
+
+---
+
+## Practice — where to drill each topic
+
+Every topic file has a matching set in `Quant/Practice/`. Hints in those sets cite the section number of the notes that holds the intended method, so a wrong answer points you straight back to the right paragraph. Each set ends with an **error-audit table** mapping question numbers to the specific mistake each one is built to catch — read that before re-reading theory.
+
+| To drill | Open |
+|---|---|
+| any single topic | `Quant/Practice/<Topic>-Practice.md` |
+| under time, with scoring | `Quant/Practice/CAT-Quant-Test.html` — 692 questions across all 20 topics |
+| only the exam-feel sets | the same file → **Mixed sets only** |
+| mental calculation speed | `Quant/Reference/Flashcard-Drill.html` |
+| vocabulary | `VARC/Practice/Vocab-Trainer.html` — definition, synonym and antonym MCQs |
+
+All of it is **generated from JSON** in `_build/`, never written by hand — the `.md` and the interactive test come from the same source, so they cannot disagree. See the README section "How the generated files work" before editing anything under `Practice/`.
+
+---
+
+## VARC
+
+| File | Covers |
+|---|---|
+| `VARC/Vocabulary.md` | 127 words in 28 meaning-groups, with synonyms, antonyms and usage |
+| `VARC/Practice/Vocab-Trainer.html` | interactive definition / synonym / antonym MCQs; tracks the words you keep missing |
+
+Words are grouped **by meaning**, not alphabetically, because CAT tests discrimination between near-synonyms far more often than raw recall. The trainer exploits this: a synonym question always plants one antonym of the same word among the options, and an antonym question plants one synonym.
+
+### Meaning-group lookup — `VARC/Vocabulary.md`
+
+Find the sense you want here, then open that `##` section in `Vocabulary.md`. The full word list per group lives in that file's own **Groups** table at the top — not duplicated here.
+
+| Sense | Section | Sense | Section |
+|---|---|---|---|
+| praising, revering | Praise and reverence | criticising, attacking | Criticism and attack |
+| lying, misleading | Deception and insincerity | talking too much | Excessive speech |
+| terse, tight-lipped | Brevity and reserve | refusing to budge | Stubbornness |
+| yielding, fawning | Submission and flattery | angry, aggressive | Anger and hostility |
+| soothing, unruffled | Calming and composure | too much of something | Excess and abundance |
+| too little, sparing | Scarcity and thrift | open-handed | Generosity |
+| fading, short-lived | Decline and impermanence | lasting, unchanging | Permanence |
+| hard vs easy to understand | Obscurity and clarity | careful, sound judgement | Caution and judgement |
+| daring, reckless | Boldness and rashness | fearful, hesitant | Timidity |
+| overbearing pride | Arrogance | modest, self-lowering | Humility |
+| hardworking, exacting | Diligence | idle, drifting | Laziness and aimlessness |
+| wise, well-read | Insight and learning | slow-witted, easily fooled | Dullness and gullibility |
+| agreement, peace-making | Harmony and reconciliation | disagreement, splitting | Conflict and division |
+| starting, emerging | Beginning and growth | confirming or disputing a claim | Appeasement of doubt and proof |
 
 ---
 
@@ -338,10 +509,9 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 
 - **Data Interpretation** — no file yet. Percentages §11 covers growth rates in a DI context, but nothing on caselets, tables or graph reading.
 - **Logical Reasoning** — no file yet.
-- **VARC** — no file yet.
-- **Set theory / Venn diagrams** — overlaps counting; not yet a file.
-- **Coordinate geometry** — not yet covered in `Geometry-Mensuration.md`.
-- **Practice sets** exist only for Algebra, Means & Weighted Averages, and Mixtures & Alligation.
+- **VARC beyond vocabulary** — no file yet on reading comprehension, para-jumbles, para-summary or odd-one-out.
+- **Thin practice sets for the four geometry files** — splitting `Geometry-Mensuration.md` redistributed its 38 questions as Triangles 9, Circles 7, Quadrilaterals & Polygons 13, Mensuration 9. The notes now cover far more than the drills do: nothing yet tests recasting, combined solids, the painted cube, unfolding, segment area, two-circle configurations, the sine/cosine rule, heights and distances, cevian area splitting or Apollonius. Add questions to the relevant `_build/topics/*.json` and re-run the generator.
+- **Practice sets for Set Theory and Coordinate Geometry** — both concept files exist but neither has a generated practice set. Each needs a `_build/topics/*.json` and a generator re-run; do not hand-write the `-Practice.md`.
 
 ---
 
@@ -351,30 +521,44 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 CAT Prep/
 ├── Index.md                              ← you are here
 ├── README.md
-└── Quant/
-    ├── Algebra.md
-    ├── Calendars.md
-    ├── Clocks.md
-    ├── Geometry-Mensuration.md
-    ├── Logarithms.md
-    ├── Means-and-Weighted-Averages.md
-    ├── Mixtures-and-Alligation.md
-    ├── Number-System.md
-    ├── Percentages.md
-    ├── PnC-Probability.md
-    ├── Profit-Loss-Discount.md
-    ├── Progressions-AP-GP.md
-    ├── Races.md
-    ├── Ratio-Proportion-Variation.md
-    ├── Simple-Compound-Interest.md
-    ├── Time-Speed-Distance.md
-    ├── Time-Work-Pipes-Cisterns.md
-    ├── Practice/
-    │   ├── Algebra-Practice.md
-    │   ├── Means-and-Weighted-Averages-Practice.md
-    │   ├── Mixtures-and-Alligation-Practice.md
-    │   └── CAT-Quant-Test.html
-    └── Reference/
-        ├── Calculation-Toolkit.md
-        └── Flashcard-Drill.html
+├── Quant/
+│   ├── Algebra.md
+│   ├── Calendars.md
+│   ├── Circles.md
+│   ├── Clocks.md
+│   ├── Coordinate-Geometry.md
+│   ├── Mensuration.md
+│   ├── Logarithms.md
+│   ├── Means-and-Weighted-Averages.md
+│   ├── Mixtures-and-Alligation.md
+│   ├── Number-System.md
+│   ├── Percentages.md
+│   ├── PnC-Probability.md
+│   ├── Profit-Loss-Discount.md
+│   ├── Progressions-AP-GP.md
+│   ├── Quadrilaterals-and-Polygons.md
+│   ├── Races.md
+│   ├── Ratio-Proportion-Variation.md
+│   ├── Set-Theory-Venn.md
+│   ├── Simple-Compound-Interest.md
+│   ├── Time-Speed-Distance.md
+│   ├── Triangles.md
+│   ├── Time-Work-Pipes-Cisterns.md
+│   ├── Practice/
+│   │   ├── <Topic>-Practice.md        ← one per topic, all 20
+│   │   ├── CAT-Quant-Test.html        ← interactive, 692 questions
+│   │   └── _build/
+│   │       ├── gen_practice.py        ← generator
+│   │       └── topics/*.json          ← question data (source of truth)
+│   └── Reference/
+│       ├── Calculation-Toolkit.md
+│       └── Flashcard-Drill.html
+└── VARC/
+    ├── Vocabulary.md
+    └── Practice/
+        ├── Vocab-Trainer.html
+        └── _build/
+            ├── gen_vocab.py           ← generator
+            ├── trainer_template.html
+            └── words.json             ← word data (source of truth)
 ```

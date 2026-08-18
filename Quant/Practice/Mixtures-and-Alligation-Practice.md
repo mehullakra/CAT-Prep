@@ -4,7 +4,7 @@
 >
 > **TITA** = type-in-the-answer (no options). **MCQ** = choose one.
 >
-> Suggested timing: 1.5 min/question for Sets A–F, and attempt the Mixed Set in one 15-minute block.
+> Suggested timing: 1.5 min/question for Sets A–F, and attempt the Mixed Set in one timed block.
 >
 > **Run the §2 sanity check on every ratio you produce**: the mean sits closer to whichever ingredient dominates. If your ratio says otherwise, you read the cross straight instead of inverted.
 
@@ -44,7 +44,7 @@
 
 ---
 
-## Set B — Concentration, water and adulteration
+## Set B — Concentration, water & adulteration
 
 **B1.** (TITA) How much water (in litres) must be added to 60 litres of a 20% acid solution to bring it down to 15%?
 
@@ -150,7 +150,7 @@
 
 ---
 
-## Set E — Alligation on profit, interest, ages and speed
+## Set E — Profit, interest, ages & speed
 
 **E1.** (TITA) A man invests ₹12,000, part at 10% and the rest at 14%, earning 11.5% overall. Find the amount (in ₹) invested at 10%.
 
@@ -184,7 +184,7 @@
 
 ---
 
-## Set F — Harder blends and three ingredients
+## Set F — Harder blends & three ingredients
 
 **F1.** (TITA) Three varieties of tea costing ₹126, ₹135 and ₹175 per kg are mixed in the ratio 1 : 1 : 2. Find the cost (in ₹) per kg of the mixture.
 
@@ -227,7 +227,7 @@
 
 ---
 
-## Mixed Set — exam feel (15 minutes)
+## Mixed Set — Mixed Set — exam feel
 
 **M1.** (MCQ) In what ratio must wheat at ₹24/kg be mixed with wheat at ₹36/kg to get a mixture worth ₹30.50/kg?
 
@@ -275,81 +275,80 @@
 **M10.** (TITA) Sugar at ₹7.20/kg is mixed with sugar at ₹5.70/kg so that the mixture, sold at ₹7.20/kg, yields a 20% profit. The ratio of the ₹7.20 variety to the ₹5.70 variety is 1 : k. Find k.
 
 ---
----
 
-# Answer Key
+# Answer key
 
 ## Set A
 
-**A1 — (a) 3 : 1.** c = 62, d = 72, m = 64.5. d − m = 7.5, m − c = 2.5 ⟹ cheap : dear = 7.5 : 2.5 = 3 : 1. Check: 64.5 is close to 62, so there must be far more of the cheap variety ✓.
+**A1 — (a) 3 : 1.** c = 62, d = 72, m = 64.5. d − m = 7.5, m − c = 2.5 ⟹ cheap : dear = 7.5 : 2.5 = **3 : 1**. Check: 64.5 is close to 62, so there must be far more of the cheap variety ✓.
 
 **A2 — ₹32.50.** (5 × 28 + 3 × 40)/8 = (140 + 120)/8 = 260/8 = 32.5.
 
 **A3 — k = 4.** SP = 32 at 25% gain ⟹ CP of mixture = 32/1.25 = 25.6. c = 0, d = 32, m = 25.6. Water : Milk = (32 − 25.6) : 25.6 = 6.4 : 25.6 = 1 : 4.
 
-**A4 — (a) 7 : 3.** (20 − 16.5) : (16.5 − 15) = 3.5 : 1.5 = 7 : 3.
+**A4 — (a) 7 : 3.** (20 − 16.5) : (16.5 − 15) = 3.5 : 1.5 = **7 : 3**.
 
-**A5 — ₹55.** (8 × 40 + 12 × 65)/20 = (320 + 780)/20 = 1100/20 = 55.
+**A5 — 55.** (8 × 40 + 12 × 65)/20 = (320 + 780)/20 = 1100/20 = **55**.
 
 ## Set B
 
-**B1 — 20 litres.** c = 0, d = 20, m = 15 ⟹ water : solution = 5 : 15 = 1 : 3. The solution is 60 litres = 3 parts ⟹ 1 part = 20 litres of water.
+**B1 — 20 litres.** c = 0, d = 20, m = 15 ⟹ water : solution = 5 : 15 = 1 : 3. The solution is 60 litres = 3 parts ⟹ 1 part = **20 litres** of water.
 
-**B2 — (a) 1 : 2.** (60 − 50) : (50 − 30) = 10 : 20 = 1 : 2 (the 30% solution first).
+**B2 — (a) 1 : 2.** (60 − 50) : (50 − 30) = 10 : 20 = **1 : 2** (the 30% solution first).
 
 **B3 — 10 litres.** Salt = 4 litres and stays fixed. For salt to be 10%, total = 4/0.10 = 40 litres ⟹ evaporate 50 − 40 = 10.
 
-**B4 — (b) 20 litres.** Water = 10 litres and stays fixed. For water to be 10%, total = 100 ⟹ add 100 − 80 = 20 litres of milk.
+**B4 — (b) 20 litres.** Water = 10 litres and stays fixed. For water to be 10%, total = 100 ⟹ add 100 − 80 = **20 litres** of milk.
 
-**B5 — 12.5 litres.** CP of mixture = 45/1.125 = 40. Water : Milk = (45 − 40) : 40 = 5 : 40 = 1 : 8 ⟹ 100 litres of milk needs 12.5 litres of water.
+**B5 — 12.5 litres.** CP of mixture = 45/1.125 = 40. Water : Milk = (45 − 40) : 40 = 5 : 40 = 1 : 8 ⟹ 100 litres of milk needs **12.5 litres** of water.
 
 ## Set C
 
 **C1 — 32 litres.** 50 × (1 − 10/50)² = 50 × (4/5)² = 50 × 16/25 = 32.
 
-**C2 — (a) 343 : 169.** Wine = 64 × (7/8)³ = 64 × 343/512 = 42.875. Water = 21.125. Ratio = 343 : 169. (Option (c) is the same numbers inverted — a common slip.)
+**C2 — (a) 343 : 169.** Wine = 64 × (7/8)³ = 64 × 343/512 = 42.875. Water = 21.125. Ratio = **343 : 169**. (Option (c) is the same numbers inverted — a common slip.)
 
-**C3 — 3.** Factor per operation = (729 − 243)/729 = 2/3. 729 × (2/3)ⁿ = 216 ⟹ (2/3)ⁿ = 8/27 ⟹ n = 3.
+**C3 — 3.** Factor per operation = (729 − 243)/729 = 2/3. 729 × (2/3)ⁿ = 216 ⟹ (2/3)ⁿ = 8/27 ⟹ n = **3**.
 
 **C4 — 7.6 litres.** Milk = 40 × (9/10)² = 32.4 ⟹ water = 40 − 32.4 = 7.6.
 
-**C5 — (a) 9/16.** ((20 − 5)/20)² = (3/4)² = 9/16.
+**C5 — (a) 9/16.** ((20 − 5)/20)² = (3/4)² = **9/16**.
 
-**C6 — 64%.** Milk initially = 72 litres. Removing 18 of 90 leaves the factor (90 − 18)/90 = 4/5, so milk = 72 × 4/5 = 57.6 ⟹ 57.6/90 = 64%. (Applying the factor to 90 instead of 72 is the trap.)
+**C6 — 64%.** Milk initially = 72 litres. Removing 18 of 90 leaves the factor (90 − 18)/90 = 4/5, so milk = 72 × 4/5 = 57.6 ⟹ 57.6/90 = **64%**. (Applying the factor to 90 instead of 72 is the trap.)
 
 ## Set D
 
-**D1 — (a) 2 : 5.** Milk fractions: A = 5/6, B = 3/5, target = 2/3. d − m = 5/6 − 2/3 = 1/6; m − c = 2/3 − 3/5 = 1/15. B : A = (1/6) : (1/15) = 15 : 6 = 5 : 2 ⟹ A : B = **2 : 5**. Check: 2 parts A + 5 parts B gives milk 5/3 + 3 = 14/3 out of 7 = 2/3 ✓.
+**D1 — (a) 2 : 5.** Milk fractions: A = 5/6, B = 3/5, target = 2/3. d − m = 5/6 − 2/3 = 1/6; m − c = 2/3 − 3/5 = 1/15. B : A = (1/6) : (1/15) = 15 : 6 = 5 : 2 ⟹ A : B = ****2 : 5****. Check: 2 parts A + 5 parts B gives milk 5/3 + 3 = 14/3 out of 7 = 2/3 ✓.
 
-**D2 — 10 litres.** Milk = 42, water = 18. Milk is fixed; for a 3 : 2 ratio milk is 3/5 of the total ⟹ total = 70 ⟹ add 10 litres of water.
+**D2 — 10 litres.** Milk = 42, water = 18. Milk is fixed; for a 3 : 2 ratio milk is 3/5 of the total ⟹ total = 70 ⟹ add **10 litres** of water.
 
-**D3 — (a) 11 : 24.** Spirit fractions: first = 8/11, second = 5/6, target = 4/5. d − m = 5/6 − 4/5 = 1/30; m − c = 4/5 − 8/11 = 4/55. first : second = (1/30) : (4/55) = 11 : 24. Check: 11 parts give spirit 8, water 3; 24 parts give spirit 20, water 4 ⟹ 28 : 7 = 4 : 1 ✓.
+**D3 — (a) 11 : 24.** Spirit fractions: first = 8/11, second = 5/6, target = 4/5. d − m = 5/6 − 4/5 = 1/30; m − c = 4/5 − 8/11 = 4/55. first : second = (1/30) : (4/55) = **11 : 24**. Check: 11 parts give spirit 8, water 3; 24 parts give spirit 20, water 4 ⟹ 28 : 7 = 4 : 1 ✓.
 
-**D4 — 54%.** Milk = 20 × 3/4 + 30 × 2/5 = 15 + 12 = 27 out of 50 ⟹ 54%.
+**D4 — 54%.** Milk = 20 × 3/4 + 30 × 2/5 = 15 + 12 = 27 out of 50 ⟹ **54%**.
 
 **D5 — 20 litres.** Water = 16 initially; total stays 40. For milk : water = 4 : 1, water must be 8 litres. Removing x litres of mixture removes 0.4x of water ⟹ 16 − 0.4x = 8 ⟹ x = 20.
 
 ## Set E
 
-**E1 — ₹7,500.** (14 − 11.5) : (11.5 − 10) = 2.5 : 1.5 = 5 : 3 ⟹ 10% share = 12000 × 5/8 = 7500.
+**E1 — 7,500.** (14 − 11.5) : (11.5 − 10) = 2.5 : 1.5 = 5 : 3 ⟹ 10% share = 12000 × 5/8 = 7500.
 
-**E2 — (b) 37.5 kg.** c = 12, d = 20, m = 15. qty at 12% : qty at 20% = (20 − 15) : (15 − 12) = 5 : 3 ⟹ 20% quantity = 100 × 3/8 = 37.5 kg.
+**E2 — (b) 37.5 kg.** c = 12, d = 20, m = 15. qty at 12% : qty at 20% = (20 − 15) : (15 − 12) = 5 : 3 ⟹ 20% quantity = 100 × 3/8 = **37.5 kg**.
 
-**E3 — 10.** Girls : Boys = (16 − 15) : (15 − 12) = 1 : 3. Total 40 = 4 parts ⟹ girls = 10, boys = 30. Check: (10 × 12 + 30 × 16)/40 = 600/40 = 15 ✓.
+**E3 — 10.** Girls : Boys = (16 − 15) : (15 − 12) = 1 : 3. Total 40 = 4 parts ⟹ girls = 10, boys = 30. Check: (**10** × 12 + 30 × 16)/40 = 600/40 = 15 ✓.
 
-**E4 — (c) 60 litres.** CP of mixture = 99/1.1 = 90. (95 − 90) : (90 − 80) = 5 : 10 = 1 : 2, i.e. ₹80 : ₹95 = 1 : 2 ⟹ 30 litres at ₹80 means 60 litres at ₹95.
+**E4 — (c) 60 litres.** CP of mixture = 99/1.1 = 90. (95 − 90) : (90 − 80) = 5 : 10 = 1 : 2, i.e. ₹80 : ₹95 = 1 : 2 ⟹ 30 litres at ₹80 means **60 litres** at ₹95.
 
 **E5 — 1.5 hours.** t₄₀ : t₆₀ = (60 − 46) : (46 − 40) = 14 : 6 = 7 : 3. Total 5 h = 10 parts ⟹ t₆₀ = 1.5 h. (Legal because the weights here are times, not distances.)
 
 ## Set F
 
-**F1 — ₹152.75.** (1 × 126 + 1 × 135 + 2 × 175)/4 = (126 + 135 + 350)/4 = 611/4 = 152.75.
+**F1 — 152.75.** (1 × 126 + 1 × 135 + 2 × 175)/4 = (126 + 135 + 350)/4 = 611/4 = **152.75**.
 
-**F2 — (a) 2 : 3.** CP of mixture = 21.60/1.2 = 18. (20 − 18) : (18 − 15) = 2 : 3.
+**F2 — (a) 2 : 3.** CP of mixture = 21.60/1.2 = 18. (20 − 18) : (18 − 15) = **2 : 3**.
 
-**F3 — 20 litres.** Milk = 60, water = 20 and fixed. For 4 : 1, water is 1/5 of the total ⟹ total = 100 ⟹ add 20 litres of milk.
+**F3 — 20 litres.** Milk = 60, water = 20 and fixed. For 4 : 1, water is 1/5 of the total ⟹ total = 100 ⟹ add **20 litres** of milk.
 
-**F4 — (a) 20%.** Selling at CP with a 25% gain means water : milk = 1 : 4, so water is 1/5 = 20% of the mixture. (25% is the trap — that's water as a percentage of the *milk*.)
+**F4 — (a) 20%.** Selling at CP with a 25% gain means water : milk = 1 : 4, so water is 1/5 = **20%** of the mixture. (25% is the trap — that's water as a percentage of the *milk*.)
 
 **F5 — 21 litres.** Let total = 12k, so A = 7k, B = 5k. Drawing 9 litres removes 9 × 7/12 = 21/4 of A and 9 × 5/12 = 15/4 of B, and 9 litres of B go back in. (7k − 21/4)/(5k + 21/4) = 7/9 ⟹ 63k − 189/4 = 35k + 147/4 ⟹ 28k = 84 ⟹ k = 3 ⟹ A = 21.
 
@@ -357,21 +356,21 @@
 
 ## Mixed Set
 
-**M1 — (a) 11 : 13.** (36 − 30.5) : (30.5 − 24) = 5.5 : 6.5 = 11 : 13.
+**M1 — (a) 11 : 13.** (36 − 30.5) : (30.5 − 24) = 5.5 : 6.5 = **11 : 13**.
 
 **M2 — 8 litres.** 27 × (1 − 9/27)³ = 27 × (2/3)³ = 27 × 8/27 = 8.
 
-**M3 — (a) 1 : 2.** Gold fractions: 5/8, 5/16, target 5/12. d − m = 5/8 − 5/12 = 5/24; m − c = 5/12 − 5/16 = 5/48. second : first = (5/24) : (5/48) = 2 : 1 ⟹ first : second = 1 : 2.
+**M3 — (a) 1 : 2.** Gold fractions: 5/8, 5/16, target 5/12. d − m = 5/8 − 5/12 = 5/24; m − c = 5/12 − 5/16 = 5/48. second : first = (5/24) : (5/48) = 2 : 1 ⟹ first : second = **1 : 2**.
 
 **M4 — 8 litres.** c = 0, d = 32, m = 24 ⟹ water : milk = 8 : 24 = 1 : 3. Milk = 24 ⟹ water = 8.
 
-**M5 — (b) ₹800.** Overall rate = 104/1600 = 6.5%. (8 − 6.5) : (6.5 − 5) = 1 : 1 ⟹ ₹800 at each rate.
+**M5 — (b) ₹800.** Overall rate = 104/1600 = 6.5%. (8 − 6.5) : (6.5 − 5) = 1 : 1 ⟹ **₹800** at each rate.
 
-**M6 — 50 litres.** Water = 10 litres and fixed. For water to be 10%, total = 100 ⟹ add 50 litres of milk.
+**M6 — 50 litres.** Water = 10 litres and fixed. For water to be 10%, total = 100 ⟹ add **50 litres** of milk.
 
 **M7 — (b) 16 litres.** Total = 5k, A = 4k, B = k. Removing 10 litres takes out 8 of A and 2 of B, and 10 of B go back. (4k − 8)/(k + 8) = 2/3 ⟹ 12k − 24 = 2k + 16 ⟹ k = 4 ⟹ A = 16.
 
-**M8 — 15.** Boys : Girls = (71 − 60) : (60 − 55) = 11 : 5. Total 48 = 16 parts ⟹ girls = 15, boys = 33. Check: (33 × 55 + 15 × 71)/48 = 2880/48 = 60 ✓.
+**M8 — 15.** Boys : Girls = (71 − 60) : (60 − 55) = 11 : 5. Total 48 = 16 parts ⟹ girls = 15, boys = 33. Check: (33 × 55 + **15** × 71)/48 = 2880/48 = 60 ✓.
 
 **M9 — (b) 64%.** Each operation multiplies the milk by 0.8 ⟹ (0.8)² = 0.64.
 

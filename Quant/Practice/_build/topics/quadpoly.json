@@ -1,0 +1,211 @@
+{
+ "key": "quadpoly",
+ "order": 104,
+ "name": "Quadrilaterals & Polygons",
+ "notes": "Quadrilaterals-and-Polygons.md",
+ "file": "Quadrilaterals-and-Polygons-Practice.md",
+ "perQ": 105,
+ "intro": [
+  "**Classify the shape before writing a formula.** Most errors here are applying a rhombus fact to a parallelogram, or a cyclic fact to a general quadrilateral (§1).",
+  "For anything asking for the number of sides, start from the exterior angle 360/n — it is several times faster than the interior-angle formula (§5)."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "Quadrilaterals",
+   "qs": [
+    {
+     "id": "A1",
+     "t": "tita",
+     "q": "A quadrilateral circumscribes a circle. Three consecutive sides measure 6, 8 and 9. Find the fourth side.",
+     "a": 7,
+     "check": "6+9-8",
+     "h": "§4 — in a tangential quadrilateral, the two pairs of opposite sides have equal sums.",
+     "s": "a + c = b + d ⟹ 6 + 9 = 8 + d ⟹ d = <b>7</b>."
+    },
+    {
+     "id": "A2",
+     "t": "mcq",
+     "q": "The area of a rhombus with diagonals 24 and 10 is",
+     "o": [
+      "100",
+      "120",
+      "240",
+      "260"
+     ],
+     "a": 1,
+     "h": "§2 — half the product of the diagonals. Forgetting the half is the planted error.",
+     "s": "½ × 24 × 10 = <b>120</b>."
+    },
+    {
+     "id": "A3",
+     "t": "tita",
+     "q": "A trapezium has parallel sides 12 and 20 and height 9. Find its area.",
+     "a": 144,
+     "check": "0.5*32*9",
+     "h": "§3 — ½ (sum of the parallel sides) × height.",
+     "s": "½ × 32 × 9 = <b>144</b>."
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Polygons",
+   "qs": [
+    {
+     "id": "B1",
+     "t": "tita",
+     "q": "Find the number of diagonals of a decagon.",
+     "a": 35,
+     "check": "10*7//2",
+     "h": "§5 — n(n − 3)/2.",
+     "s": "10 × 7/2 = <b>35</b>."
+    },
+    {
+     "id": "B2",
+     "t": "mcq",
+     "q": "The interior angle of a regular polygon is 156°. The number of sides is",
+     "o": [
+      "12",
+      "15",
+      "18",
+      "20"
+     ],
+     "a": 1,
+     "h": "§5 — go via the exterior angle, which is always 360/n. Much faster than the interior-angle formula.",
+     "s": "Exterior = 180 − 156 = 24° ⟹ n = 360/24 = <b>15</b>."
+    },
+    {
+     "id": "B3",
+     "t": "tita",
+     "q": "The sum of the interior angles of a polygon is 1440°. Find the number of sides.",
+     "a": 10,
+     "check": "1440//180+2",
+     "h": "§5 — (n − 2) × 180.",
+     "s": "(n − 2)180 = 1440 ⟹ n = <b>10</b>."
+    },
+    {
+     "id": "B4",
+     "t": "mcq",
+     "q": "A regular hexagon of side 6 has area",
+     "o": [
+      "54√3",
+      "36√3",
+      "72√3",
+      "108√3"
+     ],
+     "a": 0,
+     "h": "§6 — six equilateral triangles of side 6, or (3√3/2)a².",
+     "s": "6 × (√3/4)(36) = <b>54√3</b> ≈ 93.5."
+    },
+    {
+     "id": "B5",
+     "t": "tita",
+     "q": "A polygon has 54 diagonals. Find the number of sides.",
+     "a": 12,
+     "check": "12",
+     "h": "§5 — solve n(n − 3)/2 = 54, or just test the options mentally.",
+     "s": "n² − 3n − 108 = 0 ⟹ n = <b>12</b>."
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "Areas and optimisation",
+   "qs": [
+    {
+     "id": "C1",
+     "t": "tita",
+     "q": "A rectangle has perimeter 40. Find its maximum possible area.",
+     "a": 100,
+     "check": "100",
+     "h": "§7 — for a fixed perimeter, the square maximises the area.",
+     "s": "A 10 × 10 square gives <b>100</b>."
+    },
+    {
+     "id": "C2",
+     "t": "mcq",
+     "q": "A rectangular field of area 400 m² is to be fenced. The least length of fence needed is",
+     "o": [
+      "70 m",
+      "80 m",
+      "90 m",
+      "100 m"
+     ],
+     "a": 1,
+     "h": "§7 — the dual statement: for a fixed area, the square minimises the perimeter.",
+     "s": "A 20 × 20 square ⟹ perimeter = <b>80 m</b>."
+    },
+    {
+     "id": "C3",
+     "t": "tita",
+     "q": "A rectangular plot is fenced on three sides only (a wall forms the fourth) using 60 m of fencing. Find the maximum area (in m²).",
+     "a": 450,
+     "check": "15*30",
+     "h": "§7, the wall variant — the square is no longer optimal. Write A = x(60 − 2x) and use the vertex.",
+     "s": "2x + y = 60 ⟹ A = x(60 − 2x), maximal at x = 15 ⟹ y = 30 ⟹ A = <b>450 m²</b>. (The square 15 × 15 would give only 225.)"
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (4 minutes)",
+   "block": 210,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "tita",
+     "q": "The diagonal of a square is 10√2. Find its area.",
+     "a": 100,
+     "check": "100",
+     "h": "Diagonal = a√2, or area = d²/2.",
+     "s": "a = 10 ⟹ area = <b>100</b>."
+    },
+    {
+     "id": "M2",
+     "t": "mcq",
+     "q": "The number of sides of a regular polygon whose exterior angle is 20° is",
+     "o": [
+      "15",
+      "16",
+      "18",
+      "20"
+     ],
+     "a": 2,
+     "h": "360 divided by the exterior angle.",
+     "s": "360/20 = <b>18</b>."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A1",
+   "forgetting the equal-sums property of a tangential quadrilateral, a + c = b + d (§4)"
+  ],
+  [
+   "A2, A3",
+   "dropping the ½ in the rhombus or trapezium area formula (§2, §3)"
+  ],
+  [
+   "C1, C2, C3",
+   "assuming the square is optimal even when one side is free — the wall variant has a 2 : 1 shape (§7)"
+  ],
+  [
+   "B2, B3, M2",
+   "using the interior-angle formula where the exterior angle 360/n is far quicker (§5)"
+  ],
+  [
+   "B1, B5",
+   "misremembering the diagonal count as n(n − 1)/2, which counts all the sides too (§5)"
+  ],
+  [
+   "B4",
+   "recalling the hexagon area formula instead of splitting it into six equilateral triangles (§6)"
+  ],
+  [
+   "M1",
+   "confusing a square's side with its diagonal — area is ½d² (§2)"
+  ]
+ ]
+}

@@ -157,6 +157,39 @@ Same machinery, negative direction.
 
 ---
 
+## 9a. Type 5b — Growth stated as a percentage *of the initial value*
+
+**The trap in one line:** "increases by g% **of X** every month", where X is the *initial* value, is **simple** growth, not compound. The base never moves, so the increments are equal and the totals form an AP (§1). Contrast "increases by g% every month", which does compound.
+
+After m periods: **value = X(1 + mg/100)**, so "becomes t times the initial value" means
+
+**t = 1 + mg/100**
+
+**When t and g are forced to be integers**, that equation becomes a divisibility condition, and it usually pins g down to one or two values — which is the actual work in these questions. Handle it exactly as in `Number-System.md` §11: write the condition, then find which integers satisfy it.
+
+**Method:**
+1. Decide simple or compound from whether the percentage is "of X" or unqualified.
+2. Write t = 1 + mg/100 and reduce the fraction.
+3. Impose integrality, cancelling common factors first, to get the divisibility condition on g.
+4. Apply the stated range on t to list the candidate (g, t) pairs, then pick the one the question wants.
+
+**Worked example:** A creator's subscriber count grows each month by g% of his initial count X, and after 24 months equals exactly t times the initial count, with g and t natural numbers and 3 ≤ t ≤ 15. A second creator starts with 16,000 and grows at g% per annum **compounded annually** for 2 years. Find his maximum possible final count.
+
+- Simple growth: t = 1 + 24g/100 = 1 + 6g/25
+- t integer ⟹ 25 divides 6g. Since gcd(6, 25) = 1, **25 divides g**. Write g = 25k ⟹ t = 1 + 6k.
+- 3 ≤ t ≤ 15 ⟹ 2 ≤ 6k ≤ 14 ⟹ k ∈ {1, 2} ⟹ **(g, t) = (25, 7) or (50, 13)**
+- Maximising the second creator's total means maximising g ⟹ **g = 50**
+- Compound, 2 years: 16,000 × (1.5)² = 16,000 × 2.25 = **36,000**
+
+**Traps:**
+- Compounding the first creator. "g% of X" nails the base at X — that is simple growth. Compounding would give 1.25²⁴, nowhere near an integer multiple.
+- Simple-growing the second creator. The question says *compounded annually*; 16,000 × (1 + 2 × 0.5) = 32,000 is the planted wrong answer.
+- Treating g% per **month** and g% per **annum** as one rate. The two creators share the number g, not the time unit.
+- Cancelling carelessly: 25 | 6g reduces to 25 | g only because 6 and 25 are coprime. Check the gcd before dividing.
+- Taking g = 25 because it appears first. The question asks for the **maximum**.
+
+---
+
 ## 10. Type 6 — Splitting a sum between two rates
 
 This is an alligation question in disguise. Weight by the principal.
@@ -189,6 +222,7 @@ At 5% for 3 years: 1 + 0.15 + 3(0.0025) = 1.1575 vs exact 1.157625. Accurate to 
 | CI − SI for 3 years | using the 2-year formula | Pr²(300+r)/10⁶ |
 | Rate given per annum, time in months | use months directly | convert: 6 months = ½ year |
 | SI where "interest also earns interest" is stated | SI | it's CI |
+| "increases by g% of the initial value" | compound it | base is fixed ⟹ simple growth |
 
 ---
 

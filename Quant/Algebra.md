@@ -61,6 +61,42 @@ For a cubic ax³ + bx² + cx + d with roots p, q, r:
 
 ---
 
+## 3a. Finite differences — P(x + 1) − P(x)
+
+**Core idea.** If P has degree n with leading coefficient a, then
+
+**Q(x) = P(x + 1) − P(x) has degree n − 1 and leading coefficient n·a.**
+
+Only the top term survives: (x + 1)ⁿ − xⁿ = n·xⁿ⁻¹ + (lower). Differencing is the discrete twin of differentiating and behaves the same way on degrees.
+
+The second half of the idea is that differences **telescope**:
+
+**P(b) − P(a) = Q(a) + Q(a+1) + … + Q(b−1)**
+
+So a question that hands you Q and asks for a difference of P values never requires P's coefficients at all. (Telescoping sums in general: `Progressions-AP-GP.md` §7.)
+
+**Method:**
+1. Read off deg Q = deg P − 1 and its leading coefficient n·a.
+2. Combine that with the given roots to pin Q down completely.
+3. Telescope: sum Q(k) over k = a to b − 1.
+
+**Worked example:** P(x) = x⁴ + bx³ + cx² + dx + e, and P(x + 1) − P(x) has roots 1, 2 and 3. Find P(7) − P(1).
+
+- P is degree 4, leading coefficient 1 ⟹ Q is degree **3** with leading coefficient 4 × 1 = **4**.
+- A cubic with roots 1, 2, 3 and leading coefficient 4 is fully determined: Q(x) = 4(x − 1)(x − 2)(x − 3).
+- Telescope: P(7) − P(1) = Q(1) + Q(2) + … + Q(6).
+- Q(1) = Q(2) = Q(3) = 0; Q(4) = 4·3·2·1 = 24; Q(5) = 4·4·3·2 = 96; Q(6) = 4·5·4·3 = 240.
+- Sum = 24 + 96 + 240 = **360**
+
+b, c, d and e were never needed — and could not have been found, since Q determines P only up to the constant e.
+
+**Traps:**
+- Taking Q's leading coefficient as 1 because P is monic. It is n·a = 4; dropping it divides every answer by 4.
+- Summing k = 1 to 7. P(b) − P(a) has **b − a** terms, k = a … b − 1 — here 6 terms, not 7.
+- Trying to solve for b, c, d, e first. Three conditions cannot fix four unknowns, and the question doesn't need them.
+
+---
+
 ## 4. Surds — rationalisation and equations
 
 **Conjugate rule:** multiply by the conjugate to clear a surd from a denominator.
@@ -136,6 +172,78 @@ This is the single most tested algebraic identity in CAT, usually disguised with
 
 ---
 
+## 6a. AM–GM with split terms — maximising xᵃyᵇzᶜ under a linear constraint
+
+**The shape:** "Given px + qy + rz = S with x, y, z > 0, maximise xᵃ y^b z^c."
+
+Plain AM–GM on the three terms fails, because its equality condition px = qy = rz is the optimum only when a = b = c = 1.
+
+**Core idea — split each term into as many equal pieces as its exponent.**
+
+Write px as a copies of (px/a), qy as b copies of (qy/b), rz as c copies of (rz/c), then apply AM–GM to all **n = a + b + c** pieces. Their product contains xᵃyᵇzᶜ exactly, and equality becomes
+
+**px/a = qy/b = rz/c = S/n**
+
+In words: **the constraint is divided in proportion to the exponents.**
+
+**Method:**
+1. n = sum of the exponents. Each piece equals S/n at the optimum.
+2. Read x, y, z straight off px/a = S/n, and so on.
+3. Substitute to get the maximum. You almost never need to write the inequality chain — only its equality condition.
+
+**Worked example:** If 4x + 9y + 2z = 72 with x, y, z positive reals, find the maximum value of x²y³z.
+
+- Exponents 2, 3, 1 ⟹ n = 6 pieces, each equal to 72/6 = **12**
+- 4x splits into 2 pieces of 2x ⟹ 2x = 12 ⟹ **x = 6**
+- 9y splits into 3 pieces of 3y ⟹ 3y = 12 ⟹ **y = 4**
+- 2z is a single piece ⟹ 2z = 12 ⟹ **z = 6**
+- Constraint check: 24 + 36 + 12 = 72 ✓
+- Maximum = 6² · 4³ · 6 = 36 × 64 × 6 = **13,824**
+
+(In full: 12 = (2x + 2x + 3y + 3y + 3y + 2z)/6 ≥ ((2x)²(3y)³(2z))^(1/6), so 216·x²y³z ≤ 12⁶ = 2,985,984 ⟹ x²y³z ≤ 13,824.)
+
+**The mirror version** — minimise a linear expression given a fixed product — is the same split read backwards.
+
+**Traps:**
+- Setting 4x = 9y = 2z. That is the all-exponents-1 condition; it gives 8,192, well short of 13,824.
+- Splitting by the coefficients instead of the exponents. The coefficients 4, 9, 2 stay attached to their variables; only 2, 3, 1 decide the number of pieces.
+- Applying AM–GM without the positivity condition (§6). It is a positives-only tool.
+
+---
+
+## 6b. Inequalities with a sum of moduli
+
+**Core idea.** f(x) = |x − p₁| + |x − p₂| + … is **piecewise linear and convex** — a chain of straight segments whose slope only increases as x increases. Two consequences do all the work:
+
+- The solution set of **f(x) ≤ k is a single interval** (possibly empty). It never breaks into two pieces.
+- So only the **two outermost pieces** matter. Take x far right (every bracket opens positive) and x far left (every bracket opens negative); those two linear inequalities give the endpoints. Every critical point in between can be ignored.
+
+That turns a four-case slog into two lines.
+
+**Method:**
+1. Far right: drop all the modulus signs as-is, solve for the upper endpoint.
+2. Far left: negate every bracket, solve for the lower endpoint.
+3. Confirm the set is non-empty by evaluating f at any interior critical point and checking it is ≤ k.
+4. Count integers in the closed interval: **⌊right⌋ − ⌈left⌉ + 1**.
+
+**Worked example:** For how many integer values of x is |x − 2| + |x + 1| + |2x − 5| ≤ 10?
+
+- Critical points are x = 2, −1, 2.5 — noted, then ignored.
+- **Far right** (x ≥ 2.5): (x − 2) + (x + 1) + (2x − 5) = 4x − 6 ≤ 10 ⟹ x ≤ **4**
+- **Far left** (x ≤ −1): (2 − x) + (−x − 1) + (5 − 2x) = 6 − 4x ≤ 10 ⟹ x ≥ **−1**
+- Non-empty check at x = 2: 0 + 3 + 1 = 4 ≤ 10 ✓
+- Solution set = [−1, 4]; integers −1, 0, 1, 2, 3, 4 ⟹ **6**
+
+**Where the minimum sits** (asked directly nearly as often): for |x − p₁| + … + |x − pₙ| the minimum is at the **median** of the pᵢ, or anywhere between the two middle ones when n is even. A coefficient counts as multiplicity — |2x − 5| = 2|x − 2.5| is *two* copies of the point 2.5. Here the points are −1, 2, 2.5, 2.5, so f is flat and minimal at 4 across [2, 2.5].
+
+**Traps:**
+- Case-splitting all four regions. Correct but slow, and every case is a chance to flip a sign.
+- Counting integers as right − left. A closed interval holds right − left + 1 of them: 4 − (−1) + 1 = **6**, not 5.
+- Assuming a modulus inequality always splits into two disjoint rays. True for |x| ≥ k; false for a *sum* of moduli bounded above, which is always one interval.
+- Ignoring the coefficient inside a modulus when locating the minimum. |2x − 5| carries weight 2.
+
+---
+
 ## 7. Functions (brief but tested)
 
 - **f(x) + f(1/x)** and **f(x) + f(−x)** type identities: substitute the second value into the given relation to get a second equation, then solve the pair.
@@ -164,6 +272,70 @@ That substitute-the-reciprocal move is the standard trick for the whole family.
 
 ---
 
+## 8a. Symmetric linear systems with a parameter
+
+**The shape:** ax + by = k and bx + ay = k — the same two coefficients, swapped, with the same right-hand side. CAT dresses it up by asking for how many integer values of a parameter the solution meets some sign or size condition.
+
+**Core idea — use the symmetry, not Cramer's rule.**
+
+- **Subtract:** (a − b)x + (b − a)y = 0 ⟹ (a − b)(x − y) = 0. So **either a = b, or x = y.**
+- **Add:** (a + b)(x + y) = 2k.
+
+If a ≠ b then x = y, and one substitution collapses the system to a single fraction: **x = y = k/(a + b)**.
+
+**Uniqueness** is the §8 condition a₁/a₂ ≠ b₁/b₂, which here reads a² ≠ b², i.e. **a ≠ ±b**.
+
+**Method:**
+1. Discard the parameter values that break uniqueness (a = ±b).
+2. Use the symmetry to get x = y = k/(a + b).
+3. Impose the stated condition on that one expression and count the parameter values.
+
+**Worked example:** For how many negative integers m does mx + 3y = 11, 3x + my = 11 have a unique solution with x and y both strictly positive?
+
+- Unique ⟺ m² ≠ 9 ⟹ m ≠ −3 (m is negative, so m = 3 is already out).
+- m ≠ 3, so subtracting gives x = y. Substituting: mx + 3x = 11 ⟹ x = y = 11/(m + 3).
+- x > 0 ⟹ m + 3 > 0 ⟹ m > −3. Negative integers greater than −3: **m = −1, −2**.
+- Check: m = −1 ⟹ x = y = 11/2 ✓; m = −2 ⟹ x = y = 11 ✓; m = −4 ⟹ x = y = −11 ✗.
+- Answer: **2**
+
+**Traps:**
+- Counting m = −3. It gives −3x + 3y = 11 and 3x − 3y = 11 — parallel and contradictory, so *no* solution, not a unique one.
+- Reading "strictly positive" as "positive integer". x = 11/2 is a perfectly valid solution; nothing required integrality.
+- Answering "infinitely many" because every m < −3 gives a unique solution. It does — but with x and y both negative, which the question forbids.
+- Grinding the determinant when x = y drops out of a single subtraction.
+
+---
+
+## 8b. The shortfall trick — one variable instead of four
+
+**The shape:** someone buys several things, has money left over, and the question states how much *more* they would need for one unit of each item. It looks like four unknowns; it is one.
+
+**Core idea.** Let **r = the money left over**. "She needs ₹7 more to buy an apple" says the apple costs r + 7. Every price is now r + (its stated shortfall), so the purchase equation has a single unknown.
+
+The same move covers any "falls short by", "is short of", "needs x more" phrasing — including the classic "if each child gets 5 sweets, 8 are left; if each gets 6, we are 4 short."
+
+**Method:**
+1. Name the leftover (or the shortfall) — not the prices.
+2. Write each price as leftover + its own shortfall.
+3. Substitute into the total-spent equation and solve the single linear equation.
+4. Sanity-check that the leftover really is smaller than every price, since the question said she could not buy any item.
+
+**Worked example:** Sushila buys 11 pomegranates, 7 apples and a dozen kiwis for ₹1090, and is left with too little to buy even one more of any of them. She would need ₹7 more for an apple, ₹9 more for a pomegranate and ₹16 more for a kiwi. Find the total price of one apple, one pomegranate and one kiwi.
+
+- Let the leftover be r. Then apple = r + 7, pomegranate = r + 9, kiwi = r + 16.
+- 11(r + 9) + 7(r + 7) + 12(r + 16) = 1090
+- 11r + 99 + 7r + 49 + 12r + 192 = 1090 ⟹ **30r + 340 = 1090** ⟹ 30r = 750 ⟹ **r = 25**
+- Prices: apple 32, pomegranate 34, kiwi 41. Sum = **107**
+- Checks: 11(34) + 7(32) + 12(41) = 374 + 224 + 492 = 1090 ✓, and 25 < 32, so indeed she cannot buy any ✓
+
+**Traps:**
+- Treating the three shortfalls as the prices, or as differences *between* prices. ₹7 and ₹9 are each measured from the same leftover, so pomegranate − apple = 2 — that is all the direct comparison you get.
+- Naming three price variables. One equation and three unknowns looks unsolvable and sends people hunting for information that is not there; the leftover is the hidden fourth quantity that makes it determinate.
+- Missing "a dozen" = 12.
+- Forgetting the feasibility check. If r came out larger than the cheapest item, the reading of the question would be wrong.
+
+---
+
 ## Traps
 
 | Trap | Wrong | Right |
@@ -174,8 +346,12 @@ That substitute-the-reciprocal move is the standard trick for the whole family.
 | Max of a quadratic | differentiate | use x = −b/2a |
 | Modulus equation | solve one case | case-split at every sign change |
 | AM ≥ GM | applied to negatives | positives only |
+| Maximising xᵃyᵇzᶜ | set the linear terms equal | split each in proportion to its exponent |
+| Sum of moduli ≤ k | split every case | convex ⟹ one interval; only the two outer pieces matter |
+| "Needs ₹7 more for an apple" | ₹7 is the price, or a price gap | name the leftover r; price = r + 7 |
 | Comparing surd expressions | equate whole sides | equate rational and irrational parts separately |
 | Solving for x and y | always find both | often x+y or xy is obtainable directly |
+| Symmetric system with a parameter | apply Cramer's rule | subtract ⟹ x = y, then one fraction |
 
 ---
 
@@ -187,4 +363,4 @@ That substitute-the-reciprocal move is the standard trick for the whole family.
 - Substitute back into the original equation for anything involving squaring, moduli, or logs. It costs ten seconds and catches extraneous roots.
 - If the algebra is getting long, you've missed the intended identity. Stop and re-read the expression's shape.
 
-**Where this feeds forward:** `Number-System.md` §9 and §11 (surd/exponent forms, integer solutions), `Logarithms.md` (log equations use the same substitute-and-check discipline), `Means-and-Weighted-Averages.md` §8 (AM–GM), `Progressions-AP-GP.md` (symmetric term selection), `Geometry-Mensuration.md` §6 (AM–GM as geometric optimisation).
+**Where this feeds forward:** `Number-System.md` §9 and §11 (surd/exponent forms, integer solutions), `Logarithms.md` (log equations use the same substitute-and-check discipline), `Means-and-Weighted-Averages.md` §8 (AM–GM), `Progressions-AP-GP.md` (symmetric term selection), `Quadrilaterals-and-Polygons.md` §7 (AM–GM as geometric optimisation).

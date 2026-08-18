@@ -179,6 +179,35 @@ More in `Algebra.md` §4.
 
 ---
 
+## 9a. Equations in exponents — match prime by prime
+
+**Core idea.** Unique prime factorisation means an equation between two products of prime powers is really **one equation per prime**. Rewrite every base in primes, collect exponents, and equate each prime's exponent separately. One intimidating equation becomes a small linear system.
+
+**Method:**
+1. Rewrite every base in primes: 4 = 2², 8 = 2³, 16 = 2⁴, 20 = 2²·5, 6 = 2·3, 12 = 2²·3.
+2. Add exponents across a product; multiply exponents through a power — (2ᵃ)ᵇ = 2^(ab).
+3. Write one linear equation per prime.
+4. Solve, then apply the natural-number and ordering constraints. With fewer equations than unknowns, **the inequality is what pins the answer down** — it is data, not decoration.
+
+**Worked example:** If 16^(6x) × 4^(24x+12) × 5^(2y) = 8^(4z) × 20^(12x), where x, y, z are natural numbers with x < y ≤ z, find x + y + z.
+
+- LHS: 16^(6x) = 2^(24x), and 4^(24x+12) = 2^(48x+24). So LHS = 2^(72x+24) · 5^(2y).
+- RHS: 8^(4z) = 2^(12z), and 20^(12x) = (2²·5)^(12x) = 2^(24x) · 5^(12x). So RHS = 2^(12z+24x) · 5^(12x).
+- **Prime 5:** 2y = 12x ⟹ y = 6x
+- **Prime 2:** 72x + 24 = 12z + 24x ⟹ 48x + 24 = 12z ⟹ z = 4x + 2
+- Constraints: x < y reads x < 6x — true for every natural x, so it gives nothing. y ≤ z reads 6x ≤ 4x + 2 ⟹ 2x ≤ 2 ⟹ **x = 1**.
+- x = 1, y = 6, z = 6 ⟹ **x + y + z = 13**
+
+**Traps:**
+- Forgetting that a composite base carries two primes. 20^(12x) feeds *both* the 2-equation and the 5-equation; treating it as a pure power of either one breaks the system.
+- Stopping once the equations are solved. Two equations in three unknowns leave a whole family — the ordering condition selects the member.
+- Assuming every given inequality bites. Here x < y is automatic; only y ≤ z does work. Check which one is live before spending time on it.
+- Multiplying exponents when bases are multiplied. 2ᵃ · 2ᵇ = 2^(a+b); only (2ᵃ)ᵇ multiplies.
+
+**Related:** reading structure back *out of* exponents is §10 and §10a.
+
+---
+
 ## 10. Perfect squares, cubes, and "least n"
 
 **A number is a perfect square ⟺ every prime exponent is even.** Perfect cube ⟺ every exponent is a multiple of 3.
@@ -205,6 +234,47 @@ More in `Algebra.md` §4.
 - Squares are ≡ 0 or 1 (mod 4), and ≡ 0, 1, 4, 7 (mod 9)
 
 That last line kills many questions instantly: if a candidate is ≡ 2 (mod 4), it cannot be a square.
+
+---
+
+## 10a. Reading N's structure back from its factor count
+
+§10 runs forwards: given N, decide whether it is a perfect power. This is the **reverse** question, and CAT asks it more often — *given only the number of factors, could N be a perfect square / cube / sixth power?*
+
+**Core idea.** N is a perfect k-th power ⟺ every prime exponent aᵢ is a multiple of k ⟺ every (aᵢ + 1) ≡ **1 (mod k)**.
+
+The factor count F = ∏(aᵢ + 1) (§3) is therefore a product of numbers all ≡ 1 (mod k), so **F itself must be ≡ 1 (mod k)**.
+
+| N is a… | every (aᵢ + 1) is | so F must be |
+|---|---|---|
+| perfect square | odd | odd |
+| perfect cube | ≡ 1 (mod 3) | ≡ 1 (mod 3) |
+| square **and** cube | ≡ 1 (mod 6) | ≡ 1 (mod 6) |
+
+"Both a perfect square and a perfect cube" always means **perfect sixth power** — exponents divisible by lcm(2,3) = 6.
+
+**Method:**
+1. Reduce F mod k. If F ≢ 1 (mod k), it is impossible — stop there.
+2. If F ≡ 1 (mod k), it is achievable: take the single-prime shape N = p^(F−1), whose exponent F − 1 is divisible by k by construction. So for a *possibility* question, step 1 is the whole answer.
+
+**Worked example:** The factor counts of P, Q, R, S are 25, 36, 49, 64. How many of these can be both a perfect square and a perfect cube?
+
+- Need F ≡ 1 (mod 6).
+- 25 ≡ 1 ✓ — take a + 1 = 25, so N = p²⁴, and 24 is a multiple of 6 ✓
+- 36 ≡ 0 ✗ — the only divisor of 36 that is ≡ 1 (mod 6) is 1, and 1's cannot multiply to 36
+- 49 ≡ 1 ✓ — N = p⁴⁸, and 48 is a multiple of 6 ✓
+- 64 ≡ 4 ✗ — same reason as 36
+- Answer: **2**
+
+**Companion facts this generalises:**
+- Odd factor count ⟺ perfect square — the §10 fact, now just the k = 2 case
+- F prime ⟹ N = p^(F−1); only one shape of N is possible
+- F = 2 ⟹ N is prime
+
+**Traps:**
+- Testing 36 and 64 as "even, so N could be a square". Even F rules out a *square*; the sixth-power test is mod 6, not parity.
+- Splitting F into any factorisation. 25 = 5 × 5 is useless here — 5 ≢ 1 (mod 6). Every factor must pass, not just the product.
+- Treating "square and cube" as exponents divisible by 2 or by 3. It is 6.
 
 ---
 
@@ -253,6 +323,37 @@ Since the solutions lie on a line, **any linear expression in x and y is monoton
 
 ---
 
+## 12a. Repunits and digit-pattern numbers
+
+**Core idea.** A **repunit** Rₓ is the number made of x ones — 1, 11, 111, …. Every digit-pattern number is a geometric series in disguise, and one identity converts it:
+
+**Rₓ = 111…1 (x ones) = (10ˣ − 1)/9**
+
+The same move covers the family: 222…2 = 2·Rₓ, and 999…9 = 10ˣ − 1.
+
+**Method:** replace the pattern by its closed form *before* doing anything else. A sum over x then becomes an ordinary GP (`Progressions-AP-GP.md` §5).
+
+**Worked example:** f(x) = 10ˣ − Rₓ, where Rₓ is the x-digit repunit. Find Σ(x = 1 to 10) f(x).
+
+- f(x) = 10ˣ − (10ˣ − 1)/9 = (9·10ˣ − 10ˣ + 1)/9 = **(8·10ˣ + 1)/9**
+- Σ 10ˣ for x = 1…10 is a GP with first term 10: 10(10¹⁰ − 1)/9 = 11,111,111,110
+- Σ f(x) = [8 × 11,111,111,110 + 10] / 9 = 88,888,888,890 / 9 = **9,876,543,210**
+
+The answer coming out as the digits 9 down to 0 in order is a strong signal nothing slipped.
+
+**Facts worth carrying:**
+- R_d divides Rₓ whenever d divides x (so R₆ is divisible by R₂ = 11 and R₃ = 111)
+- **Rₓ can be prime only if x is prime** — the converse fails: R₅ = 11111 = 41 × 271
+- The digit sum of Rₓ is x, so 3 | Rₓ ⟺ 3 | x and 9 | Rₓ ⟺ 9 | x (§2)
+- 10ˣ − 1 is a string of x nines: always divisible by 9, and by 11 when x is even
+
+**Traps:**
+- Writing Rₓ as (10ˣ − 1)/10 or 10ˣ/9. Test against R₂ = 11 = (100 − 1)/9 every single time.
+- Expanding the sum term by term. Ten terms is short enough to tempt you and long enough to guarantee a slip.
+- Off-by-one in the GP. Σ(x = 1 to n) 10ˣ starts at 10, so it is 10(10ⁿ − 1)/9 = 11…10 with n ones, not (10ⁿ − 1)/9.
+
+---
+
 ## Traps
 
 | Trap | Wrong | Right |
@@ -266,6 +367,9 @@ Since the solutions lie on a line, **any linear expression in x and y is monoton
 | Diophantine optimisation | test all solutions | linear ⟹ optimum at an endpoint |
 | Counting 3-digit numbers | allow leading zero | exclude a = 0 |
 | Number of factors of a square | even | **odd** — this is the defining property |
+| Factor count and perfect powers | check parity of F | perfect k-th power needs F ≡ 1 (mod k) |
+| Equation in exponents | one equation for the whole thing | one equation per prime |
+| Repunit Rₓ | (10ˣ − 1)/10 | (10ˣ − 1)/9 — check against R₂ = 11 |
 
 ---
 

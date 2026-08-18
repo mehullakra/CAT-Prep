@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAT VARC — Vocabulary Trainer</title>
+<style>
+:root{
+  --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2b303b;
+  --tx:#e6e8ec; --dim:#9aa2b1; --acc:#5b9cff; --ok:#3ecf8e; --bad:#ff6b6b;
+  --warn:#f6c453; --mark:#a97bff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;}
+.wrap{max-width:820px;margin:0 auto;padding:24px 18px 80px}
+h1{font-size:24px;margin:0 0 4px} h2{font-size:17px;margin:26px 0 10px}
+.sub{color:var(--dim);font-size:13px;margin-bottom:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.setbtn{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+  cursor:pointer;text-align:left;color:var(--tx);font:inherit;transition:.12s}
+.setbtn:hover{border-color:var(--acc);transform:translateY(-1px)}
+.setbtn .k{font-weight:640;font-size:14px} .setbtn .m{color:var(--dim);font-size:12px;margin-top:3px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex-wrap:wrap}
+.seg button{background:transparent;border:0;color:var(--dim);padding:8px 14px;cursor:pointer;font:inherit}
+.seg button.on{background:var(--acc);color:#0b0d11;font-weight:600}
+.btn{background:var(--acc);color:#0b0d11;border:0;border-radius:9px;padding:10px 18px;
+  font:inherit;font-weight:620;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--tx);border:1px solid var(--line);font-weight:500}
+.btn.ghost:hover{border-color:var(--acc)}
+.btn:disabled{opacity:.4;cursor:default}
+.hide{display:none!important}
+label.lbl{color:var(--dim);font-size:13px;margin-right:2px}
+
+.top{position:sticky;top:0;z-index:5;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:18px}
+.top .wrap{padding-top:0;padding-bottom:0}
+.pill{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;color:var(--dim)}
+.pill.good{border-color:var(--ok);color:#8ee5bd}
+.pill.bad{border-color:var(--bad);color:#ffa8a8}
+.bar{height:4px;background:var(--panel2);border-radius:999px;overflow:hidden;margin-top:10px}
+.bar > i{display:block;height:100%;background:var(--acc);transition:width .2s}
+
+.qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.qno{font-size:12px;color:var(--dim);letter-spacing:.04em;text-transform:uppercase}
+.prompt{font-size:13px;color:var(--dim);margin-bottom:8px}
+.word{font-size:30px;font-weight:680;letter-spacing:-.01em;margin:2px 0 4px}
+.pos{font-size:13px;color:var(--dim);font-style:italic;margin-bottom:18px}
+.opt{display:flex;gap:11px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);
+  border-radius:10px;padding:12px 14px;margin-bottom:9px;cursor:pointer;transition:.1s}
+.opt:hover{border-color:#3c4557}
+.opt.correct{border-color:var(--ok);background:#14291f}
+.opt.wrong{border-color:var(--bad);background:#2b1919}
+.opt.locked{cursor:default}
+.opt .lab{width:22px;height:22px;flex:0 0 22px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;font-size:12px;color:var(--dim)}
+.opt.correct .lab{background:var(--ok);color:#0b0d11;border-color:var(--ok)}
+.opt.wrong .lab{background:var(--bad);color:#0b0d11;border-color:var(--bad)}
+.note{background:var(--panel2);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;
+  padding:12px 14px;margin-top:14px;font-size:14px;color:#dfe3ea}
+.note.good{border-left-color:var(--ok)} .note.bad{border-left-color:var(--bad)}
+.note b{color:#fff}
+.note .defn{margin-bottom:6px}
+.note .sy{color:var(--dim);font-size:13px}
+.note .sy b{color:#cfd6e2;font-weight:600}
+.note .ex{margin-top:8px;font-style:italic;color:#c3cad6;font-size:13.5px}
+.kbd{display:inline-block;border:1px solid var(--line);border-radius:5px;padding:0 5px;
+  font-size:11px;color:var(--dim);background:#12151b}
+
+table{border-collapse:collapse;width:100%;font-size:14px;margin-top:6px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+td.w{font-weight:640;white-space:nowrap}
+td.d{color:var(--dim)}
+.big{font-size:34px;font-weight:700;letter-spacing:-.02em}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:6px 0 18px}
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.stat .n{font-size:24px;font-weight:680} .stat .l{color:var(--dim);font-size:12px;margin-top:2px}
+.foot{color:var(--dim);font-size:12px;margin-top:28px;line-height:1.7}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* Word bank — generated from _build/words.json by _build/gen_vocab.py.
+   Do not edit this array by hand; edit the JSON and re-run the generator. */
+const GROUPS = /*__GROUPS__*/null;
+</script>
+
+<script>
+const $ = (s,r=document)=>r.querySelector(s);
+const app = $("#app");
+const LET = ["A","B","C","D"];
+const LS_KEY = "cat-vocab-trainer-v1";
+
+/* ---------- flatten ---------- */
+const ALL = [];
+GROUPS.forEach((g,gi)=>g.words.forEach(w=>ALL.push(Object.assign({grp:g.name,gi},w))));
+const byWord = {}; ALL.forEach(w=>byWord[w.w]=w);
+
+/* ---------- persistence: which words you keep getting wrong ---------- */
+function loadStore(){
+  try{ return JSON.parse(localStorage.getItem(LS_KEY)) || {miss:{},seen:{}}; }
+  catch(e){ return {miss:{},seen:{}}; }
+}
+function saveStore(s){ try{ localStorage.setItem(LS_KEY, JSON.stringify(s)); }catch(e){} }
+let STORE = loadStore();
+function markSeen(w,right){
+  STORE.seen[w] = (STORE.seen[w]||0)+1;
+  if(right){ if(STORE.miss[w]){ STORE.miss[w]--; if(STORE.miss[w]<=0) delete STORE.miss[w]; } }
+  else STORE.miss[w] = (STORE.miss[w]||0)+1;
+  saveStore(STORE);
+}
+const leechList = ()=>Object.keys(STORE.miss).filter(w=>byWord[w]);
+
+/* ---------- helpers ---------- */
+const shuffle = a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];}return a;};
+const pick = a=>a[Math.random()*a.length|0];
+const cap = s=>s.charAt(0).toUpperCase()+s.slice(1);
+const POS = {n:"noun",v:"verb",adj:"adjective",adv:"adverb"};
+
+/* A distractor is safe only if it is not a synonym, antonym or the word itself. */
+function related(w){
+  const s = new Set([w.w.toLowerCase()]);
+  w.syn.forEach(x=>s.add(x.toLowerCase()));
+  w.ant.forEach(x=>s.add(x.toLowerCase()));
+  return s;
+}
+
+/* ---------- question builders ---------- */
+function qDefinition(w){
+  const bad = shuffle(ALL.filter(o=>o.w!==w.w && o.gi!==w.gi)).slice(0,3).map(o=>o.def);
+  const opts = shuffle([w.def, ...bad]);
+  return {w, mode:"def",
+    prompt:"Which of these is the meaning of",
+    opts, ans:opts.indexOf(w.def)};
+}
+function qSynonym(w){
+  const rel = related(w);
+  const correct = pick(w.syn);
+  /* one deliberate trap: an antonym of the same word */
+  const trap = pick(w.ant);
+  const pool = shuffle(ALL.filter(o=>o.gi!==w.gi))
+    .flatMap(o=>o.syn)
+    .filter(x=>!rel.has(x.toLowerCase()) && x.toLowerCase()!==trap.toLowerCase());
+  const uniq = [];
+  for(const x of pool){ if(!uniq.some(y=>y.toLowerCase()===x.toLowerCase())) uniq.push(x); if(uniq.length>=2) break; }
+  const opts = shuffle([correct, trap, ...uniq]);
+  return {w, mode:"syn", trap,
+    prompt:"Which word is closest in meaning to",
+    opts, ans:opts.indexOf(correct)};
+}
+function qAntonym(w){
+  const rel = related(w);
+  const correct = pick(w.ant);
+  const trap = pick(w.syn);          /* trap: a synonym of the same word */
+  const pool = shuffle(ALL.filter(o=>o.gi!==w.gi))
+    .flatMap(o=>o.syn)
+    .filter(x=>!rel.has(x.toLowerCase()) && x.toLowerCase()!==trap.toLowerCase());
+  const uniq = [];
+  for(const x of pool){ if(!uniq.some(y=>y.toLowerCase()===x.toLowerCase())) uniq.push(x); if(uniq.length>=2) break; }
+  const opts = shuffle([correct, trap, ...uniq]);
+  return {w, mode:"ant", trap,
+    prompt:"Which word is most nearly OPPOSITE in meaning to",
+    opts, ans:opts.indexOf(correct)};
+}
+const BUILD = {def:qDefinition, syn:qSynonym, ant:qAntonym};
+const MODE_LABEL = {def:"Definition", syn:"Synonym", ant:"Antonym"};
+
+/* ---------- session state ---------- */
+let S = null;
+let cfg = {mode:"def", len:20, group:"ALL"};
+
+function wordPool(){
+  if(cfg.group==="LEECH") return leechList().map(w=>byWord[w]);
+  if(cfg.group==="ALL") return ALL.slice();
+  return ALL.filter(w=>w.grp===cfg.group);
+}
+
+function startSession(){
+  let pool = shuffle(wordPool());
+  if(!pool.length){ renderHome("There is nothing in that list yet — answer a few questions first."); return; }
+  const n = cfg.len==="ALL" ? pool.length : Math.min(cfg.len, pool.length);
+  pool = pool.slice(0,n);
+  S = {qs:pool.map(w=>{
+        const m = cfg.mode==="mix" ? pick(["def","syn","ant"]) : cfg.mode;
+        return BUILD[m](w);
+      }),
+      i:0, picked:[], right:0, t0:Date.now()};
+  renderQ();
+}
+
+/* ---------- screens ---------- */
+function renderHome(msg){
+  S = null;
+  const leech = leechList().length;
+  const seen = Object.keys(STORE.seen).length;
+  app.innerHTML = `
+  <div class="wrap">
+    <h1>Vocabulary Trainer</h1>
+    <div class="sub">__TOTAL__ words in __NGROUPS__ meaning-groups · definition, synonym and antonym MCQs
+      · your misses are remembered between sessions</div>
+
+    ${msg?`<div class="note bad" style="margin-bottom:16px">${msg}</div>`:""}
+
+    <div class="card">
+      <div class="row" style="margin-bottom:14px">
+        <label class="lbl">Mode</label>
+        <div class="seg" id="segMode">
+          <button data-v="def">Definition</button>
+          <button data-v="syn">Synonym</button>
+          <button data-v="ant">Antonym</button>
+          <button data-v="mix">Mixed</button>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom:14px">
+        <label class="lbl">Length</label>
+        <div class="seg" id="segLen">
+          <button data-v="10">10</button>
+          <button data-v="20">20</button>
+          <button data-v="40">40</button>
+          <button data-v="ALL">All</button>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom:16px">
+        <label class="lbl">Words</label>
+        <div class="seg" id="segGrp">
+          <button data-v="ALL">Everything</button>
+          <button data-v="LEECH">My misses (${leech})</button>
+        </div>
+      </div>
+      <button class="btn" id="go">Start</button>
+      <button class="btn ghost" id="browse">Browse the list</button>
+      ${seen?`<button class="btn ghost" id="reset">Reset my history</button>`:""}
+    </div>
+
+    <h2>Or drill one group</h2>
+    <div class="grid">
+      ${GROUPS.map(g=>`<button class="setbtn" data-grp="${g.name.replace(/"/g,'&quot;')}">
+          <div class="k">${g.name}</div><div class="m">${g.words.length} words</div></button>`).join("")}
+    </div>
+
+    <div class="foot">
+      Synonym questions always plant one antonym of the same word among the options, and antonym
+      questions plant one synonym — because that is the trap the exam actually sets.
+      Keyboard: <span class="kbd">1</span>–<span class="kbd">4</span> to answer,
+      <span class="kbd">Enter</span> to continue.
+    </div>
+  </div>`;
+
+  const seg = (id,key)=>{
+    const el = $(id);
+    [...el.children].forEach(b=>{
+      if(String(cfg[key])===b.dataset.v) b.classList.add("on");
+      b.onclick=()=>{ cfg[key] = b.dataset.v==="ALL"&&key==="len" ? "ALL"
+                       : (key==="len" ? +b.dataset.v : b.dataset.v);
+                      [...el.children].forEach(x=>x.classList.remove("on")); b.classList.add("on"); };
+    });
+  };
+  seg("#segMode","mode"); seg("#segLen","len"); seg("#segGrp","group");
+  $("#go").onclick = startSession;
+  $("#browse").onclick = renderBrowse;
+  if($("#reset")) $("#reset").onclick = ()=>{ STORE={miss:{},seen:{}}; saveStore(STORE); renderHome(); };
+  document.querySelectorAll("[data-grp]").forEach(b=>{
+    b.onclick=()=>{ cfg.group=b.dataset.grp; startSession(); };
+  });
+}
+
+function renderQ(){
+  const q = S.qs[S.i];
+  const done = S.picked[S.i]!==undefined;
+  const pct = Math.round(S.i/S.qs.length*100);
+  app.innerHTML = `
+  <div class="top"><div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="row">
+        <span class="pill">${MODE_LABEL[q.mode]}</span>
+        <span class="pill">${S.i+1} / ${S.qs.length}</span>
+      </div>
+      <div class="row">
+        <span class="pill good">✓ ${S.right}</span>
+        <span class="pill bad">✕ ${S.picked.filter((p,i)=>p!==undefined&&p!==S.qs[i].ans).length}</span>
+        <button class="btn ghost" id="quit">End</button>
+      </div>
+    </div>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+  </div></div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="qhead"><div class="qno">Question ${S.i+1}</div></div>
+      <div class="prompt">${q.prompt}</div>
+      <div class="word">${q.w.w}</div>
+      <div class="pos">${POS[q.w.pos]}</div>
+      <div id="opts">
+        ${q.opts.map((o,i)=>`<div class="opt" data-i="${i}">
+            <div class="lab">${LET[i]}</div><div>${q.mode==="def"?cap(o):o}</div></div>`).join("")}
+      </div>
+      <div id="fb"></div>
+    </div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn" id="next" ${done?"":"disabled"}>${S.i===S.qs.length-1?"See results":"Next"}</button>
+      <span class="foot" style="margin:0"><span class="kbd">1</span>–<span class="kbd">4</span> answer · <span class="kbd">Enter</span> next</span>
+    </div>
+  </div>`;
+
+  $("#quit").onclick = ()=>renderResults();
+  $("#next").onclick = advance;
+  document.querySelectorAll(".opt").forEach(el=>el.onclick=()=>choose(+el.dataset.i));
+  if(done) reveal();
+}
+
+function choose(i){
+  if(S.picked[S.i]!==undefined) return;
+  S.picked[S.i]=i;
+  const q=S.qs[S.i], right = i===q.ans;
+  if(right) S.right++;
+  markSeen(q.w.w, right);
+  reveal();
+  $("#next").disabled=false;
+}
+
+function reveal(){
+  const q=S.qs[S.i], p=S.picked[S.i], right=p===q.ans;
+  document.querySelectorAll(".opt").forEach((el,i)=>{
+    el.classList.add("locked");
+    if(i===q.ans) el.classList.add("correct");
+    else if(i===p) el.classList.add("wrong");
+  });
+  let trapNote = "";
+  if(!right && q.trap && q.opts[p]===q.trap)
+    trapNote = q.mode==="syn"
+      ? ` You picked <b>${q.trap}</b>, which is an <b>antonym</b> of ${q.w.w} — the classic trap.`
+      : ` You picked <b>${q.trap}</b>, which is a <b>synonym</b> of ${q.w.w} — the classic trap.`;
+  $("#fb").innerHTML = `
+    <div class="note ${right?"good":"bad"}">
+      <div class="defn"><b>${q.w.w}</b> <i>(${POS[q.w.pos]})</i> — ${q.w.def}.${trapNote}</div>
+      <div class="sy"><b>Syn:</b> ${q.w.syn.join(", ")} &nbsp;·&nbsp; <b>Ant:</b> ${q.w.ant.join(", ")}</div>
+      <div class="sy" style="margin-top:4px"><b>Group:</b> ${q.w.grp}</div>
+      <div class="ex">“${q.w.sent}”</div>
+    </div>`;
+}
+
+function advance(){
+  if(S.i===S.qs.length-1) return renderResults();
+  S.i++; renderQ();
+}
+
+function renderResults(){
+  const attempted = S.picked.filter(p=>p!==undefined).length;
+  const wrongIdx = S.qs.map((q,i)=>i).filter(i=>S.picked[i]!==undefined && S.picked[i]!==S.qs[i].ans);
+  const secs = Math.round((Date.now()-S.t0)/1000);
+  const acc = attempted?Math.round(S.right/attempted*100):0;
+  app.innerHTML = `
+  <div class="wrap">
+    <h1>Session complete</h1>
+    <div class="sub">${MODE_LABEL[cfg.mode]||"Mixed"} · ${cfg.group==="ALL"?"all words":cfg.group==="LEECH"?"my misses":cfg.group}</div>
+    <div class="statgrid">
+      <div class="stat"><div class="n">${S.right}/${attempted}</div><div class="l">Correct</div></div>
+      <div class="stat"><div class="n">${acc}%</div><div class="l">Accuracy</div></div>
+      <div class="stat"><div class="n">${Math.floor(secs/60)}m ${secs%60}s</div><div class="l">Time</div></div>
+      <div class="stat"><div class="n">${leechList().length}</div><div class="l">Words still shaky</div></div>
+    </div>
+
+    ${wrongIdx.length?`
+      <h2>Review — the ${wrongIdx.length} you missed</h2>
+      <div class="card"><table>
+        <tr><th>Word</th><th>Meaning</th><th>Synonyms</th><th>Antonyms</th></tr>
+        ${wrongIdx.map(i=>{const w=S.qs[i].w;return `<tr>
+          <td class="w">${w.w}</td><td>${cap(w.def)}</td>
+          <td class="d">${w.syn.join(", ")}</td><td class="d">${w.ant.join(", ")}</td></tr>`;}).join("")}
+      </table></div>`
+    :`<div class="note good">Clean sweep — nothing missed in this session.</div>`}
+
+    <div class="row" style="margin-top:20px">
+      <button class="btn" id="again">Another session</button>
+      ${leechList().length?`<button class="btn ghost" id="drill">Drill my misses</button>`:""}
+      <button class="btn ghost" id="home">Home</button>
+    </div>
+  </div>`;
+  $("#again").onclick = startSession;
+  $("#home").onclick = ()=>renderHome();
+  if($("#drill")) $("#drill").onclick = ()=>{ cfg.group="LEECH"; startSession(); };
+}
+
+function renderBrowse(){
+  app.innerHTML = `
+  <div class="wrap">
+    <h1>Word list</h1>
+    <div class="sub">__TOTAL__ words, grouped by meaning. Words you have missed are marked.</div>
+    <button class="btn ghost" id="home" style="margin-bottom:18px">Back</button>
+    ${GROUPS.map(g=>`
+      <h2>${g.name}</h2>
+      <div class="card"><table>
+        <tr><th>Word</th><th>Meaning</th><th>Synonyms</th><th>Antonyms</th></tr>
+        ${g.words.map(w=>`<tr>
+          <td class="w">${w.w}${STORE.miss[w.w]?' <span class="pill bad" style="padding:1px 7px">×'+STORE.miss[w.w]+'</span>':''}</td>
+          <td>${cap(w.def)}</td>
+          <td class="d">${w.syn.join(", ")}</td>
+          <td class="d">${w.ant.join(", ")}</td></tr>`).join("")}
+      </table></div>`).join("")}
+    <div class="row" style="margin-top:20px"><button class="btn" id="home2">Back</button></div>
+  </div>`;
+  $("#home").onclick = ()=>renderHome();
+  $("#home2").onclick = ()=>renderHome();
+}
+
+/* ---------- keyboard ---------- */
+document.addEventListener("keydown", e=>{
+  if(!S) return;
+  if(e.key>="1" && e.key<="4"){ const el=document.querySelector(`.opt[data-i="${+e.key-1}"]`); if(el) el.click(); }
+  else if(e.key==="Enter"){ const b=$("#next"); if(b && !b.disabled) b.click(); }
+});
+
+renderHome();
+</script>
+</body>
+</html>

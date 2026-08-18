@@ -1,0 +1,151 @@
+{
+ "key": "mensuration",
+ "order": 106,
+ "name": "Mensuration",
+ "notes": "Mensuration.md",
+ "file": "Mensuration-Practice.md",
+ "perQ": 105,
+ "intro": [
+  "**Write the conservation equation before any numbers.** Volume before = volume after is the whole method for a third of this topic (§3).",
+  "Cancel π and common factors symbolically first, and check the units line — mm versus cm is where these questions are lost (§1)."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "Solids",
+   "qs": [
+    {
+     "id": "A1",
+     "t": "tita",
+     "q": "Find the volume of a cone of radius 7 and height 12 (π = 22/7).",
+     "a": 616,
+     "check": "(1/3)*(22/7)*49*12",
+     "h": "§1 — ⅓πr²h. Dropping the ⅓ is the standard slip.",
+     "s": "⅓ × (22/7) × 49 × 12 = <b>616</b>."
+    },
+    {
+     "id": "A2",
+     "t": "mcq",
+     "q": "The total surface area of a cube of edge 5 cm is",
+     "o": [
+      "100 cm²",
+      "125 cm²",
+      "150 cm²",
+      "180 cm²"
+     ],
+     "a": 2,
+     "h": "§1 — six faces. 125 is the volume, planted.",
+     "s": "6 × 25 = <b>150 cm²</b>."
+    },
+    {
+     "id": "A3",
+     "t": "tita",
+     "q": "A sphere of radius 6 has volume kπ. Find k.",
+     "a": 288,
+     "check": "(4/3)*216",
+     "h": "§1 — V = (4/3)πr³, so k = (4/3)r³.",
+     "s": "(4/3) × 216 = <b>288</b>."
+    },
+    {
+     "id": "A4",
+     "t": "mcq",
+     "q": "A cylinder of radius 7 and height 10 has curved surface area (π = 22/7)",
+     "o": [
+      "220",
+      "440",
+      "480",
+      "880"
+     ],
+     "a": 1,
+     "h": "§1 — curved surface is 2πrh; the total surface would add the two circular ends.",
+     "s": "2 × (22/7) × 7 × 10 = <b>440</b>."
+    },
+    {
+     "id": "A5",
+     "t": "tita",
+     "q": "A solid metallic sphere of radius 6 cm is melted and recast into spheres of radius 2 cm. How many small spheres are formed?",
+     "a": 27,
+     "check": "3**3",
+     "h": "§3 — volume is conserved, and volume scales as the cube of the radius.",
+     "s": "(6/2)³ = <b>27</b>."
+    },
+    {
+     "id": "A6",
+     "t": "mcq",
+     "q": "A cuboid measures 8 × 6 × 5. The length of its space diagonal is",
+     "o": [
+      "5√5",
+      "10",
+      "11",
+      "12"
+     ],
+     "a": 0,
+     "h": "§1 — √(l² + b² + h²), the three-dimensional Pythagoras.",
+     "s": "√(64 + 36 + 25) = √125 = <b>5√5</b> ≈ 11.18."
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (5 minutes)",
+   "block": 315,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "mcq",
+     "q": "A cone and a cylinder have the same radius and the same height. The ratio of their volumes is",
+     "o": [
+      "1 : 2",
+      "1 : 3",
+      "2 : 3",
+      "3 : 1"
+     ],
+     "a": 1,
+     "h": "The ⅓ is the whole answer.",
+     "s": "⅓πr²h : πr²h = <b>1 : 3</b>."
+    },
+    {
+     "id": "M2",
+     "t": "tita",
+     "q": "The radii of two spheres are in the ratio 2 : 3. Find the ratio of their surface areas, expressed as larger ÷ smaller.",
+     "a": 2.25,
+     "ad": "2.25 (i.e. 9 : 4)",
+     "check": "9/4",
+     "h": "Surface area scales as the square of the radius, volume as the cube.",
+     "s": "(3/2)² = <b>2.25</b>, i.e. 9 : 4. (Cubing gives 3.375 — the volume ratio, planted.)"
+    },
+    {
+     "id": "M3",
+     "t": "tita",
+     "q": "A cylindrical tank of radius 7 m and height 5 m is full of water. Find the volume in cubic metres (π = 22/7).",
+     "a": 770,
+     "check": "(22/7)*49*5",
+     "h": "πr²h, no ⅓ this time.",
+     "s": "(22/7)(49)(5) = <b>770 m³</b>."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A1, A2, A4",
+   "confusing volume with surface area, or dropping the ⅓ in the cone (§1)"
+  ],
+  [
+   "A5",
+   "scaling volumes linearly instead of by the cube of the radius (§2, §3)"
+  ],
+  [
+   "A6",
+   "using a face diagonal where the space diagonal √(l²+b²+h²) was asked (§1)"
+  ],
+  [
+   "M1",
+   "forgetting the ⅓ when comparing a cone with a cylinder of the same radius and height (§1)"
+  ],
+  [
+   "M2",
+   "scaling a surface area by k instead of k² (§2)"
+  ]
+ ]
+}

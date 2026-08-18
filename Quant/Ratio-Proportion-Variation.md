@@ -218,6 +218,49 @@ Note that B both receives and gives — write both movements before forming the 
 
 ---
 
+## 12a. Type 8 — Ratios pinned down by integrality and a range
+
+**The shape:** several people each have income : expenditure in a given ratio; incomes lie in a stated band and are multiples of 100; one extra condition links two of them; and the question asks which value is **impossible**. It reads like a data puzzle and it is really a divisibility exercise.
+
+**Core idea — the ratio plus "both amounts are whole" forces the multiplier.**
+
+If income : expenditure = a : c, write income = ak and expenditure = ck. For the expenditure to be a whole number of rupees when the income is a multiple of 100, you need **a to divide the income** — so the income must be a multiple of **lcm(a, 100)**. That single step usually cuts each person to two or three candidate incomes, and the puzzle becomes finite.
+
+| Ratio a : c | income must be a multiple of | candidates in ₹8,000–₹11,000 |
+|---|---|---|
+| 7 : 5 | 700 | 8400, 9100, 9800, 10500 |
+| 11 : 9 | 1100 | 8800, 9900, 11000 |
+| 9 : 8 | 900 | 8100, 9000, 9900, 10800 |
+| 13 : 10 | 1300 | 9100, 10400 |
+
+**Method:**
+1. List each person's candidate incomes from the divisibility rule and the range.
+2. Apply the **linking condition** (here "Jaya spends ₹600 more than Rekha") to the short lists. It normally leaves one pair.
+3. Apply the **global condition** ("the highest expenditure is below the lowest income") to prune the rest.
+4. Read off which of the offered values survives — and remember a "cannot be" question needs you to show a value is *unreachable*, not merely awkward.
+
+**Worked example:** Hema, Rekha, Jaya and Sushma have income : expenditure of 7 : 5, 11 : 9, 9 : 8 and 13 : 10. Each income is between ₹8,000 and ₹11,000 and is a multiple of ₹100. The highest expenditure is lower than the lowest income. Jaya spends ₹600 more than Rekha. Which of ₹20,200, ₹20,500, ₹20,900 cannot be Hema + Sushma?
+
+- Candidate incomes are the table above; the matching expenditures are
+  - Hema (5/7 of income): 6000, 6500, 7000, 7500
+  - Rekha (9/11): 7200, 8100, 9000
+  - Jaya (8/9): 7200, 8000, 8800, 9600
+  - Sushma (10/13): 7000, 8000
+- **Link:** Jaya − Rekha = 600. Scanning the two lists, only **9600 − 9000 = 600** works ⟹ Jaya's income **10800**, Rekha's **11000**.
+- **Global condition:** the largest expenditure is now Jaya's 9600, so every income must exceed 9600.
+  - Hema: 9800 or 10500 (8400 and 9100 are out)
+  - Sushma: 10400 only (9100 is out)
+- Hema + Sushma ∈ {9800 + 10400, 10500 + 10400} = **{20200, 20900}**
+- So **₹20,500 cannot be** the combined income.
+
+**Traps:**
+- Skipping the integrality step and treating any multiple of 100 as a valid income. Sushma at 13 : 10 can only be 9100 or 10400 in the whole band — that alone nearly finishes the question.
+- Applying "highest expenditure < lowest income" before the linking condition. Do the link first; it fixes the highest expenditure, and only then does the inequality have teeth.
+- Comparing each person's own expenditure to their own income. The condition is across all four — the highest expenditure of anyone against the lowest income of anyone.
+- Answering "all of the above are possible" from the range alone. The range permits many sums; the constraints do not.
+
+---
+
 ## Traps
 
 | Trap | Wrong | Right |
@@ -228,6 +271,7 @@ Note that B both receives and gives — write both movements before forming the 
 | Inverse variation treated as direct | a = kb | ab = k |
 | Ratio of areas from ratio of sides | same ratio | squared ratio (volumes: cubed) |
 | Splitting in "inverse ratio 2:3:4" | as 2:3:4 | as 6:4:3 |
+| Ratio a : c with whole amounts | any multiple of 100 | income must be a multiple of lcm(a, 100) |
 
 ---
 

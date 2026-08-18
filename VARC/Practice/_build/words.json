@@ -1,0 +1,273 @@
+{
+  "title": "CAT Vocabulary",
+  "note": "Words are grouped by meaning, because CAT tests discrimination between near-synonyms far more often than it tests raw recall. Learn each group as a set and note what separates its members.",
+  "groups": [
+    {
+      "name": "Praise and reverence",
+      "words": [
+        {"w":"laud","pos":"v","def":"to praise highly, especially in public","syn":["extol","commend","acclaim"],"ant":["censure","denigrate"],"sent":"Critics lauded the film for its restraint."},
+        {"w":"extol","pos":"v","def":"to praise enthusiastically and at length","syn":["glorify","exalt","eulogise"],"ant":["disparage","belittle"],"sent":"He extolled the virtues of a slower life."},
+        {"w":"venerate","pos":"v","def":"to regard with deep respect, often approaching worship","syn":["revere","esteem","honour"],"ant":["scorn","despise"],"sent":"The text is venerated by scholars of every school."},
+        {"w":"encomium","pos":"n","def":"a formal expression of high praise","syn":["eulogy","panegyric","tribute"],"ant":["diatribe","censure"],"sent":"Her retirement drew encomiums from across the industry."},
+        {"w":"acclaim","pos":"n","def":"enthusiastic and public approval","syn":["plaudits","applause","commendation"],"ant":["derision","opprobrium"],"sent":"The novel met with immediate critical acclaim."}
+      ]
+    },
+    {
+      "name": "Criticism and attack",
+      "words": [
+        {"w":"censure","pos":"v","def":"to express severe and formal disapproval of","syn":["reprimand","rebuke","condemn"],"ant":["commend","laud"],"sent":"The committee censured him for the omission."},
+        {"w":"denigrate","pos":"v","def":"to criticise unfairly so as to damage a reputation","syn":["disparage","belittle","malign"],"ant":["extol","exalt"],"sent":"He never denigrates a rival's work in public."},
+        {"w":"vilify","pos":"v","def":"to speak or write about in an abusively disparaging way","syn":["defame","slander","traduce"],"ant":["venerate","glorify"],"sent":"The reformer was vilified in the press for a decade."},
+        {"w":"castigate","pos":"v","def":"to reprimand severely","syn":["chastise","upbraid","berate"],"ant":["praise","compliment"],"sent":"She castigated the team for missing the deadline."},
+        {"w":"excoriate","pos":"v","def":"to censure or denounce in scathing terms","syn":["lambaste","flay","denounce"],"ant":["applaud","commend"],"sent":"The report excoriates the regulator's inaction."},
+        {"w":"polemic","pos":"n","def":"a strong verbal or written attack on an opinion","syn":["diatribe","tirade","invective"],"ant":["encomium","panegyric"],"sent":"The essay is less an argument than a polemic."}
+      ]
+    },
+    {
+      "name": "Deception and insincerity",
+      "words": [
+        {"w":"duplicity","pos":"n","def":"deceitfulness in speech or conduct; double-dealing","syn":["deceit","dissimulation","chicanery"],"ant":["candour","probity"],"sent":"The negotiations collapsed once his duplicity emerged."},
+        {"w":"guile","pos":"n","def":"sly or cunning intelligence used to deceive","syn":["cunning","craftiness","artifice"],"ant":["ingenuousness","artlessness"],"sent":"She won the account through patience rather than guile."},
+        {"w":"subterfuge","pos":"n","def":"a deceit or trick used to achieve an end","syn":["ruse","stratagem","ploy"],"ant":["frankness","openness"],"sent":"They obtained the documents by subterfuge."},
+        {"w":"specious","pos":"adj","def":"superficially plausible but in fact wrong","syn":["spurious","fallacious","deceptive"],"ant":["valid","cogent"],"sent":"The argument is specious, and collapses on a second reading."},
+        {"w":"disingenuous","pos":"adj","def":"not candid; pretending to know less than one does","syn":["insincere","duplicitous","feigned"],"ant":["forthright","ingenuous"],"sent":"It is disingenuous to claim the data were unavailable."}
+      ]
+    },
+    {
+      "name": "Excessive speech",
+      "words": [
+        {"w":"garrulous","pos":"adj","def":"excessively talkative, especially about trivial matters","syn":["loquacious","voluble","chatty"],"ant":["taciturn","reticent"],"sent":"A garrulous neighbour delayed him by half an hour."},
+        {"w":"loquacious","pos":"adj","def":"inclined to talk a great deal","syn":["garrulous","voluble","talkative"],"ant":["laconic","taciturn"],"sent":"He is loquacious on any subject he has read about."},
+        {"w":"verbose","pos":"adj","def":"using more words than are needed","syn":["prolix","wordy","long-winded"],"ant":["succinct","terse"],"sent":"The contract is verbose where it should be exact."},
+        {"w":"prolix","pos":"adj","def":"tediously lengthy in speech or writing","syn":["rambling","diffuse","wordy"],"ant":["concise","pithy"],"sent":"His prolix introduction lost half the audience."},
+        {"w":"bombastic","pos":"adj","def":"high-sounding but with little substance","syn":["grandiloquent","turgid","pompous"],"ant":["plain","unpretentious"],"sent":"The speech was bombastic and said almost nothing."}
+      ]
+    },
+    {
+      "name": "Brevity and reserve",
+      "words": [
+        {"w":"laconic","pos":"adj","def":"using very few words","syn":["terse","curt","concise"],"ant":["verbose","garrulous"],"sent":"His laconic reply ended the discussion."},
+        {"w":"taciturn","pos":"adj","def":"habitually saying little; reserved by temperament","syn":["reticent","uncommunicative","withdrawn"],"ant":["loquacious","voluble"],"sent":"A taciturn man, he spoke only when asked."},
+        {"w":"succinct","pos":"adj","def":"expressed briefly and clearly","syn":["concise","compact","crisp"],"ant":["rambling","prolix"],"sent":"Her summary was succinct and complete."},
+        {"w":"pithy","pos":"adj","def":"brief, forceful and full of meaning","syn":["epigrammatic","trenchant","meaty"],"ant":["verbose","diffuse"],"sent":"He has a gift for pithy formulations."},
+        {"w":"reticent","pos":"adj","def":"unwilling to reveal one's thoughts or feelings","syn":["reserved","guarded","tight-lipped"],"ant":["forthcoming","candid"],"sent":"She was reticent about her role in the decision."}
+      ]
+    },
+    {
+      "name": "Stubbornness",
+      "words": [
+        {"w":"obdurate","pos":"adj","def":"stubbornly refusing to change an opinion or course","syn":["obstinate","unyielding","implacable"],"ant":["yielding","amenable"],"sent":"The board remained obdurate despite the evidence."},
+        {"w":"intransigent","pos":"adj","def":"unwilling to compromise or reach agreement","syn":["uncompromising","inflexible","hardline"],"ant":["accommodating","flexible"],"sent":"Both sides were too intransigent for a settlement."},
+        {"w":"recalcitrant","pos":"adj","def":"obstinately uncooperative toward authority","syn":["defiant","refractory","unruly"],"ant":["docile","compliant"],"sent":"A recalcitrant witness delayed proceedings for weeks."},
+        {"w":"intractable","pos":"adj","def":"hard to control, manage or solve","syn":["unmanageable","stubborn","thorny"],"ant":["tractable","manageable"],"sent":"Inflation proved an intractable problem."},
+        {"w":"adamant","pos":"adj","def":"refusing to be persuaded or to change one's mind","syn":["resolute","unshakeable","firm"],"ant":["irresolute","wavering"],"sent":"He was adamant that no exception would be made."}
+      ]
+    },
+    {
+      "name": "Submission and flattery",
+      "words": [
+        {"w":"docile","pos":"adj","def":"ready to accept control or instruction","syn":["compliant","tractable","biddable"],"ant":["recalcitrant","unruly"],"sent":"The docile crowd dispersed without complaint."},
+        {"w":"obsequious","pos":"adj","def":"excessively obedient or attentive in order to please","syn":["servile","fawning","sycophantic"],"ant":["domineering","imperious"],"sent":"The obsequious manner grated on everyone present."},
+        {"w":"sycophant","pos":"n","def":"a person who flatters others to gain advantage","syn":["toady","flatterer","lackey"],"ant":["critic","detractor"],"sent":"He surrounded himself with sycophants."},
+        {"w":"deferential","pos":"adj","def":"showing respectful submission to another's judgement","syn":["respectful","dutiful","courteous"],"ant":["insolent","impertinent"],"sent":"She was deferential without being servile."}
+      ]
+    },
+    {
+      "name": "Anger and hostility",
+      "words": [
+        {"w":"irascible","pos":"adj","def":"easily provoked to anger","syn":["irritable","testy","choleric"],"ant":["placid","even-tempered"],"sent":"The irascible editor rewrote every paragraph."},
+        {"w":"truculent","pos":"adj","def":"eager or quick to argue or fight","syn":["belligerent","pugnacious","combative"],"ant":["amiable","conciliatory"],"sent":"His truculent tone ended any hope of agreement."},
+        {"w":"belligerent","pos":"adj","def":"hostile and aggressive","syn":["bellicose","warlike","antagonistic"],"ant":["peaceable","pacific"],"sent":"A belligerent letter arrived the following week."},
+        {"w":"acrimonious","pos":"adj","def":"angry and bitter in tone","syn":["rancorous","embittered","caustic"],"ant":["amicable","cordial"],"sent":"The split was public and acrimonious."},
+        {"w":"vitriolic","pos":"adj","def":"filled with bitter, corrosive criticism","syn":["scathing","venomous","withering"],"ant":["complimentary","laudatory"],"sent":"The review was vitriolic beyond anything the book deserved."}
+      ]
+    },
+    {
+      "name": "Calming and composure",
+      "words": [
+        {"w":"placate","pos":"v","def":"to make someone less angry or hostile","syn":["appease","pacify","conciliate"],"ant":["provoke","antagonise"],"sent":"A partial refund placated the customer."},
+        {"w":"mollify","pos":"v","def":"to soften the anger or anxiety of","syn":["soothe","assuage","calm"],"ant":["incense","aggravate"],"sent":"Nothing he said could mollify her."},
+        {"w":"assuage","pos":"v","def":"to make an unpleasant feeling less intense","syn":["alleviate","allay","relieve"],"ant":["intensify","exacerbate"],"sent":"The apology did little to assuage their doubts."},
+        {"w":"equanimity","pos":"n","def":"calmness of mind, especially under strain","syn":["composure","poise","serenity"],"ant":["agitation","perturbation"],"sent":"He met the verdict with complete equanimity."},
+        {"w":"phlegmatic","pos":"adj","def":"having a calm, unexcitable disposition","syn":["stolid","unflappable","imperturbable"],"ant":["excitable","volatile"],"sent":"A phlegmatic captain is worth two brilliant ones."}
+      ]
+    },
+    {
+      "name": "Excess and abundance",
+      "words": [
+        {"w":"surfeit","pos":"n","def":"an excessive amount of something","syn":["glut","superfluity","overabundance"],"ant":["dearth","paucity"],"sent":"There is a surfeit of opinion and a shortage of data."},
+        {"w":"plethora","pos":"n","def":"an oversupply; far more than is needed","syn":["profusion","abundance","surplus"],"ant":["scarcity","dearth"],"sent":"A plethora of options can paralyse a buyer."},
+        {"w":"superfluous","pos":"adj","def":"beyond what is required or sufficient","syn":["redundant","needless","surplus"],"ant":["essential","indispensable"],"sent":"Every superfluous clause was struck from the draft."},
+        {"w":"profligate","pos":"adj","def":"recklessly extravagant with money or resources","syn":["prodigal","spendthrift","wasteful"],"ant":["frugal","thrifty"],"sent":"The profligate spending of the first year was never recovered."},
+        {"w":"copious","pos":"adj","def":"abundant in supply or quantity","syn":["plentiful","ample","profuse"],"ant":["meagre","scant"],"sent":"She took copious notes throughout the lecture."}
+      ]
+    },
+    {
+      "name": "Scarcity and thrift",
+      "words": [
+        {"w":"dearth","pos":"n","def":"a scarcity or lack of something","syn":["paucity","shortage","insufficiency"],"ant":["surfeit","plethora"],"sent":"There is no dearth of talent, only of opportunity."},
+        {"w":"paucity","pos":"n","def":"the presence of something in only small quantities","syn":["dearth","scantiness","meagreness"],"ant":["abundance","profusion"],"sent":"The paucity of evidence stalled the inquiry."},
+        {"w":"exiguous","pos":"adj","def":"very small in size or amount; scanty","syn":["meagre","paltry","slender"],"ant":["ample","copious"],"sent":"The grant was exiguous and arrived late."},
+        {"w":"frugal","pos":"adj","def":"sparing and economical with money or food","syn":["thrifty","economical","sparing"],"ant":["profligate","extravagant"],"sent":"A frugal household weathered the downturn easily."},
+        {"w":"parsimonious","pos":"adj","def":"unwilling to spend; excessively sparing","syn":["miserly","niggardly","penurious"],"ant":["munificent","lavish"],"sent":"He was parsimonious with praise and with money alike."}
+      ]
+    },
+    {
+      "name": "Generosity",
+      "words": [
+        {"w":"munificent","pos":"adj","def":"more generous than is usual or expected","syn":["bountiful","lavish","openhanded"],"ant":["parsimonious","miserly"],"sent":"A munificent donation endowed the whole department."},
+        {"w":"magnanimous","pos":"adj","def":"generous or forgiving, especially toward a rival","syn":["big-hearted","noble","charitable"],"ant":["petty","vindictive"],"sent":"He was magnanimous in defeat."},
+        {"w":"altruistic","pos":"adj","def":"showing selfless concern for the welfare of others","syn":["unselfish","selfless","humane"],"ant":["egoistic","self-serving"],"sent":"The scheme was altruistic in design if not in effect."},
+        {"w":"philanthropy","pos":"n","def":"the practice of promoting the welfare of others","syn":["benevolence","charity","humanitarianism"],"ant":["misanthropy","selfishness"],"sent":"His later years were given over to philanthropy."}
+      ]
+    },
+    {
+      "name": "Decline and impermanence",
+      "words": [
+        {"w":"atrophy","pos":"v","def":"to waste away, typically from disuse","syn":["wither","degenerate","shrivel"],"ant":["flourish","burgeon"],"sent":"Skills atrophy quickly without practice."},
+        {"w":"moribund","pos":"adj","def":"at the point of death; stagnant and lacking vitality","syn":["dying","declining","waning"],"ant":["thriving","flourishing"],"sent":"The moribund industry was propped up for a decade."},
+        {"w":"desiccate","pos":"v","def":"to dry out thoroughly","syn":["dehydrate","parch","shrivel"],"ant":["moisten","hydrate"],"sent":"The soil was desiccated by three dry summers."},
+        {"w":"wane","pos":"v","def":"to decrease in strength, size or importance","syn":["diminish","dwindle","subside"],"ant":["wax","burgeon"],"sent":"Interest in the proposal waned within a month."},
+        {"w":"ephemeral","pos":"adj","def":"lasting for a very short time","syn":["fleeting","transient","evanescent"],"ant":["enduring","perennial"],"sent":"Fame of that kind is almost always ephemeral."}
+      ]
+    },
+    {
+      "name": "Permanence",
+      "words": [
+        {"w":"perennial","pos":"adj","def":"lasting or recurring over a long period","syn":["enduring","perpetual","abiding"],"ant":["ephemeral","fleeting"],"sent":"Funding is the perennial complaint of every department."},
+        {"w":"immutable","pos":"adj","def":"unchanging over time and unable to be changed","syn":["unalterable","invariable","fixed"],"ant":["mutable","fluid"],"sent":"He treated the schedule as immutable."},
+        {"w":"indelible","pos":"adj","def":"impossible to remove, wash away or forget","syn":["ineradicable","permanent","lasting"],"ant":["erasable","transient"],"sent":"The visit left an indelible impression."},
+        {"w":"inveterate","pos":"adj","def":"long-established and unlikely ever to change","syn":["habitual","confirmed","chronic"],"ant":["occasional","sporadic"],"sent":"An inveterate optimist, she found the good in it."}
+      ]
+    },
+    {
+      "name": "Obscurity and clarity",
+      "words": [
+        {"w":"abstruse","pos":"adj","def":"difficult to understand; deeply obscure","syn":["recondite","arcane","impenetrable"],"ant":["accessible","straightforward"],"sent":"The paper is abstruse even for specialists."},
+        {"w":"recondite","pos":"adj","def":"dealing with a subject known to very few","syn":["abstruse","esoteric","obscure"],"ant":["obvious","commonplace"],"sent":"His interests are recondite but not trivial."},
+        {"w":"esoteric","pos":"adj","def":"understood by only a small group with special knowledge","syn":["arcane","cryptic","specialised"],"ant":["exoteric","popular"],"sent":"The debate turned on an esoteric point of procedure."},
+        {"w":"perspicuous","pos":"adj","def":"clearly expressed and easy to understand","syn":["lucid","intelligible","transparent"],"ant":["opaque","muddled"],"sent":"His prose is perspicuous where the subject allows."},
+        {"w":"lucid","pos":"adj","def":"expressed clearly and easy to follow","syn":["coherent","limpid","clear"],"ant":["confusing","obfuscated"],"sent":"A lucid explanation saved an hour of argument."},
+        {"w":"opaque","pos":"adj","def":"hard to understand; not transmitting light","syn":["impenetrable","murky","unfathomable"],"ant":["lucid","pellucid"],"sent":"The rules are opaque to anyone outside the trade."}
+      ]
+    },
+    {
+      "name": "Caution and judgement",
+      "words": [
+        {"w":"circumspect","pos":"adj","def":"wary and unwilling to take risks","syn":["cautious","guarded","chary"],"ant":["rash","incautious"],"sent":"He was circumspect in everything he committed to writing."},
+        {"w":"prudent","pos":"adj","def":"acting with care and thought for the future","syn":["judicious","sensible","politic"],"ant":["imprudent","foolhardy"],"sent":"It seemed prudent to wait for the audit."},
+        {"w":"wary","pos":"adj","def":"feeling caution about possible dangers","syn":["vigilant","watchful","leery"],"ant":["unguarded","trusting"],"sent":"Investors remain wary of the sector."},
+        {"w":"judicious","pos":"adj","def":"showing good sense and sound judgement","syn":["astute","discerning","well-judged"],"ant":["injudicious","ill-advised"],"sent":"A judicious edit halved the length."}
+      ]
+    },
+    {
+      "name": "Boldness and rashness",
+      "words": [
+        {"w":"temerity","pos":"n","def":"excessive confidence or boldness; audacity","syn":["effrontery","nerve","gall"],"ant":["timidity","diffidence"],"sent":"He had the temerity to ask for a second extension."},
+        {"w":"foolhardy","pos":"adj","def":"recklessly bold without regard for danger","syn":["rash","reckless","harebrained"],"ant":["circumspect","prudent"],"sent":"Crossing at night was foolhardy in that weather."},
+        {"w":"audacious","pos":"adj","def":"willing to take bold and surprising risks","syn":["daring","bold","venturesome"],"ant":["timid","timorous"],"sent":"The audacious plan very nearly worked."},
+        {"w":"intrepid","pos":"adj","def":"fearless and adventurous","syn":["dauntless","valiant","undaunted"],"ant":["fearful","craven"],"sent":"An intrepid crew mapped the entire coast."},
+        {"w":"impetuous","pos":"adj","def":"acting quickly and without thought","syn":["impulsive","hasty","precipitate"],"ant":["deliberate","measured"],"sent":"One impetuous email undid a year of work."}
+      ]
+    },
+    {
+      "name": "Timidity",
+      "words": [
+        {"w":"diffident","pos":"adj","def":"modest or shy from a lack of self-confidence","syn":["bashful","self-effacing","hesitant"],"ant":["assertive","confident"],"sent":"He is diffident in meetings and formidable on paper."},
+        {"w":"timorous","pos":"adj","def":"showing a lack of confidence; easily frightened","syn":["apprehensive","nervous","tremulous"],"ant":["intrepid","audacious"],"sent":"A timorous knock announced the new recruit."},
+        {"w":"pusillanimous","pos":"adj","def":"showing an ignoble lack of courage","syn":["craven","spineless","faint-hearted"],"ant":["valiant","courageous"],"sent":"The retreat was widely called pusillanimous."}
+      ]
+    },
+    {
+      "name": "Arrogance",
+      "words": [
+        {"w":"hubris","pos":"n","def":"excessive pride or self-confidence, inviting a fall","syn":["arrogance","conceit","presumption"],"ant":["humility","modesty"],"sent":"The expansion was hubris dressed as strategy."},
+        {"w":"supercilious","pos":"adj","def":"behaving as though one is superior to others","syn":["haughty","disdainful","condescending"],"ant":["humble","unassuming"],"sent":"A supercilious glance was his entire reply."},
+        {"w":"imperious","pos":"adj","def":"assuming authority arrogantly; domineering","syn":["overbearing","high-handed","peremptory"],"ant":["meek","submissive"],"sent":"Her imperious manner emptied the room."},
+        {"w":"pompous","pos":"adj","def":"affectedly grand and self-important","syn":["pretentious","grandiose","self-important"],"ant":["modest","down-to-earth"],"sent":"The pompous preamble ran to four pages."}
+      ]
+    },
+    {
+      "name": "Humility",
+      "words": [
+        {"w":"unassuming","pos":"adj","def":"not pretentious or presumptuous; modest","syn":["unpretentious","retiring","unobtrusive"],"ant":["ostentatious","pretentious"],"sent":"An unassuming man ran the largest fund in the city."},
+        {"w":"abase","pos":"v","def":"to lower in rank, dignity or esteem","syn":["demean","degrade","humble"],"ant":["exalt","elevate"],"sent":"He would not abase himself to keep the contract."},
+        {"w":"self-effacing","pos":"adj","def":"not seeking attention or credit for oneself","syn":["modest","reticent","unobtrusive"],"ant":["boastful","attention-seeking"],"sent":"Her self-effacing account understated her role entirely."}
+      ]
+    },
+    {
+      "name": "Diligence",
+      "words": [
+        {"w":"assiduous","pos":"adj","def":"showing great care, attention and perseverance","syn":["diligent","industrious","unflagging"],"ant":["negligent","slothful"],"sent":"Assiduous record-keeping saved the case."},
+        {"w":"sedulous","pos":"adj","def":"showing dedication and painstaking effort","syn":["persevering","painstaking","thorough"],"ant":["careless","lax"],"sent":"Two years of sedulous research went into the chapter."},
+        {"w":"tenacious","pos":"adj","def":"holding firmly to a course; persistent","syn":["dogged","unwavering","pertinacious"],"ant":["irresolute","vacillating"],"sent":"She was tenacious in pursuit of the correction."},
+        {"w":"meticulous","pos":"adj","def":"showing great attention to detail; very careful","syn":["scrupulous","exacting","fastidious"],"ant":["slapdash","careless"],"sent":"His meticulous notes made the audit trivial."},
+        {"w":"punctilious","pos":"adj","def":"showing great attention to correct behaviour or detail","syn":["precise","conscientious","exact"],"ant":["lax","casual"],"sent":"He was punctilious about acknowledging sources."}
+      ]
+    },
+    {
+      "name": "Laziness and aimlessness",
+      "words": [
+        {"w":"indolent","pos":"adj","def":"wanting to avoid exertion; habitually lazy","syn":["slothful","idle","work-shy"],"ant":["industrious","assiduous"],"sent":"An indolent afternoon produced nothing at all."},
+        {"w":"lethargic","pos":"adj","def":"sluggish and lacking energy or enthusiasm","syn":["listless","languid","enervated"],"ant":["energetic","vigorous"],"sent":"The whole team was lethargic after the flight."},
+        {"w":"torpid","pos":"adj","def":"mentally or physically inactive; sluggish","syn":["inert","dormant","sluggish"],"ant":["lively","animated"],"sent":"Trade was torpid through the whole quarter."},
+        {"w":"desultory","pos":"adj","def":"lacking a plan or purpose; jumping from one thing to another","syn":["aimless","haphazard","cursory"],"ant":["methodical","systematic"],"sent":"A desultory search of the archive turned up nothing."}
+      ]
+    },
+    {
+      "name": "Insight and learning",
+      "words": [
+        {"w":"sagacious","pos":"adj","def":"having keen practical judgement; wise","syn":["shrewd","canny","sage"],"ant":["obtuse","witless"],"sent":"A sagacious appointment steadied the company."},
+        {"w":"perspicacious","pos":"adj","def":"having a ready insight into things","syn":["discerning","penetrating","insightful"],"ant":["undiscerning","obtuse"],"sent":"Her perspicacious reading found the flaw at once."},
+        {"w":"erudite","pos":"adj","def":"having or showing great scholarly knowledge","syn":["learned","scholarly","well-read"],"ant":["ignorant","unlettered"],"sent":"The footnotes alone are erudite enough to publish."},
+        {"w":"astute","pos":"adj","def":"able to assess situations accurately and turn them to advantage","syn":["shrewd","sharp","calculating"],"ant":["naive","gullible"],"sent":"An astute purchase at the bottom of the market."}
+      ]
+    },
+    {
+      "name": "Dullness and gullibility",
+      "words": [
+        {"w":"obtuse","pos":"adj","def":"annoyingly slow to understand","syn":["dense","imperceptive","dim"],"ant":["perspicacious","astute"],"sent":"He was being deliberately obtuse about the deadline."},
+        {"w":"fatuous","pos":"adj","def":"silly and pointless; complacently foolish","syn":["inane","asinine","vacuous"],"ant":["judicious","sensible"],"sent":"A fatuous remark closed the discussion."},
+        {"w":"credulous","pos":"adj","def":"too ready to believe things; easily deceived","syn":["gullible","trusting","unquestioning"],"ant":["sceptical","incredulous"],"sent":"The scheme preyed on credulous first-time investors."},
+        {"w":"insipid","pos":"adj","def":"lacking flavour, interest or vigour","syn":["vapid","bland","banal"],"ant":["piquant","stimulating"],"sent":"The sequel was insipid where the original was sharp."}
+      ]
+    },
+    {
+      "name": "Harmony and reconciliation",
+      "words": [
+        {"w":"concord","pos":"n","def":"agreement or harmony between people or groups","syn":["accord","amity","consensus"],"ant":["discord","strife"],"sent":"Twenty years of concord ended in a single afternoon."},
+        {"w":"amicable","pos":"adj","def":"characterised by friendliness and goodwill","syn":["cordial","congenial","harmonious"],"ant":["acrimonious","hostile"],"sent":"They reached an amicable settlement out of court."},
+        {"w":"conciliatory","pos":"adj","def":"intended to placate or win goodwill","syn":["appeasing","propitiatory","peacemaking"],"ant":["antagonistic","provocative"],"sent":"A conciliatory statement followed within the hour."},
+        {"w":"rapprochement","pos":"n","def":"the re-establishment of cordial relations","syn":["reconciliation","détente","understanding"],"ant":["estrangement","rupture"],"sent":"The visit signalled a rapprochement between the two states."}
+      ]
+    },
+    {
+      "name": "Conflict and division",
+      "words": [
+        {"w":"discord","pos":"n","def":"disagreement or lack of harmony","syn":["strife","dissension","friction"],"ant":["concord","amity"],"sent":"Discord over the budget split the committee."},
+        {"w":"schism","pos":"n","def":"a split into opposing factions within a group","syn":["rift","rupture","cleavage"],"ant":["union","reconciliation"],"sent":"The schism has lasted four hundred years."},
+        {"w":"dissent","pos":"n","def":"the holding or expression of opinions at variance with the official view","syn":["objection","disagreement","opposition"],"ant":["assent","acquiescence"],"sent":"A single note of dissent was recorded."},
+        {"w":"contentious","pos":"adj","def":"likely to cause disagreement or argument","syn":["controversial","divisive","disputatious"],"ant":["uncontroversial","agreeable"],"sent":"The most contentious clause was quietly dropped."}
+      ]
+    },
+    {
+      "name": "Beginning and growth",
+      "words": [
+        {"w":"nascent","pos":"adj","def":"just coming into existence and beginning to develop","syn":["incipient","emerging","budding"],"ant":["mature","established"],"sent":"The nascent industry attracted more capital than sense."},
+        {"w":"incipient","pos":"adj","def":"beginning to happen or develop","syn":["nascent","embryonic","inchoate"],"ant":["full-blown","developed"],"sent":"There were incipient signs of recovery by March."},
+        {"w":"burgeon","pos":"v","def":"to begin to grow or increase rapidly","syn":["flourish","proliferate","mushroom"],"ant":["wane","atrophy"],"sent":"Demand burgeoned once the tariff was lifted."},
+        {"w":"inchoate","pos":"adj","def":"just begun and so not fully formed","syn":["rudimentary","undeveloped","embryonic"],"ant":["complete","fully formed"],"sent":"His objection was real but inchoate."}
+      ]
+    },
+    {
+      "name": "Appeasement of doubt and proof",
+      "words": [
+        {"w":"corroborate","pos":"v","def":"to confirm or give support to a statement or finding","syn":["substantiate","verify","authenticate"],"ant":["refute","contradict"],"sent":"Two independent surveys corroborate the result."},
+        {"w":"refute","pos":"v","def":"to prove a statement or theory to be wrong","syn":["disprove","rebut","confute"],"ant":["corroborate","substantiate"],"sent":"The paper refutes the earlier estimate convincingly."},
+        {"w":"tenable","pos":"adj","def":"able to be defended against objection","syn":["defensible","sustainable","arguable"],"ant":["untenable","indefensible"],"sent":"That reading is no longer tenable."},
+        {"w":"cogent","pos":"adj","def":"clear, logical and convincing","syn":["compelling","persuasive","forceful"],"ant":["specious","unconvincing"],"sent":"She made a cogent case for delay."},
+        {"w":"equivocate","pos":"v","def":"to use ambiguous language so as to avoid committing oneself","syn":["prevaricate","hedge","waffle"],"ant":["specify","commit"],"sent":"He equivocated for twenty minutes and answered nothing."}
+      ]
+    }
+  ]
+}

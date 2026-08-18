@@ -1,0 +1,142 @@
+{
+ "key": "triangles",
+ "order": 100,
+ "name": "Triangles",
+ "notes": "Triangles.md",
+ "file": "Triangles-Practice.md",
+ "perQ": 105,
+ "intro": [
+  "**Draw it, then label every known length and angle on the figure.** Most geometry errors are bookkeeping errors, not reasoning errors (§1).",
+  "Learn the Pythagorean triples cold — 3-4-5, 5-12-13, 7-24-25, 8-15-17, 9-40-41 — and that 13-14-15 has area 84. CAT picks its numbers from that list (§3)."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "Triangles",
+   "qs": [
+    {
+     "id": "A1",
+     "t": "tita",
+     "q": "The sides of a triangle are 13, 14 and 15. Find its area.",
+     "a": 84,
+     "check": "(21*8*7*6)**0.5",
+     "h": "§3 — Heron's formula with s = 21. This particular triangle appears constantly in CAT; memorise that its area is 84.",
+     "s": "s = 21 ⟹ √(21 × 8 × 7 × 6) = √7056 = <b>84</b>."
+    },
+    {
+     "id": "A2",
+     "t": "mcq",
+     "q": "In a right triangle the legs are 9 and 12. The altitude to the hypotenuse is",
+     "o": [
+      "6",
+      "7.2",
+      "7.5",
+      "8"
+     ],
+     "a": 1,
+     "h": "§7 — the area computed two ways: ½(9)(12) = ½(hypotenuse)(altitude).",
+     "s": "Hypotenuse = 15 (a 3-4-5 triple scaled by 3) ⟹ altitude = 9 × 12/15 = <b>7.2</b>."
+    },
+    {
+     "id": "A3",
+     "t": "tita",
+     "q": "An equilateral triangle has area 36√3. Find its side.",
+     "a": 12,
+     "check": "12",
+     "h": "§3 — area = (√3/4)a². The √3 cancels, which is why the numbers look ugly but aren't.",
+     "s": "(√3/4)a² = 36√3 ⟹ a² = 144 ⟹ a = <b>12</b>."
+    },
+    {
+     "id": "A4",
+     "t": "mcq",
+     "q": "In triangle ABC, D is the midpoint of BC and the area of ABC is 48. The area of ABD is",
+     "o": [
+      "12",
+      "16",
+      "24",
+      "32"
+     ],
+     "a": 2,
+     "h": "§4 — a median splits a triangle into two of equal area, regardless of shape.",
+     "s": "A median bisects the area ⟹ <b>24</b>."
+    },
+    {
+     "id": "A5",
+     "t": "tita",
+     "q": "Two similar triangles have areas in the ratio 9 : 16. If the smaller has perimeter 45, find the perimeter of the larger.",
+     "a": 60,
+     "check": "45*4/3",
+     "h": "§4 — areas scale as the square of the linear ratio, so take square roots before scaling a length.",
+     "s": "Linear ratio = 3 : 4 ⟹ perimeter = 45 × 4/3 = <b>60</b>. (Scaling by 16/9 gives 80 — the planted error.)"
+    },
+    {
+     "id": "A6",
+     "t": "mcq",
+     "q": "The sides of a triangle are 7, 24 and 25. Its inradius is",
+     "o": [
+      "2",
+      "3",
+      "3.5",
+      "4"
+     ],
+     "a": 1,
+     "h": "§5 — this is a right triangle, and for a right triangle r = (a + b − c)/2.",
+     "s": "7² + 24² = 25² ⟹ right angled ⟹ r = (7 + 24 − 25)/2 = <b>3</b>. (Check with r = Area/s = 84/18 … careful: s = 28, Area = 84 ⟹ r = 3 ✓)"
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (5 minutes)",
+   "block": 315,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "tita",
+     "q": "Find the area of a triangle with sides 9, 12 and 15.",
+     "a": 54,
+     "check": "0.5*9*12",
+     "h": "Check for a Pythagorean triple before reaching for Heron.",
+     "s": "9-12-15 is 3-4-5 tripled ⟹ right angled ⟹ ½(9)(12) = <b>54</b>."
+    },
+    {
+     "id": "M2",
+     "t": "tita",
+     "q": "In a right triangle, the hypotenuse is 26 and one leg is 10. Find the area.",
+     "a": 120,
+     "check": "0.5*10*24",
+     "h": "5-12-13 doubled.",
+     "s": "The other leg is 24 ⟹ area = ½(10)(24) = <b>120</b>."
+    },
+    {
+     "id": "M3",
+     "t": "mcq",
+     "q": "In triangle ABC, DE is parallel to BC with AD : DB = 2 : 3. The ratio of the area of ADE to that of ABC is",
+     "o": [
+      "2 : 5",
+      "4 : 25",
+      "4 : 9",
+      "2 : 3"
+     ],
+     "a": 1,
+     "h": "AD : AB is the linear ratio, and areas go as its square.",
+     "s": "AD : AB = 2 : 5 ⟹ area ratio = <b>4 : 25</b>. (4 : 9 uses AD : DB — the planted error.)"
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A2, A6, M1, M2",
+   "grinding through Heron or algebra where a Pythagorean triple was staring at you (§3)"
+  ],
+  [
+   "A5, M3",
+   "scaling a length by the area ratio instead of by its square root — areas go as k², so take the root first (§4)"
+  ],
+  [
+   "A4",
+   "computing heights instead of using the same-height rule: a median always halves the area (§4)"
+  ]
+ ]
+}

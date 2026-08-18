@@ -111,6 +111,40 @@ The reverse phrasing is more common in CAT than the forward one. Set the unknown
 
 ---
 
+## 5a. Departures defined *backwards* from the finish
+
+§5 handles "A leaves after 5 days" — a phase boundary you can count forwards from day 1. CAT prefers the harder phrasing: "**A leaves 3 days before the project is completed**." The boundary is measured from an end you do not yet know, so you cannot split into phases until you have the answer.
+
+**Core idea — assume the total D, express every worker's days in terms of D, and solve or test.**
+
+For a total of D days:
+- someone who works throughout contributes D days
+- someone who leaves k days before the end contributes **D − k** days
+- someone on alternate days from day 1 contributes **⌈(their last day)/2⌉** days — count the odd-numbered days only, not half of them
+
+Because D must be a whole number and the options are few, **testing D is usually faster than solving** — one substitution per candidate, and the totals bracket the answer immediately.
+
+**Method:**
+1. Set the total work as the LCM of the individual times (§1) and get each rate.
+2. Write each person's number of working days as an expression in D.
+3. Test the candidate values of D from the options, or solve if the expression is clean. Check that the total lands on exactly the full work — under means D is too small, over means too large.
+
+**Worked example:** Rohan alone takes 15 days, Suman 10, Tarun 20. All three start together, but Tarun works only on alternate days starting from day 1. Tarun leaves 3 days before completion and Suman leaves 1 day before completion. In how many days is the project completed?
+
+- Total = LCM(15, 10, 20) = **60 units**. Rates: Rohan **4**/day, Suman **6**/day, Tarun **3**/day.
+- Days worked: Rohan D; Suman D − 1; Tarun works the odd-numbered days up to day D − 3.
+- **Test D = 6:** Rohan 6 days ⟹ 24. Suman days 1–5 ⟹ 5 × 6 = 30. Tarun's last possible day is day 3, so he works days 1 and 3 ⟹ 2 × 3 = 6.
+- Total = 24 + 30 + 6 = **60** ✓ exactly ⟹ **D = 6**
+- Bracketing check: D = 5 gives 20 + 24 + 3 = 47 (short), D = 7 gives 28 + 36 + 6 = 70 (over). 6 is the only fit.
+
+**Traps:**
+- Halving Tarun's span. Over days 1–3 he works **2** days (1 and 3), not 1.5. Alternate-day counts are ceilings, not halves — §4.
+- Reading "leaves 3 days before completion" as "works for 3 days" or "leaves on day 3".
+- Splitting into forward phases. You cannot, until D is known; that is exactly what makes this harder than §5.
+- Accepting a fractional D. Here the departures are pegged to whole days from the end, so a non-integer D is a signal you have miscounted somebody's days, not a valid answer.
+
+---
+
 ## 6. Wages
 
 **Wages are split in the ratio of work actually done** — that is, efficiency × days worked. **Not** in the ratio of days worked alone, and not in the ratio of efficiencies alone.
@@ -268,6 +302,7 @@ The most common exam shape in this topic. **Method: units done, units remaining,
 | Person leaves midway | average the rates | phase it: work done, then remainder |
 | Efficiency percentage | "50% more efficient" → time × 1.5 | efficiency 3:2 → time 2:3, so × 2/3 |
 | Fraction of work | new LCM computed | take the fraction of the same total |
+| "Leaves 3 days before completion" | works 3 days, or leaves on day 3 | works D − 3 days; test integer D |
 
 ---
 

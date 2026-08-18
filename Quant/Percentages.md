@@ -90,6 +90,46 @@ Net factor = (1 ± a/100)(1 ± b/100)…
 
 **The general result:** a rise of x% followed by a fall of x% always gives a net **decrease** of x²/100 %. Never zero. This shows up in profit & loss identically.
 
+**When one factor is a dimension, square (or cube) it first.** A linear dimension changing by x% changes area by the *square* of that factor and volume by the *cube* — see `Mensuration.md` §2, the scaling rule (linear ×k ⟹ area ×k², volume ×k³). Only then multiply it into the other factors.
+
+**Worked example:** A square's side rises 10% and the paint used is 10% cheaper. Change in painting cost?
+- Cost = Area × Rate. Side factor 1.1 ⟹ **area factor 1.1² = 1.21**; rate factor 0.9
+- 1.21 × 0.9 = 1.089 → **8.9% costlier**
+
+Answering "no change" because +10% and −10% cancel is the trap: the dimension gets squared before it meets the price cut, so the increase wins.
+
+---
+
+## 5a. An *absolute* change in a dimension — and recovering the dimension from it
+
+§5 handles a dimension changing by a **percentage**. The other half of the family gives an **absolute** change — "the length increases by 1 cm" — and asks what that does to the area, or runs it backwards.
+
+**Core idea.** Adding 1 to the length multiplies the area by (l + 1)/l = 1 + 1/l. So
+
+**adding 1 cm to a side raises the area by exactly 100/l %** — the reciprocal of that side, as a percentage
+
+Read backwards, this is a **free measurement**: a stated percentage area increase tells you the side directly. 12.5% = 1/8 ⟹ that side is 8. 20% = 1/5 ⟹ that side is 5. No algebra at all.
+
+More generally, adding k to a side of length l raises the area by 100k/l %.
+
+**Method:**
+1. Convert each stated area-increase percentage to a fraction in lowest terms.
+2. The denominator (times k) **is** the corresponding side.
+3. Now that you have actual dimensions, answer whatever was asked — perimeter, area, diagonal — with plain arithmetic.
+
+**Worked example:** A rectangle's area rises by 12.5% when its length grows by 1 cm, and by 20% when its breadth grows by 1 cm. By approximately what percentage does the perimeter rise if the length grows by 2 cm and the breadth by 1 cm?
+
+- 12.5% = 1/8 ⟹ **l = 8**; 20% = 1/5 ⟹ **b = 5**
+  - (Check: 9 × 5 = 45 vs 40 ⟹ +12.5% ✓; 8 × 6 = 48 vs 40 ⟹ +20% ✓)
+- Old perimeter = 2(8 + 5) = 26. New = 2(10 + 6) = 32.
+- Increase = 6/26 = 3/13 ≈ 0.2308 ⟹ **≈ 23%**
+
+**Traps:**
+- Applying the two percentage rises together to get the area and stopping there. The question asks about the **perimeter**, which is not a percentage question at all once you have l and b.
+- Adding 12.5% + 20% in any form. They are increases on different dimensions and never combine additively for the perimeter.
+- Using the "square the factor" rule of §5. That is for *proportional* changes; a fixed +1 cm is not proportional, and it affects a long side far less than a short one.
+- Assuming the perimeter rises by the same percentage as a side. Perimeter is linear in both, so its percentage rise is a weighted blend — here (2 + 1)/(8 + 5) = 3/13, which is the whole calculation in one line.
+
 ---
 
 ## 6. Type 1 — Successive changes on population/price
@@ -118,6 +158,63 @@ Expenditure = Price × Quantity. If expenditure is fixed, the two factors are re
 
 This exact structure reappears as: speed vs time (distance fixed), men vs days (work fixed), length vs breadth (area fixed). Recognise the shape and reuse the table.
 
+### 7a. When expenditure is NOT fixed (generalised price–consumption)
+
+Everything above is the special case "expenditure unchanged", where the price and quantity factors are exact reciprocals. The general statement is just the product rule:
+
+**E-factor = P-factor × Q-factor  ⟹  Q-factor = E-factor ÷ P-factor**
+
+Fixed expenditure is only the case E-factor = 1, which collapses this back to the reciprocal table of §4.
+
+**Worked example:** Wheat rises from ₹24/kg to ₹27/kg. By what % must a family cut consumption so that expenditure falls by 21.25%?
+
+- P-factor = 27/24 = 9/8
+- E-factor = 1 − 21.25% = 1 − 17/80 = 63/80
+- Q-factor = (63/80) ÷ (9/8) = (63/80) × (8/9) = 7/10 → **30% reduction**
+
+Check (assume 100 kg): 100 × 24 = 2400 → 2400 × 0.7875 = 1890 → 1890 ÷ 27 = 70 kg. 100 → 70 ✓
+
+**Method:** write all three as fractions, divide, then read the resulting factor as a change. Never add or subtract the percentages.
+
+Applying the §7 reciprocal shortcut blindly here (price up 1/8 ⟹ consumption down 1/9 = 11.11%) gives the wrong answer, because expenditure is not fixed this time.
+
+Same shape elsewhere: distance-factor = speed-factor × time-factor, work-factor = men-factor × days-factor, area-factor = length-factor × breadth-factor. One identity, four topics.
+
+| Trap | Wrong | Right |
+|---|---|---|
+| Price up x%, expenditure also changes | use the §4 reciprocal, x/(100+x) | divide E-factor by P-factor |
+| "decrease expenditure by 21.25%" | subtract 21.25% from the price rise | multiply by 0.7875 |
+
+### 7b. "n more/fewer items for the same money" — recovering the actual price
+
+§7 answers in percentages. This variant gives you a **count** instead and asks for the rupee price. The bridge is one sentence: **the % change in quantity, applied to the original quantity, equals the given extra count.**
+
+**Method:**
+1. Price factor from the stated change (drop of 25% → ×3/4).
+2. Quantity factor = its reciprocal, since the money spent is fixed (→ ×4/3).
+3. Read the quantity factor as a **change**: ×4/3 means quantity rose by 1/3 of the original.
+4. Set that fraction of the original quantity equal to the given count ⟹ original quantity Q.
+5. Original price = Money ÷ Q.
+
+**Worked example:** When the price of eggs dropped 25%, 25 more eggs could be bought for ₹30. Find the original price of one egg.
+
+- Price factor = 3/4 ⟹ quantity factor = 4/3
+- Quantity rose by 4/3 − 1 = **1/3** of the original
+- (1/3)·Q = 25 ⟹ **Q = 75 eggs** originally
+- Original price = 30/75 = **₹0.40** (40 paise)
+- Check: at ₹0.40 → 75 eggs; new price ₹0.30 → 100 eggs; 25 more ✓
+
+**The direction rule:** the extra count sits on the **original** quantity when the price *falls*, because you're measuring the gain from the old baseline. Price drop of 1/n ⟹ quantity gain of 1/(n−1) of the original (§4's pattern, run backwards).
+
+| Trap | Wrong | Right |
+|---|---|---|
+| Price drops 25% | quantity rises 25% | rises 33.33% (×4/3) |
+| The 25 extra eggs | 25 = 1/4 of Q | 25 = 1/3 of Q |
+| Final answer | the quantity 75 | the price 30/75 = ₹0.40 |
+| Units | leave it as 40 | question says "in Rs" → 0.40 |
+
+Same skeleton with a rise instead: "price rose 25%, 10 *fewer* items for ₹50" → quantity factor 4/5, fall of 1/5 of the original, so Q = 50.
+
 ---
 
 ## 8. Type 3 — Percentage points vs percentage
@@ -139,6 +236,40 @@ CAT and DI sets exploit this constantly. "Interest rose by 5%" is ambiguous; "ro
 - Savings = 0.56 × Income = 5600 ⟹ Income = **₹10,000**
 
 **The trap:** "20% of the remainder" ≠ 20% of income. Track what each percentage sits on. Underline the base word ("remainder", "the rest", "what was left") on first read.
+
+### 9a. Chains with money added back, closed by an equation
+
+Two extensions that turn §9 into a full CAT question.
+
+**First: money coming *in* is also a multiplier.** "X gives him 66.66% of the money in his hand" adds 2/3 of the *current* holding, so the holding goes ×(1 + 2/3) = **×5/3**. Any inflow or outflow stated as a percentage of the current amount is a factor — write it in the same row as the others. Only a *flat* rupee amount breaks the chain and forces an equation mid-way.
+
+**Second: the closing condition gives you the initial amount.** If the final amount is stated in terms of the initial (a square root, a difference, a ratio), set the chain product equal to it and solve.
+
+**Method:**
+1. Write every step as a fraction factor in one row. Outflow of 1/n → ×(1 − 1/n). Inflow of m/n of current → ×(1 + m/n).
+2. Multiply them into a single factor k, so Final = k·A.
+3. Impose the closing condition and solve for A.
+4. Back-substitute for whatever specific amount is asked.
+
+**Worked example:** Vinod gives 25% of his money to Suresh, spends 1/3 of the remainder on a ticket, spends 40% of the remainder shopping, then Gita gives him 66.66% of the money in his hand, after which he gives 4/5 of what he holds to his mother. He is left with the square root of his initial amount. How much did Gita give him?
+
+- Factors in a row: 3/4 × 2/3 × 3/5 × 5/3 × 1/5
+- Multiply: 3/4 × 2/3 = 1/2; × 3/5 = 3/10; × 5/3 = 1/2; × 1/5 = **1/10**
+- So Final = A/10, and the condition says Final = √A:
+  A/10 = √A ⟹ √A = 10 ⟹ **A = 100**
+- Gita's gift = 2/3 of the holding just before she arrived. That holding is 3/4 × 2/3 × 3/5 = 3/10 of A = 30, so she gave 2/3 × 30 = **₹20**
+- Check: 100 → 75 → 50 → 30 → +20 = 50 → gives 40 to mother → left 10 = √100 ✓
+
+**Traps**
+
+| Trap | Wrong | Right |
+|---|---|---|
+| "gives him 66.66% of the money in his hand" | ×2/3 | ×5/3 (he *keeps* his money and gains 2/3 more) |
+| Whose hand "in his hand" means | the giver's money | the receiver's current holding |
+| A/10 = √A | A = 10 | √A = 10, so A = 100 |
+| The question asked | the initial amount, 100 | Gita's gift, 20 — re-read the last line |
+
+**Why the chain product is worth computing even when you don't need it:** here it collapses to a clean 1/10, which is the signal that the setter chose the percentages to cancel. If your product is ugly, re-check a factor before continuing.
 
 ---
 
@@ -204,6 +335,49 @@ Use this every time one of the two numbers is a friendly fraction — swap them.
 
 ---
 
+## 13. Type 7 — Overall % change of a composite (weighted % change)
+
+**Core idea:** when a total is made of parts that change at *different* rates, the overall % change is the **weighted average of the parts' % changes, weighted by their original values** — not the plain average.
+
+Two parts of value V₁ and V₂ changing by a% and b%:
+
+**Overall % = (V₁·a + V₂·b) / (V₁ + V₂)**
+
+This is `Means-and-Weighted-Averages.md` §3 applied to percentages; the alligation cross of §4 there works in reverse if you need the ratio of the parts. Note this is *addition* of weighted rates, not multiplication — §5's multiplying factors are for changes applied one after another to the **same** quantity. Different parts → weighted average. Same quantity, repeated → multiply.
+
+### The swap trick
+
+CAT's favourite dressing: give the overall change once, then **swap the two rates** and give it again. Never solve the two equations by substitution — add and subtract them.
+
+With weights V₁ : V₂ = m : n (total m + n), overall changes p% and q% before/after the swap:
+
+- (m·a + n·b) = (m+n)·p
+- (m·b + n·a) = (m+n)·q
+
+**Add:** (m+n)(a+b) = (m+n)(p+q) ⟹ **a + b = p + q** (weights vanish)
+**Subtract:** (m−n)(a−b) = (m+n)(p−q) ⟹ **a − b = (p−q)·(m+n)/(m−n)**
+
+Sum and difference give a and b in one line each.
+
+**Worked example:** A portfolio holds gold worth 4× the silver. If gold rises a% and silver rises b%, the portfolio rises 7%. If gold rises b% and silver rises a%, it rises 4%. Find a and b.
+
+- Weights 4 : 1, total 5. p = 7, q = 4.
+- a + b = 7 + 4 = **11**
+- a − b = (7 − 4) × 5/3 = **5**
+- ⟹ a = 8, b = 3
+- Check: (4×8 + 1×3)/5 = 35/5 = 7 ✓  and (4×3 + 1×8)/5 = 20/5 = 4 ✓
+
+**Traps**
+
+| Trap | Wrong | Right |
+|---|---|---|
+| Parts changing at different rates | multiply the factors, as in §5 | weighted average of the rates |
+| Weights 3 : 1 | overall change is (a+b)/2 | (3a + b)/4 |
+| Swap version | substitute and grind | add for a+b, subtract for a−b |
+| Final answer "a vs b" | report a − b as the answer | if asked "% more", it's (a−b)/b — see §3 |
+
+---
+
 ## Traps, consolidated
 
 | Trap | Wrong | Right |
@@ -211,10 +385,13 @@ Use this every time one of the two numbers is a friendly fraction — swap them.
 | +20% then −20% | back to original | 4% net loss |
 | "A is 20% more than B" reversed | B is 20% less | B is 16.67% less |
 | Price up 25%, consumption cut | 25% | 20% |
+| Price up, expenditure down by a stated % | treat as the fixed-expenditure case (§7) | use §7a: Q-factor = E-factor ÷ P-factor |
 | "20% of the remainder" | 20% of the original | 20% of what's left |
 | Rate 20% → 25% | "5% increase" | 5 pp, or 25% increase |
 | Averaging two percentages | plain mean | weight by the bases |
+| Composite/portfolio changing at two rates | multiply factors (§5) | weighted average of rates (§13) |
 | Loss % > 100 | accepted | impossible — recheck |
+| "+1 cm raises area by 12.5%" | square the factor | +1 on side l ⟹ +100/l %, so l = 8 |
 
 ---
 

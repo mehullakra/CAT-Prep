@@ -156,6 +156,34 @@ When one component is unchanged, anchor on that component rather than using the 
 
 ---
 
+## 7a. Type 4b — Component accounting: reading the answer off what is *left behind*
+
+Not every two-mixture question is an alligation. When the question tells you something about the **residue** — what stays in the dispenser, the vessel, the tank — that fact is usually the fastest way in, because the residue keeps the parent mixture's ratio exactly.
+
+**Core idea.** Pouring out part of a uniform mixture changes the *quantity* of every component but not the *ratio*. So if B is 2 : 3 apple : orange, then whatever volume remains in B is still 2/5 apple. One sentence about the residue therefore fixes the poured volume in one step.
+
+**Method:**
+1. Convert each source to litres of each component (never leave it as a ratio).
+2. Find the statement about a **residue** and use it first — it involves one unknown, so it solves immediately.
+3. Substitute into the statement about the **mixture** to get the second unknown.
+4. Build the final answer from component totals, not from percentages of percentages.
+
+**Worked example:** Dispenser A holds 40 L of apple : orange = 3 : 1; dispenser B holds 60 L of 2 : 3. X litres are drawn from A and Y from B into a jug. The jug then holds exactly 14 L of orange, and what remains in B holds exactly 18 L of apple. What percentage of the jug is apple?
+
+- Convert: **A** = 30 apple + 10 orange. **B** = 24 apple + 36 orange.
+- **Residue first.** What is left in B is (60 − Y) litres, still 2/5 apple: (2/5)(60 − Y) = 18 ⟹ 60 − Y = 45 ⟹ **Y = 15**
+- **Then the jug.** Orange in the jug = X/4 + (3/5)Y = 14 ⟹ X/4 + 9 = 14 ⟹ **X = 20**
+- Jug apple = (3/4)(20) + (2/5)(15) = 15 + 6 = **21**; jug total = 20 + 15 = **35**
+- Percentage = 21/35 = **60%**
+
+**Traps:**
+- Starting with the 14-litre orange equation. It has two unknowns; the residue statement has one. Always open with the sentence that mentions only one quantity.
+- Alligating. There is no target concentration given here, so the cross has nothing to work with — this is bookkeeping, not alligation.
+- Averaging the two source percentages (75% and 40%) to get 57.5%. The pour volumes are unequal, so it must be weighted — and once you have the component totals you never need the weighting at all.
+- Forgetting that the residue keeps the parent ratio. Drawing off a uniform mixture cannot change its concentration; only adding a pure component can (§4).
+
+---
+
 ## 8. Type 5 — Alligation on profit, interest and averages
 
 Same machinery, different label. Recognising that a question *is* an alligation question is worth more than the formula.
@@ -192,6 +220,7 @@ Same machinery, different label. Recognising that a question *is* an alligation 
 | Ratio vs quantity | ratio reported as the answer | anchor with a given absolute amount |
 | Three ingredients | one unique answer assumed | often a range; look for "minimum/maximum" |
 | Non-integer people or items | reported as the answer | red flag — recheck the cross |
+| A fact about what is left in the vessel | ignored, or alligated | residue keeps the parent ratio — use it first |
 
 ---
 

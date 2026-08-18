@@ -134,6 +134,42 @@ The recognition cue for telescoping is a **product of consecutive terms in the d
 
 ---
 
+## 7a. Telescoping with three consecutive factors
+
+§7 handles 1/(n(n+1)). The three-factor version appears just as often and carries one extra step that CAT builds its decoys around.
+
+**Core idea.** The partial fraction is *not* a difference of two simple reciprocals — it is **half** the difference of two two-factor reciprocals:
+
+**1/(n(n+1)(n+2)) = ½ [ 1/(n(n+1)) − 1/((n+1)(n+2)) ]**
+
+The ½ is there because the outer factors differ by 2, not 1. Verify by recombining: 1/(n(n+1)) − 1/((n+1)(n+2)) = [(n+2) − n]/(n(n+1)(n+2)) = 2/(n(n+1)(n+2)).
+
+**The general shape**, worth writing down once:
+
+**1/(n(n+1)…(n+k)) = (1/k) [ 1/(n…(n+k−1)) − 1/((n+1)…(n+k)) ]**
+
+k = 1 needs no fraction in front, k = 2 needs ½, k = 3 needs ⅓.
+
+**Method:**
+1. Write the term as (1/k)[f(n) − f(n+1)], with f built from one fewer factor.
+2. Sum: everything cancels except (1/k)[f(1) − f(N+1)].
+3. Simplify once, at the end.
+
+**Worked example:** aₙ = 1/(n(n+1)(n+2)). Find a₁ + a₂ + … + a₁₀.
+
+- aₙ = ½[1/(n(n+1)) − 1/((n+1)(n+2))]
+- Sum = ½[1/(1·2) − 1/(11·12)] = ½[1/2 − 1/132]
+- = ½ × (66 − 1)/132 = ½ × 65/132 = **65/264**
+
+**Sanity check worth doing:** the *infinite* sum is ½ × ½ = 1/4 = 0.25, so any finite partial sum must be strictly below 0.25. Here 65/264 ≈ 0.246 — just under, as it must be. That bound alone eliminates any option ≥ 1/4 before you compute anything.
+
+**Traps:**
+- Dropping the ½. That gives 65/132, and the halved and doubled variants are planted among the options.
+- Getting the last index wrong. Ten terms end at n = 10, so the tail is 1/(11·12) — not 1/(10·11) or 1/(12·13).
+- Inventing a partial fraction like 1/n − 1/(n+1) − 1/(n+2). Recombine any decomposition before using it; it costs five seconds.
+
+---
+
 ## Traps
 
 | Trap | Wrong | Right |
@@ -146,6 +182,7 @@ The recognition cue for telescoping is a **product of consecutive terms in the d
 | Three terms in AP | a, a+d, a+2d | use a−d, a, a+d — sum becomes 3a |
 | HP handled directly | HP formulas | invert to an AP |
 | Bouncing ball | h·2r/(1−r) only | add the initial drop h |
+| 1/(n(n+1)(n+2)) telescoping | difference of two reciprocals | ½ × difference of two-factor reciprocals |
 
 ---
 

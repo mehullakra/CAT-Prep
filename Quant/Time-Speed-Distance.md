@@ -222,6 +222,39 @@ Compute the position from the *slower* runner's total distance and fold it back 
 
 ---
 
+## 7a. Two-body meeting when the speeds are swapped at the meeting point
+
+A CAT variant of §7: "on meeting they immediately interchange their speeds and directions." The standard machinery half-survives, and knowing exactly which half is the whole point.
+
+**What still holds:** the **combined speed never changes** (the same two speeds are in play, just attached to different people). So the timing rule of §7 is untouched — the nth meeting still happens when the pair has covered a **combined (2n − 1)D**, at time (2n − 1)D / (v₁ + v₂).
+
+**What breaks:** the split of that combined distance. In §7 the slower runner always covers v₁/(v₁+v₂) of it; once the speeds swap, that ratio is no longer valid and **you cannot locate the meeting point from the combined distance**. You must walk the timeline leg by leg.
+
+**Method:**
+1. Get the first meeting point from the original speeds — nothing has swapped yet.
+2. Swap the speeds, reverse both directions, and compute when each reaches their home city. These are usually *different* times, so handle them in order.
+3. Between the two turnarounds, one is heading out and the other is still heading home — check whether they meet in that window before assuming they don't.
+4. After both have turned, close the remaining gap at the combined speed.
+5. Use total combined distance = (2n − 1)D as a **check** at the end, not as the method.
+
+**Worked example:** X and Y are 1000 km apart. Ravi leaves X at 20 kmph and Mohan leaves Y at 30 kmph, towards each other. On meeting they interchange both speeds and directions; on reaching their own starting cities they turn round and continue at those speeds until they meet again. How far apart are the two meeting points?
+
+- **First meeting:** combined 1000 at 50 kmph ⟹ t = 20 h. Ravi has done 400, so **M₁ is 400 km from X**.
+- **Swap:** Ravi now 30 kmph heading back to X (400 km away); Mohan now 20 kmph heading back to Y (600 km away).
+- Ravi reaches X at t = 20 + 400/30 = 33⅓ h. Mohan reaches Y at t = 20 + 600/20 = 50 h.
+- **The gap window (33⅓ → 50 h):** Ravi is now going X → Y at 30, and Mohan is *still* going toward Y at 20 — same direction, Ravi behind. Ravi gains only 10 kmph on a 666⅔ km gap, so no meeting here. At t = 50, Ravi is at 500 and Mohan is at 1000.
+- **After both turn:** gap 500, combined 50 ⟹ 10 h ⟹ t = 60 h, both at **M₂ = 800 km from X**.
+- Distance between meeting points = 800 − 400 = **400 km**
+- Check: combined distance by t = 60 is 1600 + 1400 = 3000 = 3D ✓ (the 2nd meeting, as expected)
+
+**Traps:**
+- Using the §7 position rule. Ravi actually covers 1600 of the 3000, not 20/50 × 3000 = 1200 — the swap changes the split even though the total is unchanged.
+- Assuming both reach home at the same moment. They almost never do; the interval between the two turnarounds is where the question hides.
+- Skipping the same-direction window. If the trailing runner were fast enough, the meeting would happen there and the answer would change completely.
+- Answering with a single meeting point instead of the **distance between** the two.
+
+---
+
 ## 8. The √ trick (high frequency)
 
 A starts from P, B starts from Q, moving toward each other. They meet after time t. A then takes t₁ more to reach Q, B takes t₂ more to reach P.
@@ -303,6 +336,7 @@ Note the inversion in the ratio: the runner with the *shorter* remaining time is
 | √ trick ratio | √t₁ : √t₂ | A : B = √t₂ : √t₁ |
 | nth bounce meeting | nD | (2n − 1)D |
 | Ratio inverted | speed ratio used as time ratio | invert it — they're inverse |
+| Speeds swapped at the meeting | (2n−1)D split by original speeds | timing survives, the split does not — walk the timeline |
 
 ---
 

@@ -212,6 +212,40 @@ That double-counting correction is the entire question. Whenever two stated grou
 
 ---
 
+## 13a. Type 9 — When removing a sub-group shifts the average
+
+**The shape:** "the class average drops by 2 if the top 4 (totalling 312) are excluded." There are **two** unknowns — the group size n and the group average A — and each such statement gives exactly one equation. Two statements, and the system is determined.
+
+**Core idea.** Remove k members whose total is S from a group of n averaging A:
+
+**(nA − S)/(n − k) = A + d**
+
+where d is the stated shift (negative if the average drops). Clear the denominator and the **nA terms cancel on both sides**, leaving a linear equation:
+
+**S = kA − d(n − k)**
+
+That cancellation is the whole trick — the awkward product nA never survives, so you are always solving a plain 2 × 2 linear system.
+
+**Method:**
+1. Name n and A; write one equation per statement.
+2. Solve the linear system for A and n, then get the total nA.
+3. Answer via **totals**, never by combining averages.
+
+**Worked example:** Excluding the 4 highest scorers (combined 312) drops the class average by 2. Excluding instead the 6 lowest scorers (combined 258) raises it by 3. What is the average when both groups are excluded?
+
+- Top 4 out: (nA − 312)/(n − 4) = A − 2 ⟹ nA − 312 = nA − 4A − 2n + 8 ⟹ 4A + 2n = 320 ⟹ **2A + n = 160**
+- Bottom 6 out: (nA − 258)/(n − 6) = A + 3 ⟹ nA − 258 = nA − 6A + 3n − 18 ⟹ 6A − 3n = 240 ⟹ **2A − n = 80**
+- Add: 4A = 240 ⟹ **A = 60**. Subtract: **n = 40**. Total = 2400.
+- Both out: (2400 − 312 − 258)/(40 − 4 − 6) = 1830/30 = **61**
+
+**Traps:**
+- Adding the two shifts. The shifts sit over *different* denominators and do not combine. (Here −2 + 3 = +1 happens to land on the right answer of 61 — a coincidence of these particular numbers, not a method. Change 312 to 300 and it breaks.)
+- Using n − 4 or n − 6 as the final size. Both groups go, so it is n − 10 = 30.
+- Averaging the two given averages. Rebuild the total first, every time (§13).
+- Reading "drops by 2 points" as a percentage, or as "drops to 2". It is an absolute shift.
+
+---
+
 ## Traps
 
 | Trap | Wrong | Right |
@@ -224,6 +258,7 @@ That double-counting correction is the entire question. Whenever two stated grou
 | Averaging profit percentages | plain mean | weight by cost price |
 | Average of averages | average them again | recombine the sums |
 | Median assumed equal to mean | always | only for symmetric data |
+| Two sub-groups removed | add the two average shifts | shifts have different denominators — solve for n and A |
 
 ---
 

@@ -218,6 +218,37 @@ These two look identical in the question and are wildly different in the answer.
 
 ---
 
+## 9a. Monotone sequences — "digits are non-decreasing"
+
+**The recognition cue:** the question fixes the *order* of the slots, so once you know which values are used and how often, the sequence is completely determined. There is exactly **one** valid arrangement per multiset — so don't arrange at all, just **choose with repetition**.
+
+**Core idea.** Choosing r items from n types, repetition allowed, order irrelevant:
+
+**C(n + r − 1, r)**
+
+This is §9's stars and bars read the other way round: "how many of each type" *is* a distribution of r identical stars into n distinct boxes, so C(n + r − 1, n − 1) = C(n + r − 1, r). Use whichever form has the smaller lower index.
+
+**Method:**
+1. Confirm the wording forces a unique order — "non-decreasing", "non-increasing", "in increasing order", "in alphabetical order".
+2. Fix the **value pool**. This is where the leading-digit rule bites.
+3. Weakly monotone (repeats allowed) → C(n + r − 1, r). Strictly monotone (no repeats) → C(n, r).
+
+**Worked example:** How many 7-digit numbers have non-decreasing digits?
+
+- d₁ ≤ d₂ ≤ … ≤ d₇. If d₁ = 0 the number has a leading zero, so d₁ ≥ 1 — and because the sequence never decreases, **every** digit is ≥ 1. Pool = {1,…,9}, so n = 9, r = 7.
+- C(9 + 7 − 1, 7) = C(15, 7) = 6435
+- Answer: **6435**
+
+**The non-increasing version is not symmetric.** For d₁ ≥ d₂ ≥ … ≥ d₇ the *later* digits may be 0, so the pool is all ten digits and only d₁ ≥ 1 restricts anything. Count = C(16, 7) − 1 = 11440 − 1 = **11439** (the −1 removes the all-zeros multiset, the only one whose leading digit is 0).
+
+**Traps:**
+- Multiplying by 7!, or computing 9⁷. There is nothing to arrange — the order is forced by the constraint.
+- Using n = 10 for the non-decreasing case. One leading-zero check kills the entire 0 branch, because 0 can only sit first.
+- Confusing "non-decreasing" (repeats allowed, C(15,7) = 6435) with "strictly increasing" (no repeats, C(9,7) = 36).
+- Assuming the non-increasing count equals the non-decreasing count. The zero is available at the back but not at the front, so they differ.
+
+---
+
 ## 10. Derangements
 
 Recognise the phrasing: "nobody gets their own", "no letter into its correct envelope", "no one sits in their assigned seat". Then read D(n) off the memorised list.
@@ -379,6 +410,7 @@ Expected value of one die roll = (1+2+3+4+5+6)/6 = 3.5. Worth remembering.
 | Diagonals of an n-gon | C(n,2) | C(n,2) − n |
 | C(n,r) computed the long way | expand C(20,18) | C(20,18) = C(20,2) = 190 |
 | Dictionary rank | words counted before it | rank = that count + 1 |
+| Non-decreasing digits | arrange after choosing | order is forced — choose with repetition only |
 
 ---
 

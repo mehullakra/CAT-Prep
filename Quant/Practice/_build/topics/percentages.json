@@ -1,0 +1,372 @@
+{
+  "key": "percentages",
+  "order": 20,
+  "name": "Percentages",
+  "notes": "Percentages.md",
+  "file": "Percentages-Practice.md",
+  "perQ": 75,
+  "intro": [
+    "**Name the base before you compute.** Almost every wrong answer in this topic is a right calculation on the wrong base (§3).",
+    "Work in multiplying factors, not in additions: +25% is ×5/4, −20% is ×4/5. Chains then collapse in one line (§5)."
+  ],
+  "sets": [
+    {
+      "id": "A",
+      "name": "Fraction ↔ percentage fluency",
+      "qs": [
+        {
+          "id": "A1", "t": "tita",
+          "q": "Find 37.5% of 1,024.",
+          "a": 384, "check": "0.375*1024",
+          "h": "§2 — 37.5% is 3/8. Never long-multiply by 0.375.",
+          "s": "3/8 × 1024 = <b>384</b>."
+        },
+        {
+          "id": "A2", "t": "mcq",
+          "q": "If 15% of a number is 45, then 40% of the same number is",
+          "o": ["90", "105", "120", "135"], "a": 2,
+          "h": "§1 — find the number first, or scale directly: 40/15 = 8/3.",
+          "s": "The number is 45/0.15 = 300 ⟹ 40% = <b>120</b>. Or 45 × (40/15) = 120."
+        },
+        {
+          "id": "A3", "t": "tita",
+          "q": "What percentage of 250 is 45?",
+          "a": 18, "ad": "18%", "check": "45/250*100",
+          "h": "§3 — \"of 250\" names the base. It goes in the denominator.",
+          "s": "45/250 × 100 = <b>18%</b>."
+        },
+        {
+          "id": "A4", "t": "mcq",
+          "q": "62.5% of 800 equals",
+          "o": ["480", "500", "520", "560"], "a": 1,
+          "h": "§2 — 62.5% is 5/8.",
+          "s": "5/8 × 800 = <b>500</b>."
+        },
+        {
+          "id": "A5", "t": "tita",
+          "q": "A number increased by 25% gives 350. Find the original number.",
+          "a": 280, "check": "350/1.25",
+          "h": "§3 — divide by 1.25, don't subtract 25% of 350. The base is the original, not the result.",
+          "s": "350/1.25 = <b>280</b>. (Subtracting 25% of 350 gives 262.5 — the standard error.)"
+        },
+        {
+          "id": "A6", "t": "mcq",
+          "q": "If A is 300 and B is 240, then B is less than A by",
+          "o": ["20%", "25%", "30%", "33.33%"], "a": 0,
+          "h": "§3 — \"less than A\" makes A the base, so divide by 300, not 240.",
+          "s": "60/300 = <b>20%</b>. (Dividing by 240 gives 25% — that would answer \"A is more than B by …\".)"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "The reciprocal relationship",
+      "qs": [
+        {
+          "id": "B1", "t": "mcq",
+          "q": "If A is 25% more than B, then B is less than A by",
+          "o": ["20%", "25%", "16.67%", "33.33%"], "a": 0,
+          "h": "§4 — 25% is 1/4 more, so the reverse is 1/5 less.",
+          "s": "A : B = 5 : 4 ⟹ B is short by 1 part out of 5 = <b>20%</b>."
+        },
+        {
+          "id": "B2", "t": "tita",
+          "q": "If A's income is 33.33% more than B's, by what percent is B's income less than A's?",
+          "a": 25, "ad": "25%", "check": "100*(1-3/4)",
+          "h": "§4 table — 1/3 more corresponds to 1/4 less.",
+          "s": "A : B = 4 : 3 ⟹ B is short by 1 part out of 4 = <b>25%</b>."
+        },
+        {
+          "id": "B3", "t": "mcq",
+          "q": "If the price of sugar is 20% less than that of rice, the price of rice is more than that of sugar by",
+          "o": ["20%", "25%", "16.67%", "30%"], "a": 1,
+          "h": "§4 — 1/5 less reverses to 1/4 more.",
+          "s": "Sugar : rice = 4 : 5 ⟹ rice exceeds sugar by 1/4 = <b>25%</b>."
+        },
+        {
+          "id": "B4", "t": "tita",
+          "q": "A's salary is 20% less than B's. By what percent is B's salary more than A's?",
+          "a": 25, "ad": "25%", "check": "100*(5/4-1)",
+          "h": "§4 — same pair as B3, stated the other way round.",
+          "s": "A : B = 4 : 5 ⟹ B exceeds A by 1/4 = <b>25%</b>."
+        },
+        {
+          "id": "B5", "t": "mcq",
+          "q": "If X is 60% of Y, then Y exceeds X by",
+          "o": ["40%", "60%", "66.67%", "150%"], "a": 2,
+          "h": "§4 — the base flips from Y to X. Y/X = 5/3.",
+          "s": "X : Y = 3 : 5 ⟹ Y exceeds X by 2/3 = <b>66.67%</b>. (40% answers \"X is less than Y by …\".)"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Successive changes",
+      "qs": [
+        {
+          "id": "C1", "t": "tita",
+          "q": "The price of an article rises 20% and then falls 20%. Find the net percentage change (enter a negative number for a fall).",
+          "a": -4, "ad": "−4%", "check": "100*(1.2*0.8-1)",
+          "h": "§5 — chain the factors. Equal up-then-down percentages never cancel.",
+          "s": "1.2 × 0.8 = 0.96 ⟹ a net change of <b>−4%</b>."
+        },
+        {
+          "id": "C2", "t": "mcq",
+          "q": "A salary is increased by 25% and then decreased by 20%. The net change is",
+          "o": ["5% increase", "no change", "5% decrease", "4% decrease"], "a": 1,
+          "h": "§5 — 5/4 × 4/5. The fractions are reciprocals, which is exactly why this pair does cancel.",
+          "s": "1.25 × 0.8 = 1 ⟹ <b>no change</b>. Contrast C1: it is the fractions, not the percentages, that must be reciprocal."
+        },
+        {
+          "id": "C3", "t": "tita",
+          "q": "A town's population rises 10% in the first year, 20% in the second and 25% in the third, reaching 33,000. Find the population 3 years ago.",
+          "a": 20000, "check": "33000/(1.1*1.2*1.25)",
+          "h": "§6 — chain the three factors, then divide. Do not subtract 55%.",
+          "s": "1.1 × 1.2 × 1.25 = 1.65 ⟹ P = 33000/1.65 = <b>20,000</b>."
+        },
+        {
+          "id": "C4", "t": "mcq",
+          "q": "The length of a rectangle increases by 20% and the breadth decreases by 10%. The area changes by",
+          "o": ["+8%", "+10%", "−8%", "+2%"], "a": 0,
+          "h": "§5 — area is a product, so multiply the factors. The naive +20 − 10 = +10 is planted.",
+          "s": "1.2 × 0.9 = 1.08 ⟹ <b>+8%</b>."
+        },
+        {
+          "id": "C5", "t": "tita",
+          "q": "A quantity is increased by 30% and then increased by 30% again. Find the total percentage increase.",
+          "a": 69, "ad": "69%", "check": "100*(1.3**2-1)",
+          "h": "§5 — 1.3², not 60%.",
+          "s": "1.3² = 1.69 ⟹ <b>69%</b>."
+        },
+        {
+          "id": "C6", "t": "mcq",
+          "q": "After two successive discounts of 10% and 20%, an article sells for ₹1,440. Its marked price was",
+          "o": ["₹1,800", "₹2,000", "₹2,100", "₹2,400"], "a": 1,
+          "h": "§5 — the combined factor is 0.72, not 0.70. Then divide.",
+          "s": "0.9 × 0.8 = 0.72 ⟹ MP = 1440/0.72 = <b>₹2,000</b>. (Using a single 30% discount gives ₹2,057 — not an option, which is your check.)"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Price and consumption (product held constant)",
+      "qs": [
+        {
+          "id": "D1", "t": "tita",
+          "q": "The price of petrol rises 25%. By what percent must consumption be reduced to keep expenditure unchanged?",
+          "a": 20, "ad": "20%", "check": "100*(1-1/1.25)",
+          "h": "§7 — expenditure = price × consumption, so the two factors must be reciprocal. 25% up is 1/4; the cut is 1/5.",
+          "s": "New consumption factor = 1/1.25 = 0.8 ⟹ reduction = <b>20%</b>. (Answering 25% is the standard error.)"
+        },
+        {
+          "id": "D2", "t": "mcq",
+          "q": "The price of rice falls 20%. By what percent can a family increase consumption without increasing expenditure?",
+          "o": ["20%", "25%", "16.67%", "33.33%"], "a": 1,
+          "h": "§7 in the other direction — 1/0.8.",
+          "s": "1/0.8 = 1.25 ⟹ an increase of <b>25%</b>."
+        },
+        {
+          "id": "D3", "t": "tita",
+          "q": "The price of sugar rises from ₹30/kg to ₹36/kg. By what percent must a family reduce consumption so that expenditure rises by only 10%? Give the answer to two decimals.",
+          "a": 8.33, "ad": "8.33%", "check": "100*(1-1.10/1.20)",
+          "h": "§7, generalised — the consumption factor is (target expenditure factor)/(price factor).",
+          "s": "Price factor 1.2, expenditure factor 1.1 ⟹ consumption factor = 1.1/1.2 = 11/12 ⟹ reduction = 1/12 = <b>8.33%</b>."
+        },
+        {
+          "id": "D4", "t": "mcq",
+          "q": "A man's salary rises 20% and his expenditure rises 10%. If his savings were 20% of his salary, his savings rise by",
+          "o": ["40%", "50%", "60%", "70%"], "a": 2,
+          "h": "§1 — assume a salary of 100, tabulate before and after. Savings are a residue, so they move much faster than either component.",
+          "s": "Before: 100, 80, savings 20. After: 120, 88, savings 32 ⟹ increase = 12/20 = <b>60%</b>."
+        },
+        {
+          "id": "D5", "t": "tita",
+          "q": "If the price of an article is reduced by 20%, a man can buy 5 kg more for ₹600. Find the original price per kg (in ₹).",
+          "a": 30, "ad": "₹30", "check": "150/5",
+          "h": "§7 — write the quantity at each price as 600/p and 600/0.8p, then take the difference.",
+          "s": "600/0.8p − 600/p = 5 ⟹ 750/p − 600/p = 5 ⟹ 150/p = 5 ⟹ p = <b>₹30</b>. Check: 20 kg vs 25 kg ✓"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Percentage points, remainders and percentages of percentages",
+      "qs": [
+        {
+          "id": "E1", "t": "mcq",
+          "q": "A bank raises its interest rate from 4% to 5%. This is",
+          "o": ["a 1% increase", "a 25% increase", "a 20% increase", "a 5% increase"], "a": 1,
+          "h": "§8 — 1 percentage point is not 1%. The base for a percentage change is the old rate.",
+          "s": "1/4 = <b>a 25% increase</b> (or equivalently, a rise of 1 percentage point)."
+        },
+        {
+          "id": "E2", "t": "tita",
+          "q": "A man spends 30% of his income on rent and 20% of the remainder on food. What percentage of his income is left?",
+          "a": 56, "ad": "56%", "check": "100*0.7*0.8",
+          "h": "§9 — \"of the remainder\" resets the base to what is left, not to the original.",
+          "s": "0.7 × 0.8 = 0.56 ⟹ <b>56%</b>. (Treating both as percentages of income gives 50% — the planted error.)"
+        },
+        {
+          "id": "E3", "t": "mcq",
+          "q": "In a school 60% of the students are boys, and 25% of the boys wear glasses. The percentage of the whole school that is boys wearing glasses is",
+          "o": ["12%", "15%", "20%", "25%"], "a": 1,
+          "h": "§12 — a percentage of a percentage is a product.",
+          "s": "0.6 × 0.25 = 0.15 ⟹ <b>15%</b>."
+        },
+        {
+          "id": "E4", "t": "tita",
+          "q": "A man spends 25% of his salary on rent, 30% of the remainder on food, and saves the rest, which is ₹5,250. Find his salary (in ₹).",
+          "a": 10000, "check": "5250/(0.75*0.7)",
+          "h": "§9 — chain 0.75 and 0.70 to get the saved fraction, then divide.",
+          "s": "0.75 × 0.7 = 0.525 ⟹ salary = 5250/0.525 = <b>₹10,000</b>."
+        },
+        {
+          "id": "E5", "t": "mcq",
+          "q": "The pass percentage in an exam rose from 40% to 48%. Expressed as a percentage of the earlier figure, the increase is",
+          "o": ["8%", "16.67%", "20%", "25%"], "a": 2,
+          "h": "§8 — the rise is 8 percentage points; the question asks for the relative change.",
+          "s": "8/40 = <b>20%</b>. (8% would be the percentage-point answer.)"
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Elections, exams and pass marks",
+      "qs": [
+        {
+          "id": "F1", "t": "tita",
+          "q": "In an election between two candidates, the winner got 60% of the votes and won by 1,200 votes. Find the total number of votes polled.",
+          "a": 6000, "check": "1200/0.2",
+          "h": "§10 — the margin is 60 − 40 = 20 percentage points of the total.",
+          "s": "Margin = 20% of total = 1200 ⟹ total = <b>6,000</b>."
+        },
+        {
+          "id": "F2", "t": "mcq",
+          "q": "A student scores 30% and fails by 30 marks. Another scores 45% and gets 15 marks more than the pass mark. The maximum marks are",
+          "o": ["250", "300", "350", "400"], "a": 1,
+          "h": "§10 — the gap between the two scores is 45 marks and 15 percentage points. Subtract the two equations.",
+          "s": "0.45M − 0.30M = 30 + 15 = 45 ⟹ 0.15M = 45 ⟹ M = <b>300</b>. (Pass mark = 90 + 30 = 120 ✓)"
+        },
+        {
+          "id": "F3", "t": "tita",
+          "q": "A candidate needs 40% to pass. He scores 160 marks and fails by 40 marks. Find the maximum marks.",
+          "a": 500, "check": "200/0.4",
+          "h": "§10 — the pass mark is what he scored plus what he was short by.",
+          "s": "Pass mark = 160 + 40 = 200 = 0.4M ⟹ M = <b>500</b>."
+        },
+        {
+          "id": "F4", "t": "mcq",
+          "q": "In an election, 20% of the registered voters did not vote. The winner got 60% of the votes cast and won by 3,200 votes. The number of registered voters is",
+          "o": ["16,000", "20,000", "24,000", "25,000"], "a": 1,
+          "h": "§10 — two bases here: the margin is a percentage of the votes cast, which is itself a percentage of the registered voters.",
+          "s": "Margin = 20% of votes cast = 0.20 × 0.80V = 0.16V = 3200 ⟹ V = <b>20,000</b>. (Ignoring the turnout gives 16,000 — an option.)"
+        },
+        {
+          "id": "F5", "t": "tita",
+          "q": "In an exam, 35% failed in Maths, 45% failed in English and 20% failed in both. What percentage passed in both subjects?",
+          "a": 40, "ad": "40%", "check": "100-(35+45-20)",
+          "h": "§10 — inclusion–exclusion for those who failed at least one, then take the complement.",
+          "s": "Failed at least one = 35 + 45 − 20 = 60% ⟹ passed both = <b>40%</b>."
+        },
+        {
+          "id": "F6", "t": "mcq",
+          "q": "In an election among three candidates, A got 45% and B got 35% of the votes. If C got 4,000 votes, the total number of votes was",
+          "o": ["16,000", "18,000", "20,000", "24,000"], "a": 2,
+          "h": "§10 — C's share is the residue.",
+          "s": "C = 100 − 45 − 35 = 20% ⟹ total = 4000/0.20 = <b>20,000</b>."
+        }
+      ]
+    },
+    {
+      "id": "M",
+      "name": "exam feel (13 minutes)",
+      "block": 780,
+      "qs": [
+        {
+          "id": "M1", "t": "mcq",
+          "q": "If the price of a commodity increases by 60%, by what percent must consumption be reduced to keep expenditure unchanged?",
+          "o": ["33.33%", "37.5%", "40%", "60%"], "a": 1,
+          "h": "Reciprocal of 1.6.",
+          "s": "1/1.6 = 0.625 ⟹ a reduction of <b>37.5%</b>."
+        },
+        {
+          "id": "M2", "t": "tita",
+          "q": "Find 40% of 60% of 250.",
+          "a": 60, "check": "0.4*0.6*250",
+          "h": "Multiply the factors.",
+          "s": "0.24 × 250 = <b>60</b>."
+        },
+        {
+          "id": "M3", "t": "mcq",
+          "q": "A number is increased by 20% and the result is then decreased by 25%. The net change is",
+          "o": ["5% decrease", "10% decrease", "5% increase", "no change"], "a": 1,
+          "h": "1.2 × 0.75.",
+          "s": "1.2 × 0.75 = 0.9 ⟹ a <b>10% decrease</b>."
+        },
+        {
+          "id": "M4", "t": "tita",
+          "q": "A man's income rises 25% while his tax rate falls from 20% to 16%. Find the percentage change in the tax he pays (enter 0 if unchanged).",
+          "a": 0, "ad": "0% (unchanged)", "check": "100*(1.25*0.16/0.20-1)",
+          "h": "Tax = income × rate, so chain the two factors.",
+          "s": "1.25 × (16/20) = 1.25 × 0.8 = 1 ⟹ the tax is <b>unchanged</b>. (100 × 0.20 = 20 and 125 × 0.16 = 20 ✓)"
+        },
+        {
+          "id": "M5", "t": "mcq",
+          "q": "If A's salary is 20% more than B's, and B's is 25% more than C's, then A's salary exceeds C's by",
+          "o": ["45%", "50%", "55%", "45.5%"], "a": 1,
+          "h": "Chain 6/5 and 5/4.",
+          "s": "1.2 × 1.25 = 1.5 ⟹ <b>50%</b>."
+        },
+        {
+          "id": "M6", "t": "tita",
+          "q": "A salary is first increased by 20% and then decreased by 20%. If the final salary is ₹19,200, find the original salary (in ₹).",
+          "a": 20000, "check": "19200/0.96",
+          "h": "The net factor is 0.96.",
+          "s": "19200/0.96 = <b>₹20,000</b>."
+        },
+        {
+          "id": "M7", "t": "mcq",
+          "q": "In a class of 50, 40% are girls. If 10 more girls join, the percentage of girls becomes",
+          "o": ["45%", "48%", "50%", "55%"], "a": 2,
+          "h": "The denominator changes too.",
+          "s": "Girls 20, boys 30. After: 30 girls out of 60 = <b>50%</b>. (Forgetting to update the total gives 60%.)"
+        },
+        {
+          "id": "M8", "t": "tita",
+          "q": "A shopkeeper reduces the price of an item by 20%, which increases sales volume by 30%. Find the percentage change in revenue.",
+          "a": 4, "ad": "+4%", "check": "100*(0.8*1.3-1)",
+          "h": "Revenue is a product of price and quantity.",
+          "s": "0.8 × 1.3 = 1.04 ⟹ revenue rises by <b>4%</b>."
+        },
+        {
+          "id": "M9", "t": "mcq",
+          "q": "A man spends 75% of his income. If his income rises 20% and his expenditure rises 10%, his savings rise by",
+          "o": ["10%", "25%", "50%", "60%"], "a": 2,
+          "h": "Assume 100 and tabulate.",
+          "s": "Before: 100, 75, savings 25. After: 120, 82.5, savings 37.5 ⟹ increase = 12.5/25 = <b>50%</b>."
+        },
+        {
+          "id": "M10", "t": "tita",
+          "q": "In an exam a candidate scoring 25% fails by 30 marks, while one scoring 50% gets 20 marks more than the pass mark. Find the pass mark.",
+          "a": 80, "check": "0.25*200+30",
+          "h": "Subtract the two statements to get the maximum first, then back out the pass mark.",
+          "s": "0.50M − 0.25M = 30 + 20 = 50 ⟹ M = 200. Pass mark = 0.25(200) + 30 = <b>80</b>. Check: 100 − 20 = 80 ✓"
+        }
+      ]
+    }
+  ],
+  "audit": [
+    ["A3, A5, A6, E5", "computing on the wrong base — the phrase \"of\" or \"than\" always names it (§3)"],
+    ["B1–B5", "reversing a percentage comparison by reusing the same number instead of the reciprocal fraction (§4)"],
+    ["C1, C4, C5", "adding successive percentage changes instead of multiplying the factors (§5)"],
+    ["C2", "assuming equal percentages never cancel — they do when the fractions are reciprocal"],
+    ["C3, C6, M6", "subtracting the total percentage from the final value instead of dividing by the chained factor"],
+    ["D1, D2, D3, M1", "quoting the price change as the consumption change — they are reciprocal, never equal (§7)"],
+    ["D4, M9", "computing on income or expenditure instead of on savings, which is a residue and moves fastest"],
+    ["E1, E5", "confusing percentage points with a percentage change (§8)"],
+    ["E2, E4", "applying the second percentage to the original rather than to the remainder (§9)"],
+    ["F1, F4", "forgetting that the winning margin is the difference of the shares, and that turnout is a second base (§10)"],
+    ["F2, M10", "solving one equation at a time instead of subtracting to eliminate the pass mark"],
+    ["M7", "changing the numerator but not the denominator"]
+  ]
+}

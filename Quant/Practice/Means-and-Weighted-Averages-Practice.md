@@ -4,7 +4,7 @@
 >
 > **TITA** = type-in-the-answer (no options). **MCQ** = choose one.
 >
-> Suggested timing: 1.5 min/question for Sets A–H, and attempt the Mixed Set in one 14-minute block.
+> Suggested timing: 1.5 min/question for Sets A–H, and attempt the Mixed Set in one timed block.
 
 ---
 
@@ -42,7 +42,7 @@
 
 ---
 
-## Set B — Weighted average and alligation
+## Set B — Weighted average & alligation
 
 **B1.** (TITA) In a class, 30 boys average 55 marks and 20 girls average 70 marks. Find the class average.
 
@@ -76,7 +76,7 @@
 
 ---
 
-## Set C — Replacement and addition
+## Set C — Replacement & addition
 
 **C1.** (TITA) The average weight of 10 people increases by 1.5 kg when a new person replaces one weighing 58 kg. Find the weight (in kg) of the new person.
 
@@ -156,7 +156,7 @@
 
 ---
 
-## Set F — AM, GM, HM and maxima–minima
+## Set F — AM, GM, HM and max–min
 
 **F1.** (MCQ) The AM of two positive numbers is 10 and their GM is 8. Their HM is
 
@@ -190,7 +190,7 @@
 
 ---
 
-## Set G — AP-type averages, median and mode
+## Set G — AP-type averages, median, mode
 
 **G1.** (TITA) Find the average of the first 75 natural numbers.
 
@@ -220,7 +220,7 @@
 
 ---
 
-## Set H — Unknown counts and sub-group reconstruction
+## Set H — Unknown counts & sub-groups
 
 **H1.** (TITA) A class of 50 students averages 60 marks. A sub-group of 20 averages 45. Find the average of the remaining 30.
 
@@ -258,7 +258,7 @@
 
 ---
 
-## Mixed Set — exam feel (14 minutes)
+## Mixed Set — Mixed Set — exam feel
 
 **M1.** (MCQ) A group of 60 students averages 55 marks. The boys average 50 and the girls average 65. The number of girls is
 
@@ -297,53 +297,52 @@
 **M8.** (TITA) The average age of a family of 5 members is 20 years. The youngest member is 10 years old. What was the average age (in years) of the family at the time the youngest member was born?
 
 ---
----
 
-# Answer Key
+# Answer key
 
 ## Set A
 
-**A1 — 102.** Take A = 100. Deviations: +2, +7, −1, +4, −2, summing to 10. Average = 100 + 10/5 = 102.
+**A1 — 102.** Take A = 100. Deviations: +2, +7, −1, +4, −2, summing to 10. Average = 100 + 10/5 = **102**.
 
-**A2 — (c) 62.** Adding 4 raises the average to 31; doubling then doubles it to 62.
+**A2 — (c) 62.** Adding 4 raises the average to 31; doubling then doubles it to **62**.
 
-**A3 — 22.** For 11 consecutive integers the average is the 6th (middle) term, so the middle is 17. The numbers run 12 to 22; largest = 22.
+**A3 — 22.** For 11 consecutive integers the average is the 6th (middle) term, so the middle is 17. The numbers run 12 to 22; largest = **22**.
 
-**A4 — 40.** Total = 5 × 10 = 50. To maximise one value, minimise the other four distinct positive integers: 1 + 2 + 3 + 4 = 10. Largest = 50 − 10 = 40.
+**A4 — 40.** Total = 5 × 10 = 50. To maximise one value, minimise the other four distinct positive integers: 1 + 2 + 3 + 4 = 10. Largest = 50 − 10 = **40**.
 
-**A5 — (b) 49.5.** Total = 900. First twelve sum to 504, so the rest sum to 396. Average = 396/8 = 49.5.
+**A5 — (b) 49.5.** Total = 900. First twelve sum to 504, so the rest sum to 396. Average = 396/8 = **49.5**.
 
 ## Set B
 
-**B1 — 61.** (30 × 55 + 20 × 70)/50 = (1650 + 1400)/50 = 61. Check: 61 is nearer 55 than 70, and boys are the larger group ✓.
+**B1 — 61.** (30 × 55 + 20 × 70)/50 = (1650 + 1400)/50 = 61. Check: **61** is nearer 55 than 70, and boys are the larger group ✓.
 
-**B2 — (c) ₹31.** (40 × 25 + 60 × 35)/100 = (1000 + 2100)/100 = 31. (Nearer 35, because more rice was sold at 35 ✓.)
+**B2 — (c) ₹31.** (40 × 25 + 60 × 35)/100 = (1000 + 2100)/100 = **31**. (Nearer 35, because more rice was sold at 35 ✓.)
 
-**B3 — 15.** Alligation about 71: boys : girls = (74 − 71) : (71 − 62) = 3 : 9 = 1 : 3. Of 60 students, boys = 60 × 1/4 = 15.
+**B3 — 15.** Alligation about 71: boys : girls = (74 − 71) : (71 − 62) = 3 : 9 = 1 : 3. Of 60 students, boys = 60 × 1/4 = **15**.
 
 **B4 — (b) ₹54,000.** Weights 60 : 40. (60 × 50 + 40 × 60)/100 = (3000 + 2400)/100 = 54 thousand.
 
-**B5 — 64.25.** (25 × 70 + 35 × 65 + 40 × 60)/100 = (1750 + 2275 + 2400)/100 = 6425/100 = 64.25.
+**B5 — 64.25.** (25 × 70 + 35 × 65 + 40 × 60)/100 = (1750 + 2275 + 2400)/100 = 6425/100 = **64.25**.
 
 ## Set C
 
 **C1 — 73 kg.** Total increase = 10 × 1.5 = 15 kg. New person = 58 + 15 = 73.
 
-**C2 — (d) 36.** 12 × 25 − 11 × 24 = 300 − 264 = 36.
+**C2 — (d) 36.** 12 × 25 − 11 × 24 = 300 − 264 = **36**.
 
 **C3 — 30 years.** 16 × 15 − 15 × 14 = 240 − 210 = 30. (Not 15 — the teacher must also pull the other fifteen up.)
 
-**C4 — (b) 39.** Original total = 352. After the swap the total is 11 × 31 = 341. Without the captain the other ten total 352 − 50 = 302, so the new player scored 341 − 302 = 39.
+**C4 — (b) 39.** Original total = 352. After the swap the total is 11 × 31 = 341. Without the captain the other ten total 352 − 50 = 302, so the new player scored 341 − 302 = **39**.
 
 **C5 — 139 kg.** Total increase = 8 × 3 = 24 kg. Combined new weight = (55 + 60) + 24 = 139.
 
 ## Set D
 
-**D1 — 41.08.** The sum was understated by 63 − 36 = 27. Correct average = 40 + 27/25 = 40 + 1.08 = 41.08.
+**D1 — 41.08.** The sum was understated by 63 − 36 = 27. Correct average = 40 + 27/25 = 40 + 1.08 = **41.08**.
 
-**D2 — 63.8.** Errors: 85 − 58 = +27 and 45 − 54 = −9, net +18. Correct average = 62 + 18/10 = 63.8.
+**D2 — 63.8.** Errors: 85 − 58 = +27 and 45 − 54 = −9, net +18. Correct average = 62 + 18/10 = **63.8**.
 
-**D3 — (c) 72.52.** Net error = (84 − 48) + (45 − 55) = 36 − 10 = +26. Correct average = 72 + 26/50 = 72.52.
+**D3 — (c) 72.52.** Net error = (84 − 48) + (45 − 55) = 36 − 10 = +26. Correct average = 72 + 26/50 = **72.52**.
 
 ## Set E
 
@@ -353,58 +352,58 @@
 
 **E3 — 30 km/h.** 3/(1/20 + 1/30 + 1/60) = 3/(6/60) = 3/0.1 = 30.
 
-**E4 — 37.5 km/h.** Times: 60/30 = 2 h and 90/45 = 2 h, so 4 h for 150 km ⟹ 37.5 km/h.
+**E4 — 37.5 km/h.** Times: 60/30 = 2 h and 90/45 = 2 h, so 4 h for 150 km ⟹ **37.5 km/h**.
 
 ## Set F
 
-**F1 — (c) 6.4.** GM² = AM × HM ⟹ 64 = 10 × HM ⟹ HM = 6.4.
+**F1 — (c) 6.4.** GM² = AM × HM ⟹ 64 = 10 × HM ⟹ HM = **6.4**.
 
-**F2 — 225.** Product is maximal at equality: 15 × 15 = 225.
+**F2 — 225.** Product is maximal at equality: 15 × 15 = **225**.
 
-**F3 — 10.** a + b = 26 and ab = 144. (a − b)² = 676 − 576 = 100 ⟹ difference = 10. (The numbers are 18 and 8.)
+**F3 — 10.** a + b = 26 and ab = 144. (a − b)² = 676 − 576 = 100 ⟹ difference = **10**. (The numbers are 18 and 8.)
 
-**F4 — (b) 50%.** Factors 1.25 and 1.80 multiply to 2.25; √2.25 = 1.5 ⟹ 50% per year. (The arithmetic mean, 52.5%, is the trap.)
+**F4 — (b) 50%.** Factors 1.25 and 1.80 multiply to 2.25; √2.25 = 1.5 ⟹ **50%** per year. (The arithmetic mean, 52.5%, is the trap.)
 
-**F5 — 4.** Expand: (a + b)(1/a + 1/b) = 2 + a/b + b/a ≥ 2 + 2 = 4, with equality at a = b.
+**F5 — 4.** Expand: (a + b)(1/a + 1/b) = 2 + a/b + b/a ≥ 2 + 2 = **4**, with equality at a = b.
 
 ## Set G
 
-**G1 — 38.** (n + 1)/2 = 76/2 = 38.
+**G1 — 38.** (n + 1)/2 = 76/2 = **38**.
 
-**G2 — (b) 20.** Sum of the first 20 odd numbers = 20² = 400; average = 400/20 = 20.
+**G2 — (b) 20.** Sum of the first 20 odd numbers = 20² = 400; average = 400/20 = **20**.
 
-**G3 — 30.** Average of the first n even numbers = n + 1 = 31 ⟹ n = 30.
+**G3 — 30.** Average of the first n even numbers = n + 1 = 31 ⟹ n = **30**.
 
-**G4 — (b) 8.** Sorted, the two middle terms are 7 and 9 ⟹ median = 8. The mean, 140/6 ≈ 23.33, is dragged up by the outlier 100.
+**G4 — (b) 8.** Sorted, the two middle terms are 7 and 9 ⟹ median = **8**. The mean, 140/6 ≈ 23.33, is dragged up by the outlier 100.
 
 ## Set H
 
-**H1 — 70.** Total = 3000; sub-group total = 900 ⟹ remainder = 2100 over 30 = 70.
+**H1 — 70.** Total = 3000; sub-group total = 900 ⟹ remainder = 2100 over 30 = **70**.
 
-**H2 — 15.** Alligation about 27: original : new = (32 − 27) : (27 − 25) = 5 : 2. New = 6 ⟹ original = 15. (Check: (375 + 192)/21 = 27 ✓.)
+**H2 — 15.** Alligation about 27: original : new = (32 − 27) : (27 − 25) = 5 : 2. New = 6 ⟹ original = **15**. (Check: (375 + 192)/21 = 27 ✓.)
 
-**H3 — (b) 20.** Alligation about 72: boys : girls = (80 − 72) : (72 − 66) = 8 : 6 = 4 : 3. Girls = 15 ⟹ boys = 20.
+**H3 — (b) 20.** Alligation about 72: boys : girls = (80 − 72) : (72 − 66) = 8 : 6 = 4 : 3. Girls = 15 ⟹ boys = **20**.
 
-**H4 — 16.** First three sum to 42, last three to 54; total 96 counts the third number twice. Sum of all five = 96 − 16 = 80 ⟹ average = 16.
+**H4 — 16.** First three sum to 42, last three to 54; total 96 counts the third number twice. Sum of all five = 96 − 16 = 80 ⟹ average = **16**.
 
-**H5 — ₹51,000.** Total = 40 × 42 = 1680 (thousands). A + B = 360 + 810 = 1170. C has 40 − 30 = 10 people totalling 510 ⟹ average ₹51,000.
+**H5 — 51.** Total = 40 × 42 = 1680 (thousands). A + B = 360 + 810 = 1170. C has 40 − 30 = 10 people totalling 510 ⟹ average **₹51,000**.
 
-**H6 — (c) 48.** First four sum to 140, last four to 188; total 328 counts the fourth number twice. All seven sum to 280 ⟹ fourth = 328 − 280 = 48.
+**H6 — (c) 48.** First four sum to 140, last four to 188; total 328 counts the fourth number twice. All seven sum to 280 ⟹ fourth = 328 − 280 = **48**.
 
 ## Mixed Set
 
-**M1 — (a) 20.** Alligation about 55: boys : girls = (65 − 55) : (55 − 50) = 2 : 1 ⟹ girls = 60 × 1/3 = 20.
+**M1 — (a) 20.** Alligation about 55: boys : girls = (65 − 55) : (55 − 50) = 2 : 1 ⟹ girls = 60 × 1/3 = **20**.
 
 **M2 — 48 km/h.** Equal distances ⟹ 2(40)(60)/100 = 48.
 
-**M3 — (d) 42.** Adding 3 gives 21; doubling gives 42.
+**M3 — (d) 42.** Adding 3 gives 21; doubling gives **42**.
 
 **M4 — 66.6 kg.** Total = 408; after the person leaves, 333 over 5 = 66.6.
 
-**M5 — (c) 12.** GM = √(AM × HM) = √(15 × 9.6) = √144 = 12.
+**M5 — (c) 12.** GM = √(AM × HM) = √(15 × 9.6) = √144 = **12**.
 
-**M6 — 56.** First six sum to 294, last six to 312; total 606 counts the sixth twice. All eleven sum to 550 ⟹ sixth = 606 − 550 = 56.
+**M6 — 56.** First six sum to 294, last six to 312; total 606 counts the sixth twice. All eleven sum to 550 ⟹ sixth = 606 − 550 = **56**.
 
-**M7 — (c) 24.9.** Net error = (51 − 15) + (23 − 32) = 36 − 9 = +27. Correct average = 24 + 27/30 = 24.9.
+**M7 — (c) 24.9.** Net error = (51 − 15) + (23 − 32) = 36 − 9 = +27. Correct average = 24 + 27/30 = **24.9**.
 
 **M8 — 12.5 years.** Current total = 100, so the other four members total 90 now. Ten years ago they totalled 90 − 40 = 50, giving an average of 12.5 for the family that existed then.
