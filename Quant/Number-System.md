@@ -33,6 +33,50 @@ If you can classify the question in ten seconds, you've done the hard part.
 
 ---
 
+## 2a. Terminating and recurring decimals
+
+**Core idea.** Write the fraction **in lowest terms** first — everything below is false otherwise. Then the denominator alone decides the decimal's shape.
+
+| Denominator q (lowest terms) | Decimal |
+|---|---|
+| q = 2ᵃ5ᵇ only | **terminates**, after max(a, b) places |
+| q coprime to 10 | **purely recurring** |
+| q = 2ᵃ5ᵇ × k, with k coprime to 10 | **mixed** — max(a,b) non-repeating digits, then recurs |
+
+**Length of the recurring block** = the smallest d with 10ᵈ ≡ 1 (mod k). That d always **divides φ(k)**, which is usually enough to pin it down by testing the divisors.
+
+**Worked examples:**
+- 7/40: 40 = 2³·5 ⟹ terminates after max(3,1) = **3 places** (0.175)
+- 1/7: 7 is coprime to 10, φ(7) = 6, and no smaller divisor works ⟹ period **6** (0.142857…)
+- 1/6: 6 = 2 × 3 ⟹ mixed, 1 non-repeating digit then period 1 (0.1666…)
+- 1/13: φ(13) = 12; 10⁶ ≡ 1 (mod 13) ⟹ period **6** (0.076923…)
+
+The 1/7 and 1/13 digit families are worth recognising on sight — see `Reference/Calculation-Toolkit.md` §10.
+
+**Traps:** not reducing first (6/8 looks like it has denominator 8 but is 3/4); assuming every non-terminating decimal is purely recurring; assuming the period equals φ(k) rather than a divisor of it.
+
+---
+
+## 2b. Parity — the even/odd test
+
+Cheap, and it settles "prove no solution exists" questions in one line.
+
+- even ± even = even; odd ± odd = **even**; even ± odd = odd
+- even × anything = even; odd × odd = odd
+- **a + b and a − b always have the same parity**
+- the sum of n odd numbers is odd **iff n is odd**
+- the product of k consecutive integers is divisible by **k!** — so any two consecutive give an even, any three give a multiple of 6
+
+**Squares mod 4 and mod 8 are the sharpest form of this** (§10): a square is ≡ 0 or 1 (mod 4), so a sum of two squares is ≡ 0, 1 or 2 (mod 4) and **never 3**.
+
+**Worked example:** Can x² + y² = 2023 have integer solutions?
+- 2023 = 4(505) + 3 ⟹ 2023 ≡ 3 (mod 4), which no sum of two squares can be ⟹ **no**
+
+**Worked example:** Can the sum of five odd numbers be 100?
+- Five odds sum to odd; 100 is even ⟹ **no**. No algebra required.
+
+---
+
 ## 3. Prime factorisation — everything it gives you
 
 If N = p^a · q^b · r^c …
@@ -65,6 +109,40 @@ If N = p^a · q^b · r^c …
 
 ---
 
+## 4a. HCF and LCM word problems
+
+§4 gives the machinery. These are the five shapes it gets used in, and recognising which one you are looking at *is* the question.
+
+| Phrasing | Take |
+|---|---|
+| largest tile / longest tape / greatest measure that fits exactly | **HCF** |
+| bells toll together, lights blink together, buses depart together | **LCM** |
+| least number leaving remainder r with each of a, b, c | **LCM(a,b,c)·k + r** |
+| least number leaving remainders r₁, r₂, r₃ where each divisor − remainder is the same d | **LCM − d** |
+| largest number dividing a, b, c leaving remainders r₁, r₂, r₃ | **HCF(a−r₁, b−r₂, c−r₃)** |
+
+"Same remainder, remainder unknown" is the §4 case: HCF of the **differences**.
+
+**Worked example (LCM, and the +1):** Bells toll at intervals of 2, 4, 6, 8, 10 and 12 seconds, starting together. How many times do they toll together in 30 minutes?
+- LCM(2,4,6,8,10,12) = **120 s**
+- 1800/120 = 15 further coincidences, **plus the one at the start = 16**
+- Whether the initial toll counts is the entire difficulty; read the wording.
+
+**Worked example (constant deficit):** The least number which, divided by 5, 6 and 7, leaves remainders 3, 4 and 5.
+- Each remainder is **2 less** than its divisor ⟹ the number is 2 less than a common multiple
+- LCM(5,6,7) = 210 ⟹ answer **208**
+
+**Worked example (plain remainder):** Least number leaving remainder 3 when divided by 6, 7 and 8.
+- LCM = 168 ⟹ **171**
+
+**Worked example (ratio):** Two numbers are in the ratio 3 : 4 and their HCF is 4. Find their LCM.
+- The numbers are 3k and 4k with k = HCF = 4 ⟹ 12 and 16 ⟹ LCM = **48**
+- General: numbers a·h and b·h with a, b coprime have LCM = **abh**, and product = HCF × LCM ✓
+
+**Traps:** forgetting the initial simultaneous event; using HCF where "together again" wants LCM; applying HCF × LCM = product to three numbers (§4 — two only).
+
+---
+
 ## 5. Unit digit and cyclicity
 
 Unit digits repeat with period ≤ 4.
@@ -79,6 +157,37 @@ Unit digits repeat with period ≤ 4.
 
 **Worked example:** Unit digit of 7^105.
 - 7 has cycle 7, 9, 3, 1. 105 mod 4 = 1 ⟹ **7**
+
+---
+
+## 5a. Last two digits
+
+§5 gives the last digit. The last **two** needs a different tool for each ending, and these four cases cover everything CAT sets.
+
+**1. Base ends in 1.** The answer ends in 1, and the tens digit is
+
+**(tens digit of the base × exponent) mod 10**
+
+Because (1 + 10a)ⁿ ≡ 1 + 10an (mod 100) — every later binomial term carries 100.
+
+- 31⁴⁵: tens = (3 × 45) mod 10 = 135 mod 10 = 5 ⟹ **51**
+
+**2. Base ends in 3, 7 or 9 — convert to case 1.** 3⁴ = 81, 7⁴ = 2401, 9² = 81. Raise to that power first, then apply case 1.
+
+- 7¹⁰⁰ = (7⁴)²⁵ ≡ 01²⁵ ⟹ **01**
+- 3¹⁰⁰ = (3⁴)²⁵ ≡ 81²⁵; tens = (8 × 25) mod 10 = 0 ⟹ **01**
+
+**3. Even bases — use 2¹⁰ ≡ 24 and the 76 fixed point.** Any number ending in **76 stays ending in 76** under any power, which collapses most of these.
+
+- 2¹⁰⁰ = (2¹⁰)¹⁰ ≡ 24¹⁰; 24² = 576 ≡ 76 ⟹ 24¹⁰ = (24²)⁵ ≡ 76⁵ ≡ **76**
+
+**4. The general fallback — split mod 4 and mod 25**, then recombine. Slower, but never fails.
+
+- 2¹⁰⁰: ≡ 0 (mod 4). φ(25) = 20 ⟹ 2¹⁰⁰ = (2²⁰)⁵ ≡ 1 (mod 25). The number ≡ 0 mod 4 and ≡ 1 mod 25 is **76** ✓
+
+**Worth memorising:** …76 raised to any power ends in 76. …25 ends in 25. …01 ends in 01. Spotting one of these ends the question immediately.
+
+**Traps:** applying the case-1 rule to a base not ending in 1; using the *unit* digit of the base where the rule wants the *tens* digit; forgetting to reduce the exponent mod 10 in case 1.
 
 ---
 
@@ -315,15 +424,86 @@ Since the solutions lie on a line, **any linear expression in x and y is monoton
 
 ---
 
-## 12. Base systems and factorials (brief)
+## 12. Factorials — highest powers and trailing zeros
 
-- Number in base b: digits are the remainders of repeated division by b.
-- Highest power of prime p in n!: ⌊n/p⌋ + ⌊n/p²⌋ + ⌊n/p³⌋ + …
-- n! is never a perfect square for n > 1.
+**Legendre's formula.** The highest power of a **prime** p dividing n! is
+
+**⌊n/p⌋ + ⌊n/p²⌋ + ⌊n/p³⌋ + …**
+
+Keep going until the term is 0. Each term counts the multiples of that power of p, so the multiples of p² get counted twice, which is exactly right.
+
+**Worked example:** The highest power of 3 in 100!
+- ⌊100/3⌋ + ⌊100/9⌋ + ⌊100/27⌋ + ⌊100/81⌋ = 33 + 11 + 3 + 1 = **48**
+
+### The highest power of a *composite*
+
+Factor the composite, apply Legendre to each prime, then **divide each exponent by the power it is needed in and take the minimum**. The scarcest prime is the binding constraint.
+
+**Worked example:** The highest power of 12 dividing 50!
+- 12 = 2²·3, so 12ᵏ needs 2^(2k) and 3^k.
+- Power of 2 in 50! = 25 + 12 + 6 + 3 + 1 = 47 ⟹ 2k ≤ 47 ⟹ k ≤ 23
+- Power of 3 in 50! = 16 + 5 + 1 = 22 ⟹ k ≤ 22
+- **k = 22** — 3 is the binding prime, not the more numerous 2.
+
+Applying Legendre to 12 directly, as if it were prime, is the standard wrong answer.
+
+### Trailing zeros, in any base
+
+Base-10 trailing zeros are the power of **5** (see §3) — 2s are always in surplus. In a general base b, factor b and use the same minimum rule.
+
+**Worked example:** How many trailing zeros does 100! have in base 6?
+- 6 = 2 × 3. Power of 2 in 100! = 50+25+12+6+3+1 = 97; power of 3 = 48.
+- min(97, 48) = **48 zeros**
+
+**Worked example:** Trailing zeros of 100! in base 12 (= 2²·3): min(⌊97/2⌋, 48) = min(48, 48) = **48**.
+
+**Two facts CAT builds questions on:**
+- The trailing-zero count **skips values**. No factorial ends in exactly 5 zeros — 24! has 4 and 25! jumps to 6, because 25 contributes two 5s. "For how many n does n! end in exactly k zeros" is answered by that jump structure: the answer is 5 or 0.
+- **n! is never a perfect square for n > 1** (Bertrand: there is always a prime between n/2 and n, appearing to the first power).
 
 ---
 
-## 12a. Repunits and digit-pattern numbers
+## 13. Base systems
+
+A number written in base b uses digits **0 to b − 1** only. So a numeral containing a 7 must be in base 8 or higher — a one-line elimination that answers several questions outright.
+
+**Value:** (dₖ…d₁d₀)_b = dₖbᵏ + … + d₁b + d₀
+
+**Decimal → base b:** divide repeatedly by b and read the remainders **bottom to top**.
+
+**Worked example:** Write 156 in base 7.
+- 156 ÷ 7 = 22 r **2**; 22 ÷ 7 = 3 r **1**; 3 ÷ 7 = 0 r **3**
+- Reading upwards: **(312)₇**. Check: 3(49) + 1(7) + 2 = 147 + 7 + 2 = 156 ✓
+
+**Base b → decimal:** expand positionally. (245)₇ = 2(49) + 4(7) + 5 = **131**.
+
+**Between two non-decimal bases:** go through decimal unless one base is a power of the other. Base 2 → base 8 groups the binary digits in **threes**, base 2 → base 16 in **fours**, from the right — no arithmetic needed.
+
+### Arithmetic inside a base
+
+Add and multiply exactly as in decimal, but **carry at b instead of 10**.
+
+**Worked example:** (34)₅ + (23)₅
+- Units: 4 + 3 = 7 = 5 + 2 ⟹ write **2**, carry 1
+- Next: 3 + 2 + 1 = 6 = 5 + 1 ⟹ write **1**, carry 1 ⟹ leading **1**
+- Result **(112)₅**. Check: 19 + 13 = 32, and 1(25) + 1(5) + 2 = 32 ✓
+
+### Divisibility and digit sums in base b
+
+In base b, **(b − 1) plays the role that 9 plays in base 10** — because b ≡ 1 (mod b−1), a number is congruent to its digit sum mod (b − 1). So in base 8 the digit sum tests divisibility by 7; in base 16, by 15. Likewise b + 1 plays the role of 11, via the alternating digit sum. This is §2 and §7 generalised.
+
+**Number of digits** of N in base b = ⌊log_b N⌋ + 1 (`Logarithms.md` §3).
+
+**Traps:**
+- A digit ≥ the base. (49)₇ is not a valid numeral.
+- Reading the remainders top-down. They come out least-significant first.
+- Applying Legendre's formula to a composite directly.
+- Assuming trailing zeros in base b equal those in base 10.
+- Forgetting that b = 1 and negative digits do not exist; the smallest usable base is 2.
+
+---
+
+## 13a. Repunits and digit-pattern numbers
 
 **Core idea.** A **repunit** Rₓ is the number made of x ones — 1, 11, 111, …. Every digit-pattern number is a geometric series in disguise, and one identity converts it:
 

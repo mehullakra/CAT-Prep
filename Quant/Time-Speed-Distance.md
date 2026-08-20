@@ -188,7 +188,7 @@ Same trains in the same direction: relative speed = 10 km/hr = 25/9 m/s, time = 
 - If time upstream : time downstream = m : n, then b : s = (m + n) : (m − n)
 - Round-trip average speed = (b² − s²)/b, always less than b
 
-Escalators, moving walkways, and wind-assisted flights are the identical structure with different nouns. Same two formulas.
+**Moving walkways and wind-assisted flights** are this exact structure with different nouns — same two formulas. **Escalators are only sometimes this structure**; see §6a before assuming.
 
 **Worked example:** A boat covers 24 km downstream in 3 hrs and returns in 4 hrs. Find the speed of the boat and the stream.
 
@@ -201,6 +201,43 @@ Escalators, moving walkways, and wind-assisted flights are the identical structu
 - s = 2 ⟹ b = **6 km/hr**
 
 **The round-trip trap:** the average speed for a there-and-back river trip is never b. It's (b² − s²)/b, which is strictly less, because more time is spent in the slow direction. With b = 7, s = 1: average = (49 − 1)/7 = 48/7 ≈ 6.86, not 7.
+
+---
+
+## 6a. Escalators — the two different questions
+
+An escalator question is one of two things, and using the wrong one is the standard way to lose it.
+
+**If the question is about distance or time**, it *is* boats and streams (§6): the escalator is the stream, the person is the boat, effective speed = own speed ± escalator speed.
+
+**If the question counts steps, it is not.** "Walking up a moving escalator a man takes 30 steps; running he takes 40; how many steps are visible when it is stopped?" — nobody's speed in metres is given, and there is no distance. This is a **rate problem in units of steps** (`Time-Work-Pipes-Cisterns.md` §1 is the same machinery).
+
+**Core idea.** The staircase has a fixed number of visible steps N. While the person climbs, the escalator also delivers steps. So
+
+**N = (steps the person takes) + (steps the escalator contributes during the same time)**
+
+The escalator's contribution is (escalator rate) × (time taken), and time = (steps taken) / (person's rate). Everything is in steps per unit time, so no distance is ever needed.
+
+**Method:**
+1. Let the escalator move e steps in the time the person takes **one** step.
+2. For each scenario, time ∝ number of steps the person took, so the escalator adds e × (that number).
+3. Set the two expressions for N equal and solve for e, then for N.
+
+**Worked example:** Walking, a man takes 30 steps to reach the top; running at twice the rate he takes 40. How many steps are visible?
+
+- Let the escalator deliver e steps per one of his walking steps.
+- **Walking:** he takes 30 steps, in that time the escalator gives 30e ⟹ N = 30 + 30e
+- **Running:** he is twice as fast, so 40 running steps take the time of 20 walking steps ⟹ escalator gives 20e ⟹ N = 40 + 20e
+- 30 + 30e = 40 + 20e ⟹ 10e = 10 ⟹ e = 1 ⟹ **N = 60**
+
+**The rate-conversion step in bold, because it is the whole question:** taking 40 steps at double speed occupies the time of only 20 normal steps. Multiplying 40 by e instead of 20 is the planted error and gives 70.
+
+**Downward on an upward escalator:** the escalator now works against him, so N = (steps taken) − (escalator's contribution), and the step count he needs is larger than N. Same equation, one sign flipped.
+
+**Traps:**
+- Treating a steps question as boats and streams. There is no distance, so b ± s has nothing to attach to.
+- Forgetting to convert step counts into equal *times* before adding the escalator's share.
+- Assuming the answer is the average of the two step counts. Here that gives 35, not 60.
 
 ---
 

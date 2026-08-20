@@ -1,6 +1,9 @@
 # CAT Prep
 
-Notes and practice material for CAT quant prep. Start with [Index.md](https://github.com/mehullakra/CAT-Prep/blob/main/Index.md) — it's the topic-to-file lookup table.
+Notes and practice material for CAT quant prep.
+
+- [Index.md](https://github.com/mehullakra/CAT-Prep/blob/main/Index.md) — topic-to-file lookup. Use it to find a **concept**.
+- [Syllabus-Coverage.md](https://github.com/mehullakra/CAT-Prep/blob/main/Syllabus-Coverage.md) — module-by-module readiness. Use it to check whether a **module** is done.
 
 ## Quant
 
@@ -11,6 +14,7 @@ Notes and practice material for CAT quant prep. Start with [Index.md](https://gi
 | [Circles.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Circles.md) | Circles |
 | [Clocks.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Clocks.md) | Clocks |
 | [Coordinate-Geometry.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Coordinate-Geometry.md) | Coordinate Geometry |
+| [Functions-and-Graphs.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Functions-and-Graphs.md) | Functions & Graphs |
 | [Logarithms.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Logarithms.md) | Logarithms |
 | [Mensuration.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Mensuration.md) | Mensuration |
 | [Means-and-Weighted-Averages.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Means-and-Weighted-Averages.md) | Means & Weighted Averages |
@@ -31,7 +35,7 @@ Notes and practice material for CAT quant prep. Start with [Index.md](https://gi
 
 ### Quant/Practice
 
-Every topic file except Set Theory & Venn Diagrams and Coordinate Geometry has a matching practice set. Each set runs A–H plus a timed Mixed set, with hints keyed to the section of the notes that contains the intended method, a full answer key, and an error-audit table at the end.
+Every topic file except Set Theory & Venn Diagrams, Coordinate Geometry and Functions & Graphs has a matching practice set. Each set runs A–H plus a timed Mixed set, with hints keyed to the section of the notes that contains the intended method, a full answer key, and an error-audit table at the end.
 
 | File | Questions |
 |---|---|
@@ -98,8 +102,9 @@ All 20 topics are now generated. The four that predated the generator — Algebr
 ```
 CAT Prep/
 ├── Index.md
+├── Syllabus-Coverage.md
 ├── Quant/
-│   ├── *.md              ← one file per topic (22)
+│   ├── *.md              ← one file per topic (23)
 │   ├── Practice/         ← practice sets and the interactive test
 │   │   └── _build/       ← question data + generator (source of truth)
 │   └── Reference/        ← quick-reference material

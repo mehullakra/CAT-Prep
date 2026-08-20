@@ -170,6 +170,55 @@ k = 1 needs no fraction in front, k = 2 needs ½, k = 3 needs ⅓.
 
 ---
 
+## 8. Special series worth recognising
+
+The three power sums live in `Reference/Calculation-Toolkit.md` §15 and are not repeated here. These are the shapes that are *not* an AP, GP or HP and still collapse in one line.
+
+| Series | Sum |
+|---|---|
+| 1·1! + 2·2! + … + n·n! | **(n+1)! − 1** |
+| 1·2 + 2·3 + … + n(n+1) | **n(n+1)(n+2)/3** |
+| 1·2·3 + 2·3·4 + … + n(n+1)(n+2) | **n(n+1)(n+2)(n+3)/4** |
+| 1 + 3 + 5 + … (n odd numbers) | **n²** |
+| 1/(1·2) + 1/(2·3) + … | telescoping — §7 |
+
+**The pattern behind rows 2 and 3:** a product of k consecutive integers sums to the product of k+1 consecutive integers, divided by k+1. Recognise it and you never memorise the individual formulas.
+
+**Worked example:** Find 1·1! + 2·2! + 3·3! + 4·4!.
+- (4+1)! − 1 = 120 − 1 = **119** (check: 1 + 4 + 18 + 96 = 119 ✓)
+
+**Method when nothing matches:** write the general term Tₙ, split it into pieces you can sum (powers of n, or a telescoping difference), and sum each. "Find Sₙ given Tₙ = n² + 3n + 2" is Σn² + 3Σn + 2n, nothing more.
+
+**Given Sₙ, recover Tₙ** with **Tₙ = Sₙ − Sₙ₋₁** — and check T₁ = S₁ separately, because that formula is invalid at n = 1.
+
+---
+
+## 9. Recursively defined sequences
+
+CAT gives a recurrence and asks for a distant term. Four shapes, and you should classify before computing anything.
+
+| Recurrence | What to do |
+|---|---|
+| aₙ₊₁ = aₙ + d | AP — §1 |
+| aₙ₊₁ = r·aₙ | GP — §5 |
+| aₙ₊₁ = aₙ + f(n) | **telescope**: aₙ = a₁ + Σ f(k) |
+| aₙ₊₁ = p·aₙ + q | **fixed point** — see below |
+
+**The fixed-point method** for aₙ₊₁ = p·aₙ + q (p ≠ 1): solve x = px + q for the fixed point x = q/(1 − p). Then (aₙ − x) is a plain GP with ratio p, so
+
+**aₙ = x + (a₁ − x)·p^(n−1)**
+
+**Worked example:** a₁ = 3 and aₙ₊₁ = 3aₙ − 4. Find aₙ.
+- Fixed point: x = 3x − 4 ⟹ x = 2
+- aₙ − 2 = (3 − 2)·3^(n−1) ⟹ **aₙ = 3^(n−1) + 2**
+- Check: a₂ = 3(3) − 4 = 5 = 3 + 2 ✓; a₃ = 3(5) − 4 = 11 = 9 + 2 ✓
+
+**When the recurrence looks unfriendly, compute the first five or six terms and look for a cycle.** Sequences defined by remainders, digit operations or alternating signs are almost always **periodic**, and then the answer is the index mod the period — the same move as §5 cyclicity in `Number-System.md`.
+
+**Trap:** assuming a recurrence must have a closed form. If the question asks for a₁₀₀ and no pattern appears in six terms, you have probably misread the recurrence.
+
+---
+
 ## Traps
 
 | Trap | Wrong | Right |

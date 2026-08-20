@@ -158,7 +158,7 @@ Expenditure = Price × Quantity. If expenditure is fixed, the two factors are re
 
 This exact structure reappears as: speed vs time (distance fixed), men vs days (work fixed), length vs breadth (area fixed). Recognise the shape and reuse the table.
 
-### 7a. When expenditure is NOT fixed (generalised price–consumption)
+## 7a. When expenditure is NOT fixed (generalised price–consumption)
 
 Everything above is the special case "expenditure unchanged", where the price and quantity factors are exact reciprocals. The general statement is just the product rule:
 
@@ -185,7 +185,7 @@ Same shape elsewhere: distance-factor = speed-factor × time-factor, work-factor
 | Price up x%, expenditure also changes | use the §4 reciprocal, x/(100+x) | divide E-factor by P-factor |
 | "decrease expenditure by 21.25%" | subtract 21.25% from the price rise | multiply by 0.7875 |
 
-### 7b. "n more/fewer items for the same money" — recovering the actual price
+## 7b. "n more/fewer items for the same money" — recovering the actual price
 
 §7 answers in percentages. This variant gives you a **count** instead and asks for the rupee price. The bridge is one sentence: **the % change in quantity, applied to the original quantity, equals the given extra count.**
 
@@ -237,7 +237,7 @@ CAT and DI sets exploit this constantly. "Interest rose by 5%" is ambiguous; "ro
 
 **The trap:** "20% of the remainder" ≠ 20% of income. Track what each percentage sits on. Underline the base word ("remainder", "the rest", "what was left") on first read.
 
-### 9a. Chains with money added back, closed by an equation
+## 9a. Chains with money added back, closed by an equation
 
 Two extensions that turn §9 into a full CAT question.
 

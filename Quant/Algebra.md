@@ -29,6 +29,43 @@
 
 ---
 
+## 1a. The binomial theorem
+
+§1 gives (a + b)² and (a + b)³. This is the general case, and CAT asks it as "find the coefficient of xᵏ" or "find the term independent of x" rather than as an expansion.
+
+**(a + b)ⁿ = Σ C(n,r) · a^(n−r) · b^r**, summed over r = 0 to n. C(n,r) is the usual combination (`PnC-Probability.md` §2).
+
+**The general term is the whole topic:**
+
+**T₍ᵣ₊₁₎ = C(n,r) · a^(n−r) · b^r**
+
+Note the index shift — the r-th power of b sits in the **(r+1)-th** term.
+
+**Facts worth having:**
+- There are **n + 1** terms.
+- **Middle term:** n even ⟹ exactly one, the (n/2 + 1)-th. n odd ⟹ two, the ((n+1)/2)-th and ((n+3)/2)-th.
+- C(n,r) is largest in the middle, so the middle term carries the greatest binomial coefficient.
+- **Sum of all binomial coefficients = 2ⁿ.** Odd-position and even-position coefficients each sum to 2ⁿ⁻¹.
+- **Sum of the coefficients of any polynomial = P(1).** The **constant term = P(0)**. These two substitutions answer a whole class of questions instantly.
+
+**Method for "coefficient of xᵏ":** write the general term, collect the power of x, set it equal to k, solve for r, substitute back. Never expand.
+
+**Worked example:** Find the term independent of x in (x + 2/x)¹⁰.
+- T₍ᵣ₊₁₎ = C(10,r) · x^(10−r) · (2/x)^r = C(10,r) · 2^r · x^(10−2r)
+- Independent of x ⟹ 10 − 2r = 0 ⟹ r = 5
+- Term = C(10,5) · 2⁵ = 252 × 32 = **8064**
+
+**Worked example:** Find the sum of the coefficients in (1 + 2x)⁵.
+- Put x = 1: 3⁵ = **243**. No expansion needed.
+
+**Traps:**
+- Off-by-one in the term number. The term containing bʳ is the (r+1)-th.
+- Expanding when only one coefficient is wanted. Ten terms is ten chances to slip.
+- Forgetting that the coefficient includes everything numeric — the 2⁵ above, not just C(10,5).
+- Reading "greatest term" as "greatest coefficient". They differ once x has a numeric value.
+
+---
+
 ## 2. Quadratics
 
 For ax² + bx + c = 0 with roots α, β:
@@ -44,6 +81,60 @@ For ax² + bx + c = 0 with roots α, β:
 **Sign of a quadratic:** for a > 0, the expression is negative strictly between the roots and positive outside. Sketching the parabola settles every inequality question in two seconds.
 
 **Common roots:** two quadratics share both roots ⟺ a₁/a₂ = b₁/b₂ = c₁/c₂.
+
+---
+
+## 2a. Location of the roots
+
+§2 tells you *whether* the roots are real. This tells you *where* they are, which is what CAT actually asks — "for how many k does this have both roots greater than 2".
+
+**Everything follows from three readings of the parabola** (take a > 0; if a < 0, multiply the equation through by −1 first):
+
+- the **sign of f(k)** — positive means k is outside the roots, negative means k is between them
+- the **vertex position** −b/2a — which side of k the parabola sits
+- the **discriminant** — whether roots exist at all
+
+| Condition on the roots | Requires |
+|---|---|
+| k lies **between** the roots | **f(k) < 0** — and that alone (D > 0 comes free) |
+| both roots **> k** | D ≥ 0, f(k) > 0, −b/2a > k |
+| both roots **< k** | D ≥ 0, f(k) > 0, −b/2a < k |
+| both roots in (k₁, k₂) | D ≥ 0, f(k₁) > 0, f(k₂) > 0, k₁ < −b/2a < k₂ |
+| exactly one root in (k₁, k₂) | **f(k₁)·f(k₂) < 0** |
+| both roots positive | D ≥ 0, sum > 0, product > 0 |
+| roots of **opposite signs** | **product < 0** — nothing else needed |
+
+The single-condition rows are the ones to memorise: a sign change of f *is* a root in between, and that is often the whole question.
+
+**Worked example:** For which k does x² − 6x + k = 0 have one root less than 1 and the other greater than 3?
+- Both 1 and 3 must lie strictly between the roots ⟹ f(1) < 0 **and** f(3) < 0
+- f(1) = 1 − 6 + k = k − 5 < 0 ⟹ k < 5
+- f(3) = 9 − 18 + k = k − 9 < 0 ⟹ k < 9
+- Both ⟹ **k < 5** (and D = 36 − 4k > 0 is then automatic)
+
+**Trap:** checking only the discriminant and the sum/product. Those give sign information but never *location* relative to an arbitrary k — for that you must evaluate f at k.
+
+---
+
+## 2b. Equations reducible to a quadratic
+
+Four substitutions cover almost every "higher-degree" equation CAT sets. Spotting the shape is the work; the algebra afterwards is §2.
+
+| Shape | Substitute |
+|---|---|
+| ax⁴ + bx² + c = 0 (biquadratic) | **t = x²**, then x = ±√t |
+| a·m^(2x) + b·mˣ + c = 0 | **t = mˣ** (and t > 0 always) |
+| ax + b√x + c = 0 | **t = √x** (and t ≥ 0) |
+| ax⁴ + bx³ + cx² + bx + a (palindromic) | divide by x², then **t = x + 1/x** |
+| equations in log x | **t = log x** — see `Logarithms.md` §4 |
+
+**Worked example:** Solve 2^(2x) − 5·2ˣ + 4 = 0.
+- t = 2ˣ ⟹ t² − 5t + 4 = 0 ⟹ t = 1 or 4 ⟹ **x = 0 or 2**
+
+**Worked example:** Solve x⁴ − 5x² + 4 = 0.
+- t = x² ⟹ t = 1 or 4 ⟹ **x = ±1, ±2** — four roots, and stopping at t is the standard slip
+
+**Always check the substitution's own range.** t = 2ˣ must be positive and t = √x non-negative, so a negative t is discarded rather than back-substituted. This is the same discipline as §4's extraneous surd roots.
 
 ---
 
@@ -97,6 +188,35 @@ b, c, d and e were never needed — and could not have been found, since Q deter
 
 ---
 
+## 3b. Remainder and factor theorem
+
+**Division algorithm:** for any polynomials P and D, P(x) = D(x)·Q(x) + R(x) with **deg R < deg D**. Dividing by a linear expression therefore leaves a **constant**; dividing by a quadratic leaves at most a **linear** remainder. Knowing the *shape* of R before computing is what makes these quick.
+
+- **Remainder theorem:** the remainder of P(x) ÷ (x − a) is **P(a)**. For a divisor (ax − b), it is P(b/a).
+- **Factor theorem:** (x − a) is a factor of P(x) ⟺ **P(a) = 0**. This is the remainder theorem with remainder zero.
+- **Rational root theorem:** any rational root p/q in lowest terms has p dividing the constant term and q dividing the leading coefficient. For a **monic** polynomial that means every rational root is an integer factor of the constant term — which is how you factor a cubic in ten seconds.
+
+**Worked example:** Find the remainder when x³ − 3x² + 4x − 5 is divided by (x − 2).
+- P(2) = 8 − 12 + 8 − 5 = **−1**
+
+**Worked example (quadratic divisor — the CAT version):** P(x) leaves remainder 3 on division by (x − 1) and 5 on division by (x − 2). Find the remainder on division by (x − 1)(x − 2).
+- The divisor is quadratic ⟹ remainder has the form ax + b.
+- P(x) = (x−1)(x−2)Q(x) + ax + b. Putting x = 1: a + b = 3. Putting x = 2: 2a + b = 5.
+- ⟹ a = 2, b = 1 ⟹ remainder = **2x + 1**
+
+**Worked example (factoring a cubic):** Factorise x³ − 6x² + 11x − 6.
+- Monic, constant −6 ⟹ test the divisors of 6. P(1) = 1 − 6 + 11 − 6 = 0 ⟹ (x − 1) is a factor.
+- Divide out: x² − 5x + 6 = (x − 2)(x − 3) ⟹ **(x − 1)(x − 2)(x − 3)**
+
+**Traps:**
+- Using P(−a) for the divisor (x − a). The root of x − a is +a.
+- Assuming the remainder is a constant when the divisor is quadratic. It is linear, and you need **two** conditions to pin it down.
+- Testing only positive candidates for a rational root. Negative divisors of the constant count too.
+
+**Related:** the difference P(x+1) − P(x) is §3a; the connection is that both turn polynomial questions into evaluations rather than expansions.
+
+---
+
 ## 4. Surds — rationalisation and equations
 
 **Conjugate rule:** multiply by the conjugate to clear a surd from a denominator.
@@ -131,6 +251,32 @@ b, c, d and e were never needed — and could not have been found, since Q deter
 Check with p = 7, q = 3: (49 + 9)/2 = 29 ✓, ((49 − 9)/4)² = 10² = 100 ✓.
 
 **Nested surds:** √(a ± 2√b) = √m ± √n where m + n = a and mn = b. So √(7 + 2√12)? m + n = 7, mn = 12 ⟹ m, n = 4, 3 ⟹ **2 + √3**.
+
+---
+
+## 4a. Comparing surds and large powers
+
+"Which is larger, 2¹⁰⁰ or 3⁷⁰?" looks like it needs a calculator. It needs one of three moves.
+
+**1. Same index ⟹ compare the insides.** √17 > √15, trivially.
+
+**2. Different indices ⟹ raise both to the LCM of the indices.**
+
+**Worked example:** Compare ∛3 and √2.
+- LCM(3, 2) = 6 ⟹ ∛3 = 3^(2/6) = 9^(1/6) and √2 = 2^(3/6) = 8^(1/6)
+- 9 > 8 ⟹ **∛3 > √2**
+
+**3. Large powers ⟹ make the *exponents* equal using their HCF.** This is the one worth drilling, because it needs no logs.
+
+**Worked example:** Which is larger, 2¹⁰⁰ or 3⁷⁰?
+- HCF(100, 70) = 10 ⟹ 2¹⁰⁰ = (2¹⁰)¹⁰ = 1024¹⁰ and 3⁷⁰ = (3⁷)¹⁰ = 2187¹⁰
+- 2187 > 1024 ⟹ **3⁷⁰ is larger**
+
+**The log fallback**, when the exponents share no useful factor: compare n·log a directly (`Logarithms.md` §3). Here 100 log 2 = 30.10 against 70 log 3 = 33.40 ⟹ same conclusion, more arithmetic.
+
+**A useful reflex for values near 1:** for a, b > 0, a/b > 1 ⟺ a > b, so a ratio question and a comparison question are the same question. And raising both sides to any **positive** power preserves the inequality — which is what legitimises moves 2 and 3.
+
+**Trap:** comparing exponents when the bases differ, or bases when the exponents differ. 2¹⁰⁰ has the larger exponent and is the smaller number.
 
 ---
 
@@ -244,19 +390,45 @@ That turns a four-case slog into two lines.
 
 ---
 
-## 7. Functions (brief but tested)
+## 6c. The wavy curve — rational and higher-degree inequalities
 
-- **f(x) + f(1/x)** and **f(x) + f(−x)** type identities: substitute the second value into the given relation to get a second equation, then solve the pair.
-- **Even:** f(−x) = f(x). **Odd:** f(−x) = −f(x).
-- **Composite:** work from the inside out; f(g(x)) ≠ g(f(x)) in general.
-- **Inverse:** swap x and y, solve for y.
+§6 handles moduli and AM–GM. This is the method for anything that **factors**: (x−1)(x+2)(x−5) > 0, or a rational inequality like (x−1)(x+2)/(x−3) ≥ 0.
 
-**Worked example:** If f(x) + 2f(1/x) = 3x, find f(2).
-- Put x = 2: f(2) + 2f(1/2) = 6
-- Put x = 1/2: f(1/2) + 2f(2) = 3/2
-- Multiply the second by 2 and subtract: 4f(2) − f(2) = 3 − 6 ⟹ 3f(2) = −3 ⟹ f(2) = **−1**
+**Never cross-multiply a rational inequality.** The sign of the denominator is unknown, so multiplying by it may or may not flip the inequality. Bring everything to one side instead, over a common denominator, and factor.
 
-That substitute-the-reciprocal move is the standard trick for the whole family.
+**Method:**
+1. Get the form (product of linear factors)/(product of linear factors) compared to **0**.
+2. Make every factor's x-coefficient **positive** — flipping the sign of a factor flips the whole inequality.
+3. Mark all roots on a number line: numerator roots are **filled** for ≥ or ≤, denominator roots are **always open** (the expression is undefined there).
+4. The curve is **positive to the far right** of the largest root. Moving left, it **alternates at each simple root**.
+5. At a root of **even multiplicity** the sign does **not** change — the curve touches the axis and turns back.
+6. Read off the intervals matching your inequality.
+
+**Worked example:** Solve (x − 1)(x + 2)/(x − 3) > 0.
+- Roots at −2, 1, 3. The 3 is a denominator root ⟹ excluded regardless.
+- Far right (x > 3): all three factors positive ⟹ **+**
+- Alternating leftwards: (1, 3) ⟹ **−**, (−2, 1) ⟹ **+**, (−∞, −2) ⟹ **−**
+- We want > 0 ⟹ **(−2, 1) ∪ (3, ∞)**
+- Spot-check x = 0: (−1)(2)/(−3) = 2/3 > 0 ✓
+
+**Worked example (even multiplicity):** Solve (x − 1)²(x + 3) < 0.
+- Far right positive. At x = 1 the multiplicity is 2 ⟹ **no sign change**, so (−3, 1) is still positive.
+- At x = −3, simple root ⟹ flips ⟹ (−∞, −3) is negative.
+- Answer: **x < −3**. Note x = 1 is *not* a solution — the expression is 0 there, not negative.
+
+**Traps:**
+- Cross-multiplying by (x − 3). Legal only if you case-split on its sign, which is exactly the work this method avoids.
+- Including a denominator root because the inequality says ≥. Undefined beats included, always.
+- Alternating at every root regardless of multiplicity. Even powers touch and turn.
+- Forgetting step 2. (3 − x) must be rewritten as −(x − 3), and that minus sign flips the inequality.
+
+---
+
+## 7. Functions — moved
+
+Functions, graphs, domain and range, [x] and {x}, transformations, counting solutions graphically and the maxima–minima toolkit now live in **`Functions-and-Graphs.md`**. They outgrew a subsection here.
+
+The pieces that stayed in this file, because they are algebraic manipulation rather than function theory, are §2 (quadratics and the vertex), §6 (AM–GM and modulus basics), §6a (AM–GM with split terms) and §6b (sums of moduli). `Functions-and-Graphs.md` §11 routes each kind of maximum to whichever of those applies.
 
 ---
 
@@ -363,4 +535,4 @@ The same move covers any "falls short by", "is short of", "needs x more" phrasin
 - Substitute back into the original equation for anything involving squaring, moduli, or logs. It costs ten seconds and catches extraneous roots.
 - If the algebra is getting long, you've missed the intended identity. Stop and re-read the expression's shape.
 
-**Where this feeds forward:** `Number-System.md` §9 and §11 (surd/exponent forms, integer solutions), `Logarithms.md` (log equations use the same substitute-and-check discipline), `Means-and-Weighted-Averages.md` §8 (AM–GM), `Progressions-AP-GP.md` (symmetric term selection), `Quadrilaterals-and-Polygons.md` §7 (AM–GM as geometric optimisation).
+**Where this feeds forward:** `Functions-and-Graphs.md` (graphs, domain and range, the maxima–minima router), `Number-System.md` §9 and §11 (surd/exponent forms, integer solutions), `Logarithms.md` (log equations use the same substitute-and-check discipline), `Means-and-Weighted-Averages.md` §8 (AM–GM), `Progressions-AP-GP.md` (symmetric term selection), `Quadrilaterals-and-Polygons.md` §7 (AM–GM as geometric optimisation).

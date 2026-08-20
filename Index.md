@@ -40,12 +40,13 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 | `Quant/Quadrilaterals-and-Polygons.md` | parallelograms, trapezium, kites, polygons, regular-polygon metrics, optimisation |
 | `Quant/Mensuration.md` | solids, scaling, recasting, combined solids, painted cube, unfolding |
 | `Quant/Coordinate-Geometry.md` | distance, section formula, lines, shoelace area, circles on axes |
+| `Quant/Functions-and-Graphs.md` | domain and range, [x] and {x}, transformations, counting solutions, maxima–minima |
 | `Quant/PnC-Probability.md` | arrangements, selections, probability, expected value |
 | `Quant/Set-Theory-Venn.md` | two/three-set formulas, 2×2 tables, max–min of overlaps |
 | `Quant/Reference/Calculation-Toolkit.md` | tables, squares, cubes, fast arithmetic |
 | `VARC/Vocabulary.md` | 127 words grouped by meaning, with synonyms and antonyms |
 
-Every topic file above has a companion set at `Quant/Practice/<same name>-Practice.md`, except `Set-Theory-Venn.md` and `Coordinate-Geometry.md`, which have notes but no practice set yet.
+Every topic file above has a companion set at `Quant/Practice/<same name>-Practice.md`, except `Set-Theory-Venn.md`, `Coordinate-Geometry.md` and `Functions-and-Graphs.md`, which have notes but no practice set yet.
 
 ---
 
@@ -57,9 +58,13 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 |---|---|
 | The three core tools (factorise, mod, bound) | §1 The three tools |
 | Divisibility rules (7, 11, 13, composite divisors) | §2 Divisibility rules |
+| Terminating vs recurring decimals; length of the recurring block | §2a Terminating and recurring decimals |
+| Parity arguments; "no integer solution exists" | §2b Parity — the even/odd test |
 | Number of factors, sum of factors, product of factors | §3 Prime factorisation |
 | HCF and LCM, HCF×LCM = product | §4 HCF and LCM |
+| Bells tolling, largest tile, least number leaving remainder r | §4a HCF and LCM word problems |
 | Unit digit, cyclicity of powers | §5 Unit digit and cyclicity |
+| Last two digits of a power; the …76 fixed point | §5a Last two digits |
 | Remainder theorems (Fermat, Wilson, negative remainders) | §6 Remainder theorems |
 | Digit sum of Nᵏ, F(N) functions | §7 Digit-sum functions on powers |
 | Counting numbers under divisibility + digit-sum constraints | §8 Divisibility + digit-sum counting |
@@ -68,23 +73,32 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Perfect square / cube / 6th power deduced from the factor count | §10a Reading N's structure back from its factor count |
 | Equation between products of prime powers; equate exponents per prime | §9a Equations in exponents |
 | Integer solutions of ax + by = c | §11 Diophantine equations |
-| Base systems, trailing zeros in factorials | §12 Base systems and factorials |
-| Repunits Rₓ = (10ˣ − 1)/9, digit-pattern numbers | §12a Repunits and digit-pattern numbers |
+| Highest power of a prime in n! (Legendre) | §12 Factorials — highest powers and trailing zeros |
+| Highest power of a *composite* in n!; trailing zeros in any base | §12 Factorials — highest powers and trailing zeros |
+| Base conversion, arithmetic inside a base, valid digits | §13 Base systems |
+| Digit-sum divisibility in base b ((b−1) plays the role of 9) | §13 Base systems |
+| Repunits Rₓ = (10ˣ − 1)/9, digit-pattern numbers | §13a Repunits and digit-pattern numbers |
 
 ### Algebra — `Quant/Algebra.md`
 
 | Topic / keyword | Section |
 |---|---|
 | Standard identities, x + 1/x chain | §1 The identities that actually appear |
+| Binomial theorem: general term, middle term, coefficient of xᵏ, sum of coefficients | §1a The binomial theorem |
 | Roots, discriminant, sum/product of roots | §2 Quadratics |
+| Location of roots: both > k, opposite signs, one root in an interval | §2a Location of the roots |
+| Biquadratic, aˣ substitution, palindromic, √x substitution | §2b Equations reducible to a quadratic |
 | Symmetric systems, cubics | §3 Higher-degree and symmetric systems |
+| Remainder theorem, factor theorem, rational roots, quadratic-divisor remainder | §3b Remainder and factor theorem |
 | Finite differences P(x+1) − P(x), telescoping to P(b) − P(a) | §3a Finite differences |
 | Rationalisation, surd equations | §4 Surds |
+| Comparing surds and large powers (2¹⁰⁰ vs 3⁷⁰) | §4a Comparing surds and large powers |
 | a + b + c = 0 ⟹ a³ + b³ + c³ = 3abc | §5 The a + b + c = 0 identity |
 | AM–GM, maxima and minima, modulus inequalities | §6 Inequalities and maxima–minima |
 | Maximise xᵃyᵇzᶜ under a linear constraint (split by exponents) | §6a AM–GM with split terms |
 | Sum-of-moduli inequality, counting integer solutions | §6b Inequalities with a sum of moduli |
-| Functions, composition, f(x) + f(1/x) tricks | §7 Functions |
+| Wavy curve / sign scheme; rational and higher-degree inequalities | §6c The wavy curve |
+| Functions and graphs (moved out of this file) | §7 → `Functions-and-Graphs.md` |
 | Word problems into linear equations | §8 Linear equations in word problems |
 | "Needs ₹x more to buy one" — name the leftover, not the prices | §8b The shortfall trick |
 | Symmetric system ax+by=k, bx+ay=k with a parameter; sign constraints | §8a Symmetric linear systems with a parameter |
@@ -113,6 +127,8 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | GP: nth term, finite and infinite sum | §5 Geometric Progression |
 | HP and its AP reciprocal | §6 Harmonic Progression |
 | AGP and telescoping series | §7 Type 3 |
+| Σ n·n!, Σ n(n+1); recovering Tₙ from Sₙ | §8 Special series worth recognising |
+| Recurrences: telescoping, the fixed-point method, periodicity | §9 Recursively defined sequences |
 | Telescoping 1/(n(n+1)(n+2)) — the ½ factor | §7a Telescoping with three consecutive factors |
 
 ### Percentages — `Quant/Percentages.md`
@@ -234,6 +250,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Relative speed, catch-up and overtake | §4 Relative speed |
 | Trains crossing pole/platform/each other | §5 Trains |
 | Boats and streams, upstream/downstream | §6 Boats and streams |
+| Escalators: distance type vs steps-counted type | §6a Escalators — the two different questions |
 | Two people bouncing between two points, nth meeting | §7 Two-body meeting |
 | Same, but the two swap speeds on meeting | §7a Two-body meeting when the speeds are swapped |
 | √(t₁t₂) trick | §8 The √ trick |
@@ -316,6 +333,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Point on a circle, perpendicular to the diameter | §7 Type 1 — Altitudes |
 | Cevians and area splitting | §8 Type 2 — Splitting area with cevians |
 | Sine rule (and = 2R), cosine rule | §9 Sine rule and cosine rule |
+| Trig identities, quadrant signs, max/min of a·sin x + b·cos x | §9a Trigonometric identities and maxima |
 | Angles of elevation and depression | §10 Type 3 — Heights and distances |
 | Folding and crease problems | §11 Type 4 — Folding and creases |
 
@@ -363,6 +381,24 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Ant on a box, shortest path across a surface | §9 Type 6 — Unfolding |
 | Sphere in a cube, cube in a sphere, sphere in a cylinder | §10 Inscribed and circumscribed solids |
 | Liquid level, immersion, partly filled cone | §11 Type 7 — Liquid level and immersion |
+
+### Functions & Graphs — `Quant/Functions-and-Graphs.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Which of the four question shapes this is | §1 What CAT actually asks |
+| Domain and range; the four illegal structures | §2 Domain and range |
+| Range by solving for x in terms of y | §2 Domain and range |
+| One-one, onto, even, odd, periodic | §3 Classifying a function |
+| Composition, inverse, self-inverse, iterated functions | §4 Composition and inverse |
+| f(x) + f(1/x); f(x+y) = f(x)+f(y) and its family | §5 Type 1 — Functional equations |
+| Greatest integer [x] and fractional part {x} | §6 Greatest integer and fractional part |
+| The standard graph shapes | §7 The standard graphs |
+| Shifts, stretches, reflections; \|f(x)\| vs f(\|x\|) | §8 Transformations |
+| How many solutions — sketch both sides | §9 Type 2 — Counting solutions graphically |
+| Regions of a two-variable inequality; \|x\|+\|y\| ≤ a | §10 Type 3 — Regions |
+| Which maxima–minima tool to use | §11 Maxima and minima |
+| Range of a rational function via the discriminant | §11 Maxima and minima |
 
 ### Coordinate Geometry — `Quant/Coordinate-Geometry.md`
 
@@ -429,6 +465,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Interactive calculation drill | `Quant/Reference/Flashcard-Drill.html` |
 | Practice set for any topic (all 20) | `Quant/Practice/<Topic>-Practice.md` |
 | Interactive mock test (692 questions, all 20 topics) | `Quant/Practice/CAT-Quant-Test.html` |
+| Is a syllabus module ready to revise from? | `Syllabus-Coverage.md` |
 
 ---
 
@@ -507,11 +544,11 @@ Find the sense you want here, then open that `##` section in `Vocabulary.md`. Th
 
 ## Gaps — not yet covered
 
+**For Quant, `Syllabus-Coverage.md` is the authoritative list** — it maps every coaching module to its file and section, marks it full / partial / thin, names the specific missing piece, and carries the priority queue. It also owns practice-set coverage. Only the non-Quant gaps are listed here.
+
 - **Data Interpretation** — no file yet. Percentages §11 covers growth rates in a DI context, but nothing on caselets, tables or graph reading.
 - **Logical Reasoning** — no file yet.
 - **VARC beyond vocabulary** — no file yet on reading comprehension, para-jumbles, para-summary or odd-one-out.
-- **Thin practice sets for the four geometry files** — splitting `Geometry-Mensuration.md` redistributed its 38 questions as Triangles 9, Circles 7, Quadrilaterals & Polygons 13, Mensuration 9. The notes now cover far more than the drills do: nothing yet tests recasting, combined solids, the painted cube, unfolding, segment area, two-circle configurations, the sine/cosine rule, heights and distances, cevian area splitting or Apollonius. Add questions to the relevant `_build/topics/*.json` and re-run the generator.
-- **Practice sets for Set Theory and Coordinate Geometry** — both concept files exist but neither has a generated practice set. Each needs a `_build/topics/*.json` and a generator re-run; do not hand-write the `-Practice.md`.
 
 ---
 
@@ -521,12 +558,14 @@ Find the sense you want here, then open that `##` section in `Vocabulary.md`. Th
 CAT Prep/
 ├── Index.md                              ← you are here
 ├── README.md
+├── Syllabus-Coverage.md                  ← module-by-module readiness
 ├── Quant/
 │   ├── Algebra.md
 │   ├── Calendars.md
 │   ├── Circles.md
 │   ├── Clocks.md
 │   ├── Coordinate-Geometry.md
+│   ├── Functions-and-Graphs.md
 │   ├── Mensuration.md
 │   ├── Logarithms.md
 │   ├── Means-and-Weighted-Averages.md

@@ -179,6 +179,50 @@ Pythagoras is the C = 90° case. The rearranged form is how you decide whether a
 
 ---
 
+## 9a. Trigonometric identities, and maxima of a·sin x + b·cos x
+
+§9 solves triangles. This is the small amount of pure trigonometry CAT asks outside a triangle.
+
+**The three Pythagorean identities:**
+
+- sin²θ + cos²θ = 1
+- 1 + tan²θ = sec²θ
+- 1 + cot²θ = cosec²θ
+
+**Compound and double angles** (the ones that actually appear):
+
+- sin(A ± B) = sin A cos B ± cos A sin B
+- cos(A ± B) = cos A cos B ∓ sin A sin B
+- **sin 2A = 2 sin A cos A**; cos 2A = 1 − 2sin²A = 2cos²A − 1
+- tan(A + B) = (tan A + tan B)/(1 − tan A tan B)
+
+**Signs by quadrant — "ASTC":** **A**ll positive in the first, **S**ine in the second, **T**angent in the third, **C**osine in the fourth.
+
+### The maximum and minimum of a·sin x + b·cos x
+
+**Range = [−√(a² + b²), +√(a² + b²)]**
+
+Why: write a sin x + b cos x = √(a²+b²) · sin(x + φ), where φ has tan φ = b/a. The bracket is a single sine, so it swings between −1 and 1.
+
+**Worked example:** Find the maximum of 3 sin x + 4 cos x.
+- √(9 + 16) = **5**, minimum −5. The 3-4-5 triple is not a coincidence — setters choose a and b so the root is clean.
+
+**The related maxima worth knowing:**
+
+| Expression | Maximum | Minimum |
+|---|---|---|
+| sin x · cos x = ½ sin 2x | **½** | −½ |
+| sin⁴x + cos⁴x = 1 − ½sin²2x | 1 | **½** |
+| sin²x + cosec²x (and the cos/sec pair) | unbounded | **2** (AM–GM, `Algebra.md` §6) |
+| a sin x + b cos x | √(a²+b²) | −√(a²+b²) |
+
+**Traps:**
+- Taking the maximum of a sin x + b cos x as a + b. That would need both to peak at the same x, which they never do.
+- Reading sin⁴ + cos⁴ as 1. Only sin² + cos² is 1; the fourth powers range over [½, 1].
+- Assuming sin²x + cosec²x can be small. Its minimum is 2, not 0 — reciprocals under AM–GM.
+
+---
+
 ## 10. Type 3 — Heights and distances
 
 Angle of **elevation** is measured up from the horizontal; angle of **depression** is measured down from the horizontal at the observer — and it equals the elevation from the other end (alternate angles, §2). Confusing which is which is the entire difficulty of most of these.
