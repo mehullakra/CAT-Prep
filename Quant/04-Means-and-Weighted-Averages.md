@@ -56,7 +56,7 @@ Given the two group values and the blend, alligation recovers the ratio of weigh
 - Distances: 75 − 65 = 10, 65 − 60 = 5
 - Boys : Girls = 10 : 5 = **2 : 1** ✓ (matches §3)
 
-Full treatment of the cross in `Mixtures-and-Alligation.md` §2.
+Full treatment of the cross in `05-Mixtures-and-Alligation.md` §2.
 
 ---
 
@@ -106,7 +106,7 @@ Same numbers, different answers. The question hinges on whether distance or time
 
 For three equal distances at a, b, c: average = 3/(1/a + 1/b + 1/c).
 
-*Kept here because average-speed items appear in averages sets. The full treatment, including multi-sector journeys and unequal legs, is in `Time-Speed-Distance.md` §3 and §3b.*
+*Kept here because average-speed items appear in averages sets. The full treatment, including multi-sector journeys and unequal legs, is in `08-Time-Speed-Distance.md` §3 and §3b.*
 
 ---
 
@@ -270,4 +270,4 @@ That cancellation is the whole trick — the awkward product nA never survives, 
 - Ask "are these things being added, or multiplied?" Added ⟹ AM. Multiplied ⟹ GM. Rates over a fixed quantity ⟹ HM.
 - If a question gives you a blend and asks for a ratio, stop and use alligation — it's always faster than setting up an equation.
 
-**Where this feeds forward:** `Mixtures-and-Alligation.md` (the backward direction), `Percentages.md` (weighting percentages), `Time-Speed-Distance.md` (harmonic mean speeds), `Simple-Compound-Interest.md` (GM for average growth).
+**Where this feeds forward:** `05-Mixtures-and-Alligation.md` (the backward direction), `02-Percentages.md` (weighting percentages), `08-Time-Speed-Distance.md` (harmonic mean speeds), `07-Simple-Compound-Interest.md` (GM for average growth).

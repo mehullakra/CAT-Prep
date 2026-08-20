@@ -1,9 +1,9 @@
 {
  "key": "mensuration",
- "order": 106,
+ "order": 200,
  "name": "Mensuration",
- "notes": "Mensuration.md",
- "file": "Mensuration-Practice.md",
+ "notes": "20-Mensuration.md",
+ "file": "20-Mensuration-Practice.md",
  "perQ": 105,
  "intro": [
   "**Write the conservation equation before any numbers.** Volume before = volume after is the whole method for a third of this topic (§3).",

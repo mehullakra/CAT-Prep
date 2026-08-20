@@ -16,7 +16,7 @@ That's the entire conceptual content. SI is an AP; CI is a GP.
 | SI | P(1 + rn/100) | Prn/100 |
 | CI | P(1 + r/100)ⁿ | P[(1 + r/100)ⁿ − 1] |
 
-**Use the factor form for CI, not the formula.** At 10% for 3 years, the amount is P × 1.1³. Treat it exactly like successive percentage changes (see `Percentages.md` §5) — it *is* that.
+**Use the factor form for CI, not the formula.** At 10% for 3 years, the amount is P × 1.1³. Treat it exactly like successive percentage changes (see `02-Percentages.md` §5) — it *is* that.
 
 ---
 
@@ -165,7 +165,7 @@ After m periods: **value = X(1 + mg/100)**, so "becomes t times the initial valu
 
 **t = 1 + mg/100**
 
-**When t and g are forced to be integers**, that equation becomes a divisibility condition, and it usually pins g down to one or two values — which is the actual work in these questions. Handle it exactly as in `Number-System.md` §11: write the condition, then find which integers satisfy it.
+**When t and g are forced to be integers**, that equation becomes a divisibility condition, and it usually pins g down to one or two values — which is the actual work in these questions. Handle it exactly as in `01-Number-System.md` §11: write the condition, then find which integers satisfy it.
 
 **Method:**
 1. Decide simple or compound from whether the percentage is "of X" or unqualified.
@@ -197,7 +197,7 @@ This is an alligation question in disguise. Weight by the principal.
 **Worked example:** ₹12,000 is split between two schemes at 8% and 12% SI, giving total interest of ₹1,200 in one year (i.e. 10% overall).
 - Alligation: (12 − 10) : (10 − 8) = 1 : 1 ⟹ ₹6,000 each.
 
-See `Mixtures-and-Alligation.md` §8 for the general treatment. Note the weighting is by principal, and this only works cleanly for SI or for one CI period.
+See `05-Mixtures-and-Alligation.md` §8 for the general treatment. Note the weighting is by principal, and this only works cleanly for SI or for one CI period.
 
 ---
 
@@ -233,4 +233,4 @@ At 5% for 3 years: 1 + 0.15 + 3(0.0025) = 1.1575 vs exact 1.157625. Accurate to 
 - Check whether interest is per annum but the period is in months or the compounding is sub-annual — that's the most-planted trap.
 - CI > SI always for t > 1 year; they're equal at t = 1. If your CI comes out lower, you've made an error.
 
-**Where this feeds forward:** `Percentages.md` (successive change is the same operation), `Mixtures-and-Alligation.md` (splitting principal between rates), `Means-and-Weighted-Averages.md` (average rate of return is a weighted mean, and for multi-year growth it's a *geometric* mean).
+**Where this feeds forward:** `02-Percentages.md` (successive change is the same operation), `05-Mixtures-and-Alligation.md` (splitting principal between rates), `04-Means-and-Weighted-Averages.md` (average rate of return is a weighted mean, and for multi-year growth it's a *geometric* mean).

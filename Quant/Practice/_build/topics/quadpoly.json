@@ -1,9 +1,9 @@
 {
  "key": "quadpoly",
- "order": 104,
+ "order": 190,
  "name": "Quadrilaterals & Polygons",
- "notes": "Quadrilaterals-and-Polygons.md",
- "file": "Quadrilaterals-and-Polygons-Practice.md",
+ "notes": "19-Quadrilaterals-and-Polygons.md",
+ "file": "19-Quadrilaterals-and-Polygons-Practice.md",
  "perQ": 105,
  "intro": [
   "**Classify the shape before writing a formula.** Most errors here are applying a rhombus fact to a parallelogram, or a cyclic fact to a general quadrilateral (§1).",

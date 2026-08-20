@@ -20,39 +20,41 @@ Every topic file ends with a **Traps** table; most also end with **Practical exa
 
 | File | Covers |
 |---|---|
-| `Quant/Number-System.md` | divisibility, primes, HCF/LCM, remainders, digit sums, Diophantine |
-| `Quant/Algebra.md` | identities, quadratics, surds, inequalities, functions |
-| `Quant/Logarithms.md` | laws, log equations, nested logs, log inequalities |
-| `Quant/Progressions-AP-GP.md` | AP, GP, HP, AGP, telescoping |
-| `Quant/Percentages.md` | % change, reciprocal trick, successive change, DI growth |
-| `Quant/Ratio-Proportion-Variation.md` | ratios, proportion, variation, partnership |
-| `Quant/Means-and-Weighted-Averages.md` | averages, weighted average, AM/GM/HM |
-| `Quant/Mixtures-and-Alligation.md` | alligation cross, concentration, replacement |
-| `Quant/Profit-Loss-Discount.md` | CP/MP/SP, discounts, false weights, adulteration |
-| `Quant/Simple-Compound-Interest.md` | SI, CI, instalments, depreciation |
-| `Quant/Time-Speed-Distance.md` | TSD, trains, boats, circular tracks |
-| `Quant/Races.md` | beats, dead heats, head starts, games of points |
-| `Quant/Clocks.md` | angle formula, faulty clocks, mirror images |
-| `Quant/Calendars.md` | odd days, day of the week, repeating calendars |
-| `Quant/Time-Work-Pipes-Cisterns.md` | LCM method, M-D-H, wages, pipes |
-| `Quant/Triangles.md` | angles, triangle essentials, similarity and area ratios, centres, trigonometry, folding |
-| `Quant/Circles.md` | chords, tangents, segments, cyclic quadrilaterals, two-circle configurations |
-| `Quant/Quadrilaterals-and-Polygons.md` | parallelograms, trapezium, kites, polygons, regular-polygon metrics, optimisation |
-| `Quant/Mensuration.md` | solids, scaling, recasting, combined solids, painted cube, unfolding |
-| `Quant/Coordinate-Geometry.md` | distance, section formula, lines, shoelace area, circles on axes |
-| `Quant/Functions-and-Graphs.md` | domain and range, [x] and {x}, transformations, counting solutions, maxima–minima |
-| `Quant/PnC-Probability.md` | arrangements, selections, probability, expected value |
-| `Quant/Set-Theory-Venn.md` | two/three-set formulas, 2×2 tables, max–min of overlaps |
+| `Quant/01-Number-System.md` | divisibility, primes, HCF/LCM, remainders, digit sums, Diophantine |
+| `Quant/02-Percentages.md` | % change, reciprocal trick, successive change, DI growth |
+| `Quant/03-Ratio-Proportion-Variation.md` | ratios, proportion, variation, partnership |
+| `Quant/04-Means-and-Weighted-Averages.md` | averages, weighted average, AM/GM/HM |
+| `Quant/05-Mixtures-and-Alligation.md` | alligation cross, concentration, replacement |
+| `Quant/06-Profit-Loss-Discount.md` | CP/MP/SP, discounts, false weights, adulteration |
+| `Quant/07-Simple-Compound-Interest.md` | SI, CI, instalments, depreciation |
+| `Quant/08-Time-Speed-Distance.md` | TSD, trains, boats, circular tracks |
+| `Quant/09-Races.md` | beats, dead heats, head starts, games of points |
+| `Quant/10-Clocks.md` | angle formula, faulty clocks, mirror images |
+| `Quant/11-Time-Work-Pipes-Cisterns.md` | LCM method, M-D-H, wages, pipes |
+| `Quant/12-Calendars.md` | odd days, day of the week, repeating calendars |
+| `Quant/13-Algebra.md` | identities, quadratics, surds, inequalities, functions |
+| `Quant/14-Logarithms.md` | laws, log equations, nested logs, log inequalities |
+| `Quant/15-Progressions-AP-GP.md` | AP, GP, HP, AGP, telescoping |
+| `Quant/16-Functions-and-Graphs.md` | domain and range, [x] and {x}, transformations, counting solutions, maxima–minima |
+| `Quant/17-Triangles.md` | angles, triangle essentials, similarity and area ratios, centres, trigonometry, folding |
+| `Quant/18-Circles.md` | chords, tangents, segments, cyclic quadrilaterals, two-circle configurations |
+| `Quant/19-Quadrilaterals-and-Polygons.md` | parallelograms, trapezium, kites, polygons, regular-polygon metrics, optimisation |
+| `Quant/20-Mensuration.md` | solids, scaling, recasting, combined solids, painted cube, unfolding |
+| `Quant/21-Coordinate-Geometry.md` | distance, section formula, lines, shoelace area, circles on axes |
+| `Quant/22-Set-Theory-Venn.md` | two/three-set formulas, 2×2 tables, max–min of overlaps |
+| `Quant/23-PnC-Probability.md` | arrangements, selections, probability, expected value |
 | `Quant/Reference/Calculation-Toolkit.md` | tables, squares, cubes, fast arithmetic |
 | `VARC/Vocabulary.md` | 127 words grouped by meaning, with synonyms and antonyms |
 
-Every topic file above has a companion set at `Quant/Practice/<same name>-Practice.md`, except `Set-Theory-Venn.md`, `Coordinate-Geometry.md` and `Functions-and-Graphs.md`, which have notes but no practice set yet.
+**The two-digit prefix is the study order** — read them 01 → 23. It follows the prerequisite chain: Number System first because Time & Work and Calendars need it, arithmetic next, then algebra, then Functions & Graphs (which needs Algebra §2 and §6), then geometry (Triangles before Circles, since a diameter turns a circle question into a triangle one), then Set Theory before PnC. Practice files and the topic order inside `CAT-Quant-Test.html` use the same numbers.
+
+Every topic file above has a companion set at `Quant/Practice/<same name>-Practice.md`, except `22-Set-Theory-Venn.md`, `21-Coordinate-Geometry.md` and `16-Functions-and-Graphs.md`, which have notes but no practice set yet.
 
 ---
 
 ## Lookup table
 
-### Number System — `Quant/Number-System.md`
+### Number System — `Quant/01-Number-System.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -79,59 +81,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Digit-sum divisibility in base b ((b−1) plays the role of 9) | §13 Base systems |
 | Repunits Rₓ = (10ˣ − 1)/9, digit-pattern numbers | §13a Repunits and digit-pattern numbers |
 
-### Algebra — `Quant/Algebra.md`
-
-| Topic / keyword | Section |
-|---|---|
-| Standard identities, x + 1/x chain | §1 The identities that actually appear |
-| Binomial theorem: general term, middle term, coefficient of xᵏ, sum of coefficients | §1a The binomial theorem |
-| Roots, discriminant, sum/product of roots | §2 Quadratics |
-| Location of roots: both > k, opposite signs, one root in an interval | §2a Location of the roots |
-| Biquadratic, aˣ substitution, palindromic, √x substitution | §2b Equations reducible to a quadratic |
-| Symmetric systems, cubics | §3 Higher-degree and symmetric systems |
-| Remainder theorem, factor theorem, rational roots, quadratic-divisor remainder | §3b Remainder and factor theorem |
-| Finite differences P(x+1) − P(x), telescoping to P(b) − P(a) | §3a Finite differences |
-| Rationalisation, surd equations | §4 Surds |
-| Comparing surds and large powers (2¹⁰⁰ vs 3⁷⁰) | §4a Comparing surds and large powers |
-| a + b + c = 0 ⟹ a³ + b³ + c³ = 3abc | §5 The a + b + c = 0 identity |
-| AM–GM, maxima and minima, modulus inequalities | §6 Inequalities and maxima–minima |
-| Maximise xᵃyᵇzᶜ under a linear constraint (split by exponents) | §6a AM–GM with split terms |
-| Sum-of-moduli inequality, counting integer solutions | §6b Inequalities with a sum of moduli |
-| Wavy curve / sign scheme; rational and higher-degree inequalities | §6c The wavy curve |
-| Functions and graphs (moved out of this file) | §7 → `Functions-and-Graphs.md` |
-| Word problems into linear equations | §8 Linear equations in word problems |
-| "Needs ₹x more to buy one" — name the leftover, not the prices | §8b The shortfall trick |
-| Symmetric system ax+by=k, bx+ay=k with a parameter; sign constraints | §8a Symmetric linear systems with a parameter |
-
-### Logarithms — `Quant/Logarithms.md`
-
-| Topic / keyword | Section |
-|---|---|
-| Definition, why logs behave the way they do | §1 The definition |
-| Product, quotient, power, base-change laws | §2 The laws |
-| log 2, log 3, log 7 values worth knowing | §3 Values worth knowing |
-| Log equation reducing to a quadratic | §4 Type 1 |
-| Nested log equations | §5 Type 2 |
-| Product-zero conditions | §6 Type 3 |
-| Log inequalities (base < 1 flips the sign) | §7 Type 4 |
-| Logs of terms in AP/GP | §8 Logs and progressions |
-
-### Progressions — `Quant/Progressions-AP-GP.md`
-
-| Topic / keyword | Section |
-|---|---|
-| AP: nth term, sum, common difference | §1 Arithmetic Progression |
-| Sum of a range of terms (Sₙ − Sₘ) | §2 Type 1 |
-| Counting/locating integer terms in a subsequence | §3 Type 2 |
-| Middle term, symmetric-term tricks | §4 Useful AP facts |
-| GP: nth term, finite and infinite sum | §5 Geometric Progression |
-| HP and its AP reciprocal | §6 Harmonic Progression |
-| AGP and telescoping series | §7 Type 3 |
-| Σ n·n!, Σ n(n+1); recovering Tₙ from Sₙ | §8 Special series worth recognising |
-| Recurrences: telescoping, the fixed-point method, periodicity | §9 Recursively defined sequences |
-| Telescoping 1/(n(n+1)(n+2)) — the ½ factor | §7a Telescoping with three consecutive factors |
-
-### Percentages — `Quant/Percentages.md`
+### Percentages — `Quant/02-Percentages.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -154,7 +104,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Percentage of a percentage | §12 Percentage of a percentage |
 | Overall % change of a composite/portfolio; swapped rates | §13 Type 7 |
 
-### Ratio, Proportion & Variation — `Quant/Ratio-Proportion-Variation.md`
+### Ratio, Proportion & Variation — `Quant/03-Ratio-Proportion-Variation.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -172,7 +122,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Redistribution and exchange word problems | §12 Type 7 |
 | Incomes in a band, multiples of 100, whole expenditures — "which cannot be" | §12a Type 8 — Ratios pinned by integrality and a range |
 
-### Means & Weighted Averages — `Quant/Means-and-Weighted-Averages.md`
+### Means & Weighted Averages — `Quant/04-Means-and-Weighted-Averages.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -191,7 +141,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Reconstructing sub-group values from group averages | §13 Type 8 |
 | Average shifts by d when a sub-group is removed; solving for n and A | §13a Type 9 — When removing a sub-group shifts the average |
 
-### Mixtures & Alligation — `Quant/Mixtures-and-Alligation.md`
+### Mixtures & Alligation — `Quant/05-Mixtures-and-Alligation.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -205,7 +155,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Solving for the poured amounts from what is left in the vessel | §7a Type 4b — Component accounting |
 | Alligation on profit %, interest rates, ages, speeds | §8 Type 5 |
 
-### Profit, Loss & Discount — `Quant/Profit-Loss-Discount.md`
+### Profit, Loss & Discount — `Quant/06-Profit-Loss-Discount.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -221,7 +171,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Comparing profit across items | §11 Type 8 |
 | Markup + discount + wastage combined | §12 Type 9 |
 
-### Simple & Compound Interest — `Quant/Simple-Compound-Interest.md`
+### Simple & Compound Interest — `Quant/07-Simple-Compound-Interest.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -238,7 +188,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Splitting a sum between two rates | §10 Type 6 |
 | Fast CI approximation | §11 Useful approximation |
 
-### Time, Speed & Distance — `Quant/Time-Speed-Distance.md`
+### Time, Speed & Distance — `Quant/08-Time-Speed-Distance.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -256,7 +206,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | √(t₁t₂) trick | §8 The √ trick |
 | Circular tracks, meeting points, meeting at start | §9 Circular tracks |
 
-### Races — `Quant/Races.md`
+### Races — `Quant/09-Races.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -270,7 +220,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Games of points (billiards-style) | §8 Type 6 |
 | Multiple laps and overtaking | §9 Type 7 |
 
-### Clocks — `Quant/Clocks.md`
+### Clocks — `Quant/10-Clocks.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -282,21 +232,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Mirror images | §6 Type 3 |
 | Counting configurations in a time window | §7 Type 4 |
 
-### Calendars — `Quant/Calendars.md`
-
-| Topic / keyword | Section |
-|---|---|
-| Odd days, day codes (0 = Sunday) | §1 Core idea — odd days |
-| Leap year rule, odd days per year and per century | §2 Odd days in a year |
-| Odd days per month | §3 Odd days in a month |
-| Day of the week for a given date | §4 Type 1 |
-| Day of the week from a given reference date | §4 Type 1 (shortcut) |
-| Which year repeats a given year's calendar | §5 Type 2 |
-| 53 Sundays, probability questions | §6 Type 3 |
-| 5 Mondays in a month, weekday counting | §6 Type 3 |
-| Days between two dates | §7 Type 4 |
-
-### Time & Work, Pipes & Cisterns — `Quant/Time-Work-Pipes-Cisterns.md`
+### Time & Work, Pipes & Cisterns — `Quant/11-Time-Work-Pipes-Cisterns.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -313,7 +249,91 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Ratio of work rates | §10 Ratio of work rates |
 | Partial work then remainder by one worker | §11 Partial work |
 
-### Triangles — `Quant/Triangles.md`
+### Calendars — `Quant/12-Calendars.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Odd days, day codes (0 = Sunday) | §1 Core idea — odd days |
+| Leap year rule, odd days per year and per century | §2 Odd days in a year |
+| Odd days per month | §3 Odd days in a month |
+| Day of the week for a given date | §4 Type 1 |
+| Day of the week from a given reference date | §4 Type 1 (shortcut) |
+| Which year repeats a given year's calendar | §5 Type 2 |
+| 53 Sundays, probability questions | §6 Type 3 |
+| 5 Mondays in a month, weekday counting | §6 Type 3 |
+| Days between two dates | §7 Type 4 |
+
+### Algebra — `Quant/13-Algebra.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Standard identities, x + 1/x chain | §1 The identities that actually appear |
+| Binomial theorem: general term, middle term, coefficient of xᵏ, sum of coefficients | §1a The binomial theorem |
+| Roots, discriminant, sum/product of roots | §2 Quadratics |
+| Location of roots: both > k, opposite signs, one root in an interval | §2a Location of the roots |
+| Biquadratic, aˣ substitution, palindromic, √x substitution | §2b Equations reducible to a quadratic |
+| Symmetric systems, cubics | §3 Higher-degree and symmetric systems |
+| Remainder theorem, factor theorem, rational roots, quadratic-divisor remainder | §3b Remainder and factor theorem |
+| Finite differences P(x+1) − P(x), telescoping to P(b) − P(a) | §3a Finite differences |
+| Rationalisation, surd equations | §4 Surds |
+| Comparing surds and large powers (2¹⁰⁰ vs 3⁷⁰) | §4a Comparing surds and large powers |
+| a + b + c = 0 ⟹ a³ + b³ + c³ = 3abc | §5 The a + b + c = 0 identity |
+| AM–GM, maxima and minima, modulus inequalities | §6 Inequalities and maxima–minima |
+| Maximise xᵃyᵇzᶜ under a linear constraint (split by exponents) | §6a AM–GM with split terms |
+| Sum-of-moduli inequality, counting integer solutions | §6b Inequalities with a sum of moduli |
+| Wavy curve / sign scheme; rational and higher-degree inequalities | §6c The wavy curve |
+| Functions and graphs (moved out of this file) | §7 → `16-Functions-and-Graphs.md` |
+| Word problems into linear equations | §8 Linear equations in word problems |
+| "Needs ₹x more to buy one" — name the leftover, not the prices | §8b The shortfall trick |
+| Symmetric system ax+by=k, bx+ay=k with a parameter; sign constraints | §8a Symmetric linear systems with a parameter |
+
+### Logarithms — `Quant/14-Logarithms.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Definition, why logs behave the way they do | §1 The definition |
+| Product, quotient, power, base-change laws | §2 The laws |
+| log 2, log 3, log 7 values worth knowing | §3 Values worth knowing |
+| Log equation reducing to a quadratic | §4 Type 1 |
+| Nested log equations | §5 Type 2 |
+| Product-zero conditions | §6 Type 3 |
+| Log inequalities (base < 1 flips the sign) | §7 Type 4 |
+| Logs of terms in AP/GP | §8 Logs and progressions |
+
+### Progressions — `Quant/15-Progressions-AP-GP.md`
+
+| Topic / keyword | Section |
+|---|---|
+| AP: nth term, sum, common difference | §1 Arithmetic Progression |
+| Sum of a range of terms (Sₙ − Sₘ) | §2 Type 1 |
+| Counting/locating integer terms in a subsequence | §3 Type 2 |
+| Middle term, symmetric-term tricks | §4 Useful AP facts |
+| GP: nth term, finite and infinite sum | §5 Geometric Progression |
+| HP and its AP reciprocal | §6 Harmonic Progression |
+| AGP and telescoping series | §7 Type 3 |
+| Σ n·n!, Σ n(n+1); recovering Tₙ from Sₙ | §8 Special series worth recognising |
+| Recurrences: telescoping, the fixed-point method, periodicity | §9 Recursively defined sequences |
+| Telescoping 1/(n(n+1)(n+2)) — the ½ factor | §7a Telescoping with three consecutive factors |
+
+### Functions & Graphs — `Quant/16-Functions-and-Graphs.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Which of the four question shapes this is | §1 What CAT actually asks |
+| Domain and range; the four illegal structures | §2 Domain and range |
+| Range by solving for x in terms of y | §2 Domain and range |
+| One-one, onto, even, odd, periodic | §3 Classifying a function |
+| Composition, inverse, self-inverse, iterated functions | §4 Composition and inverse |
+| f(x) + f(1/x); f(x+y) = f(x)+f(y) and its family | §5 Type 1 — Functional equations |
+| Greatest integer [x] and fractional part {x} | §6 Greatest integer and fractional part |
+| The standard graph shapes | §7 The standard graphs |
+| Shifts, stretches, reflections; \|f(x)\| vs f(\|x\|) | §8 Transformations |
+| How many solutions — sketch both sides | §9 Type 2 — Counting solutions graphically |
+| Regions of a two-variable inequality; \|x\|+\|y\| ≤ a | §10 Type 3 — Regions |
+| Which maxima–minima tool to use | §11 Maxima and minima |
+| Range of a rational function via the discriminant | §11 Maxima and minima |
+
+### Triangles — `Quant/17-Triangles.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -337,7 +357,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Angles of elevation and depression | §10 Type 3 — Heights and distances |
 | Folding and crease problems | §11 Type 4 — Folding and creases |
 
-### Circles — `Quant/Circles.md`
+### Circles — `Quant/18-Circles.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -352,7 +372,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Two circles: touching, intersecting, common tangents, common chord | §6 Type 2 — Two circles |
 | Circles inscribed in and circumscribing figures; packed circles | §7 Type 3 — Inscribed and circumscribing |
 
-### Quadrilaterals & Polygons — `Quant/Quadrilaterals-and-Polygons.md`
+### Quadrilaterals & Polygons — `Quant/19-Quadrilaterals-and-Polygons.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -365,7 +385,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Regular polygon inradius, circumradius, area | §6 Regular polygons — the metric formulas |
 | Optimisation: fixed area or perimeter; the wall variant | §7 Type 2 — Optimisation |
 
-### Mensuration — `Quant/Mensuration.md`
+### Mensuration — `Quant/20-Mensuration.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -382,25 +402,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Sphere in a cube, cube in a sphere, sphere in a cylinder | §10 Inscribed and circumscribed solids |
 | Liquid level, immersion, partly filled cone | §11 Type 7 — Liquid level and immersion |
 
-### Functions & Graphs — `Quant/Functions-and-Graphs.md`
-
-| Topic / keyword | Section |
-|---|---|
-| Which of the four question shapes this is | §1 What CAT actually asks |
-| Domain and range; the four illegal structures | §2 Domain and range |
-| Range by solving for x in terms of y | §2 Domain and range |
-| One-one, onto, even, odd, periodic | §3 Classifying a function |
-| Composition, inverse, self-inverse, iterated functions | §4 Composition and inverse |
-| f(x) + f(1/x); f(x+y) = f(x)+f(y) and its family | §5 Type 1 — Functional equations |
-| Greatest integer [x] and fractional part {x} | §6 Greatest integer and fractional part |
-| The standard graph shapes | §7 The standard graphs |
-| Shifts, stretches, reflections; \|f(x)\| vs f(\|x\|) | §8 Transformations |
-| How many solutions — sketch both sides | §9 Type 2 — Counting solutions graphically |
-| Regions of a two-variable inequality; \|x\|+\|y\| ≤ a | §10 Type 3 — Regions |
-| Which maxima–minima tool to use | §11 Maxima and minima |
-| Range of a rational function via the discriminant | §11 Maxima and minima |
-
-### Coordinate Geometry — `Quant/Coordinate-Geometry.md`
+### Coordinate Geometry — `Quant/21-Coordinate-Geometry.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -415,7 +417,21 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Circle equations, centre and radius, tangency | §7 Circles in coordinates |
 | Reflections and shortest-path-touching-a-line | §8 Type 2 — Reflections and shortest paths |
 
-### Permutations, Combinations & Probability — `Quant/PnC-Probability.md`
+### Set Theory & Venn Diagrams — `Quant/22-Set-Theory-Venn.md`
+
+| Topic / keyword | Section |
+|---|---|
+| Fixed totals, degrees of freedom | §1 The core idea |
+| Two sets: union, both, exactly one, neither | §2 Two sets |
+| Three sets: inclusion–exclusion, exactly one/two/three | §3 Three sets |
+| Two independent attributes → 2×2 grid, one free cell | §4 The 2×2 classification table |
+| Percentages in a 2×2 table, choosing the total | §5 Type 1 |
+| Checking a question is self-consistent | §5 Type 1 (consistency trap) |
+| "At least / at most" → maximise or minimise a cell | §6 Type 2 |
+| Max and min of an overlap | §7 Type 3 |
+| Set questions inside DI caselets | §8 Type 4 |
+
+### Permutations, Combinations & Probability — `Quant/23-PnC-Probability.md`
 
 | Topic / keyword | Section |
 |---|---|
@@ -438,20 +454,6 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Conditional probability | §15 Conditional probability |
 | Repeated trials, expected value | §16 Repeated trials |
 
-### Set Theory & Venn Diagrams — `Quant/Set-Theory-Venn.md`
-
-| Topic / keyword | Section |
-|---|---|
-| Fixed totals, degrees of freedom | §1 The core idea |
-| Two sets: union, both, exactly one, neither | §2 Two sets |
-| Three sets: inclusion–exclusion, exactly one/two/three | §3 Three sets |
-| Two independent attributes → 2×2 grid, one free cell | §4 The 2×2 classification table |
-| Percentages in a 2×2 table, choosing the total | §5 Type 1 |
-| Checking a question is self-consistent | §5 Type 1 (consistency trap) |
-| "At least / at most" → maximise or minimise a cell | §6 Type 2 |
-| Max and min of an overlap | §7 Type 3 |
-| Set questions inside DI caselets | §8 Type 4 |
-
 ### Reference and practice
 
 | Resource | File |
@@ -463,7 +465,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Constants and unit conversions | `Quant/Reference/Calculation-Toolkit.md` §11 |
 | Fast-arithmetic techniques, % shortcuts, growth multipliers, series sums | `Quant/Reference/Calculation-Toolkit.md` §12–15 |
 | Interactive calculation drill | `Quant/Reference/Flashcard-Drill.html` |
-| Practice set for any topic (all 20) | `Quant/Practice/<Topic>-Practice.md` |
+| Practice set for any topic (all 20) | `Quant/Practice/<NN>-<Topic>-Practice.md` |
 | Interactive mock test (692 questions, all 20 topics) | `Quant/Practice/CAT-Quant-Test.html` |
 | Is a syllabus module ready to revise from? | `Syllabus-Coverage.md` |
 
@@ -489,7 +491,7 @@ Every topic file above has a companion set at `Quant/Practice/<same name>-Practi
 | Mensuration ↔ Percentages | a % change in a dimension cubes for volume (Mensuration §2, Percentages §5) |
 | Coordinate ↔ Weighted averages | the section formula *is* a weighted average (Coordinate §2) |
 | Interest ↔ Number System | integer-rate questions become divisibility conditions (SCI §9a, Number System §11) |
-| Number System ↔ Progressions | repunits and digit patterns are geometric sums (Number System §12a, Progressions §5) |
+| Number System ↔ Progressions | repunits and digit patterns are geometric sums (Number System §13a, Progressions §5) |
 | Ratio ↔ Number System | "whole rupees" turns a ratio into a divisibility condition (Ratio §12a, Number System §11) |
 
 ---
@@ -500,7 +502,7 @@ Every topic file has a matching set in `Quant/Practice/`. Hints in those sets ci
 
 | To drill | Open |
 |---|---|
-| any single topic | `Quant/Practice/<Topic>-Practice.md` |
+| any single topic | `Quant/Practice/<NN>-<Topic>-Practice.md` |
 | under time, with scoring | `Quant/Practice/CAT-Quant-Test.html` — 692 questions across all 20 topics |
 | only the exam-feel sets | the same file → **Mixed sets only** |
 | mental calculation speed | `Quant/Reference/Flashcard-Drill.html` |
@@ -521,7 +523,7 @@ Words are grouped **by meaning**, not alphabetically, because CAT tests discrimi
 
 ### Meaning-group lookup — `VARC/Vocabulary.md`
 
-Find the sense you want here, then open that `##` section in `Vocabulary.md`. The full word list per group lives in that file's own **Groups** table at the top — not duplicated here.
+Find the sense you want here, then open that `##` section in `VARC/Vocabulary.md`. The full word list per group lives in that file's own **Groups** table at the top — not duplicated here.
 
 | Sense | Section | Sense | Section |
 |---|---|---|---|
@@ -560,31 +562,31 @@ CAT Prep/
 ├── README.md
 ├── Syllabus-Coverage.md                  ← module-by-module readiness
 ├── Quant/
-│   ├── Algebra.md
-│   ├── Calendars.md
-│   ├── Circles.md
-│   ├── Clocks.md
-│   ├── Coordinate-Geometry.md
-│   ├── Functions-and-Graphs.md
-│   ├── Mensuration.md
-│   ├── Logarithms.md
-│   ├── Means-and-Weighted-Averages.md
-│   ├── Mixtures-and-Alligation.md
-│   ├── Number-System.md
-│   ├── Percentages.md
-│   ├── PnC-Probability.md
-│   ├── Profit-Loss-Discount.md
-│   ├── Progressions-AP-GP.md
-│   ├── Quadrilaterals-and-Polygons.md
-│   ├── Races.md
-│   ├── Ratio-Proportion-Variation.md
-│   ├── Set-Theory-Venn.md
-│   ├── Simple-Compound-Interest.md
-│   ├── Time-Speed-Distance.md
-│   ├── Triangles.md
-│   ├── Time-Work-Pipes-Cisterns.md
+│   ├── 01-Number-System.md
+│   ├── 02-Percentages.md
+│   ├── 03-Ratio-Proportion-Variation.md
+│   ├── 04-Means-and-Weighted-Averages.md
+│   ├── 05-Mixtures-and-Alligation.md
+│   ├── 06-Profit-Loss-Discount.md
+│   ├── 07-Simple-Compound-Interest.md
+│   ├── 08-Time-Speed-Distance.md
+│   ├── 09-Races.md
+│   ├── 10-Clocks.md
+│   ├── 11-Time-Work-Pipes-Cisterns.md
+│   ├── 12-Calendars.md
+│   ├── 13-Algebra.md
+│   ├── 14-Logarithms.md
+│   ├── 15-Progressions-AP-GP.md
+│   ├── 16-Functions-and-Graphs.md
+│   ├── 17-Triangles.md
+│   ├── 18-Circles.md
+│   ├── 19-Quadrilaterals-and-Polygons.md
+│   ├── 20-Mensuration.md
+│   ├── 21-Coordinate-Geometry.md
+│   ├── 22-Set-Theory-Venn.md
+│   ├── 23-PnC-Probability.md
 │   ├── Practice/
-│   │   ├── <Topic>-Practice.md        ← one per topic, all 20
+│   │   ├── <NN>-<Topic>-Practice.md   ← one per topic, all 20
 │   │   ├── CAT-Quant-Test.html        ← interactive, 692 questions
 │   │   └── _build/
 │   │       ├── gen_practice.py        ← generator

@@ -1,6 +1,6 @@
 # Functions & Graphs
 
-> CAT quant. The topic where **drawing beats solving**. A question that looks like it needs algebra — how many solutions, what is the maximum, for which k does this hold — usually collapses the moment you sketch it. The algebraic machinery for inequalities and maxima lives in `Algebra.md`; this file is about the function itself and its picture.
+> CAT quant. The topic where **drawing beats solving**. A question that looks like it needs algebra — how many solutions, what is the maximum, for which k does this hold — usually collapses the moment you sketch it. The algebraic machinery for inequalities and maxima lives in `13-Algebra.md`; this file is about the function itself and its picture.
 
 ---
 
@@ -104,7 +104,7 @@ Odd roots (∛) impose nothing — a very common false restriction.
 
 - **[x]** = the greatest integer ≤ x. So [2.7] = 2 but **[−2.7] = −3**, not −2. This sign behaviour is the single most tested point.
 - **{x}** = x − [x], always in **[0, 1)**. {−2.7} = 0.3.
-- **x = [x] + {x}** always. Splitting an equation into its integer and fractional parts is the standard method — the integer parts must match and the fractional parts must match, exactly as with rational and irrational parts (`Algebra.md` §4).
+- **x = [x] + {x}** always. Splitting an equation into its integer and fractional parts is the standard method — the integer parts must match and the fractional parts must match, exactly as with rational and irrational parts (`13-Algebra.md` §4).
 - [x + n] = [x] + n for **integer** n only.
 - [x] + [−x] = 0 if x is an integer, **−1** otherwise.
 
@@ -175,7 +175,7 @@ Choose the split so that both sides are standard shapes. For x² = 2ˣ, sketch a
 - y = 4 is a horizontal line, above the flat floor of 2 ⟹ it cuts each rising arm once ⟹ **2 solutions** (x = 0 and x = 4).
 - Had the right side been 2, the line would lie **along** the floor ⟹ infinitely many. Had it been 1, none.
 
-That parameter sweep — no solutions / infinitely many / exactly two — is exactly what CAT asks, and the sketch answers all three at once. The algebraic treatment of these sums is `Algebra.md` §6b.
+That parameter sweep — no solutions / infinitely many / exactly two — is exactly what CAT asks, and the sketch answers all three at once. The algebraic treatment of these sums is `13-Algebra.md` §6b.
 
 **Worked example:** For how many integers k does x² − 6x + k = 0 have two distinct real roots with both roots positive?
 - Two distinct real: discriminant 36 − 4k > 0 ⟹ k < 9
@@ -188,7 +188,7 @@ That parameter sweep — no solutions / infinitely many / exactly two — is exa
 
 **y > f(x)** is the region **above** the curve; y < f(x) is below. For a straight line, test the origin — if it satisfies the inequality, shade the side containing it, otherwise the other side. A strict inequality means a dashed boundary that is not included.
 
-Several inequalities together give a **feasible region**; its corners are the intersections of the boundary lines, and any linear expression is maximised or minimised **at a corner** (the same endpoint logic as `Number-System.md` §11).
+Several inequalities together give a **feasible region**; its corners are the intersections of the boundary lines, and any linear expression is maximised or minimised **at a corner** (the same endpoint logic as `01-Number-System.md` §11).
 
 **|x| + |y| ≤ a** is the square with vertices (±a, 0) and (0, ±a) — a diamond, area 2a². **max(|x|, |y|) ≤ a** is the ordinary axis-aligned square of side 2a. Both appear as "find the area of the region" questions and both are answered by drawing four lines.
 
@@ -198,10 +198,10 @@ Several inequalities together give a **feasible region**; its corners are the in
 
 | Shape of the expression | Tool |
 |---|---|
-| quadratic | vertex at x = −b/2a — `Algebra.md` §2 |
-| product with a fixed sum, or sum with a fixed product | AM ≥ GM — `Algebra.md` §6 |
-| xᵃyᵇzᶜ under a linear constraint | AM–GM with split terms — `Algebra.md` §6a |
-| sum of moduli | convex; minimum at the median — `Algebra.md` §6b |
+| quadratic | vertex at x = −b/2a — `13-Algebra.md` §2 |
+| product with a fixed sum, or sum with a fixed product | AM ≥ GM — `13-Algebra.md` §6 |
+| xᵃyᵇzᶜ under a linear constraint | AM–GM with split terms — `13-Algebra.md` §6a |
+| sum of moduli | convex; minimum at the median — `13-Algebra.md` §6b |
 | sum of squares | each square ≥ 0; minimum when each is 0 |
 | a rational function | solve for x in terms of y and force the discriminant ≥ 0 |
 | anything with a sketchable shape | read it off the graph |
@@ -246,4 +246,4 @@ Several inequalities together give a **feasible region**; its corners are the in
 - With [x] or {x}, immediately write x = [x] + {x} and split the equation into integer and fractional parts.
 - If a maximum or minimum question is taking more than a minute, you have picked the wrong tool from §11, not made an arithmetic error.
 
-**Where this feeds forward:** `Algebra.md` §2 (quadratics), §6–§6b (AM–GM, moduli, the inequality machinery this file draws on), `Coordinate-Geometry.md` §3 (lines as graphs), `Logarithms.md` (the log and exponential shapes), `Number-System.md` §11 (optimisation at an endpoint).
+**Where this feeds forward:** `13-Algebra.md` §2 (quadratics), §6–§6b (AM–GM, moduli, the inequality machinery this file draws on), `21-Coordinate-Geometry.md` §3 (lines as graphs), `14-Logarithms.md` (the log and exponential shapes), `01-Number-System.md` §11 (optimisation at an endpoint).

@@ -1,9 +1,9 @@
 {
  "key": "triangles",
- "order": 100,
+ "order": 170,
  "name": "Triangles",
- "notes": "Triangles.md",
- "file": "Triangles-Practice.md",
+ "notes": "17-Triangles.md",
+ "file": "17-Triangles-Practice.md",
  "perQ": 105,
  "intro": [
   "**Draw it, then label every known length and angle on the figure.** Most geometry errors are bookkeeping errors, not reasoning errors (§1).",

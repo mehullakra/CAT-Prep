@@ -90,7 +90,7 @@ Net factor = (1 ± a/100)(1 ± b/100)…
 
 **The general result:** a rise of x% followed by a fall of x% always gives a net **decrease** of x²/100 %. Never zero. This shows up in profit & loss identically.
 
-**When one factor is a dimension, square (or cube) it first.** A linear dimension changing by x% changes area by the *square* of that factor and volume by the *cube* — see `Mensuration.md` §2, the scaling rule (linear ×k ⟹ area ×k², volume ×k³). Only then multiply it into the other factors.
+**When one factor is a dimension, square (or cube) it first.** A linear dimension changing by x% changes area by the *square* of that factor and volume by the *cube* — see `20-Mensuration.md` §2, the scaling rule (linear ×k ⟹ area ×k², volume ×k³). Only then multiply it into the other factors.
 
 **Worked example:** A square's side rises 10% and the paint used is 10% cheaper. Change in painting cost?
 - Cost = Area × Rate. Side factor 1.1 ⟹ **area factor 1.1² = 1.21**; rate factor 0.9
@@ -343,7 +343,7 @@ Two parts of value V₁ and V₂ changing by a% and b%:
 
 **Overall % = (V₁·a + V₂·b) / (V₁ + V₂)**
 
-This is `Means-and-Weighted-Averages.md` §3 applied to percentages; the alligation cross of §4 there works in reverse if you need the ratio of the parts. Note this is *addition* of weighted rates, not multiplication — §5's multiplying factors are for changes applied one after another to the **same** quantity. Different parts → weighted average. Same quantity, repeated → multiply.
+This is `04-Means-and-Weighted-Averages.md` §3 applied to percentages; the alligation cross of §4 there works in reverse if you need the ratio of the parts. Note this is *addition* of weighted rates, not multiplication — §5's multiplying factors are for changes applied one after another to the **same** quantity. Different parts → weighted average. Same quantity, repeated → multiply.
 
 ### The swap trick
 
@@ -402,4 +402,4 @@ Sum and difference give a and b in one line each.
 - Convert every percentage to a fraction before multiplying. 87.5% × 64 is painful; 7/8 × 64 = 56 is instant.
 - After any percentage-change answer, sanity-check the direction: should the result be bigger or smaller than what you started with?
 
-**Where this feeds forward:** `Profit-Loss-Discount.md` (all bases), `Simple-Compound-Interest.md` (CI is repeated percentage change), `Means-and-Weighted-Averages.md` (averaging percentages correctly), `Mixtures-and-Alligation.md` (concentrations).
+**Where this feeds forward:** `06-Profit-Loss-Discount.md` (all bases), `07-Simple-Compound-Interest.md` (CI is repeated percentage change), `04-Means-and-Weighted-Averages.md` (averaging percentages correctly), `05-Mixtures-and-Alligation.md` (concentrations).

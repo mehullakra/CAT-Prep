@@ -2,7 +2,7 @@
 
 > CAT quant. Mostly a bookkeeping topic — the formulas are short and the marks are lost to using the wrong one for the wrong shape. The two things worth real attention are the **trapezium** and the **optimisation** family, which are where CAT actually sets hard questions.
 
-Approach discipline for any plane figure lives in `Triangles.md` §1.
+Approach discipline for any plane figure lives in `17-Triangles.md` §1.
 
 ---
 
@@ -16,7 +16,7 @@ Approach discipline for any plane figure lives in `Triangles.md` §1.
 | Square | all equal | all 90° | equal, perpendicular, bisect | a² = ½ d² |
 | Kite | two adjacent pairs equal | one pair equal | **perpendicular**, long one bisects short | ½ d₁d₂ |
 | Trapezium | one pair parallel | — | — | ½(a + b)h |
-| Cyclic | — | opposite sum 180° | — | Brahmagupta (`Circles.md` §4) |
+| Cyclic | — | opposite sum 180° | — | Brahmagupta (`18-Circles.md` §4) |
 
 **Any quadrilateral with perpendicular diagonals has area ½ d₁d₂.** That covers rhombus, square and kite in one line — do not memorise three formulas.
 
@@ -96,7 +96,7 @@ There is no simpler kite-inradius formula. Get both diagonals by Pythagoras, tak
 - Sum of **exterior** angles = **360°**, always, for any convex polygon
 - Regular n-gon: each interior angle = (n−2)·180/n, each exterior angle = **360/n**
 - **Number of diagonals = n(n − 3)/2**
-- Number of triangles formed by joining vertices (no three collinear) = C(n, 3) — see `PnC-Probability.md` §11
+- Number of triangles formed by joining vertices (no three collinear) = C(n, 3) — see `23-PnC-Probability.md` §11
 
 **Always work from the exterior angle.** It is 360/n, so "interior angle 156°" means exterior 24°, so n = 360/24 = **15**. Going via the interior formula takes three times as long and invites arithmetic slips.
 
@@ -137,7 +137,7 @@ You will rarely need the general form in the exam; the three cases below cover a
 - For a **fixed perimeter**, area is maximised by the most symmetric shape — square among rectangles, circle among all shapes
 - For a **fixed area**, perimeter is minimised by that same shape
 
-These are AM–GM in geometric clothing (`Algebra.md` §6).
+These are AM–GM in geometric clothing (`13-Algebra.md` §6).
 
 **Plain case:** rectangle of perimeter P ⟹ maximum area P²/16, at the square. Rectangle of area A ⟹ minimum perimeter 4√A, again at the square.
 
@@ -184,4 +184,4 @@ A rectangular plot against a straight wall, fenced on three sides. Let y be the 
 - For a trapezium with all four sides given, drop the two perpendiculars immediately — the base splits into (a − b) plus two feet, and the rest is Pythagoras.
 - When a question says "maximum" or "minimum" with a fixed area or perimeter, go straight to the symmetry principle. Don't differentiate, and check whether a side is free before assuming a square.
 
-**Where this feeds forward:** `Triangles.md` (every quadrilateral is two triangles), `Circles.md` §4 and §7 (cyclic quadrilaterals, inscribed and circumscribed circles), `Mensuration.md` (cross-sections and faces of prisms), `Coordinate-Geometry.md` §5 (identifying these shapes from vertices), `Algebra.md` §6 (AM–GM behind §7).
+**Where this feeds forward:** `17-Triangles.md` (every quadrilateral is two triangles), `18-Circles.md` §4 and §7 (cyclic quadrilaterals, inscribed and circumscribed circles), `20-Mensuration.md` (cross-sections and faces of prisms), `21-Coordinate-Geometry.md` §5 (identifying these shapes from vertices), `13-Algebra.md` §6 (AM–GM behind §7).

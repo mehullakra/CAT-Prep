@@ -1,324 +1,534 @@
 {
-  "key": "logs",
-  "order": 90,
-  "name": "Logarithms",
-  "notes": "Logarithms.md",
-  "file": "Logarithms-Practice.md",
-  "perQ": 90,
-  "intro": [
-    "**When stuck, go back to the definition.** log_a b = c means a^c = b, and rewriting in exponential form settles most doubts in one line (§1).",
-    "Check the domain before you celebrate a root: the argument of every log must be positive and the base must be positive and ≠ 1. Extraneous roots are the main source of lost marks here."
-  ],
-  "sets": [
+ "key": "logs",
+ "order": 140,
+ "name": "Logarithms",
+ "notes": "14-Logarithms.md",
+ "file": "14-Logarithms-Practice.md",
+ "perQ": 90,
+ "intro": [
+  "**When stuck, go back to the definition.** log_a b = c means a^c = b, and rewriting in exponential form settles most doubts in one line (§1).",
+  "Check the domain before you celebrate a root: the argument of every log must be positive and the base must be positive and ≠ 1. Extraneous roots are the main source of lost marks here."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "Definition and evaluation",
+   "qs": [
     {
-      "id": "A",
-      "name": "Definition and evaluation",
-      "qs": [
-        {
-          "id": "A1", "t": "tita",
-          "q": "Find the value of log₂ 64.",
-          "a": 6, "check": "6",
-          "h": "§1 — ask what power of 2 gives 64.",
-          "s": "2⁶ = 64 ⟹ <b>6</b>."
-        },
-        {
-          "id": "A2", "t": "mcq",
-          "q": "log₃ (1/81) equals",
-          "o": ["−4", "−3", "3", "4"], "a": 0,
-          "h": "§1 — a reciprocal argument gives a negative log.",
-          "s": "1/81 = 3⁻⁴ ⟹ <b>−4</b>."
-        },
-        {
-          "id": "A3", "t": "tita",
-          "q": "If log_x 27 = 3, find x.",
-          "a": 3, "check": "3",
-          "h": "§1 — rewrite as x³ = 27. The unknown is the base here, not the argument.",
-          "s": "x³ = 27 ⟹ x = <b>3</b>."
-        },
-        {
-          "id": "A4", "t": "mcq",
-          "q": "log₈ 32 equals",
-          "o": ["5/3", "4/3", "3/2", "2"], "a": 0,
-          "h": "§2 — put both numbers on base 2 and take the ratio of the exponents.",
-          "s": "log₈ 32 = log₂32/log₂8 = 5/3 ⟹ <b>5/3</b>."
-        },
-        {
-          "id": "A5", "t": "tita",
-          "q": "Find the value of log₅ 125 + log₂ 32.",
-          "a": 8, "check": "3+5",
-          "h": "§1 — evaluate each term separately; the bases differ, so no law applies across them.",
-          "s": "3 + 5 = <b>8</b>."
-        },
-        {
-          "id": "A6", "t": "mcq",
-          "q": "If log₁₀ 2 = 0.3010, then log₁₀ 5 equals",
-          "o": ["0.6990", "0.6021", "0.7000", "0.5000"], "a": 0,
-          "h": "§3 — 5 = 10/2, so use the quotient law.",
-          "s": "log 5 = log 10 − log 2 = 1 − 0.3010 = <b>0.6990</b>."
-        }
-      ]
+     "id": "A1",
+     "t": "tita",
+     "q": "Find the value of log₂ 64.",
+     "a": 6,
+     "check": "6",
+     "h": "§1 — ask what power of 2 gives 64.",
+     "s": "2⁶ = 64 ⟹ <b>6</b>."
     },
     {
-      "id": "B",
-      "name": "The laws",
-      "qs": [
-        {
-          "id": "B1", "t": "tita",
-          "q": "Find the value of log₁₀ 8 + log₁₀ 125.",
-          "a": 3, "check": "3",
-          "h": "§2 — the product law. 8 × 125 is deliberately a power of 10.",
-          "s": "log(8 × 125) = log 1000 = <b>3</b>."
-        },
-        {
-          "id": "B2", "t": "mcq",
-          "q": "log₁₀ 45 − log₁₀ 9 + log₁₀ 2 equals",
-          "o": ["0", "1", "2", "log₁₀ 8"], "a": 1,
-          "h": "§2 — combine into a single log of one fraction before evaluating.",
-          "s": "log(45 × 2/9) = log 10 = <b>1</b>."
-        },
-        {
-          "id": "B3", "t": "tita",
-          "q": "If log₂ x = 5, find log₈ x (as a fraction).",
-          "a": "5/3", "alt": ["5/3"], "check": "5/3",
-          "h": "§2, change of base — log₈ x = log₂x / log₂8.",
-          "s": "log₈ x = 5/3 ⟹ <b>5/3</b> (x = 32 = 8^(5/3) ✓)."
-        },
-        {
-          "id": "B4", "t": "mcq",
-          "q": "The value of log₂ 3 × log₃ 4 × log₄ 8 is",
-          "o": ["2", "3", "4", "6"], "a": 1,
-          "h": "§2 — a chain of change-of-base factors telescopes: the intermediate bases cancel.",
-          "s": "The chain collapses to log₂ 8 = <b>3</b>."
-        },
-        {
-          "id": "B5", "t": "tita",
-          "q": "Given log₁₀ 2 = 0.3010 and log₁₀ 3 = 0.4771, find log₁₀ 12 to four decimal places.",
-          "a": 1.0791, "check": "2*0.3010+0.4771",
-          "h": "§2 — factorise 12 as 2² × 3, then use the product and power laws.",
-          "s": "2(0.3010) + 0.4771 = <b>1.0791</b>."
-        },
-        {
-          "id": "B6", "t": "mcq",
-          "q": "If log_a b = 3, then log_b a equals",
-          "o": ["3", "1/3", "−3", "−1/3"], "a": 1,
-          "h": "§2 — swapping base and argument takes the reciprocal, not the negative.",
-          "s": "log_b a = 1/log_a b = <b>1/3</b>."
-        }
-      ]
+     "id": "A2",
+     "t": "mcq",
+     "q": "log₃ (1/81) equals",
+     "o": [
+      "−4",
+      "−3",
+      "3",
+      "4"
+     ],
+     "a": 0,
+     "h": "§1 — a reciprocal argument gives a negative log.",
+     "s": "1/81 = 3⁻⁴ ⟹ <b>−4</b>."
     },
     {
-      "id": "C",
-      "name": "Equations that reduce to quadratics",
-      "qs": [
-        {
-          "id": "C1", "t": "tita",
-          "q": "Solve (log₂ x)² − 3 log₂ x + 2 = 0 and give the sum of the roots in x.",
-          "a": 6, "check": "2+4",
-          "h": "§4 — substitute t = log₂ x, solve for t, then convert back. The question asks for x, not t.",
-          "s": "t² − 3t + 2 = 0 ⟹ t = 1 or 2 ⟹ x = 2 or 4 ⟹ sum = <b>6</b>. (Answering 3 gives the sum of the t values.)"
-        },
-        {
-          "id": "C2", "t": "mcq",
-          "q": "If (log₁₀ x)² − 5 log₁₀ x + 6 = 0, the product of the roots in x is",
-          "o": ["5", "6", "10⁵", "10⁶"], "a": 2,
-          "h": "§4 — the roots in x multiply to 10^(sum of the t values).",
-          "s": "t = 2 or 3 ⟹ x = 100 or 1000 ⟹ product = <b>10⁵</b>."
-        },
-        {
-          "id": "C3", "t": "tita",
-          "q": "Solve log₃ x + log_x 3 = 2. Find x.",
-          "a": 3, "check": "3",
-          "h": "§4 — the second term is the reciprocal of the first, so set t = log₃ x and use t + 1/t.",
-          "s": "t + 1/t = 2 ⟹ t = 1 ⟹ x = <b>3</b>."
-        },
-        {
-          "id": "C4", "t": "mcq",
-          "q": "If log₂ x + log_x 2 = 5/2, the possible values of x are",
-          "o": ["4 and √2", "4 and 2", "2 and √2", "4 and ½"], "a": 0,
-          "h": "§4 — t + 1/t = 5/2 gives two reciprocal values of t, and both are valid here.",
-          "s": "t = 2 or ½ ⟹ x = 2² or 2^½ ⟹ <b>4 and √2</b>."
-        },
-        {
-          "id": "C5", "t": "tita",
-          "q": "If (log₅ x)² = log₅ x + 2, find the sum of all values of x.",
-          "a": 25.2, "check": "25+1/5",
-          "h": "§4 — t² − t − 2 = 0. A negative value of t is perfectly legal; it gives a fractional x.",
-          "s": "t = 2 or −1 ⟹ x = 25 or 1/5 ⟹ sum = <b>25.2</b>."
-        }
-      ]
+     "id": "A3",
+     "t": "tita",
+     "q": "If log_x 27 = 3, find x.",
+     "a": 3,
+     "check": "3",
+     "h": "§1 — rewrite as x³ = 27. The unknown is the base here, not the argument.",
+     "s": "x³ = 27 ⟹ x = <b>3</b>."
     },
     {
-      "id": "D",
-      "name": "Nested logs, domains and extraneous roots",
-      "qs": [
-        {
-          "id": "D1", "t": "tita",
-          "q": "Solve log₂(log₃(log₄ x)) = 0. Find x.",
-          "a": 64, "check": "64",
-          "h": "§5 — peel one layer at a time from the outside in. Remember log_a 1 = 0.",
-          "s": "log₃(log₄ x) = 1 ⟹ log₄ x = 3 ⟹ x = 4³ = <b>64</b>."
-        },
-        {
-          "id": "D2", "t": "mcq",
-          "q": "If log₃(log₂ x) = 1, then x is",
-          "o": ["6", "8", "9", "27"], "a": 1,
-          "h": "§5 — two layers only.",
-          "s": "log₂ x = 3 ⟹ x = <b>8</b>."
-        },
-        {
-          "id": "D3", "t": "tita",
-          "q": "Solve log₂(x² − 3x + 4) = 1 and give the sum of the roots.",
-          "a": 3, "check": "1+2",
-          "h": "§5 — convert to exponential form, then check that both roots keep the argument positive.",
-          "s": "x² − 3x + 4 = 2 ⟹ x² − 3x + 2 = 0 ⟹ x = 1 or 2 ⟹ sum = <b>3</b>. Both are valid (the argument equals 2 in each case)."
-        },
-        {
-          "id": "D4", "t": "mcq",
-          "q": "The number of real solutions of log₁₀(x − 1) + log₁₀(x + 1) = log₁₀ 8 is",
-          "o": ["0", "1", "2", "infinitely many"], "a": 1,
-          "h": "§6 — combine, solve, then apply the domain condition x > 1. One algebraic root does not survive.",
-          "s": "x² − 1 = 8 ⟹ x = ±3, but x = −3 makes log(x − 1) undefined ⟹ <b>1 solution</b> (x = 3)."
-        },
-        {
-          "id": "D5", "t": "tita",
-          "q": "Solve log₄(x + 3) − log₄(x − 1) = 1. Find x (as a fraction).",
-          "a": "7/3", "alt": ["7/3"], "check": "7/3",
-          "h": "§5 — the quotient law, then convert. Check x > 1 at the end.",
-          "s": "(x + 3)/(x − 1) = 4 ⟹ 3x = 7 ⟹ x = <b>7/3</b>, which satisfies x > 1 ✓"
-        }
-      ]
+     "id": "A4",
+     "t": "mcq",
+     "q": "log₈ 32 equals",
+     "o": [
+      "5/3",
+      "4/3",
+      "3/2",
+      "2"
+     ],
+     "a": 0,
+     "h": "§2 — put both numbers on base 2 and take the ratio of the exponents.",
+     "s": "log₈ 32 = log₂32/log₂8 = 5/3 ⟹ <b>5/3</b>."
     },
     {
-      "id": "E",
-      "name": "Inequalities and digit counting",
-      "qs": [
-        {
-          "id": "E1", "t": "mcq",
-          "q": "The solution set of log₂ x > 3 is",
-          "o": ["x > 8", "0 < x < 8", "x > 6", "x < 8"], "a": 0,
-          "h": "§7 — a base greater than 1 preserves the direction of the inequality.",
-          "s": "x > 2³ ⟹ <b>x > 8</b>."
-        },
-        {
-          "id": "E2", "t": "tita",
-          "q": "How many digits does 2¹⁰⁰ have? (Take log₁₀ 2 = 0.3010.)",
-          "a": 31, "check": "31",
-          "h": "§3 — the number of digits is ⌊n log₁₀ 2⌋ + 1.",
-          "s": "100 × 0.3010 = 30.10 ⟹ ⌊30.10⌋ + 1 = <b>31 digits</b>."
-        },
-        {
-          "id": "E3", "t": "mcq",
-          "q": "The solution set of log_(1/2) x > 2 is",
-          "o": ["0 < x < 1/4", "x > 1/4", "x > 4", "0 < x < 4"], "a": 0,
-          "h": "§7 — a base between 0 and 1 flips the inequality. Don't forget x > 0.",
-          "s": "x < (½)² = ¼ together with x > 0 ⟹ <b>0 < x < 1/4</b>."
-        },
-        {
-          "id": "E4", "t": "tita",
-          "q": "Find the number of digits in 3⁵⁰. (Take log₁₀ 3 = 0.4771.)",
-          "a": 24, "check": "24",
-          "h": "§3 — same rule as E2.",
-          "s": "50 × 0.4771 = 23.855 ⟹ ⌊23.855⌋ + 1 = <b>24 digits</b>."
-        },
-        {
-          "id": "E5", "t": "mcq",
-          "q": "The characteristic of log₁₀ 0.00456 is",
-          "o": ["−4", "−3", "3", "4"], "a": 1,
-          "h": "§3 — write the number in scientific notation; the power of 10 is the characteristic.",
-          "s": "0.00456 = 4.56 × 10⁻³ ⟹ characteristic = <b>−3</b>."
-        }
-      ]
+     "id": "A5",
+     "t": "tita",
+     "q": "Find the value of log₅ 125 + log₂ 32.",
+     "a": 8,
+     "check": "3+5",
+     "h": "§1 — evaluate each term separately; the bases differ, so no law applies across them.",
+     "s": "3 + 5 = <b>8</b>."
     },
     {
-      "id": "M",
-      "name": "exam feel (15 minutes)",
-      "block": 900,
-      "qs": [
-        {
-          "id": "M1", "t": "tita",
-          "q": "Find log₉ 27.",
-          "a": "3/2", "alt": ["3/2", "1.5"], "check": "1.5",
-          "h": "Put both on base 3.",
-          "s": "log₉ 27 = 3/2 = <b>1.5</b>."
-        },
-        {
-          "id": "M2", "t": "mcq",
-          "q": "If log₁₀ x = 2.5, then x equals",
-          "o": ["25", "250", "316.23", "500"], "a": 2,
-          "h": "10^2.5 = 10² × √10.",
-          "s": "100 × 3.1623 = <b>316.23</b>."
-        },
-        {
-          "id": "M3", "t": "tita",
-          "q": "Simplify log₂ 8 + log₃ 9 − log₅ 25.",
-          "a": 3, "check": "3+2-2",
-          "h": "Evaluate each term on its own base.",
-          "s": "3 + 2 − 2 = <b>3</b>."
-        },
-        {
-          "id": "M4", "t": "mcq",
-          "q": "The value of log₂ 5 × log₅ 8 is",
-          "o": ["2", "3", "5", "8"], "a": 1,
-          "h": "The chain collapses.",
-          "s": "log₂ 8 = <b>3</b>."
-        },
-        {
-          "id": "M5", "t": "tita",
-          "q": "Solve log₃(x − 2) = 2. Find x.",
-          "a": 11, "check": "9+2",
-          "h": "Convert to exponential form.",
-          "s": "x − 2 = 9 ⟹ x = <b>11</b>."
-        },
-        {
-          "id": "M6", "t": "mcq",
-          "q": "Given log₁₀ 2 = 0.3010, the number of digits in 2⁶⁴ is",
-          "o": ["19", "20", "21", "64"], "a": 1,
-          "h": "Floor plus one.",
-          "s": "64 × 0.3010 = 19.264 ⟹ <b>20 digits</b>."
-        },
-        {
-          "id": "M7", "t": "tita",
-          "q": "If (log₂ x)² − 4 log₂ x + 3 = 0, find the product of the roots in x.",
-          "a": 16, "check": "2*8",
-          "h": "Solve in t, then convert.",
-          "s": "t = 1 or 3 ⟹ x = 2 or 8 ⟹ product = <b>16</b> (= 2^(1+3) ✓)."
-        },
-        {
-          "id": "M8", "t": "mcq",
-          "q": "The value of 1/log₂ 30 + 1/log₃ 30 + 1/log₅ 30 is",
-          "o": ["0", "1", "2", "30"], "a": 1,
-          "h": "Each reciprocal is a log to base 30; then use the product law.",
-          "s": "log₃₀2 + log₃₀3 + log₃₀5 = log₃₀ 30 = <b>1</b>."
-        },
-        {
-          "id": "M9", "t": "tita",
-          "q": "Solve log₅(x + 1) + log₅(x − 3) = 1. Find x.",
-          "a": 4, "check": "4",
-          "h": "Combine, solve, then discard whatever breaks the domain.",
-          "s": "(x + 1)(x − 3) = 5 ⟹ x² − 2x − 8 = 0 ⟹ x = 4 or −2; only <b>x = 4</b> satisfies x > 3."
-        },
-        {
-          "id": "M10", "t": "mcq",
-          "q": "If a, b, c are in GP, then log a, log b, log c are in",
-          "o": ["AP", "GP", "HP", "no particular progression"], "a": 0,
-          "h": "§8 — taking logs turns multiplication into addition.",
-          "s": "b² = ac ⟹ 2 log b = log a + log c ⟹ the logs are in <b>AP</b>."
-        }
-      ]
+     "id": "A6",
+     "t": "mcq",
+     "q": "If log₁₀ 2 = 0.3010, then log₁₀ 5 equals",
+     "o": [
+      "0.6990",
+      "0.6021",
+      "0.7000",
+      "0.5000"
+     ],
+     "a": 0,
+     "h": "§3 — 5 = 10/2, so use the quotient law.",
+     "s": "log 5 = log 10 − log 2 = 1 − 0.3010 = <b>0.6990</b>."
     }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "The laws",
+   "qs": [
+    {
+     "id": "B1",
+     "t": "tita",
+     "q": "Find the value of log₁₀ 8 + log₁₀ 125.",
+     "a": 3,
+     "check": "3",
+     "h": "§2 — the product law. 8 × 125 is deliberately a power of 10.",
+     "s": "log(8 × 125) = log 1000 = <b>3</b>."
+    },
+    {
+     "id": "B2",
+     "t": "mcq",
+     "q": "log₁₀ 45 − log₁₀ 9 + log₁₀ 2 equals",
+     "o": [
+      "0",
+      "1",
+      "2",
+      "log₁₀ 8"
+     ],
+     "a": 1,
+     "h": "§2 — combine into a single log of one fraction before evaluating.",
+     "s": "log(45 × 2/9) = log 10 = <b>1</b>."
+    },
+    {
+     "id": "B3",
+     "t": "tita",
+     "q": "If log₂ x = 5, find log₈ x (as a fraction).",
+     "a": "5/3",
+     "alt": [
+      "5/3"
+     ],
+     "check": "5/3",
+     "h": "§2, change of base — log₈ x = log₂x / log₂8.",
+     "s": "log₈ x = 5/3 ⟹ <b>5/3</b> (x = 32 = 8^(5/3) ✓)."
+    },
+    {
+     "id": "B4",
+     "t": "mcq",
+     "q": "The value of log₂ 3 × log₃ 4 × log₄ 8 is",
+     "o": [
+      "2",
+      "3",
+      "4",
+      "6"
+     ],
+     "a": 1,
+     "h": "§2 — a chain of change-of-base factors telescopes: the intermediate bases cancel.",
+     "s": "The chain collapses to log₂ 8 = <b>3</b>."
+    },
+    {
+     "id": "B5",
+     "t": "tita",
+     "q": "Given log₁₀ 2 = 0.3010 and log₁₀ 3 = 0.4771, find log₁₀ 12 to four decimal places.",
+     "a": 1.0791,
+     "check": "2*0.3010+0.4771",
+     "h": "§2 — factorise 12 as 2² × 3, then use the product and power laws.",
+     "s": "2(0.3010) + 0.4771 = <b>1.0791</b>."
+    },
+    {
+     "id": "B6",
+     "t": "mcq",
+     "q": "If log_a b = 3, then log_b a equals",
+     "o": [
+      "3",
+      "1/3",
+      "−3",
+      "−1/3"
+     ],
+     "a": 1,
+     "h": "§2 — swapping base and argument takes the reciprocal, not the negative.",
+     "s": "log_b a = 1/log_a b = <b>1/3</b>."
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "Equations that reduce to quadratics",
+   "qs": [
+    {
+     "id": "C1",
+     "t": "tita",
+     "q": "Solve (log₂ x)² − 3 log₂ x + 2 = 0 and give the sum of the roots in x.",
+     "a": 6,
+     "check": "2+4",
+     "h": "§4 — substitute t = log₂ x, solve for t, then convert back. The question asks for x, not t.",
+     "s": "t² − 3t + 2 = 0 ⟹ t = 1 or 2 ⟹ x = 2 or 4 ⟹ sum = <b>6</b>. (Answering 3 gives the sum of the t values.)"
+    },
+    {
+     "id": "C2",
+     "t": "mcq",
+     "q": "If (log₁₀ x)² − 5 log₁₀ x + 6 = 0, the product of the roots in x is",
+     "o": [
+      "5",
+      "6",
+      "10⁵",
+      "10⁶"
+     ],
+     "a": 2,
+     "h": "§4 — the roots in x multiply to 10^(sum of the t values).",
+     "s": "t = 2 or 3 ⟹ x = 100 or 1000 ⟹ product = <b>10⁵</b>."
+    },
+    {
+     "id": "C3",
+     "t": "tita",
+     "q": "Solve log₃ x + log_x 3 = 2. Find x.",
+     "a": 3,
+     "check": "3",
+     "h": "§4 — the second term is the reciprocal of the first, so set t = log₃ x and use t + 1/t.",
+     "s": "t + 1/t = 2 ⟹ t = 1 ⟹ x = <b>3</b>."
+    },
+    {
+     "id": "C4",
+     "t": "mcq",
+     "q": "If log₂ x + log_x 2 = 5/2, the possible values of x are",
+     "o": [
+      "4 and √2",
+      "4 and 2",
+      "2 and √2",
+      "4 and ½"
+     ],
+     "a": 0,
+     "h": "§4 — t + 1/t = 5/2 gives two reciprocal values of t, and both are valid here.",
+     "s": "t = 2 or ½ ⟹ x = 2² or 2^½ ⟹ <b>4 and √2</b>."
+    },
+    {
+     "id": "C5",
+     "t": "tita",
+     "q": "If (log₅ x)² = log₅ x + 2, find the sum of all values of x.",
+     "a": 25.2,
+     "check": "25+1/5",
+     "h": "§4 — t² − t − 2 = 0. A negative value of t is perfectly legal; it gives a fractional x.",
+     "s": "t = 2 or −1 ⟹ x = 25 or 1/5 ⟹ sum = <b>25.2</b>."
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "name": "Nested logs, domains and extraneous roots",
+   "qs": [
+    {
+     "id": "D1",
+     "t": "tita",
+     "q": "Solve log₂(log₃(log₄ x)) = 0. Find x.",
+     "a": 64,
+     "check": "64",
+     "h": "§5 — peel one layer at a time from the outside in. Remember log_a 1 = 0.",
+     "s": "log₃(log₄ x) = 1 ⟹ log₄ x = 3 ⟹ x = 4³ = <b>64</b>."
+    },
+    {
+     "id": "D2",
+     "t": "mcq",
+     "q": "If log₃(log₂ x) = 1, then x is",
+     "o": [
+      "6",
+      "8",
+      "9",
+      "27"
+     ],
+     "a": 1,
+     "h": "§5 — two layers only.",
+     "s": "log₂ x = 3 ⟹ x = <b>8</b>."
+    },
+    {
+     "id": "D3",
+     "t": "tita",
+     "q": "Solve log₂(x² − 3x + 4) = 1 and give the sum of the roots.",
+     "a": 3,
+     "check": "1+2",
+     "h": "§5 — convert to exponential form, then check that both roots keep the argument positive.",
+     "s": "x² − 3x + 4 = 2 ⟹ x² − 3x + 2 = 0 ⟹ x = 1 or 2 ⟹ sum = <b>3</b>. Both are valid (the argument equals 2 in each case)."
+    },
+    {
+     "id": "D4",
+     "t": "mcq",
+     "q": "The number of real solutions of log₁₀(x − 1) + log₁₀(x + 1) = log₁₀ 8 is",
+     "o": [
+      "0",
+      "1",
+      "2",
+      "infinitely many"
+     ],
+     "a": 1,
+     "h": "§6 — combine, solve, then apply the domain condition x > 1. One algebraic root does not survive.",
+     "s": "x² − 1 = 8 ⟹ x = ±3, but x = −3 makes log(x − 1) undefined ⟹ <b>1 solution</b> (x = 3)."
+    },
+    {
+     "id": "D5",
+     "t": "tita",
+     "q": "Solve log₄(x + 3) − log₄(x − 1) = 1. Find x (as a fraction).",
+     "a": "7/3",
+     "alt": [
+      "7/3"
+     ],
+     "check": "7/3",
+     "h": "§5 — the quotient law, then convert. Check x > 1 at the end.",
+     "s": "(x + 3)/(x − 1) = 4 ⟹ 3x = 7 ⟹ x = <b>7/3</b>, which satisfies x > 1 ✓"
+    }
+   ]
+  },
+  {
+   "id": "E",
+   "name": "Inequalities and digit counting",
+   "qs": [
+    {
+     "id": "E1",
+     "t": "mcq",
+     "q": "The solution set of log₂ x > 3 is",
+     "o": [
+      "x > 8",
+      "0 < x < 8",
+      "x > 6",
+      "x < 8"
+     ],
+     "a": 0,
+     "h": "§7 — a base greater than 1 preserves the direction of the inequality.",
+     "s": "x > 2³ ⟹ <b>x > 8</b>."
+    },
+    {
+     "id": "E2",
+     "t": "tita",
+     "q": "How many digits does 2¹⁰⁰ have? (Take log₁₀ 2 = 0.3010.)",
+     "a": 31,
+     "check": "31",
+     "h": "§3 — the number of digits is ⌊n log₁₀ 2⌋ + 1.",
+     "s": "100 × 0.3010 = 30.10 ⟹ ⌊30.10⌋ + 1 = <b>31 digits</b>."
+    },
+    {
+     "id": "E3",
+     "t": "mcq",
+     "q": "The solution set of log_(1/2) x > 2 is",
+     "o": [
+      "0 < x < 1/4",
+      "x > 1/4",
+      "x > 4",
+      "0 < x < 4"
+     ],
+     "a": 0,
+     "h": "§7 — a base between 0 and 1 flips the inequality. Don't forget x > 0.",
+     "s": "x < (½)² = ¼ together with x > 0 ⟹ <b>0 < x < 1/4</b>."
+    },
+    {
+     "id": "E4",
+     "t": "tita",
+     "q": "Find the number of digits in 3⁵⁰. (Take log₁₀ 3 = 0.4771.)",
+     "a": 24,
+     "check": "24",
+     "h": "§3 — same rule as E2.",
+     "s": "50 × 0.4771 = 23.855 ⟹ ⌊23.855⌋ + 1 = <b>24 digits</b>."
+    },
+    {
+     "id": "E5",
+     "t": "mcq",
+     "q": "The characteristic of log₁₀ 0.00456 is",
+     "o": [
+      "−4",
+      "−3",
+      "3",
+      "4"
+     ],
+     "a": 1,
+     "h": "§3 — write the number in scientific notation; the power of 10 is the characteristic.",
+     "s": "0.00456 = 4.56 × 10⁻³ ⟹ characteristic = <b>−3</b>."
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (15 minutes)",
+   "block": 900,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "tita",
+     "q": "Find log₉ 27.",
+     "a": "3/2",
+     "alt": [
+      "3/2",
+      "1.5"
+     ],
+     "check": "1.5",
+     "h": "Put both on base 3.",
+     "s": "log₉ 27 = 3/2 = <b>1.5</b>."
+    },
+    {
+     "id": "M2",
+     "t": "mcq",
+     "q": "If log₁₀ x = 2.5, then x equals",
+     "o": [
+      "25",
+      "250",
+      "316.23",
+      "500"
+     ],
+     "a": 2,
+     "h": "10^2.5 = 10² × √10.",
+     "s": "100 × 3.1623 = <b>316.23</b>."
+    },
+    {
+     "id": "M3",
+     "t": "tita",
+     "q": "Simplify log₂ 8 + log₃ 9 − log₅ 25.",
+     "a": 3,
+     "check": "3+2-2",
+     "h": "Evaluate each term on its own base.",
+     "s": "3 + 2 − 2 = <b>3</b>."
+    },
+    {
+     "id": "M4",
+     "t": "mcq",
+     "q": "The value of log₂ 5 × log₅ 8 is",
+     "o": [
+      "2",
+      "3",
+      "5",
+      "8"
+     ],
+     "a": 1,
+     "h": "The chain collapses.",
+     "s": "log₂ 8 = <b>3</b>."
+    },
+    {
+     "id": "M5",
+     "t": "tita",
+     "q": "Solve log₃(x − 2) = 2. Find x.",
+     "a": 11,
+     "check": "9+2",
+     "h": "Convert to exponential form.",
+     "s": "x − 2 = 9 ⟹ x = <b>11</b>."
+    },
+    {
+     "id": "M6",
+     "t": "mcq",
+     "q": "Given log₁₀ 2 = 0.3010, the number of digits in 2⁶⁴ is",
+     "o": [
+      "19",
+      "20",
+      "21",
+      "64"
+     ],
+     "a": 1,
+     "h": "Floor plus one.",
+     "s": "64 × 0.3010 = 19.264 ⟹ <b>20 digits</b>."
+    },
+    {
+     "id": "M7",
+     "t": "tita",
+     "q": "If (log₂ x)² − 4 log₂ x + 3 = 0, find the product of the roots in x.",
+     "a": 16,
+     "check": "2*8",
+     "h": "Solve in t, then convert.",
+     "s": "t = 1 or 3 ⟹ x = 2 or 8 ⟹ product = <b>16</b> (= 2^(1+3) ✓)."
+    },
+    {
+     "id": "M8",
+     "t": "mcq",
+     "q": "The value of 1/log₂ 30 + 1/log₃ 30 + 1/log₅ 30 is",
+     "o": [
+      "0",
+      "1",
+      "2",
+      "30"
+     ],
+     "a": 1,
+     "h": "Each reciprocal is a log to base 30; then use the product law.",
+     "s": "log₃₀2 + log₃₀3 + log₃₀5 = log₃₀ 30 = <b>1</b>."
+    },
+    {
+     "id": "M9",
+     "t": "tita",
+     "q": "Solve log₅(x + 1) + log₅(x − 3) = 1. Find x.",
+     "a": 4,
+     "check": "4",
+     "h": "Combine, solve, then discard whatever breaks the domain.",
+     "s": "(x + 1)(x − 3) = 5 ⟹ x² − 2x − 8 = 0 ⟹ x = 4 or −2; only <b>x = 4</b> satisfies x > 3."
+    },
+    {
+     "id": "M10",
+     "t": "mcq",
+     "q": "If a, b, c are in GP, then log a, log b, log c are in",
+     "o": [
+      "AP",
+      "GP",
+      "HP",
+      "no particular progression"
+     ],
+     "a": 0,
+     "h": "§8 — taking logs turns multiplication into addition.",
+     "s": "b² = ac ⟹ 2 log b = log a + log c ⟹ the logs are in <b>AP</b>."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A2, A3",
+   "solving for the argument when the base is the unknown, or missing the sign on a reciprocal argument (§1)"
   ],
-  "audit": [
-    ["A2, A3", "solving for the argument when the base is the unknown, or missing the sign on a reciprocal argument (§1)"],
-    ["A4, B3, B4, M4", "not converting to a common base before combining (§2)"],
-    ["A6, B1, B2, B5", "applying a law across logs with different bases, which is not permitted"],
-    ["B6", "negating instead of reciprocating when base and argument swap"],
-    ["C1, C2, C5, M7", "reporting the answer in t when the question asks for x (§4)"],
-    ["C3, C4", "missing the second reciprocal root of t + 1/t = k"],
-    ["D1, D2", "peeling the nested logs from the inside out instead of the outside in (§5)"],
-    ["D4, M9", "keeping an algebraic root that violates the domain (§6)"],
-    ["E1, E3", "not flipping the inequality when the base lies between 0 and 1 (§7)"],
-    ["E2, E4, M6", "forgetting the +1 in the digit-count rule (§3)"],
-    ["E5", "reading the characteristic of a number below 1 as one unit too negative"],
-    ["M10", "not recognising that logs convert a GP into an AP (§8)"]
+  [
+   "A4, B3, B4, M4",
+   "not converting to a common base before combining (§2)"
+  ],
+  [
+   "A6, B1, B2, B5",
+   "applying a law across logs with different bases, which is not permitted"
+  ],
+  [
+   "B6",
+   "negating instead of reciprocating when base and argument swap"
+  ],
+  [
+   "C1, C2, C5, M7",
+   "reporting the answer in t when the question asks for x (§4)"
+  ],
+  [
+   "C3, C4",
+   "missing the second reciprocal root of t + 1/t = k"
+  ],
+  [
+   "D1, D2",
+   "peeling the nested logs from the inside out instead of the outside in (§5)"
+  ],
+  [
+   "D4, M9",
+   "keeping an algebraic root that violates the domain (§6)"
+  ],
+  [
+   "E1, E3",
+   "not flipping the inequality when the base lies between 0 and 1 (§7)"
+  ],
+  [
+   "E2, E4, M6",
+   "forgetting the +1 in the digit-count rule (§3)"
+  ],
+  [
+   "E5",
+   "reading the characteristic of a number below 1 as one unit too negative"
+  ],
+  [
+   "M10",
+   "not recognising that logs convert a GP into an AP (§8)"
   ]
+ ]
 }

@@ -51,7 +51,7 @@ It applies to any quantity that behaves as a **weighted average per unit**:
 - Profit % — weighted by cost price
 - Interest rates — weighted by principal
 
-**Does not apply** to average speed over equal *distances*. That's the harmonic mean, 2ab/(a+b), not a weighted average. Applying the cross there is a classic misfire — see `Time-Speed-Distance.md` §3.
+**Does not apply** to average speed over equal *distances*. That's the harmonic mean, 2ab/(a+b), not a weighted average. Applying the cross there is a classic misfire — see `08-Time-Speed-Distance.md` §3.
 
 **The recognition skill matters more than the formula.** CAT almost never says "alligation". It says "in what ratio", or gives you two groups and a combined average and asks for a group size. Any question with two sub-groups and one overall average is an alligation question.
 
@@ -75,7 +75,7 @@ Treat the concentration exactly as you would a price.
 - c = 0 (water), d = 36 (milk), m = 30
 - Water : Milk = (36 − 30) : (30 − 0) = 6 : 30 = **1 : 5**
 
-This is the adulteration case from profit & loss, solved with the general tool. See `Profit-Loss-Discount.md` §8 for the direct method.
+This is the adulteration case from profit & loss, solved with the general tool. See `06-Profit-Loss-Discount.md` §8 for the direct method.
 
 **Worked example (finding a quantity, not a ratio):** How much water must be added to 40 litres of a 15% alcohol solution to bring it down to 10%?
 
@@ -226,4 +226,4 @@ Same machinery, different label. Recognising that a question *is* an alligation 
 
 **The one habit that fixes most errors:** after getting a ratio, ask which ingredient there should be more of. The mean is always closer to whichever ingredient dominates. If the ratio says otherwise, the cross was inverted. Three seconds, and it catches the single most common mistake in the topic.
 
-*Related files: `Profit-Loss-Discount.md` §8 (adulteration is alligation with a zero-cost ingredient), `Time-Speed-Distance.md` §3 (where alligation must **not** be used).*
+*Related files: `06-Profit-Loss-Discount.md` §8 (adulteration is alligation with a zero-cost ingredient), `08-Time-Speed-Distance.md` §3 (where alligation must **not** be used).*

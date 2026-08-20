@@ -282,4 +282,4 @@ If income : expenditure = a : c, write income = ak and expenditure = ck. For the
 - If a question gives a ratio and one absolute value, that value determines k. Find k first, always.
 - For variation, verify direction with a sanity check: as b doubles, should a double or halve?
 
-**Where this feeds forward:** `Mixtures-and-Alligation.md` (ratios of quantities), `Time-Work-Pipes-Cisterns.md` (inverse variation of men and days), `Time-Speed-Distance.md` (speed ratios ⟹ inverse time ratios), `Means-and-Weighted-Averages.md` (weights are ratios).
+**Where this feeds forward:** `05-Mixtures-and-Alligation.md` (ratios of quantities), `11-Time-Work-Pipes-Cisterns.md` (inverse variation of men and days), `08-Time-Speed-Distance.md` (speed ratios ⟹ inverse time ratios), `04-Means-and-Weighted-Averages.md` (weights are ratios).

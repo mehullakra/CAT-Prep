@@ -1,253 +1,419 @@
 {
-  "key": "clocks",
-  "order": 64,
-  "name": "Clocks",
-  "notes": "Clocks.md",
-  "file": "Clocks-Practice.md",
-  "perQ": 90,
-  "intro": [
-    "**One formula does almost everything: angle = |30H − 5.5M|.** The hour hand moves 0.5°/min and the minute hand 6°/min, and 30H − 5.5M is just the difference (§2).",
-    "If the formula returns more than 180°, subtract from 360° to get the smaller angle — unless the question explicitly asks for the reflex angle."
-  ],
-  "sets": [
+ "key": "clocks",
+ "order": 100,
+ "name": "Clocks",
+ "notes": "10-Clocks.md",
+ "file": "10-Clocks-Practice.md",
+ "perQ": 90,
+ "intro": [
+  "**One formula does almost everything: angle = |30H − 5.5M|.** The hour hand moves 0.5°/min and the minute hand 6°/min, and 30H − 5.5M is just the difference (§2).",
+  "If the formula returns more than 180°, subtract from 360° to get the smaller angle — unless the question explicitly asks for the reflex angle."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "The angle between the hands",
+   "qs": [
     {
-      "id": "A",
-      "name": "The angle between the hands",
-      "qs": [
-        {
-          "id": "A1", "t": "tita",
-          "q": "Find the angle (in degrees) between the hands of a clock at 3:20.",
-          "a": 20, "ad": "20°", "check": "abs(30*3-5.5*20)",
-          "h": "§2 — |30(3) − 5.5(20)|. The common wrong answer of 0° assumes the hour hand stays on the 3.",
-          "s": "|90 − 110| = <b>20°</b>."
-        },
-        {
-          "id": "A2", "t": "mcq",
-          "q": "The angle between the hands at 4:40 is",
-          "o": ["90°", "100°", "110°", "120°"], "a": 1,
-          "h": "§2 — |120 − 220|.",
-          "s": "|120 − 220| = <b>100°</b>."
-        },
-        {
-          "id": "A3", "t": "tita",
-          "q": "Find the angle (in degrees) between the hands at 7:10.",
-          "a": 155, "ad": "155°", "check": "abs(30*7-5.5*10)",
-          "h": "§2 — |210 − 55|. Still under 180, so no correction is needed.",
-          "s": "|210 − 55| = <b>155°</b>."
-        },
-        {
-          "id": "A4", "t": "mcq",
-          "q": "The angle between the hands at 9:30 is",
-          "o": ["95°", "100°", "105°", "110°"], "a": 2,
-          "h": "§2 — the hour hand is halfway between 9 and 10, not on the 9.",
-          "s": "|270 − 165| = <b>105°</b>."
-        },
-        {
-          "id": "A5", "t": "tita",
-          "q": "Find the reflex angle (in degrees) between the hands at 2:50.",
-          "a": 215, "ad": "215°", "check": "360-abs(360-abs(30*2-5.5*50))",
-          "h": "§2 — the formula gives 215°, which is already the reflex angle; the smaller one is 145°. Read which is wanted.",
-          "s": "|60 − 275| = 215° ⟹ the reflex angle is <b>215°</b> (the smaller angle being 145°)."
-        }
-      ]
+     "id": "A1",
+     "t": "tita",
+     "q": "Find the angle (in degrees) between the hands of a clock at 3:20.",
+     "a": 20,
+     "ad": "20°",
+     "check": "abs(30*3-5.5*20)",
+     "h": "§2 — |30(3) − 5.5(20)|. The common wrong answer of 0° assumes the hour hand stays on the 3.",
+     "s": "|90 − 110| = <b>20°</b>."
     },
     {
-      "id": "B",
-      "name": "Coincidence, opposition and right angles",
-      "qs": [
-        {
-          "id": "B1", "t": "tita",
-          "q": "At what time between 3 and 4 o'clock do the hands coincide? Give the number of minutes past 3, to two decimals.",
-          "a": 16.36, "ad": "16.36 minutes past 3", "check": "90/5.5",
-          "h": "§3 — coincidence means the angle is 0, so 30H = 5.5M.",
-          "s": "5.5M = 90 ⟹ M = 90/5.5 = <b>16.36 minutes past 3</b> (i.e. 3:16 and 21.8 s)."
-        },
-        {
-          "id": "B2", "t": "mcq",
-          "q": "Between 2 and 3 o'clock, the hands point in exactly opposite directions at",
-          "o": ["43.64 minutes past 2", "40 minutes past 2", "45 minutes past 2", "38.18 minutes past 2"], "a": 0,
-          "h": "§3 — opposition means an angle of 180°, so solve |60 − 5.5M| = 180.",
-          "s": "5.5M = 240 ⟹ M = <b>43.64 minutes past 2</b>."
-        },
-        {
-          "id": "B3", "t": "tita",
-          "q": "At what time between 4 and 5 o'clock are the hands first at right angles? Give minutes past 4, to two decimals.",
-          "a": 5.45, "ad": "5.45 minutes past 4", "check": "30/5.5",
-          "h": "§4 — solve |120 − 5.5M| = 90. There are two solutions in the hour; the question wants the earlier.",
-          "s": "5.5M = 30 ⟹ M = <b>5.45</b> (the other right angle falls at 38.18 minutes past 4)."
-        },
-        {
-          "id": "B4", "t": "mcq",
-          "q": "How many times in 12 hours do the hands of a clock coincide?",
-          "o": ["11", "12", "22", "24"], "a": 0,
-          "h": "§3 — between 11 and 1 there is only one coincidence, at 12 o'clock. That is what costs the twelfth.",
-          "s": "<b>11 times</b> — once in each hour except that the 11 o'clock and 12 o'clock cases are the same event."
-        },
-        {
-          "id": "B5", "t": "tita",
-          "q": "How many times in 24 hours are the hands of a clock at right angles?",
-          "a": 44, "ad": "44 times", "check": "44",
-          "h": "§3 — 22 in 12 hours, by the same logic that gives 11 coincidences.",
-          "s": "22 per 12 hours ⟹ <b>44 times</b> in a day."
-        }
-      ]
+     "id": "A2",
+     "t": "mcq",
+     "q": "The angle between the hands at 4:40 is",
+     "o": [
+      "90°",
+      "100°",
+      "110°",
+      "120°"
+     ],
+     "a": 1,
+     "h": "§2 — |120 − 220|.",
+     "s": "|120 − 220| = <b>100°</b>."
     },
     {
-      "id": "C",
-      "name": "Faulty clocks",
-      "qs": [
-        {
-          "id": "C1", "t": "tita",
-          "q": "A clock gains 5 minutes every hour. If it is set right at 8 a.m., how many minutes will it be ahead at 8 p.m. the same day?",
-          "a": 60, "ad": "60 minutes", "check": "12*5",
-          "h": "§5 — a uniform gain accumulates linearly over the elapsed hours.",
-          "s": "12 hours × 5 min = <b>60 minutes</b> ahead."
-        },
-        {
-          "id": "C2", "t": "mcq",
-          "q": "A clock gains 10 seconds per hour and is set right at 6 a.m. At the true time of 6 p.m. the same day, it shows",
-          "o": ["6:01 p.m.", "6:02 p.m.", "6:05 p.m.", "6:10 p.m."], "a": 1,
-          "h": "§5 — convert the total gain into minutes at the end.",
-          "s": "12 × 10 = 120 s = 2 minutes ⟹ it shows <b>6:02 p.m.</b>"
-        },
-        {
-          "id": "C3", "t": "tita",
-          "q": "A clock is set right at 5 a.m. and loses 16 minutes in 24 hours. When the clock shows 10 p.m. on the fourth day, how many minutes past 10 p.m. is the true time?",
-          "a": 60, "ad": "60 minutes (the true time is 11 p.m.)", "check": "(89*60)*(1440/1424)-89*60",
-          "h": "§5 — the clock shows 1424 minutes for every 1440 true minutes, so scale the shown interval up by 1440/1424.",
-          "s": "Shown interval = 89 hours = 5340 min ⟹ true = 5340 × 1440/1424 = 5400 min = 90 hours ⟹ true time is 11 p.m., i.e. <b>60 minutes</b> past 10 p.m."
-        },
-        {
-          "id": "C4", "t": "mcq",
-          "q": "Two clocks are set right at noon. One gains 2 minutes a day and the other loses 3 minutes a day. They will be 1 hour apart after",
-          "o": ["10 days", "12 days", "15 days", "20 days"], "a": 1,
-          "h": "§5 — the gap grows at the sum of the two rates, since they drift in opposite directions.",
-          "s": "Relative drift = 5 min/day ⟹ 60/5 = <b>12 days</b>."
-        },
-        {
-          "id": "C5", "t": "tita",
-          "q": "A watch gains uniformly. It was 3 minutes slow at noon on Monday and 3 minutes fast at 9 p.m. the following Monday. How many hours after noon on Monday did it show the correct time?",
-          "a": 88.5, "ad": "88.5 hours", "check": "177*3/6",
-          "h": "§5 — the total drift is 6 minutes over the whole interval; the correct moment is where half of it has accumulated.",
-          "s": "Interval = 7 days 9 hours = 177 hours for a 6-minute swing ⟹ correct at 177 × 3/6 = <b>88.5 hours</b> after noon on Monday."
-        }
-      ]
+     "id": "A3",
+     "t": "tita",
+     "q": "Find the angle (in degrees) between the hands at 7:10.",
+     "a": 155,
+     "ad": "155°",
+     "check": "abs(30*7-5.5*10)",
+     "h": "§2 — |210 − 55|. Still under 180, so no correction is needed.",
+     "s": "|210 − 55| = <b>155°</b>."
     },
     {
-      "id": "D",
-      "name": "Mirror images and counting within a window",
-      "qs": [
-        {
-          "id": "D1", "t": "mcq",
-          "q": "A clock seen in a mirror appears to show 8:20. The actual time is",
-          "o": ["3:40", "4:40", "3:20", "4:20"], "a": 0,
-          "h": "§6 — subtract the shown time from 11:60 (i.e. 12:00), which is the reflection rule for any time other than exactly 12.",
-          "s": "11:60 − 8:20 = <b>3:40</b>."
-        },
-        {
-          "id": "D2", "t": "tita",
-          "q": "The mirror image of a clock shows 2:30. Express the actual time as the number of minutes past 9.",
-          "a": 30, "ad": "30 minutes past 9 (9:30)", "check": "30",
-          "h": "§6 — the same subtraction; here it lands on a whole half-hour.",
-          "s": "12:00 − 2:30 = 9:30 ⟹ <b>30 minutes past 9</b>."
-        },
-        {
-          "id": "D3", "t": "mcq",
-          "q": "A clock in a mirror appears to show 10:10. The actual time is",
-          "o": ["1:50", "2:50", "1:10", "2:10"], "a": 0,
-          "h": "§6 — 11:60 minus the shown time.",
-          "s": "11:60 − 10:10 = <b>1:50</b>."
-        },
-        {
-          "id": "D4", "t": "tita",
-          "q": "How many times between 3 p.m. and 9 p.m. do the hands of a clock coincide?",
-          "a": 6, "ad": "6 times", "check": "6",
-          "h": "§7 — coincidences recur every 720/11 minutes; count how many land inside the window.",
-          "s": "Roughly at 3:16, 4:22, 5:27, 6:33, 7:38 and 8:44 ⟹ <b>6 times</b>."
-        },
-        {
-          "id": "D5", "t": "mcq",
-          "q": "After the hands of a clock coincide, they next coincide after",
-          "o": ["60 minutes", "65 minutes", "65.45 minutes", "66 minutes"], "a": 2,
-          "h": "§3 — 11 coincidences spread over 12 hours.",
-          "s": "720/11 = <b>65.45 minutes</b>."
-        }
-      ]
+     "id": "A4",
+     "t": "mcq",
+     "q": "The angle between the hands at 9:30 is",
+     "o": [
+      "95°",
+      "100°",
+      "105°",
+      "110°"
+     ],
+     "a": 2,
+     "h": "§2 — the hour hand is halfway between 9 and 10, not on the 9.",
+     "s": "|270 − 165| = <b>105°</b>."
     },
     {
-      "id": "M",
-      "name": "exam feel (12 minutes)",
-      "block": 720,
-      "qs": [
-        {
-          "id": "M1", "t": "tita",
-          "q": "Find the angle (in degrees) between the hands at 5:30.",
-          "a": 15, "ad": "15°", "check": "abs(30*5-5.5*30)",
-          "h": "The hour hand is halfway to 6.",
-          "s": "|150 − 165| = <b>15°</b>."
-        },
-        {
-          "id": "M2", "t": "mcq",
-          "q": "The angle between the hands at 8:24 is",
-          "o": ["96°", "102°", "108°", "114°"], "a": 2,
-          "h": "|240 − 132|.",
-          "s": "|240 − 132| = <b>108°</b>."
-        },
-        {
-          "id": "M3", "t": "tita",
-          "q": "At what time between 6 and 7 o'clock do the hands coincide? Give minutes past 6, to two decimals.",
-          "a": 32.73, "ad": "32.73 minutes past 6", "check": "180/5.5",
-          "h": "5.5M = 180.",
-          "s": "M = 180/5.5 = <b>32.73 minutes past 6</b>."
-        },
-        {
-          "id": "M4", "t": "mcq",
-          "q": "How many times in 24 hours do the hands of a clock point in opposite directions?",
-          "o": ["11", "22", "24", "44"], "a": 1,
-          "h": "11 per 12 hours, for the same reason as coincidences.",
-          "s": "<b>22 times</b>."
-        },
-        {
-          "id": "M5", "t": "tita",
-          "q": "A clock gains 4 minutes every hour and is set right at 9 a.m. How many minutes past 9 p.m. does it show at the true time of 9 p.m. the same day?",
-          "a": 48, "ad": "48 minutes", "check": "12*4",
-          "h": "Linear accumulation over 12 hours.",
-          "s": "12 × 4 = <b>48 minutes</b> (it shows 9:48 p.m.)."
-        },
-        {
-          "id": "M6", "t": "mcq",
-          "q": "A clock seen in a mirror shows 4:35. The actual time is",
-          "o": ["7:25", "8:25", "7:35", "8:35"], "a": 0,
-          "h": "11:60 minus the shown time.",
-          "s": "11:60 − 4:35 = <b>7:25</b>."
-        },
-        {
-          "id": "M7", "t": "tita",
-          "q": "At what time between 10 and 11 o'clock are the hands at right angles for the second time? Give minutes past 10, to two decimals.",
-          "a": 38.18, "ad": "38.18 minutes past 10", "check": "210/5.5",
-          "h": "Two solutions: 300 − 5.5M = 270 and 300 − 5.5M = 90. Take the later one.",
-          "s": "5.5M = 210 ⟹ M = <b>38.18</b> (the first right angle was at 5.45 minutes past 10)."
-        },
-        {
-          "id": "M8", "t": "mcq",
-          "q": "A clock loses 5 minutes every hour and is set right at 6 a.m. At the true time of 6 p.m. the same day, it shows",
-          "o": ["5:00 p.m.", "5:30 p.m.", "5:45 p.m.", "6:00 p.m."], "a": 0,
-          "h": "12 hours of loss at 5 minutes an hour.",
-          "s": "12 × 5 = 60 minutes lost ⟹ it shows <b>5:00 p.m.</b>"
-        }
-      ]
+     "id": "A5",
+     "t": "tita",
+     "q": "Find the reflex angle (in degrees) between the hands at 2:50.",
+     "a": 215,
+     "ad": "215°",
+     "check": "360-abs(360-abs(30*2-5.5*50))",
+     "h": "§2 — the formula gives 215°, which is already the reflex angle; the smaller one is 145°. Read which is wanted.",
+     "s": "|60 − 275| = 215° ⟹ the reflex angle is <b>215°</b> (the smaller angle being 145°)."
     }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Coincidence, opposition and right angles",
+   "qs": [
+    {
+     "id": "B1",
+     "t": "tita",
+     "q": "At what time between 3 and 4 o'clock do the hands coincide? Give the number of minutes past 3, to two decimals.",
+     "a": 16.36,
+     "ad": "16.36 minutes past 3",
+     "check": "90/5.5",
+     "h": "§3 — coincidence means the angle is 0, so 30H = 5.5M.",
+     "s": "5.5M = 90 ⟹ M = 90/5.5 = <b>16.36 minutes past 3</b> (i.e. 3:16 and 21.8 s)."
+    },
+    {
+     "id": "B2",
+     "t": "mcq",
+     "q": "Between 2 and 3 o'clock, the hands point in exactly opposite directions at",
+     "o": [
+      "43.64 minutes past 2",
+      "40 minutes past 2",
+      "45 minutes past 2",
+      "38.18 minutes past 2"
+     ],
+     "a": 0,
+     "h": "§3 — opposition means an angle of 180°, so solve |60 − 5.5M| = 180.",
+     "s": "5.5M = 240 ⟹ M = <b>43.64 minutes past 2</b>."
+    },
+    {
+     "id": "B3",
+     "t": "tita",
+     "q": "At what time between 4 and 5 o'clock are the hands first at right angles? Give minutes past 4, to two decimals.",
+     "a": 5.45,
+     "ad": "5.45 minutes past 4",
+     "check": "30/5.5",
+     "h": "§4 — solve |120 − 5.5M| = 90. There are two solutions in the hour; the question wants the earlier.",
+     "s": "5.5M = 30 ⟹ M = <b>5.45</b> (the other right angle falls at 38.18 minutes past 4)."
+    },
+    {
+     "id": "B4",
+     "t": "mcq",
+     "q": "How many times in 12 hours do the hands of a clock coincide?",
+     "o": [
+      "11",
+      "12",
+      "22",
+      "24"
+     ],
+     "a": 0,
+     "h": "§3 — between 11 and 1 there is only one coincidence, at 12 o'clock. That is what costs the twelfth.",
+     "s": "<b>11 times</b> — once in each hour except that the 11 o'clock and 12 o'clock cases are the same event."
+    },
+    {
+     "id": "B5",
+     "t": "tita",
+     "q": "How many times in 24 hours are the hands of a clock at right angles?",
+     "a": 44,
+     "ad": "44 times",
+     "check": "44",
+     "h": "§3 — 22 in 12 hours, by the same logic that gives 11 coincidences.",
+     "s": "22 per 12 hours ⟹ <b>44 times</b> in a day."
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "Faulty clocks",
+   "qs": [
+    {
+     "id": "C1",
+     "t": "tita",
+     "q": "A clock gains 5 minutes every hour. If it is set right at 8 a.m., how many minutes will it be ahead at 8 p.m. the same day?",
+     "a": 60,
+     "ad": "60 minutes",
+     "check": "12*5",
+     "h": "§5 — a uniform gain accumulates linearly over the elapsed hours.",
+     "s": "12 hours × 5 min = <b>60 minutes</b> ahead."
+    },
+    {
+     "id": "C2",
+     "t": "mcq",
+     "q": "A clock gains 10 seconds per hour and is set right at 6 a.m. At the true time of 6 p.m. the same day, it shows",
+     "o": [
+      "6:01 p.m.",
+      "6:02 p.m.",
+      "6:05 p.m.",
+      "6:10 p.m."
+     ],
+     "a": 1,
+     "h": "§5 — convert the total gain into minutes at the end.",
+     "s": "12 × 10 = 120 s = 2 minutes ⟹ it shows <b>6:02 p.m.</b>"
+    },
+    {
+     "id": "C3",
+     "t": "tita",
+     "q": "A clock is set right at 5 a.m. and loses 16 minutes in 24 hours. When the clock shows 10 p.m. on the fourth day, how many minutes past 10 p.m. is the true time?",
+     "a": 60,
+     "ad": "60 minutes (the true time is 11 p.m.)",
+     "check": "(89*60)*(1440/1424)-89*60",
+     "h": "§5 — the clock shows 1424 minutes for every 1440 true minutes, so scale the shown interval up by 1440/1424.",
+     "s": "Shown interval = 89 hours = 5340 min ⟹ true = 5340 × 1440/1424 = 5400 min = 90 hours ⟹ true time is 11 p.m., i.e. <b>60 minutes</b> past 10 p.m."
+    },
+    {
+     "id": "C4",
+     "t": "mcq",
+     "q": "Two clocks are set right at noon. One gains 2 minutes a day and the other loses 3 minutes a day. They will be 1 hour apart after",
+     "o": [
+      "10 days",
+      "12 days",
+      "15 days",
+      "20 days"
+     ],
+     "a": 1,
+     "h": "§5 — the gap grows at the sum of the two rates, since they drift in opposite directions.",
+     "s": "Relative drift = 5 min/day ⟹ 60/5 = <b>12 days</b>."
+    },
+    {
+     "id": "C5",
+     "t": "tita",
+     "q": "A watch gains uniformly. It was 3 minutes slow at noon on Monday and 3 minutes fast at 9 p.m. the following Monday. How many hours after noon on Monday did it show the correct time?",
+     "a": 88.5,
+     "ad": "88.5 hours",
+     "check": "177*3/6",
+     "h": "§5 — the total drift is 6 minutes over the whole interval; the correct moment is where half of it has accumulated.",
+     "s": "Interval = 7 days 9 hours = 177 hours for a 6-minute swing ⟹ correct at 177 × 3/6 = <b>88.5 hours</b> after noon on Monday."
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "name": "Mirror images and counting within a window",
+   "qs": [
+    {
+     "id": "D1",
+     "t": "mcq",
+     "q": "A clock seen in a mirror appears to show 8:20. The actual time is",
+     "o": [
+      "3:40",
+      "4:40",
+      "3:20",
+      "4:20"
+     ],
+     "a": 0,
+     "h": "§6 — subtract the shown time from 11:60 (i.e. 12:00), which is the reflection rule for any time other than exactly 12.",
+     "s": "11:60 − 8:20 = <b>3:40</b>."
+    },
+    {
+     "id": "D2",
+     "t": "tita",
+     "q": "The mirror image of a clock shows 2:30. Express the actual time as the number of minutes past 9.",
+     "a": 30,
+     "ad": "30 minutes past 9 (9:30)",
+     "check": "30",
+     "h": "§6 — the same subtraction; here it lands on a whole half-hour.",
+     "s": "12:00 − 2:30 = 9:30 ⟹ <b>30 minutes past 9</b>."
+    },
+    {
+     "id": "D3",
+     "t": "mcq",
+     "q": "A clock in a mirror appears to show 10:10. The actual time is",
+     "o": [
+      "1:50",
+      "2:50",
+      "1:10",
+      "2:10"
+     ],
+     "a": 0,
+     "h": "§6 — 11:60 minus the shown time.",
+     "s": "11:60 − 10:10 = <b>1:50</b>."
+    },
+    {
+     "id": "D4",
+     "t": "tita",
+     "q": "How many times between 3 p.m. and 9 p.m. do the hands of a clock coincide?",
+     "a": 6,
+     "ad": "6 times",
+     "check": "6",
+     "h": "§7 — coincidences recur every 720/11 minutes; count how many land inside the window.",
+     "s": "Roughly at 3:16, 4:22, 5:27, 6:33, 7:38 and 8:44 ⟹ <b>6 times</b>."
+    },
+    {
+     "id": "D5",
+     "t": "mcq",
+     "q": "After the hands of a clock coincide, they next coincide after",
+     "o": [
+      "60 minutes",
+      "65 minutes",
+      "65.45 minutes",
+      "66 minutes"
+     ],
+     "a": 2,
+     "h": "§3 — 11 coincidences spread over 12 hours.",
+     "s": "720/11 = <b>65.45 minutes</b>."
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (12 minutes)",
+   "block": 720,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "tita",
+     "q": "Find the angle (in degrees) between the hands at 5:30.",
+     "a": 15,
+     "ad": "15°",
+     "check": "abs(30*5-5.5*30)",
+     "h": "The hour hand is halfway to 6.",
+     "s": "|150 − 165| = <b>15°</b>."
+    },
+    {
+     "id": "M2",
+     "t": "mcq",
+     "q": "The angle between the hands at 8:24 is",
+     "o": [
+      "96°",
+      "102°",
+      "108°",
+      "114°"
+     ],
+     "a": 2,
+     "h": "|240 − 132|.",
+     "s": "|240 − 132| = <b>108°</b>."
+    },
+    {
+     "id": "M3",
+     "t": "tita",
+     "q": "At what time between 6 and 7 o'clock do the hands coincide? Give minutes past 6, to two decimals.",
+     "a": 32.73,
+     "ad": "32.73 minutes past 6",
+     "check": "180/5.5",
+     "h": "5.5M = 180.",
+     "s": "M = 180/5.5 = <b>32.73 minutes past 6</b>."
+    },
+    {
+     "id": "M4",
+     "t": "mcq",
+     "q": "How many times in 24 hours do the hands of a clock point in opposite directions?",
+     "o": [
+      "11",
+      "22",
+      "24",
+      "44"
+     ],
+     "a": 1,
+     "h": "11 per 12 hours, for the same reason as coincidences.",
+     "s": "<b>22 times</b>."
+    },
+    {
+     "id": "M5",
+     "t": "tita",
+     "q": "A clock gains 4 minutes every hour and is set right at 9 a.m. How many minutes past 9 p.m. does it show at the true time of 9 p.m. the same day?",
+     "a": 48,
+     "ad": "48 minutes",
+     "check": "12*4",
+     "h": "Linear accumulation over 12 hours.",
+     "s": "12 × 4 = <b>48 minutes</b> (it shows 9:48 p.m.)."
+    },
+    {
+     "id": "M6",
+     "t": "mcq",
+     "q": "A clock seen in a mirror shows 4:35. The actual time is",
+     "o": [
+      "7:25",
+      "8:25",
+      "7:35",
+      "8:35"
+     ],
+     "a": 0,
+     "h": "11:60 minus the shown time.",
+     "s": "11:60 − 4:35 = <b>7:25</b>."
+    },
+    {
+     "id": "M7",
+     "t": "tita",
+     "q": "At what time between 10 and 11 o'clock are the hands at right angles for the second time? Give minutes past 10, to two decimals.",
+     "a": 38.18,
+     "ad": "38.18 minutes past 10",
+     "check": "210/5.5",
+     "h": "Two solutions: 300 − 5.5M = 270 and 300 − 5.5M = 90. Take the later one.",
+     "s": "5.5M = 210 ⟹ M = <b>38.18</b> (the first right angle was at 5.45 minutes past 10)."
+    },
+    {
+     "id": "M8",
+     "t": "mcq",
+     "q": "A clock loses 5 minutes every hour and is set right at 6 a.m. At the true time of 6 p.m. the same day, it shows",
+     "o": [
+      "5:00 p.m.",
+      "5:30 p.m.",
+      "5:45 p.m.",
+      "6:00 p.m."
+     ],
+     "a": 0,
+     "h": "12 hours of loss at 5 minutes an hour.",
+     "s": "12 × 5 = 60 minutes lost ⟹ it shows <b>5:00 p.m.</b>"
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A1, A2, A4, M1, M2",
+   "treating the hour hand as fixed on the hour mark instead of advancing 0.5° per minute (§2)"
   ],
-  "audit": [
-    ["A1, A2, A4, M1, M2", "treating the hour hand as fixed on the hour mark instead of advancing 0.5° per minute (§2)"],
-    ["A5", "reporting the smaller angle where the reflex angle was asked, or vice versa"],
-    ["B1, B2, M3", "using 6M instead of 5.5M — the relative speed of the hands is 5.5°/min, not 6 (§3)"],
-    ["B3, M7", "finding only one of the two right angles in an hour, or picking the wrong one (§4)"],
-    ["B4, B5, M4", "answering 12 or 24 by assuming one event per hour (§3)"],
-    ["C1, C2, C5, M5, M8", "mixing the units of the drift, or applying it to the wrong number of hours (§5)"],
-    ["C3", "scaling the shown interval down instead of up for a slow clock"],
-    ["C4", "subtracting the two drift rates when the clocks drift in opposite directions"],
-    ["D1, D2, D3, M6", "subtracting from 12:00 without borrowing correctly — use 11:60 (§6)"],
-    ["D4, D5", "assuming coincidences fall exactly one hour apart rather than 65.45 minutes (§7)"]
+  [
+   "A5",
+   "reporting the smaller angle where the reflex angle was asked, or vice versa"
+  ],
+  [
+   "B1, B2, M3",
+   "using 6M instead of 5.5M — the relative speed of the hands is 5.5°/min, not 6 (§3)"
+  ],
+  [
+   "B3, M7",
+   "finding only one of the two right angles in an hour, or picking the wrong one (§4)"
+  ],
+  [
+   "B4, B5, M4",
+   "answering 12 or 24 by assuming one event per hour (§3)"
+  ],
+  [
+   "C1, C2, C5, M5, M8",
+   "mixing the units of the drift, or applying it to the wrong number of hours (§5)"
+  ],
+  [
+   "C3",
+   "scaling the shown interval down instead of up for a slow clock"
+  ],
+  [
+   "C4",
+   "subtracting the two drift rates when the clocks drift in opposite directions"
+  ],
+  [
+   "D1, D2, D3, M6",
+   "subtracting from 12:00 without borrowing correctly — use 11:60 (§6)"
+  ],
+  [
+   "D4, D5",
+   "assuming coincidences fall exactly one hour apart rather than 65.45 minutes (§7)"
   ]
+ ]
 }

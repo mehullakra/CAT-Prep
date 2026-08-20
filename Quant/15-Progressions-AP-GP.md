@@ -113,7 +113,7 @@ a, b, c are in HP ⟺ their reciprocals are in AP.
 - Harmonic mean of a and b = 2ab/(a+b)
 - If a, b, c are in HP then b = 2ac/(a+c)
 
-**AM ≥ GM ≥ HM** for positive numbers, with equality only when all terms are equal. See `Means-and-Weighted-Averages.md` §8.
+**AM ≥ GM ≥ HM** for positive numbers, with equality only when all terms are equal. See `04-Means-and-Weighted-Averages.md` §8.
 
 ---
 
@@ -213,7 +213,7 @@ CAT gives a recurrence and asks for a distant term. Four shapes, and you should 
 - aₙ − 2 = (3 − 2)·3^(n−1) ⟹ **aₙ = 3^(n−1) + 2**
 - Check: a₂ = 3(3) − 4 = 5 = 3 + 2 ✓; a₃ = 3(5) − 4 = 11 = 9 + 2 ✓
 
-**When the recurrence looks unfriendly, compute the first five or six terms and look for a cycle.** Sequences defined by remainders, digit operations or alternating signs are almost always **periodic**, and then the answer is the index mod the period — the same move as §5 cyclicity in `Number-System.md`.
+**When the recurrence looks unfriendly, compute the first five or six terms and look for a cycle.** Sequences defined by remainders, digit operations or alternating signs are almost always **periodic**, and then the answer is the index mod the period — the same move as §5 cyclicity in `01-Number-System.md`.
 
 **Trap:** assuming a recurrence must have a closed form. If the question asks for a₁₀₀ and no pattern appears in six terms, you have probably misread the recurrence.
 
@@ -243,4 +243,4 @@ CAT gives a recurrence and asks for a distant term. Four shapes, and you should 
 - When two progressions are involved, think LCM and congruences, not listing.
 - Sanity-check n: it must be a positive integer. A fractional n means the value isn't in the sequence, which is frequently the answer itself.
 
-**Where this feeds forward:** `Number-System.md` §8 and §11 (counting multiples, congruences), `Means-and-Weighted-Averages.md` §8 and §10 (means, sequence averages), `Algebra.md` (symmetric selection is the same idea as symmetric sums), `Logarithms.md` (logs of a GP form an AP).
+**Where this feeds forward:** `01-Number-System.md` §8 and §11 (counting multiples, congruences), `04-Means-and-Weighted-Averages.md` §8 and §10 (means, sequence averages), `13-Algebra.md` (symmetric selection is the same idea as symmetric sums), `14-Logarithms.md` (logs of a GP form an AP).

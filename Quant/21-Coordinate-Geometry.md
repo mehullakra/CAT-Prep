@@ -11,7 +11,7 @@ Put the figure on axes when the question gives you any of:
 - **Actual coordinates** — then there is no choice, and no synthetic detour is worth trying.
 - **Midpoints, medians, or ratios along a segment** — the section formula handles them in one line.
 - **Perpendiculars, or a rectangle/square** — align the sides with the axes and everything becomes arithmetic.
-- **A reflection or a fold** — see `Triangles.md` §11; a fold is a reflection, and reflections are trivial on axes.
+- **A reflection or a fold** — see `17-Triangles.md` §11; a fold is a reflection, and reflections are trivial on axes.
 
 **Choose the origin to kill the most zeros.** Put it at a right-angle vertex, at the centre of a circle, or at the midpoint of a symmetric figure. Half the algebra in a coordinate question is decided before you write a single equation.
 
@@ -30,7 +30,7 @@ For A(x₁, y₁) and B(x₂, y₂):
 - **External division** in m : n — same formula with n replaced by −n
 - **Centroid** of a triangle = ((x₁ + x₂ + x₃)/3, (y₁ + y₂ + y₃)/3)
 
-The section formula is a **weighted average** (`Means-and-Weighted-Averages.md` §3): the far endpoint gets the near weight. If you remember it as "cross the weights", you will never write it upside down.
+The section formula is a **weighted average** (`04-Means-and-Weighted-Averages.md` §3): the far endpoint gets the near weight. If you remember it as "cross the weights", you will never write it upside down.
 
 ---
 
@@ -76,7 +76,7 @@ Add coordinatewise. The same relation rearranged finds any missing vertex.
 | Rhombus | parallelogram **and** all four sides equal |
 | Rectangle | parallelogram **and** equal diagonals |
 | Square | both of the above |
-| Any quadrilateral, is it cyclic? | opposite angles sum to 180° — usually easier via `Circles.md` §4 |
+| Any quadrilateral, is it cyclic? | opposite angles sum to 180° — usually easier via `18-Circles.md` §4 |
 
 **Worked example:** Three consecutive vertices of parallelogram ABCD are A(−4, −2), B(2, 3) and C(7, 1). The diagonal BD meets the y-axis at P. Find the y-coordinate of P.
 
@@ -102,7 +102,7 @@ Add coordinatewise. The same relation rearranged finds any missing vertex.
 
 - **Collinear ⟺ this area is 0.** That is the fastest collinearity test there is — faster than comparing two slopes, and it never divides by zero.
 - For a polygon, walk the vertices in order and sum x_i·y_{i+1} − x_{i+1}·y_i, then halve the absolute value. Going round in the wrong order gives nonsense, so keep the cycle consistent.
-- **Quadrilateral shortcut:** if the diagonals are known and perpendicular, Area = ½ d₁d₂ (`Quadrilaterals-and-Polygons.md` §1).
+- **Quadrilateral shortcut:** if the diagonals are known and perpendicular, Area = ½ d₁d₂ (`19-Quadrilaterals-and-Polygons.md` §1).
 
 **Worked example:** Are (1, 2), (3, 6) and (5, 10) collinear?
 - ½ |1(6 − 10) + 3(10 − 2) + 5(2 − 6)| = ½ |−4 + 24 − 20| = **0** ⟹ yes.
@@ -116,14 +116,14 @@ Add coordinatewise. The same relation rearranged finds any missing vertex.
 - A point is inside / on / outside according as x² + y² + 2gx + 2fy + c is < / = / > 0
 - **Tangency of a line to a circle** ⟺ distance from the centre to the line = r. Use §4's distance formula; do not substitute and take a discriminant unless you must.
 
-The synthetic circle facts — chords, tangents, alternate segment, power of a point — live in `Circles.md` §2–§4 and are not repeated here.
+The synthetic circle facts — chords, tangents, alternate segment, power of a point — live in `18-Circles.md` §2–§4 and are not repeated here.
 
 ---
 
 ## 8. Type 2 — Reflections and shortest paths
 
 - **Reflection in the x-axis:** (a, b) → (a, −b). **In the y-axis:** (a, b) → (−a, b). **In the origin:** (a, b) → (−a, −b). **In y = x:** (a, b) → (b, a).
-- **Reflection in a general line:** the line is the perpendicular bisector of the segment joining a point to its image — the same statement that governs folding in `Triangles.md` §11.
+- **Reflection in a general line:** the line is the perpendicular bisector of the segment joining a point to its image — the same statement that governs folding in `17-Triangles.md` §11.
 
 **Shortest path touching a line:** to minimise PA + AB where A must lie on a given line, reflect one endpoint across the line and join it straight to the other. The straight distance between P′ and B *is* the minimum, and it crosses the line at the optimal A.
 
@@ -153,4 +153,4 @@ The synthetic circle facts — chords, tangents, alternate segment, power of a p
 - Prefer the distance-from-a-point formula over substituting and solving a quadratic. It is one line and cannot produce extraneous roots.
 - When a figure has a right angle, a midpoint and a reflection all at once, coordinates will beat synthetic geometry nearly every time.
 
-**Where this feeds forward:** `Triangles.md`, `Circles.md` and `Quadrilaterals-and-Polygons.md` (the synthetic versions of everything here, plus Triangles §11 folding as reflection), `Algebra.md` §2 (line–curve intersections are quadratics), `Means-and-Weighted-Averages.md` §3 (the section formula is a weighted average).
+**Where this feeds forward:** `17-Triangles.md`, `18-Circles.md` and `19-Quadrilaterals-and-Polygons.md` (the synthetic versions of everything here, plus Triangles §11 folding as reflection), `13-Algebra.md` §2 (line–curve intersections are quadratics), `04-Means-and-Weighted-Averages.md` §3 (the section formula is a weighted average).

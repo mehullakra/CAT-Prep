@@ -1,358 +1,599 @@
 {
-  "key": "profitloss",
-  "order": 30,
-  "name": "Profit, Loss & Discount",
-  "notes": "Profit-Loss-Discount.md",
-  "file": "Profit-Loss-Discount-Practice.md",
-  "perQ": 90,
-  "intro": [
-    "**Profit % is always on CP; discount % is always on MP.** Half the errors in this topic are a correct percentage applied to the wrong base (§2).",
-    "Chain everything as factors: markup, discount and wastage each multiply, and they act on different quantities (§12)."
-  ],
-  "sets": [
+ "key": "profitloss",
+ "order": 60,
+ "name": "Profit, Loss & Discount",
+ "notes": "06-Profit-Loss-Discount.md",
+ "file": "06-Profit-Loss-Discount-Practice.md",
+ "perQ": 90,
+ "intro": [
+  "**Profit % is always on CP; discount % is always on MP.** Half the errors in this topic are a correct percentage applied to the wrong base (§2).",
+  "Chain everything as factors: markup, discount and wastage each multiply, and they act on different quantities (§12)."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "Cost price, selling price and profit percent",
+   "qs": [
     {
-      "id": "A",
-      "name": "Cost price, selling price and profit percent",
-      "qs": [
-        {
-          "id": "A1", "t": "tita",
-          "q": "An article bought for ₹640 is sold for ₹768. Find the profit percent.",
-          "a": 20, "ad": "20%", "check": "128/640*100",
-          "h": "§1 — profit % is on CP. 128/640.",
-          "s": "Profit = 128 ⟹ 128/640 = <b>20%</b>."
-        },
-        {
-          "id": "A2", "t": "mcq",
-          "q": "An article sold for ₹450 gives a 25% profit. Its cost price is",
-          "o": ["₹337.50", "₹360", "₹375", "₹400"], "a": 1,
-          "h": "§3 — divide by 1.25. Subtracting 25% of the SP is the planted error.",
-          "s": "450/1.25 = <b>₹360</b>. (450 × 0.75 = ₹337.50 is the decoy.)"
-        },
-        {
-          "id": "A3", "t": "tita",
-          "q": "A man sells an article at a 15% loss for ₹1,020. Find the cost price (in ₹).",
-          "a": 1200, "ad": "₹1,200", "check": "1020/0.85",
-          "h": "§3 — a 15% loss means SP = 0.85 × CP.",
-          "s": "1020/0.85 = <b>₹1,200</b>."
-        },
-        {
-          "id": "A4", "t": "mcq",
-          "q": "If the cost price of 20 articles equals the selling price of 16 articles, the profit percent is",
-          "o": ["20%", "25%", "30%", "33.33%"], "a": 1,
-          "h": "§9 — the larger number sits on the CP side, so it's a profit. SP/CP = 20/16.",
-          "s": "20 CP = 16 SP ⟹ SP/CP = 5/4 ⟹ profit = <b>25%</b>."
-        },
-        {
-          "id": "A5", "t": "tita",
-          "q": "By selling an article for ₹900 a man loses 10%. At what price should he sell it to gain 20% (in ₹)?",
-          "a": 1200, "ad": "₹1,200", "check": "900/0.9*1.2",
-          "h": "§1 — recover CP first. Every profit or loss percentage refers back to that one number.",
-          "s": "CP = 900/0.9 = ₹1,000 ⟹ SP for 20% gain = <b>₹1,200</b>."
-        },
-        {
-          "id": "A6", "t": "mcq",
-          "q": "A trader's profit is 25% of the cost price. His profit as a percentage of the selling price is",
-          "o": ["16.67%", "20%", "25%", "33.33%"], "a": 1,
-          "h": "§2 — the base changes from CP to SP. Take CP = 100.",
-          "s": "CP 100, profit 25, SP 125 ⟹ 25/125 = <b>20%</b>."
-        }
-      ]
+     "id": "A1",
+     "t": "tita",
+     "q": "An article bought for ₹640 is sold for ₹768. Find the profit percent.",
+     "a": 20,
+     "ad": "20%",
+     "check": "128/640*100",
+     "h": "§1 — profit % is on CP. 128/640.",
+     "s": "Profit = 128 ⟹ 128/640 = <b>20%</b>."
     },
     {
-      "id": "B",
-      "name": "Marked price and a single discount",
-      "qs": [
-        {
-          "id": "B1", "t": "tita",
-          "q": "An article marked at ₹1,500 is sold at a 12% discount. Find the selling price (in ₹).",
-          "a": 1320, "ad": "₹1,320", "check": "1500*0.88",
-          "h": "§4 — discount is on MP, always.",
-          "s": "1500 × 0.88 = <b>₹1,320</b>."
-        },
-        {
-          "id": "B2", "t": "mcq",
-          "q": "A shopkeeper marks his goods 40% above cost and allows a 25% discount. His profit percent is",
-          "o": ["5%", "10%", "15%", "20%"], "a": 0,
-          "h": "§4 — chain 1.4 and 0.75. The markup and the discount act on different bases, so they never simply subtract.",
-          "s": "1.4 × 0.75 = 1.05 ⟹ <b>5%</b> profit. (40 − 25 = 15% is the planted error.)"
-        },
-        {
-          "id": "B3", "t": "tita",
-          "q": "A shopkeeper wants a 20% profit after allowing a 20% discount. By what percent above cost must he mark his goods?",
-          "a": 50, "ad": "50%", "check": "100*(1.2/0.8-1)",
-          "h": "§4 read backwards — markup factor = (profit factor)/(discount factor).",
-          "s": "1.2/0.8 = 1.5 ⟹ mark up by <b>50%</b>. (Answering 40% assumes the two 20%s cancel.)"
-        },
-        {
-          "id": "B4", "t": "mcq",
-          "q": "An article marked at ₹800 is sold for ₹680. The rate of discount is",
-          "o": ["12%", "15%", "17.65%", "20%"], "a": 1,
-          "h": "§4 — divide the discount by the MP, not by the SP. One option is the SP-based answer.",
-          "s": "120/800 = <b>15%</b>. (120/680 = 17.65% uses the wrong base.)"
-        },
-        {
-          "id": "B5", "t": "tita",
-          "q": "A shopkeeper marks an article 30% above cost and gives a discount, ending with a 4% profit. Find the discount percent.",
-          "a": 20, "ad": "20%", "check": "100*(1-1.04/1.3)",
-          "h": "§4 — the discount factor is (profit factor)/(markup factor).",
-          "s": "1.04/1.3 = 0.8 ⟹ discount = <b>20%</b>."
-        }
-      ]
+     "id": "A2",
+     "t": "mcq",
+     "q": "An article sold for ₹450 gives a 25% profit. Its cost price is",
+     "o": [
+      "₹337.50",
+      "₹360",
+      "₹375",
+      "₹400"
+     ],
+     "a": 1,
+     "h": "§3 — divide by 1.25. Subtracting 25% of the SP is the planted error.",
+     "s": "450/1.25 = <b>₹360</b>. (450 × 0.75 = ₹337.50 is the decoy.)"
     },
     {
-      "id": "C",
-      "name": "Successive discounts",
-      "qs": [
-        {
-          "id": "C1", "t": "mcq",
-          "q": "Successive discounts of 20% and 10% are equivalent to a single discount of",
-          "o": ["26%", "28%", "30%", "32%"], "a": 1,
-          "h": "§5 — 0.8 × 0.9. The naive sum 30% is planted.",
-          "s": "0.8 × 0.9 = 0.72 ⟹ a single discount of <b>28%</b>."
-        },
-        {
-          "id": "C2", "t": "tita",
-          "q": "An article marked at ₹2,500 is sold after successive discounts of 20%, 10% and 5%. Find the selling price (in ₹).",
-          "a": 1710, "ad": "₹1,710", "check": "2500*0.8*0.9*0.95",
-          "h": "§5 — chain all three factors, then multiply once.",
-          "s": "2500 × 0.8 × 0.9 × 0.95 = 2500 × 0.684 = <b>₹1,710</b>."
-        },
-        {
-          "id": "C3", "t": "mcq",
-          "q": "Which is the better deal for a buyer: a single discount of 30%, or successive discounts of 20% and 10%?",
-          "o": ["The single 30% discount", "The successive discounts", "They are identical", "Cannot be determined"], "a": 0,
-          "h": "§5 — compare the surviving factors 0.70 and 0.72. Smaller is better for the buyer.",
-          "s": "0.70 vs 0.8 × 0.9 = 0.72 ⟹ <b>the single 30% discount</b> is better. Successive discounts always undershoot their sum."
-        },
-        {
-          "id": "C4", "t": "tita",
-          "q": "Successive discounts of 25% and x% are equivalent to a single discount of 40%. Find x.",
-          "a": 20, "ad": "20%", "check": "100*(1-0.6/0.75)",
-          "h": "§5 — set 0.75 × (1 − x/100) = 0.60 and solve for the second factor.",
-          "s": "0.75(1 − x/100) = 0.60 ⟹ 1 − x/100 = 0.8 ⟹ x = <b>20%</b>. (40 − 25 = 15% is the planted error.)"
-        },
-        {
-          "id": "C5", "t": "mcq",
-          "q": "After two equal successive discounts, an article marked at ₹10,000 sells for ₹8,100. Each discount is",
-          "o": ["9%", "9.5%", "10%", "19%"], "a": 2,
-          "h": "§5 — 0.81 is a perfect square. Take the square root of the surviving factor.",
-          "s": "(1 − d)² = 0.81 ⟹ 1 − d = 0.9 ⟹ each discount is <b>10%</b>. (19% is the single equivalent discount, planted.)"
-        }
-      ]
+     "id": "A3",
+     "t": "tita",
+     "q": "A man sells an article at a 15% loss for ₹1,020. Find the cost price (in ₹).",
+     "a": 1200,
+     "ad": "₹1,200",
+     "check": "1020/0.85",
+     "h": "§3 — a 15% loss means SP = 0.85 × CP.",
+     "s": "1020/0.85 = <b>₹1,200</b>."
     },
     {
-      "id": "D",
-      "name": "The two classic traps",
-      "qs": [
-        {
-          "id": "D1", "t": "mcq",
-          "q": "A man sells two articles at ₹960 each, gaining 20% on one and losing 20% on the other. Overall he",
-          "o": ["gains 4%", "loses 4%", "breaks even", "loses 2%"], "a": 1,
-          "h": "§6 — same SP with equal ± percentages is always a loss of x²/100 percent. Never a break-even.",
-          "s": "Loss = 20²/100 = <b>4%</b>. (CPs are ₹800 and ₹1,200, total ₹2,000 against an SP of ₹1,920.)"
-        },
-        {
-          "id": "D2", "t": "tita",
-          "q": "A man sells two horses at ₹4,000 each, gaining 25% on one and losing 25% on the other. Find his net loss (in ₹), to two decimals.",
-          "a": 533.33, "ad": "₹533.33", "check": "4000/1.25+4000/0.75-8000",
-          "h": "§6 — the percentage loss is 25²/100 = 6.25%, but the question asks for the rupee amount, so find both CPs.",
-          "s": "CPs = 4000/1.25 = ₹3,200 and 4000/0.75 = ₹5,333.33 ⟹ total CP ₹8,533.33 against SP ₹8,000 ⟹ loss = <b>₹533.33</b> (6.25% of CP ✓)."
-        },
-        {
-          "id": "D3", "t": "mcq",
-          "q": "An article is sold at a 20% profit. Had it been bought for 20% less and sold for ₹90 less, the profit would have been 25%. The original cost price was",
-          "o": ["₹400", "₹425", "₹450", "₹500"], "a": 2,
-          "h": "§6 — write both scenarios in terms of the same C and equate. Only one unknown is needed.",
-          "s": "1.2C − 90 = 1.25(0.8C) = C ⟹ 0.2C = 90 ⟹ C = <b>₹450</b>. Check: SP 540 vs new CP 360 and new SP 450 = 25% profit ✓"
-        },
-        {
-          "id": "D4", "t": "tita",
-          "q": "By selling an article at ₹720 a man loses as much as he would gain by selling it at ₹880. Find the cost price (in ₹).",
-          "a": 800, "ad": "₹800", "check": "(720+880)/2",
-          "h": "§6 — equal rupee loss and gain means the CP is exactly midway.",
-          "s": "CP = (720 + 880)/2 = <b>₹800</b>."
-        },
-        {
-          "id": "D5", "t": "mcq",
-          "q": "If the selling price of 10 articles equals the cost price of 12 articles, the profit percent is",
-          "o": ["16.67%", "20%", "25%", "30%"], "a": 1,
-          "h": "§9 — here the larger number is on the CP side, so it is a profit. SP/CP = 12/10.",
-          "s": "10 SP = 12 CP ⟹ SP/CP = 1.2 ⟹ profit = <b>20%</b>. (Reading it as 10/12 gives a 16.67% loss — the direction trap.)"
-        }
-      ]
+     "id": "A4",
+     "t": "mcq",
+     "q": "If the cost price of 20 articles equals the selling price of 16 articles, the profit percent is",
+     "o": [
+      "20%",
+      "25%",
+      "30%",
+      "33.33%"
+     ],
+     "a": 1,
+     "h": "§9 — the larger number sits on the CP side, so it's a profit. SP/CP = 20/16.",
+     "s": "20 CP = 16 SP ⟹ SP/CP = 5/4 ⟹ profit = <b>25%</b>."
     },
     {
-      "id": "E",
-      "name": "False weights and adulteration",
-      "qs": [
-        {
-          "id": "E1", "t": "tita",
-          "q": "A shopkeeper sells at cost price but uses a 900 g weight for 1 kg. Find his profit percent, to two decimals.",
-          "a": 11.11, "ad": "11.11%", "check": "100/900*100",
-          "h": "§7 — the base is what he actually gives, not what he claims. 100/900, not 100/1000.",
-          "s": "He gains 100 g on a true cost of 900 g ⟹ 100/900 = <b>11.11%</b>. (10% uses the wrong base.)"
-        },
-        {
-          "id": "E2", "t": "mcq",
-          "q": "A dealer professes to sell at cost price but uses an 800 g weight for a kilogram. His gain is",
-          "o": ["20%", "22.5%", "25%", "33.33%"], "a": 2,
-          "h": "§7 — 200/800.",
-          "s": "200/800 = <b>25%</b>. (20% would be 200/1000 — the wrong base.)"
-        },
-        {
-          "id": "E3", "t": "tita",
-          "q": "A shopkeeper uses a 950 g weight for 1 kg and also marks up his goods 20%. Find his overall profit percent, to two decimals.",
-          "a": 26.32, "ad": "26.32%", "check": "100*(1.2*1000/950-1)",
-          "h": "§7 + §12 — the markup and the short weight are independent factors, so multiply them.",
-          "s": "1.2 × (1000/950) = 1.2 × 1.05263 = 1.26316 ⟹ <b>26.32%</b>. (Adding 20 + 5.26 gives 25.26% — close enough to be a plausible wrong answer.)"
-        },
-        {
-          "id": "E4", "t": "mcq",
-          "q": "Milk costing ₹40/litre is mixed with water and the mixture sold at ₹40/litre, yielding a 25% profit. The ratio of water to milk in the mixture is",
-          "o": ["1 : 3", "1 : 4", "1 : 5", "2 : 5"], "a": 1,
-          "h": "§8 — the base is the pure quantity, not the mixture. Water is free, so profit % = water/milk.",
-          "s": "Profit 25% = 1/4 ⟹ water : milk = <b>1 : 4</b>. Check: 4 L milk costs ₹160, 5 L sells for ₹200, profit 40/160 = 25% ✓"
-        },
-        {
-          "id": "E5", "t": "tita",
-          "q": "A milkman mixes water with milk and sells the mixture at cost price, making a 20% profit. Find the percentage of water in the mixture, to two decimals.",
-          "a": 16.67, "ad": "16.67%", "check": "100/6",
-          "h": "§8 — 20% profit gives water : milk = 1 : 5, but the question asks for water as a share of the mixture.",
-          "s": "Water : milk = 1 : 5 ⟹ water as a fraction of the 6-part mixture = 1/6 = <b>16.67%</b>. (Answering 20% confuses the two bases.)"
-        }
-      ]
+     "id": "A5",
+     "t": "tita",
+     "q": "By selling an article for ₹900 a man loses 10%. At what price should he sell it to gain 20% (in ₹)?",
+     "a": 1200,
+     "ad": "₹1,200",
+     "check": "900/0.9*1.2",
+     "h": "§1 — recover CP first. Every profit or loss percentage refers back to that one number.",
+     "s": "CP = 900/0.9 = ₹1,000 ⟹ SP for 20% gain = <b>₹1,200</b>."
     },
     {
-      "id": "F",
-      "name": "Equating goods, bulk offers and combined chains",
-      "qs": [
-        {
-          "id": "F1", "t": "mcq",
-          "q": "\"Buy 3 get 1 free\" is equivalent to a discount of",
-          "o": ["25%", "33.33%", "20%", "30%"], "a": 0,
-          "h": "§10 — the base is what you receive (4 items), not what you pay for (3).",
-          "s": "You get 4 for the price of 3 ⟹ 1/4 = <b>25%</b>. (33.33% uses 3 as the base — the planted error.)"
-        },
-        {
-          "id": "F2", "t": "tita",
-          "q": "A shop offers \"buy 4 get 2 free\". Find the equivalent discount percent, to two decimals.",
-          "a": 33.33, "ad": "33.33%", "check": "200/6",
-          "h": "§10 — 2 free out of the 6 you take home.",
-          "s": "2/6 = <b>33.33%</b>."
-        },
-        {
-          "id": "F3", "t": "mcq",
-          "q": "If the cost price of 15 articles equals the selling price of 12 articles, then there is a",
-          "o": ["20% loss", "20% profit", "25% profit", "25% loss"], "a": 2,
-          "h": "§9 — larger number on the CP side means a profit. Then SP/CP = 15/12.",
-          "s": "SP/CP = 15/12 = 1.25 ⟹ a <b>25% profit</b>."
-        },
-        {
-          "id": "F4", "t": "tita",
-          "q": "A shopkeeper marks his goods 50% above cost, allows a 20% discount, and finds 10% of his stock spoils and cannot be sold. Find his overall profit percent.",
-          "a": 8, "ad": "8%", "check": "100*(0.9*1.5*0.8-1)",
-          "h": "§12 — markup and discount act on the price; wastage acts on the quantity. Assume 100 units at ₹1 each.",
-          "s": "Cost = ₹100. He sells 90 units at 1.5 × 0.8 = ₹1.20 each = ₹108 ⟹ profit = <b>8%</b>."
-        },
-        {
-          "id": "F5", "t": "mcq",
-          "q": "A trader sells two items at the same price, one at a 25% profit and the other at a 25% loss, with an overall loss of ₹500. His total selling price was",
-          "o": ["₹6,000", "₹7,000", "₹7,500", "₹8,000"], "a": 2,
-          "h": "§6 + §11 — the loss is 6.25% of the total CP, and the total CP is expressible in terms of the common SP.",
-          "s": "With each SP = x: CPs are 0.8x and (4/3)x ⟹ total CP = (32/15)x against total SP = 2x ⟹ loss = (2/15)x = 500 ⟹ x = ₹3,750 ⟹ total SP = <b>₹7,500</b>."
-        }
-      ]
-    },
-    {
-      "id": "M",
-      "name": "exam feel (15 minutes)",
-      "block": 900,
-      "qs": [
-        {
-          "id": "M1", "t": "mcq",
-          "q": "A shopkeeper marks goods 25% above cost and allows a 10% discount. His profit percent is",
-          "o": ["10%", "12.5%", "15%", "15.5%"], "a": 1,
-          "h": "Chain 1.25 and 0.9.",
-          "s": "1.25 × 0.9 = 1.125 ⟹ <b>12.5%</b>."
-        },
-        {
-          "id": "M2", "t": "tita",
-          "q": "An article costing ₹2,400 is sold at a 15% loss. Find the selling price (in ₹).",
-          "a": 2040, "ad": "₹2,040", "check": "2400*0.85",
-          "h": "Loss is on CP.",
-          "s": "2400 × 0.85 = <b>₹2,040</b>."
-        },
-        {
-          "id": "M3", "t": "mcq",
-          "q": "Successive discounts of 10%, 20% and 25% are equivalent to a single discount of",
-          "o": ["45%", "46%", "50%", "55%"], "a": 1,
-          "h": "Chain all three factors.",
-          "s": "0.9 × 0.8 × 0.75 = 0.54 ⟹ <b>46%</b>. (The naive sum 55% is planted.)"
-        },
-        {
-          "id": "M4", "t": "tita",
-          "q": "A dishonest trader sells at cost price but gives 750 g for 1 kg. Find his profit percent, to two decimals.",
-          "a": 33.33, "ad": "33.33%", "check": "250/750*100",
-          "h": "The base is the 750 g he actually gives.",
-          "s": "250/750 = <b>33.33%</b>."
-        },
-        {
-          "id": "M5", "t": "mcq",
-          "q": "A man buys 60 apples for ₹300 and sells them at 5 for ₹30. His profit percent is",
-          "o": ["15%", "20%", "25%", "30%"], "a": 1,
-          "h": "Put both sides on the same 60 apples.",
-          "s": "SP = 12 × 30 = ₹360 against CP ₹300 ⟹ <b>20%</b>."
-        },
-        {
-          "id": "M6", "t": "tita",
-          "q": "A shopkeeper wants a 25% profit after giving a 20% discount on the marked price. By what percent above cost must he mark the goods?",
-          "a": 56.25, "ad": "56.25%", "check": "100*(1.25/0.8-1)",
-          "h": "Markup factor = profit factor ÷ discount factor.",
-          "s": "1.25/0.8 = 1.5625 ⟹ mark up by <b>56.25%</b>."
-        },
-        {
-          "id": "M7", "t": "mcq",
-          "q": "Two articles are sold at ₹1,200 each, one at a 20% profit and the other at a 20% loss. The net result is",
-          "o": ["a loss of ₹100", "a gain of ₹100", "no profit no loss", "a loss of ₹200"], "a": 0,
-          "h": "The percentage is 4%; convert it to rupees via the total CP.",
-          "s": "CPs = ₹1,000 and ₹1,500 ⟹ total CP ₹2,500 against SP ₹2,400 ⟹ <b>a loss of ₹100</b> (4% ✓)."
-        },
-        {
-          "id": "M8", "t": "tita",
-          "q": "By selling 45 lemons for ₹40 a man loses 20%. How many lemons must he sell for ₹24 to gain 20%?",
-          "a": 18, "check": "24/((40/45)/0.8*1.2)",
-          "h": "Work per lemon: SP, then CP, then the new SP.",
-          "s": "SP per lemon = 40/45 = 8/9 ⟹ CP = (8/9)/0.8 = 10/9. For a 20% gain, SP = 1.2 × 10/9 = 4/3 ⟹ 24 ÷ 4/3 = <b>18 lemons</b>."
-        },
-        {
-          "id": "M9", "t": "mcq",
-          "q": "The marked price of an article is 20% above its cost price. After a discount the trader still makes a 2% profit. The discount is",
-          "o": ["12%", "15%", "18%", "20%"], "a": 1,
-          "h": "Discount factor = profit factor ÷ markup factor.",
-          "s": "1.02/1.2 = 0.85 ⟹ discount = <b>15%</b>."
-        },
-        {
-          "id": "M10", "t": "tita",
-          "q": "A man buys milk at ₹30/litre, adds water, and sells the mixture at ₹36/litre for a 50% profit. Find the litres of water added per litre of milk.",
-          "a": 0.25, "check": "45/36-1",
-          "h": "Water is free, so the cost stays at ₹30 per litre of milk.",
-          "s": "Per litre of milk: cost ₹30, required revenue ₹45 ⟹ mixture volume = 45/36 = 1.25 L ⟹ water = <b>0.25 litres</b>."
-        }
-      ]
+     "id": "A6",
+     "t": "mcq",
+     "q": "A trader's profit is 25% of the cost price. His profit as a percentage of the selling price is",
+     "o": [
+      "16.67%",
+      "20%",
+      "25%",
+      "33.33%"
+     ],
+     "a": 1,
+     "h": "§2 — the base changes from CP to SP. Take CP = 100.",
+     "s": "CP 100, profit 25, SP 125 ⟹ 25/125 = <b>20%</b>."
     }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Marked price and a single discount",
+   "qs": [
+    {
+     "id": "B1",
+     "t": "tita",
+     "q": "An article marked at ₹1,500 is sold at a 12% discount. Find the selling price (in ₹).",
+     "a": 1320,
+     "ad": "₹1,320",
+     "check": "1500*0.88",
+     "h": "§4 — discount is on MP, always.",
+     "s": "1500 × 0.88 = <b>₹1,320</b>."
+    },
+    {
+     "id": "B2",
+     "t": "mcq",
+     "q": "A shopkeeper marks his goods 40% above cost and allows a 25% discount. His profit percent is",
+     "o": [
+      "5%",
+      "10%",
+      "15%",
+      "20%"
+     ],
+     "a": 0,
+     "h": "§4 — chain 1.4 and 0.75. The markup and the discount act on different bases, so they never simply subtract.",
+     "s": "1.4 × 0.75 = 1.05 ⟹ <b>5%</b> profit. (40 − 25 = 15% is the planted error.)"
+    },
+    {
+     "id": "B3",
+     "t": "tita",
+     "q": "A shopkeeper wants a 20% profit after allowing a 20% discount. By what percent above cost must he mark his goods?",
+     "a": 50,
+     "ad": "50%",
+     "check": "100*(1.2/0.8-1)",
+     "h": "§4 read backwards — markup factor = (profit factor)/(discount factor).",
+     "s": "1.2/0.8 = 1.5 ⟹ mark up by <b>50%</b>. (Answering 40% assumes the two 20%s cancel.)"
+    },
+    {
+     "id": "B4",
+     "t": "mcq",
+     "q": "An article marked at ₹800 is sold for ₹680. The rate of discount is",
+     "o": [
+      "12%",
+      "15%",
+      "17.65%",
+      "20%"
+     ],
+     "a": 1,
+     "h": "§4 — divide the discount by the MP, not by the SP. One option is the SP-based answer.",
+     "s": "120/800 = <b>15%</b>. (120/680 = 17.65% uses the wrong base.)"
+    },
+    {
+     "id": "B5",
+     "t": "tita",
+     "q": "A shopkeeper marks an article 30% above cost and gives a discount, ending with a 4% profit. Find the discount percent.",
+     "a": 20,
+     "ad": "20%",
+     "check": "100*(1-1.04/1.3)",
+     "h": "§4 — the discount factor is (profit factor)/(markup factor).",
+     "s": "1.04/1.3 = 0.8 ⟹ discount = <b>20%</b>."
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "Successive discounts",
+   "qs": [
+    {
+     "id": "C1",
+     "t": "mcq",
+     "q": "Successive discounts of 20% and 10% are equivalent to a single discount of",
+     "o": [
+      "26%",
+      "28%",
+      "30%",
+      "32%"
+     ],
+     "a": 1,
+     "h": "§5 — 0.8 × 0.9. The naive sum 30% is planted.",
+     "s": "0.8 × 0.9 = 0.72 ⟹ a single discount of <b>28%</b>."
+    },
+    {
+     "id": "C2",
+     "t": "tita",
+     "q": "An article marked at ₹2,500 is sold after successive discounts of 20%, 10% and 5%. Find the selling price (in ₹).",
+     "a": 1710,
+     "ad": "₹1,710",
+     "check": "2500*0.8*0.9*0.95",
+     "h": "§5 — chain all three factors, then multiply once.",
+     "s": "2500 × 0.8 × 0.9 × 0.95 = 2500 × 0.684 = <b>₹1,710</b>."
+    },
+    {
+     "id": "C3",
+     "t": "mcq",
+     "q": "Which is the better deal for a buyer: a single discount of 30%, or successive discounts of 20% and 10%?",
+     "o": [
+      "The single 30% discount",
+      "The successive discounts",
+      "They are identical",
+      "Cannot be determined"
+     ],
+     "a": 0,
+     "h": "§5 — compare the surviving factors 0.70 and 0.72. Smaller is better for the buyer.",
+     "s": "0.70 vs 0.8 × 0.9 = 0.72 ⟹ <b>the single 30% discount</b> is better. Successive discounts always undershoot their sum."
+    },
+    {
+     "id": "C4",
+     "t": "tita",
+     "q": "Successive discounts of 25% and x% are equivalent to a single discount of 40%. Find x.",
+     "a": 20,
+     "ad": "20%",
+     "check": "100*(1-0.6/0.75)",
+     "h": "§5 — set 0.75 × (1 − x/100) = 0.60 and solve for the second factor.",
+     "s": "0.75(1 − x/100) = 0.60 ⟹ 1 − x/100 = 0.8 ⟹ x = <b>20%</b>. (40 − 25 = 15% is the planted error.)"
+    },
+    {
+     "id": "C5",
+     "t": "mcq",
+     "q": "After two equal successive discounts, an article marked at ₹10,000 sells for ₹8,100. Each discount is",
+     "o": [
+      "9%",
+      "9.5%",
+      "10%",
+      "19%"
+     ],
+     "a": 2,
+     "h": "§5 — 0.81 is a perfect square. Take the square root of the surviving factor.",
+     "s": "(1 − d)² = 0.81 ⟹ 1 − d = 0.9 ⟹ each discount is <b>10%</b>. (19% is the single equivalent discount, planted.)"
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "name": "The two classic traps",
+   "qs": [
+    {
+     "id": "D1",
+     "t": "mcq",
+     "q": "A man sells two articles at ₹960 each, gaining 20% on one and losing 20% on the other. Overall he",
+     "o": [
+      "gains 4%",
+      "loses 4%",
+      "breaks even",
+      "loses 2%"
+     ],
+     "a": 1,
+     "h": "§6 — same SP with equal ± percentages is always a loss of x²/100 percent. Never a break-even.",
+     "s": "Loss = 20²/100 = <b>4%</b>. (CPs are ₹800 and ₹1,200, total ₹2,000 against an SP of ₹1,920.)"
+    },
+    {
+     "id": "D2",
+     "t": "tita",
+     "q": "A man sells two horses at ₹4,000 each, gaining 25% on one and losing 25% on the other. Find his net loss (in ₹), to two decimals.",
+     "a": 533.33,
+     "ad": "₹533.33",
+     "check": "4000/1.25+4000/0.75-8000",
+     "h": "§6 — the percentage loss is 25²/100 = 6.25%, but the question asks for the rupee amount, so find both CPs.",
+     "s": "CPs = 4000/1.25 = ₹3,200 and 4000/0.75 = ₹5,333.33 ⟹ total CP ₹8,533.33 against SP ₹8,000 ⟹ loss = <b>₹533.33</b> (6.25% of CP ✓)."
+    },
+    {
+     "id": "D3",
+     "t": "mcq",
+     "q": "An article is sold at a 20% profit. Had it been bought for 20% less and sold for ₹90 less, the profit would have been 25%. The original cost price was",
+     "o": [
+      "₹400",
+      "₹425",
+      "₹450",
+      "₹500"
+     ],
+     "a": 2,
+     "h": "§6 — write both scenarios in terms of the same C and equate. Only one unknown is needed.",
+     "s": "1.2C − 90 = 1.25(0.8C) = C ⟹ 0.2C = 90 ⟹ C = <b>₹450</b>. Check: SP 540 vs new CP 360 and new SP 450 = 25% profit ✓"
+    },
+    {
+     "id": "D4",
+     "t": "tita",
+     "q": "By selling an article at ₹720 a man loses as much as he would gain by selling it at ₹880. Find the cost price (in ₹).",
+     "a": 800,
+     "ad": "₹800",
+     "check": "(720+880)/2",
+     "h": "§6 — equal rupee loss and gain means the CP is exactly midway.",
+     "s": "CP = (720 + 880)/2 = <b>₹800</b>."
+    },
+    {
+     "id": "D5",
+     "t": "mcq",
+     "q": "If the selling price of 10 articles equals the cost price of 12 articles, the profit percent is",
+     "o": [
+      "16.67%",
+      "20%",
+      "25%",
+      "30%"
+     ],
+     "a": 1,
+     "h": "§9 — here the larger number is on the CP side, so it is a profit. SP/CP = 12/10.",
+     "s": "10 SP = 12 CP ⟹ SP/CP = 1.2 ⟹ profit = <b>20%</b>. (Reading it as 10/12 gives a 16.67% loss — the direction trap.)"
+    }
+   ]
+  },
+  {
+   "id": "E",
+   "name": "False weights and adulteration",
+   "qs": [
+    {
+     "id": "E1",
+     "t": "tita",
+     "q": "A shopkeeper sells at cost price but uses a 900 g weight for 1 kg. Find his profit percent, to two decimals.",
+     "a": 11.11,
+     "ad": "11.11%",
+     "check": "100/900*100",
+     "h": "§7 — the base is what he actually gives, not what he claims. 100/900, not 100/1000.",
+     "s": "He gains 100 g on a true cost of 900 g ⟹ 100/900 = <b>11.11%</b>. (10% uses the wrong base.)"
+    },
+    {
+     "id": "E2",
+     "t": "mcq",
+     "q": "A dealer professes to sell at cost price but uses an 800 g weight for a kilogram. His gain is",
+     "o": [
+      "20%",
+      "22.5%",
+      "25%",
+      "33.33%"
+     ],
+     "a": 2,
+     "h": "§7 — 200/800.",
+     "s": "200/800 = <b>25%</b>. (20% would be 200/1000 — the wrong base.)"
+    },
+    {
+     "id": "E3",
+     "t": "tita",
+     "q": "A shopkeeper uses a 950 g weight for 1 kg and also marks up his goods 20%. Find his overall profit percent, to two decimals.",
+     "a": 26.32,
+     "ad": "26.32%",
+     "check": "100*(1.2*1000/950-1)",
+     "h": "§7 + §12 — the markup and the short weight are independent factors, so multiply them.",
+     "s": "1.2 × (1000/950) = 1.2 × 1.05263 = 1.26316 ⟹ <b>26.32%</b>. (Adding 20 + 5.26 gives 25.26% — close enough to be a plausible wrong answer.)"
+    },
+    {
+     "id": "E4",
+     "t": "mcq",
+     "q": "Milk costing ₹40/litre is mixed with water and the mixture sold at ₹40/litre, yielding a 25% profit. The ratio of water to milk in the mixture is",
+     "o": [
+      "1 : 3",
+      "1 : 4",
+      "1 : 5",
+      "2 : 5"
+     ],
+     "a": 1,
+     "h": "§8 — the base is the pure quantity, not the mixture. Water is free, so profit % = water/milk.",
+     "s": "Profit 25% = 1/4 ⟹ water : milk = <b>1 : 4</b>. Check: 4 L milk costs ₹160, 5 L sells for ₹200, profit 40/160 = 25% ✓"
+    },
+    {
+     "id": "E5",
+     "t": "tita",
+     "q": "A milkman mixes water with milk and sells the mixture at cost price, making a 20% profit. Find the percentage of water in the mixture, to two decimals.",
+     "a": 16.67,
+     "ad": "16.67%",
+     "check": "100/6",
+     "h": "§8 — 20% profit gives water : milk = 1 : 5, but the question asks for water as a share of the mixture.",
+     "s": "Water : milk = 1 : 5 ⟹ water as a fraction of the 6-part mixture = 1/6 = <b>16.67%</b>. (Answering 20% confuses the two bases.)"
+    }
+   ]
+  },
+  {
+   "id": "F",
+   "name": "Equating goods, bulk offers and combined chains",
+   "qs": [
+    {
+     "id": "F1",
+     "t": "mcq",
+     "q": "\"Buy 3 get 1 free\" is equivalent to a discount of",
+     "o": [
+      "25%",
+      "33.33%",
+      "20%",
+      "30%"
+     ],
+     "a": 0,
+     "h": "§10 — the base is what you receive (4 items), not what you pay for (3).",
+     "s": "You get 4 for the price of 3 ⟹ 1/4 = <b>25%</b>. (33.33% uses 3 as the base — the planted error.)"
+    },
+    {
+     "id": "F2",
+     "t": "tita",
+     "q": "A shop offers \"buy 4 get 2 free\". Find the equivalent discount percent, to two decimals.",
+     "a": 33.33,
+     "ad": "33.33%",
+     "check": "200/6",
+     "h": "§10 — 2 free out of the 6 you take home.",
+     "s": "2/6 = <b>33.33%</b>."
+    },
+    {
+     "id": "F3",
+     "t": "mcq",
+     "q": "If the cost price of 15 articles equals the selling price of 12 articles, then there is a",
+     "o": [
+      "20% loss",
+      "20% profit",
+      "25% profit",
+      "25% loss"
+     ],
+     "a": 2,
+     "h": "§9 — larger number on the CP side means a profit. Then SP/CP = 15/12.",
+     "s": "SP/CP = 15/12 = 1.25 ⟹ a <b>25% profit</b>."
+    },
+    {
+     "id": "F4",
+     "t": "tita",
+     "q": "A shopkeeper marks his goods 50% above cost, allows a 20% discount, and finds 10% of his stock spoils and cannot be sold. Find his overall profit percent.",
+     "a": 8,
+     "ad": "8%",
+     "check": "100*(0.9*1.5*0.8-1)",
+     "h": "§12 — markup and discount act on the price; wastage acts on the quantity. Assume 100 units at ₹1 each.",
+     "s": "Cost = ₹100. He sells 90 units at 1.5 × 0.8 = ₹1.20 each = ₹108 ⟹ profit = <b>8%</b>."
+    },
+    {
+     "id": "F5",
+     "t": "mcq",
+     "q": "A trader sells two items at the same price, one at a 25% profit and the other at a 25% loss, with an overall loss of ₹500. His total selling price was",
+     "o": [
+      "₹6,000",
+      "₹7,000",
+      "₹7,500",
+      "₹8,000"
+     ],
+     "a": 2,
+     "h": "§6 + §11 — the loss is 6.25% of the total CP, and the total CP is expressible in terms of the common SP.",
+     "s": "With each SP = x: CPs are 0.8x and (4/3)x ⟹ total CP = (32/15)x against total SP = 2x ⟹ loss = (2/15)x = 500 ⟹ x = ₹3,750 ⟹ total SP = <b>₹7,500</b>."
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (15 minutes)",
+   "block": 900,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "mcq",
+     "q": "A shopkeeper marks goods 25% above cost and allows a 10% discount. His profit percent is",
+     "o": [
+      "10%",
+      "12.5%",
+      "15%",
+      "15.5%"
+     ],
+     "a": 1,
+     "h": "Chain 1.25 and 0.9.",
+     "s": "1.25 × 0.9 = 1.125 ⟹ <b>12.5%</b>."
+    },
+    {
+     "id": "M2",
+     "t": "tita",
+     "q": "An article costing ₹2,400 is sold at a 15% loss. Find the selling price (in ₹).",
+     "a": 2040,
+     "ad": "₹2,040",
+     "check": "2400*0.85",
+     "h": "Loss is on CP.",
+     "s": "2400 × 0.85 = <b>₹2,040</b>."
+    },
+    {
+     "id": "M3",
+     "t": "mcq",
+     "q": "Successive discounts of 10%, 20% and 25% are equivalent to a single discount of",
+     "o": [
+      "45%",
+      "46%",
+      "50%",
+      "55%"
+     ],
+     "a": 1,
+     "h": "Chain all three factors.",
+     "s": "0.9 × 0.8 × 0.75 = 0.54 ⟹ <b>46%</b>. (The naive sum 55% is planted.)"
+    },
+    {
+     "id": "M4",
+     "t": "tita",
+     "q": "A dishonest trader sells at cost price but gives 750 g for 1 kg. Find his profit percent, to two decimals.",
+     "a": 33.33,
+     "ad": "33.33%",
+     "check": "250/750*100",
+     "h": "The base is the 750 g he actually gives.",
+     "s": "250/750 = <b>33.33%</b>."
+    },
+    {
+     "id": "M5",
+     "t": "mcq",
+     "q": "A man buys 60 apples for ₹300 and sells them at 5 for ₹30. His profit percent is",
+     "o": [
+      "15%",
+      "20%",
+      "25%",
+      "30%"
+     ],
+     "a": 1,
+     "h": "Put both sides on the same 60 apples.",
+     "s": "SP = 12 × 30 = ₹360 against CP ₹300 ⟹ <b>20%</b>."
+    },
+    {
+     "id": "M6",
+     "t": "tita",
+     "q": "A shopkeeper wants a 25% profit after giving a 20% discount on the marked price. By what percent above cost must he mark the goods?",
+     "a": 56.25,
+     "ad": "56.25%",
+     "check": "100*(1.25/0.8-1)",
+     "h": "Markup factor = profit factor ÷ discount factor.",
+     "s": "1.25/0.8 = 1.5625 ⟹ mark up by <b>56.25%</b>."
+    },
+    {
+     "id": "M7",
+     "t": "mcq",
+     "q": "Two articles are sold at ₹1,200 each, one at a 20% profit and the other at a 20% loss. The net result is",
+     "o": [
+      "a loss of ₹100",
+      "a gain of ₹100",
+      "no profit no loss",
+      "a loss of ₹200"
+     ],
+     "a": 0,
+     "h": "The percentage is 4%; convert it to rupees via the total CP.",
+     "s": "CPs = ₹1,000 and ₹1,500 ⟹ total CP ₹2,500 against SP ₹2,400 ⟹ <b>a loss of ₹100</b> (4% ✓)."
+    },
+    {
+     "id": "M8",
+     "t": "tita",
+     "q": "By selling 45 lemons for ₹40 a man loses 20%. How many lemons must he sell for ₹24 to gain 20%?",
+     "a": 18,
+     "check": "24/((40/45)/0.8*1.2)",
+     "h": "Work per lemon: SP, then CP, then the new SP.",
+     "s": "SP per lemon = 40/45 = 8/9 ⟹ CP = (8/9)/0.8 = 10/9. For a 20% gain, SP = 1.2 × 10/9 = 4/3 ⟹ 24 ÷ 4/3 = <b>18 lemons</b>."
+    },
+    {
+     "id": "M9",
+     "t": "mcq",
+     "q": "The marked price of an article is 20% above its cost price. After a discount the trader still makes a 2% profit. The discount is",
+     "o": [
+      "12%",
+      "15%",
+      "18%",
+      "20%"
+     ],
+     "a": 1,
+     "h": "Discount factor = profit factor ÷ markup factor.",
+     "s": "1.02/1.2 = 0.85 ⟹ discount = <b>15%</b>."
+    },
+    {
+     "id": "M10",
+     "t": "tita",
+     "q": "A man buys milk at ₹30/litre, adds water, and sells the mixture at ₹36/litre for a 50% profit. Find the litres of water added per litre of milk.",
+     "a": 0.25,
+     "check": "45/36-1",
+     "h": "Water is free, so the cost stays at ₹30 per litre of milk.",
+     "s": "Per litre of milk: cost ₹30, required revenue ₹45 ⟹ mixture volume = 45/36 = 1.25 L ⟹ water = <b>0.25 litres</b>."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A2, A3, A6, B4",
+   "applying a percentage to the wrong base — profit is on CP, discount is on MP (§2)"
   ],
-  "audit": [
-    ["A2, A3, A6, B4", "applying a percentage to the wrong base — profit is on CP, discount is on MP (§2)"],
-    ["A4, D5, F3", "getting the direction wrong when equating goods; the larger number's side decides profit vs loss (§9)"],
-    ["B2, B3, B5, M1, M6, M9", "treating markup and discount as cancelling because the percentages match — the bases differ (§4)"],
-    ["C1, C2, C4, M3", "adding successive discounts instead of chaining the factors (§5)"],
-    ["C5", "reporting the combined discount where each individual one was asked"],
-    ["D1, D2, M7", "assuming equal ± percentages on the same SP break even; it is always an x²/100 loss (§6)"],
-    ["D3", "introducing two unknowns where one C carries both scenarios"],
-    ["E1, E2, M4", "dividing the short weight's gain by 1000 instead of by what was actually given (§7)"],
-    ["E4, E5", "using the mixture as the base where the pure quantity is the base, or vice versa (§8)"],
-    ["F1, F2", "using the number paid for as the base instead of the number received (§10)"],
-    ["F4", "applying wastage to the price rather than to the quantity sold (§12)"],
-    ["M8, M10", "abandoning per-unit working, which is what keeps these two tractable"]
+  [
+   "A4, D5, F3",
+   "getting the direction wrong when equating goods; the larger number's side decides profit vs loss (§9)"
+  ],
+  [
+   "B2, B3, B5, M1, M6, M9",
+   "treating markup and discount as cancelling because the percentages match — the bases differ (§4)"
+  ],
+  [
+   "C1, C2, C4, M3",
+   "adding successive discounts instead of chaining the factors (§5)"
+  ],
+  [
+   "C5",
+   "reporting the combined discount where each individual one was asked"
+  ],
+  [
+   "D1, D2, M7",
+   "assuming equal ± percentages on the same SP break even; it is always an x²/100 loss (§6)"
+  ],
+  [
+   "D3",
+   "introducing two unknowns where one C carries both scenarios"
+  ],
+  [
+   "E1, E2, M4",
+   "dividing the short weight's gain by 1000 instead of by what was actually given (§7)"
+  ],
+  [
+   "E4, E5",
+   "using the mixture as the base where the pure quantity is the base, or vice versa (§8)"
+  ],
+  [
+   "F1, F2",
+   "using the number paid for as the base instead of the number received (§10)"
+  ],
+  [
+   "F4",
+   "applying wastage to the price rather than to the quantity sold (§12)"
+  ],
+  [
+   "M8, M10",
+   "abandoning per-unit working, which is what keeps these two tractable"
   ]
+ ]
 }

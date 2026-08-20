@@ -9,29 +9,29 @@ Notes and practice material for CAT quant prep.
 
 | File | Topic |
 |---|---|
-| [Algebra.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Algebra.md) | Algebra |
-| [Calendars.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Calendars.md) | Calendars |
-| [Circles.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Circles.md) | Circles |
-| [Clocks.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Clocks.md) | Clocks |
-| [Coordinate-Geometry.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Coordinate-Geometry.md) | Coordinate Geometry |
-| [Functions-and-Graphs.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Functions-and-Graphs.md) | Functions & Graphs |
-| [Logarithms.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Logarithms.md) | Logarithms |
-| [Mensuration.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Mensuration.md) | Mensuration |
-| [Means-and-Weighted-Averages.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Means-and-Weighted-Averages.md) | Means & Weighted Averages |
-| [Mixtures-and-Alligation.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Mixtures-and-Alligation.md) | Mixtures & Alligation |
-| [Number-System.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Number-System.md) | Number System |
-| [Percentages.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Percentages.md) | Percentages |
-| [PnC-Probability.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/PnC-Probability.md) | Permutations, Combinations & Probability |
-| [Profit-Loss-Discount.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Profit-Loss-Discount.md) | Profit, Loss & Discount |
-| [Progressions-AP-GP.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Progressions-AP-GP.md) | Progressions — AP, GP, HP |
-| [Quadrilaterals-and-Polygons.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Quadrilaterals-and-Polygons.md) | Quadrilaterals & Polygons |
-| [Races.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Races.md) | Races |
-| [Ratio-Proportion-Variation.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Ratio-Proportion-Variation.md) | Ratio, Proportion & Variation |
-| [Set-Theory-Venn.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Set-Theory-Venn.md) | Set Theory & Venn Diagrams |
-| [Simple-Compound-Interest.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Simple-Compound-Interest.md) | Simple & Compound Interest |
-| [Time-Speed-Distance.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Time-Speed-Distance.md) | Time, Speed & Distance (incl. circular tracks, clocks) |
-| [Triangles.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Triangles.md) | Triangles |
-| [Time-Work-Pipes-Cisterns.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Time-Work-Pipes-Cisterns.md) | Time & Work, Pipes & Cisterns |
+| [01-Number-System.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/01-Number-System.md) | Number System |
+| [02-Percentages.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/02-Percentages.md) | Percentages |
+| [03-Ratio-Proportion-Variation.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/03-Ratio-Proportion-Variation.md) | Ratio, Proportion & Variation |
+| [04-Means-and-Weighted-Averages.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/04-Means-and-Weighted-Averages.md) | Means & Weighted Averages |
+| [05-Mixtures-and-Alligation.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/05-Mixtures-and-Alligation.md) | Mixtures & Alligation |
+| [06-Profit-Loss-Discount.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/06-Profit-Loss-Discount.md) | Profit, Loss & Discount |
+| [07-Simple-Compound-Interest.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/07-Simple-Compound-Interest.md) | Simple & Compound Interest |
+| [08-Time-Speed-Distance.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/08-Time-Speed-Distance.md) | Time, Speed & Distance (incl. circular tracks, clocks) |
+| [09-Races.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/09-Races.md) | Races |
+| [10-Clocks.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/10-Clocks.md) | Clocks |
+| [11-Time-Work-Pipes-Cisterns.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/11-Time-Work-Pipes-Cisterns.md) | Time & Work, Pipes & Cisterns |
+| [12-Calendars.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/12-Calendars.md) | Calendars |
+| [13-Algebra.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/13-Algebra.md) | Algebra |
+| [14-Logarithms.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/14-Logarithms.md) | Logarithms |
+| [15-Progressions-AP-GP.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/15-Progressions-AP-GP.md) | Progressions — AP, GP, HP |
+| [16-Functions-and-Graphs.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/16-Functions-and-Graphs.md) | Functions & Graphs |
+| [17-Triangles.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/17-Triangles.md) | Triangles |
+| [18-Circles.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/18-Circles.md) | Circles |
+| [19-Quadrilaterals-and-Polygons.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/19-Quadrilaterals-and-Polygons.md) | Quadrilaterals & Polygons |
+| [20-Mensuration.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/20-Mensuration.md) | Mensuration |
+| [21-Coordinate-Geometry.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/21-Coordinate-Geometry.md) | Coordinate Geometry |
+| [22-Set-Theory-Venn.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/22-Set-Theory-Venn.md) | Set Theory & Venn Diagrams |
+| [23-PnC-Probability.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/23-PnC-Probability.md) | Permutations, Combinations & Probability |
 
 ### Quant/Practice
 
@@ -39,26 +39,26 @@ Every topic file except Set Theory & Venn Diagrams, Coordinate Geometry and Func
 
 | File | Questions |
 |---|---|
-| [Number-System-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Number-System-Practice.md) | 43 |
-| [Algebra-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Algebra-Practice.md) | 42 |
-| [Logarithms-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Logarithms-Practice.md) | 37 |
-| [Progressions-AP-GP-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Progressions-AP-GP-Practice.md) | 37 |
-| [Percentages-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Percentages-Practice.md) | 43 |
-| [Ratio-Proportion-Variation-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Ratio-Proportion-Variation-Practice.md) | 48 |
-| [Means-and-Weighted-Averages-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Means-and-Weighted-Averages-Practice.md) | 45 |
-| [Mixtures-and-Alligation-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Mixtures-and-Alligation-Practice.md) | 42 |
-| [Profit-Loss-Discount-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Profit-Loss-Discount-Practice.md) | 41 |
-| [Simple-Compound-Interest-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Simple-Compound-Interest-Practice.md) | 56 |
-| [Time-Speed-Distance-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Time-Speed-Distance-Practice.md) | 55 |
-| [Races-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Races-Practice.md) | 32 |
-| [Clocks-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Clocks-Practice.md) | 28 |
-| [Calendars-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Calendars-Practice.md) | 28 |
-| [Time-Work-Pipes-Cisterns-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Time-Work-Pipes-Cisterns-Practice.md) | 41 |
-| [Triangles-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Triangles-Practice.md) | 9 |
-| [Circles-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Circles-Practice.md) | 7 |
-| [Quadrilaterals-and-Polygons-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Quadrilaterals-and-Polygons-Practice.md) | 13 |
-| [Mensuration-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/Mensuration-Practice.md) | 9 |
-| [PnC-Probability-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/PnC-Probability-Practice.md) | 36 |
+| [01-Number-System-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/01-Number-System-Practice.md) | 43 |
+| [02-Percentages-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/02-Percentages-Practice.md) | 43 |
+| [03-Ratio-Proportion-Variation-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/03-Ratio-Proportion-Variation-Practice.md) | 48 |
+| [04-Means-and-Weighted-Averages-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/04-Means-and-Weighted-Averages-Practice.md) | 45 |
+| [05-Mixtures-and-Alligation-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/05-Mixtures-and-Alligation-Practice.md) | 42 |
+| [06-Profit-Loss-Discount-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/06-Profit-Loss-Discount-Practice.md) | 41 |
+| [07-Simple-Compound-Interest-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/07-Simple-Compound-Interest-Practice.md) | 56 |
+| [08-Time-Speed-Distance-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/08-Time-Speed-Distance-Practice.md) | 55 |
+| [09-Races-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/09-Races-Practice.md) | 32 |
+| [10-Clocks-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/10-Clocks-Practice.md) | 28 |
+| [11-Time-Work-Pipes-Cisterns-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/11-Time-Work-Pipes-Cisterns-Practice.md) | 41 |
+| [12-Calendars-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/12-Calendars-Practice.md) | 28 |
+| [13-Algebra-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/13-Algebra-Practice.md) | 42 |
+| [14-Logarithms-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/14-Logarithms-Practice.md) | 37 |
+| [15-Progressions-AP-GP-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/15-Progressions-AP-GP-Practice.md) | 37 |
+| [17-Triangles-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/17-Triangles-Practice.md) | 9 |
+| [18-Circles-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/18-Circles-Practice.md) | 7 |
+| [19-Quadrilaterals-and-Polygons-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/19-Quadrilaterals-and-Polygons-Practice.md) | 13 |
+| [20-Mensuration-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/20-Mensuration-Practice.md) | 9 |
+| [23-PnC-Probability-Practice.md](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/23-PnC-Probability-Practice.md) | 36 |
 | **[CAT-Quant-Test.html](https://github.com/mehullakra/CAT-Prep/blob/main/Quant/Practice/CAT-Quant-Test.html)** | **Interactive test over all 20 topics — 692 questions**, practice or exam mode, per-set or full-topic runs |
 
 ### Quant/Reference

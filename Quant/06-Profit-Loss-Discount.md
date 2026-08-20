@@ -160,7 +160,7 @@ The adulterant is free — usually water, sand, or a zero-cost substitute. The p
 
 The base is the pure quantity — what he paid for — not the mixture.
 
-**If the adulterant has a cost**, this becomes an alligation problem. Use the cross in `Mixtures-and-Alligation.md` §2 to find the mixing ratio, then compute profit on the blended CP.
+**If the adulterant has a cost**, this becomes an alligation problem. Use the cross in `05-Mixtures-and-Alligation.md` §2 to find the mixing ratio, then compute profit on the blended CP.
 
 **Read carefully — percentage of adulterant vs ratio:**
 
@@ -209,7 +209,7 @@ Profit percentages **cannot be averaged**. They must be weighted by cost price.
 - Total CP = 1000; profits = 40 and 80 → total profit = 120
 - Overall = 120/1000 = **12%**, not the arithmetic mean of 15%
 
-This is an alligation setup in disguise — see `Mixtures-and-Alligation.md` §8. The mean sits closer to 10% because the ₹800 item dominates.
+This is an alligation setup in disguise — see `05-Mixtures-and-Alligation.md` §8. The mean sits closer to 10% because the ₹800 item dominates.
 
 ---
 
@@ -272,4 +272,4 @@ The full CAT version stacks three effects. Treat each as a **factor** and multip
 - Profit % above 100% is possible and legitimate; loss % above 100% is not
 - When two effects are given as fractions, look for cancellation before multiplying — CAT builds these in
 
-*Related file: `Mixtures-and-Alligation.md` — adulteration (§8) and weighted profit (§11) are both alligation problems wearing different clothes.*
+*Related file: `05-Mixtures-and-Alligation.md` — adulteration (§8) and weighted profit (§11) are both alligation problems wearing different clothes.*

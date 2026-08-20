@@ -1,9 +1,9 @@
 {
  "key": "circles",
- "order": 102,
+ "order": 180,
  "name": "Circles",
- "notes": "Circles.md",
- "file": "Circles-Practice.md",
+ "notes": "18-Circles.md",
+ "file": "18-Circles-Practice.md",
  "perQ": 105,
  "intro": [
   "**Join the centre to everything.** Radii are free equal lengths, and most circle figures open up once three or four are drawn (§2).",

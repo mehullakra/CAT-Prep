@@ -94,7 +94,7 @@ where R and C are its row and column totals. This is the same bound as the two-s
 
 ## 5. Type 1 — Percentages in a 2×2 table (choose the total)
 
-Percentages here are a disguise. **Convert each to a fraction, then set the total to the LCM of the denominators** — every cell comes out a whole number and the arithmetic becomes trivial. The fraction table in `Percentages.md` §2 is the lookup you need; awkward-looking decimals are almost always friendly fractions.
+Percentages here are a disguise. **Convert each to a fraction, then set the total to the LCM of the denominators** — every cell comes out a whole number and the arithmetic becomes trivial. The fraction table in `02-Percentages.md` §2 is the lookup you need; awkward-looking decimals are almost always friendly fractions.
 
 Common CAT disguises: 27.27% = 3/11, 28.57% = 2/7, 71.43% = 5/7, 37.5% = 3/8, 87.5% = 7/8, 16.67% = 1/6, 8.33% = 1/12.
 
@@ -103,7 +103,7 @@ Common CAT disguises: 27.27% = 3/11, 28.57% = 2/7, 71.43% = 5/7, 37.5% = 3/8, 87
 2. Total = LCM of the denominators.
 3. Fill the four margins, then the one cell the question gives you.
 4. Subtract to get the rest.
-5. Answer the question — checking which base it wants (`Percentages.md` §3).
+5. Answer the question — checking which base it wants (`02-Percentages.md` §3).
 
 **Worked example:** In a factory 40% of employees are women and 75% are above 30, of whom half are men. What percentage of the women are above 30?
 
@@ -184,7 +184,7 @@ CAT's DI sets often hide a Venn or a 2×2 grid in a table of survey responses. T
 - **Total the rows and columns first.** A missing margin is usually recoverable and often the key.
 - **Watch for a third attribute.** If respondents are split by two attributes *and* the caselet mentions a third, you need a 2×2×2 (eight cells) — not a bigger Venn. Build it as two stacked 2×2 tables.
 
-Growth-rate and percentage-share questions on the same caselet are `Percentages.md` §11.
+Growth-rate and percentage-share questions on the same caselet are `02-Percentages.md` §11.
 
 ---
 
@@ -213,4 +213,4 @@ Growth-rate and percentage-share questions on the same caselet are `Percentages.
 - Close every problem by summing all disjoint regions back to the total.
 - If a subset comes out bigger than its parent set, don't hunt for your arithmetic slip more than once — check whether the question is self-consistent.
 
-**Where this feeds forward:** `Percentages.md` (§2 fraction table, §3 which base), `PnC-Probability.md` (inclusion–exclusion is the same identity used for counting and for P(A∪B)), `Means-and-Weighted-Averages.md` §3 (a 2×2 table's column percentages are a weighted average of its row percentages).
+**Where this feeds forward:** `02-Percentages.md` (§2 fraction table, §3 which base), `23-PnC-Probability.md` (inclusion–exclusion is the same identity used for counting and for P(A∪B)), `04-Means-and-Weighted-Averages.md` §3 (a 2×2 table's column percentages are a weighted average of its row percentages).

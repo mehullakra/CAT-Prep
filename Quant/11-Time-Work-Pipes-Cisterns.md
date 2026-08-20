@@ -310,4 +310,4 @@ The most common exam shape in this topic. **Method: units done, units remaining,
 
 **Sanity check:** the combined time must always be shorter than the fastest individual time. If your answer for "A and B together" exceeds A's solo time, you've added times instead of rates.
 
-*Related file: `Mixtures-and-Alligation.md` — the rate-blending logic there is the same weighted-average idea seen from the other side.*
+*Related file: `05-Mixtures-and-Alligation.md` — the rate-blending logic there is the same weighted-average idea seen from the other side.*

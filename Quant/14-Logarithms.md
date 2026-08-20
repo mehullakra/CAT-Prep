@@ -73,7 +73,7 @@ Whenever the same log expression appears at two powers, **substitute t**.
 - t + 1/t = 5/2 ⟹ 2t² − 5t + 2 = 0 ⟹ t = 2 or 1/2
 - x = 4 or x = √2
 
-The t + 1/t shape comes straight from the reciprocal law. Recognising it is worth training — see `Algebra.md` §1.
+The t + 1/t shape comes straight from the reciprocal law. Recognising it is worth training — see `13-Algebra.md` §1.
 
 ---
 
@@ -144,7 +144,7 @@ Forgetting the flip is the standard error; forgetting the domain is the second.
 
 ## 8. Logs and progressions
 
-If a, b, c are in **GP**, then log a, log b, log c are in **AP** (a log turns multiplication into addition). CAT uses this to disguise GP questions as log questions and vice versa. See `Progressions-AP-GP.md` §5.
+If a, b, c are in **GP**, then log a, log b, log c are in **AP** (a log turns multiplication into addition). CAT uses this to disguise GP questions as log questions and vice versa. See `15-Progressions-AP-GP.md` §5.
 
 ---
 
@@ -171,4 +171,4 @@ If a, b, c are in **GP**, then log a, log b, log c are in **AP** (a log turns mu
 - After solving, **check every root against the domain**. In this topic, checking is not optional; it is frequently where the marks are.
 - Memorise log₁₀2 and log₁₀3. Almost every numeric log question in CAT is built from those two.
 
-**Where this feeds forward:** `Algebra.md` §1 and §6 (t + 1/t, quadratics, extraneous roots), `Progressions-AP-GP.md` §5 (GP ↔ AP under logs), `Number-System.md` §5 (digit counts and powers).
+**Where this feeds forward:** `13-Algebra.md` §1 and §6 (t + 1/t, quadratics, extraneous roots), `15-Progressions-AP-GP.md` §5 (GP ↔ AP under logs), `01-Number-System.md` §5 (digit counts and powers).

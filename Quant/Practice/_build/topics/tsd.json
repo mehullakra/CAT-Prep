@@ -1,474 +1,797 @@
 {
-  "key": "tsd",
-  "order": 60,
-  "name": "Time, Speed & Distance",
-  "notes": "Time-Speed-Distance.md",
-  "file": "Time-Speed-Distance-Practice.md",
-  "perQ": 90,
-  "intro": [
-    "**Before computing, name the quantity being held constant.** Distance constant ⟹ invert the speed ratio. Time constant ⟹ distances are proportional to speeds. Naming it first kills the average-speed and ratio-inversion errors in one move.",
-    "Convert units before anything else: km/h → m/s is ×5/18. Mixing units mid-solution is silent — the arithmetic looks fine and the answer is off by 3.6."
-  ],
-  "sets": [
+ "key": "tsd",
+ "order": 80,
+ "name": "Time, Speed & Distance",
+ "notes": "08-Time-Speed-Distance.md",
+ "file": "08-Time-Speed-Distance-Practice.md",
+ "perQ": 90,
+ "intro": [
+  "**Before computing, name the quantity being held constant.** Distance constant ⟹ invert the speed ratio. Time constant ⟹ distances are proportional to speeds. Naming it first kills the average-speed and ratio-inversion errors in one move.",
+  "Convert units before anything else: km/h → m/s is ×5/18. Mixing units mid-solution is silent — the arithmetic looks fine and the answer is off by 3.6."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "The inverse-ratio core",
+   "qs": [
     {
-      "id": "A",
-      "name": "The inverse-ratio core",
-      "qs": [
-        {
-          "id": "A1", "t": "tita",
-          "q": "Walking at 5/6 of his usual speed, a man reaches office 8 minutes late. Find his usual time (in minutes).",
-          "a": 40, "ad": "40 minutes", "check": "5*8",
-          "h": "§1 — speed ratio 5 : 6 inverts to a time ratio of 6 : 5. The 8 minutes is one part.",
-          "s": "Time ratio (new : usual) = 6 : 5. The difference of 1 part is 8 minutes ⟹ usual time = 5 parts = <b>40 minutes</b>."
-        },
-        {
-          "id": "A2", "t": "mcq",
-          "q": "Increasing his speed by 20%, a man reaches 12 minutes early. His usual time is",
-          "o": ["60 min", "66 min", "72 min", "84 min"], "a": 2,
-          "h": "§1 — a 20% increase is a speed ratio of 6 : 5 (new : usual), so the time ratio is 5 : 6.",
-          "s": "Time ratio (new : usual) = 5 : 6 ⟹ difference of 1 part = 12 min ⟹ usual = 6 parts = <b>72 min</b>."
-        },
-        {
-          "id": "A3", "t": "tita",
-          "q": "A boy walking at 4 km/h reaches school 5 minutes late; walking at 5 km/h he is 10 minutes early. Find the distance to school (in km).",
-          "a": 5, "ad": "5 km", "check": "0.25/(1/4-1/5)",
-          "h": "§1 — the two journeys differ by 15 minutes in total. Set up d/4 − d/5 = 15/60.",
-          "s": "d/4 − d/5 = 15/60 ⟹ d/20 = 1/4 ⟹ d = <b>5 km</b>. (The gap is 5 + 10 = 15 minutes, not 5.)"
-        },
-        {
-          "id": "A4", "t": "mcq",
-          "q": "A train travelling at 3/5 of its usual speed is 40 minutes late. Its usual time for the journey is",
-          "o": ["40 min", "60 min", "80 min", "100 min"], "a": 1,
-          "h": "§1 — here the difference is 2 parts, not 1. Divide before multiplying.",
-          "s": "Time ratio (new : usual) = 5 : 3 ⟹ difference of 2 parts = 40 min ⟹ 1 part = 20 ⟹ usual = 3 parts = <b>60 min</b>."
-        },
-        {
-          "id": "A5", "t": "tita",
-          "q": "If a man reduces his speed by 25%, he takes 20 minutes more. Find his usual time (in minutes).",
-          "a": 60, "ad": "60 minutes", "check": "3*20",
-          "h": "§1 — a 25% reduction is a speed ratio of 3 : 4, so the time ratio is 4 : 3.",
-          "s": "Time ratio (new : usual) = 4 : 3 ⟹ difference of 1 part = 20 min ⟹ usual = 3 parts = <b>60 minutes</b>."
-        },
-        {
-          "id": "A6", "t": "mcq",
-          "q": "Two men cover the same distance, one at 30 km/h and the other at 40 km/h. The slower one takes 2 hours longer. The distance is",
-          "o": ["120 km", "180 km", "240 km", "300 km"], "a": 2,
-          "h": "§1 — d/30 − d/40 = 2. Or: time ratio 4 : 3, difference 1 part = 2 hours.",
-          "s": "d/30 − d/40 = 2 ⟹ d/120 = 2 ⟹ d = <b>240 km</b>. Check: 8 hours and 6 hours ✓"
-        }
-      ]
+     "id": "A1",
+     "t": "tita",
+     "q": "Walking at 5/6 of his usual speed, a man reaches office 8 minutes late. Find his usual time (in minutes).",
+     "a": 40,
+     "ad": "40 minutes",
+     "check": "5*8",
+     "h": "§1 — speed ratio 5 : 6 inverts to a time ratio of 6 : 5. The 8 minutes is one part.",
+     "s": "Time ratio (new : usual) = 6 : 5. The difference of 1 part is 8 minutes ⟹ usual time = 5 parts = <b>40 minutes</b>."
     },
     {
-      "id": "B",
-      "name": "Average speed and multi-sector journeys",
-      "qs": [
-        {
-          "id": "B1", "t": "tita",
-          "q": "A car goes from A to B at 60 km/h and returns at 40 km/h. Find the average speed for the whole trip (in km/h).",
-          "a": 48, "ad": "48 km/h", "check": "2*60*40/100",
-          "h": "§3 — equal distances, so the harmonic mean 2ab/(a + b). The arithmetic mean 50 is the decoy.",
-          "s": "2(60)(40)/(60 + 40) = 4800/100 = <b>48 km/h</b>."
-        },
-        {
-          "id": "B2", "t": "mcq",
-          "q": "A man drives at 30 km/h for 2 hours and then at 50 km/h for 2 hours. His average speed is",
-          "o": ["37.5 km/h", "40 km/h", "41.67 km/h", "45 km/h"], "a": 1,
-          "h": "§3 — equal times, not equal distances. Here the ordinary average is correct.",
-          "s": "Equal times ⟹ average = (30 + 50)/2 = <b>40 km/h</b>. (37.5 is the harmonic mean — the equal-distance answer, planted as a decoy.)"
-        },
-        {
-          "id": "B3", "t": "tita",
-          "q": "A man covers three equal distances at 10, 20 and 60 km/h. Find his average speed (in km/h).",
-          "a": 18, "ad": "18 km/h", "check": "3*10*20*60/(10*20+20*60+60*10)",
-          "h": "§3 — three equal distances: 3abc/(ab + bc + ca). Or assume the LCM 60 for each leg.",
-          "s": "3(10)(20)(60)/(200 + 1200 + 600) = 36000/2000 = <b>18 km/h</b>. Check with LCM: 60 km legs take 6 + 3 + 1 = 10 hours for 180 km ✓"
-        },
-        {
-          "id": "B4", "t": "mcq",
-          "q": "A person travels 150 km in 5 hours, partly at 20 km/h and partly at 40 km/h. The distance covered at 40 km/h is",
-          "o": ["50 km", "75 km", "100 km", "125 km"], "a": 2,
-          "h": "§3b, algebraic constraint — let x be the distance at 20 km/h, then answer the question actually asked.",
-          "s": "x/20 + (150 − x)/40 = 5 ⟹ 2x + 150 − x = 200 ⟹ x = 50 km at 20 km/h ⟹ at 40 km/h he covers <b>100 km</b>. (50 km is the other leg — the trap.)"
-        },
-        {
-          "id": "B5", "t": "tita",
-          "q": "A man travels the first half of a 60 km journey at 20 km/h and the second half at 30 km/h. Find the total time taken (in hours).",
-          "a": 2.5, "ad": "2.5 hours", "check": "30/20+30/30",
-          "h": "§3b — tabulate each leg and sum the times. Do not average the speeds first.",
-          "s": "30/20 + 30/30 = 1.5 + 1 = <b>2.5 hours</b>. (Average speed = 60/2.5 = 24 km/h, which is 2ab/(a+b) ✓)"
-        },
-        {
-          "id": "B6", "t": "mcq",
-          "q": "A journey of 90 km is done in three equal legs at 30, 45 and 90 km/h. The average speed is",
-          "o": ["45 km/h", "50 km/h", "55 km/h", "60 km/h"], "a": 0,
-          "h": "§3 — three equal distances again. Assume 90 km total ⟹ each leg 30 km.",
-          "s": "Times: 1 + 2/3 + 1/3 = 2 hours for 90 km ⟹ <b>45 km/h</b>. (The arithmetic mean of 30, 45, 90 is 55 — the decoy.)"
-        }
-      ]
+     "id": "A2",
+     "t": "mcq",
+     "q": "Increasing his speed by 20%, a man reaches 12 minutes early. His usual time is",
+     "o": [
+      "60 min",
+      "66 min",
+      "72 min",
+      "84 min"
+     ],
+     "a": 2,
+     "h": "§1 — a 20% increase is a speed ratio of 6 : 5 (new : usual), so the time ratio is 5 : 6.",
+     "s": "Time ratio (new : usual) = 5 : 6 ⟹ difference of 1 part = 12 min ⟹ usual = 6 parts = <b>72 min</b>."
     },
     {
-      "id": "C",
-      "name": "Relative speed, chases and meetings",
-      "qs": [
-        {
-          "id": "C1", "t": "tita",
-          "q": "A thief 300 m ahead runs at 9 km/h; a policeman chases at 12 km/h. After how many seconds is the thief caught?",
-          "a": 360, "ad": "360 seconds", "check": "300/(3*5/18)",
-          "h": "§4 — same direction, so relative speed is the difference. Convert to m/s before dividing.",
-          "s": "Relative speed = 3 km/h = 3 × 5/18 = 5/6 m/s ⟹ time = 300 ÷ 5/6 = <b>360 seconds</b> (6 minutes)."
-        },
-        {
-          "id": "C2", "t": "mcq",
-          "q": "Two cyclists 120 km apart ride toward each other at 15 km/h and 25 km/h. They meet after",
-          "o": ["2 hours", "2.5 hours", "3 hours", "4 hours"], "a": 2,
-          "h": "§4 — opposite directions, so the speeds add.",
-          "s": "Relative speed = 40 km/h ⟹ time = 120/40 = <b>3 hours</b>."
-        },
-        {
-          "id": "C3", "t": "tita",
-          "q": "Two cars start from the same point in the same direction at 50 km/h and 65 km/h. After how many hours are they 45 km apart?",
-          "a": 3, "ad": "3 hours", "check": "45/15",
-          "h": "§4 — the gap grows at the relative speed.",
-          "s": "Gap grows at 15 km/h ⟹ 45/15 = <b>3 hours</b>."
-        },
-        {
-          "id": "C4", "t": "mcq",
-          "q": "A car overtakes a bus that is 3 km ahead, in 20 minutes. If the bus travels at 45 km/h, the car's speed is",
-          "o": ["48 km/h", "50 km/h", "54 km/h", "60 km/h"], "a": 2,
-          "h": "§4 — find the relative speed first, then add the bus's speed. 20 minutes is 1/3 hour.",
-          "s": "Relative speed = 3 ÷ (1/3) = 9 km/h ⟹ car = 45 + 9 = <b>54 km/h</b>."
-        },
-        {
-          "id": "C5", "t": "tita",
-          "q": "A and B start walking toward each other from points 84 km apart at 4 km/h and 3 km/h. A dog runs continuously between them at 10 km/h. Find the total distance the dog covers (in km).",
-          "a": 120, "ad": "120 km", "check": "10*84/7",
-          "h": "§4 — you don't need the dog's path at all, only how long it runs. Find the meeting time first.",
-          "s": "They meet after 84/(4 + 3) = 12 hours ⟹ the dog runs for 12 hours at 10 km/h = <b>120 km</b>."
-        }
-      ]
+     "id": "A3",
+     "t": "tita",
+     "q": "A boy walking at 4 km/h reaches school 5 minutes late; walking at 5 km/h he is 10 minutes early. Find the distance to school (in km).",
+     "a": 5,
+     "ad": "5 km",
+     "check": "0.25/(1/4-1/5)",
+     "h": "§1 — the two journeys differ by 15 minutes in total. Set up d/4 − d/5 = 15/60.",
+     "s": "d/4 − d/5 = 15/60 ⟹ d/20 = 1/4 ⟹ d = <b>5 km</b>. (The gap is 5 + 10 = 15 minutes, not 5.)"
     },
     {
-      "id": "D",
-      "name": "Trains",
-      "qs": [
-        {
-          "id": "D1", "t": "tita",
-          "q": "A train 240 m long crosses a pole in 12 seconds. Find its speed in km/h.",
-          "a": 72, "ad": "72 km/h", "check": "240/12*18/5",
-          "h": "§5 — crossing a pole means covering exactly the train's own length. Convert with 18/5.",
-          "s": "Speed = 240/12 = 20 m/s = 20 × 18/5 = <b>72 km/h</b>."
-        },
-        {
-          "id": "D2", "t": "mcq",
-          "q": "A train 180 m long crosses a platform 270 m long in 25 seconds. Its speed is",
-          "o": ["54 km/h", "60 km/h", "64.8 km/h", "72 km/h"], "a": 2,
-          "h": "§5 — crossing a platform means train length + platform length.",
-          "s": "Distance = 450 m in 25 s = 18 m/s = <b>64.8 km/h</b>. (Using only the 180 m gives 25.92 km/h — the classic slip.)"
-        },
-        {
-          "id": "D3", "t": "tita",
-          "q": "Two trains of lengths 150 m and 250 m travel in opposite directions at 45 km/h and 27 km/h. Find the time (in seconds) to cross each other.",
-          "a": 20, "ad": "20 seconds", "check": "400/(72*5/18)",
-          "h": "§5 — opposite directions, so speeds add; both lengths count.",
-          "s": "Relative speed = 72 km/h = 20 m/s; distance = 400 m ⟹ time = <b>20 seconds</b>."
-        },
-        {
-          "id": "D4", "t": "mcq",
-          "q": "A 250 m train running at 90 km/h overtakes a cyclist riding at 18 km/h in the same direction. The time taken is",
-          "o": ["10 s", "12.5 s", "15 s", "20 s"], "a": 1,
-          "h": "§5 — the cyclist has no length, so only the train's length is covered, at the relative speed.",
-          "s": "Relative speed = 72 km/h = 20 m/s ⟹ time = 250/20 = <b>12.5 seconds</b>."
-        },
-        {
-          "id": "D5", "t": "tita",
-          "q": "Two trains running in the same direction at 72 km/h and 54 km/h cross each other in 40 seconds. If the faster train is 120 m long, find the length of the slower train (in metres).",
-          "a": 80, "ad": "80 m", "check": "(18*5/18)*40-120",
-          "h": "§5 — same direction, so the relative speed is the difference; the distance covered is the sum of the lengths.",
-          "s": "Relative speed = 18 km/h = 5 m/s ⟹ combined length = 5 × 40 = 200 m ⟹ slower train = 200 − 120 = <b>80 m</b>."
-        },
-        {
-          "id": "D6", "t": "mcq",
-          "q": "A train crosses a pole in 15 seconds and a 300 m platform in 30 seconds. The length of the train is",
-          "o": ["200 m", "250 m", "300 m", "450 m"], "a": 2,
-          "h": "§5 — the speed is the same in both cases. Equate L/15 and (L + 300)/30.",
-          "s": "L/15 = (L + 300)/30 ⟹ 2L = L + 300 ⟹ L = <b>300 m</b>. (Speed = 20 m/s in both ✓)"
-        }
-      ]
+     "id": "A4",
+     "t": "mcq",
+     "q": "A train travelling at 3/5 of its usual speed is 40 minutes late. Its usual time for the journey is",
+     "o": [
+      "40 min",
+      "60 min",
+      "80 min",
+      "100 min"
+     ],
+     "a": 1,
+     "h": "§1 — here the difference is 2 parts, not 1. Divide before multiplying.",
+     "s": "Time ratio (new : usual) = 5 : 3 ⟹ difference of 2 parts = 40 min ⟹ 1 part = 20 ⟹ usual = 3 parts = <b>60 min</b>."
     },
     {
-      "id": "E",
-      "name": "Boats and streams",
-      "qs": [
-        {
-          "id": "E1", "t": "tita",
-          "q": "A boat covers 36 km downstream in 3 hours and the same distance upstream in 6 hours. Find the speed of the stream (in km/h).",
-          "a": 3, "ad": "3 km/h", "check": "(12-6)/2",
-          "h": "§6 — get D and U first, then s = (D − U)/2.",
-          "s": "D = 12 km/h, U = 6 km/h ⟹ s = (12 − 6)/2 = <b>3 km/h</b> (and b = 9 km/h)."
-        },
-        {
-          "id": "E2", "t": "mcq",
-          "q": "A man rows at 8 km/h in still water; the stream flows at 2 km/h. He rows to a place 24 km away and returns. The total time is",
-          "o": ["6 hours", "6.4 hours", "6.5 hours", "7 hours"], "a": 1,
-          "h": "§6 — D = 10, U = 6. Add the two leg times; never average the speeds.",
-          "s": "24/10 + 24/6 = 2.4 + 4 = <b>6.4 hours</b>. (Round-trip average = 48/6.4 = 7.5 km/h = (b² − s²)/b ✓)"
-        },
-        {
-          "id": "E3", "t": "tita",
-          "q": "A boat's downstream speed is 15 km/h and its upstream speed is 9 km/h. Find its speed in still water (in km/h).",
-          "a": 12, "ad": "12 km/h", "check": "(15+9)/2",
-          "h": "§6 — b = (D + U)/2. One of the two formulas worth memorising.",
-          "s": "b = (15 + 9)/2 = <b>12 km/h</b>."
-        },
-        {
-          "id": "E4", "t": "mcq",
-          "q": "A man takes 3 times as long to row upstream as downstream. The ratio of his speed in still water to the speed of the stream is",
-          "o": ["2 : 1", "3 : 1", "4 : 1", "3 : 2"], "a": 0,
-          "h": "§6 — time ratio m : n gives b : s = (m + n) : (m − n).",
-          "s": "m : n = 3 : 1 ⟹ b : s = 4 : 2 = <b>2 : 1</b>. (Answering 3 : 1 is using the time ratio directly — the trap.)"
-        },
-        {
-          "id": "E5", "t": "tita",
-          "q": "A boat covers 30 km upstream and 44 km downstream in 10 hours; and 40 km upstream and 55 km downstream in 13 hours. Find the speed of the boat in still water (in km/h).",
-          "a": 8, "ad": "8 km/h", "check": "(11+5)/2",
-          "h": "§6 — substitute u = 1/U and d = 1/D to turn this into a linear pair, then solve.",
-          "s": "30u + 44d = 10 and 40u + 55d = 13. Multiply the first by 4/3 and subtract: 11/(3D) = 1/3 ⟹ D = 11. Then 30/U = 6 ⟹ U = 5. b = (11 + 5)/2 = <b>8 km/h</b> (s = 3)."
-        },
-        {
-          "id": "E6", "t": "mcq",
-          "q": "A boat's speed in still water is 10 km/h and the stream flows at 2 km/h. Its average speed for a round trip is",
-          "o": ["9.6 km/h", "10 km/h", "10.4 km/h", "12 km/h"], "a": 0,
-          "h": "§6 — the round-trip average is (b² − s²)/b, and it is always strictly less than b.",
-          "s": "(100 − 4)/10 = <b>9.6 km/h</b>. It must be below 10 because more time is spent going upstream."
-        }
-      ]
+     "id": "A5",
+     "t": "tita",
+     "q": "If a man reduces his speed by 25%, he takes 20 minutes more. Find his usual time (in minutes).",
+     "a": 60,
+     "ad": "60 minutes",
+     "check": "3*20",
+     "h": "§1 — a 25% reduction is a speed ratio of 3 : 4, so the time ratio is 4 : 3.",
+     "s": "Time ratio (new : usual) = 4 : 3 ⟹ difference of 1 part = 20 min ⟹ usual = 3 parts = <b>60 minutes</b>."
     },
     {
-      "id": "F",
-      "name": "Circular tracks",
-      "qs": [
-        {
-          "id": "F1", "t": "tita",
-          "q": "Two runners on a 400 m circular track run at 8 m/s and 12 m/s in opposite directions from the same point. After how many seconds do they first meet?",
-          "a": 20, "ad": "20 seconds", "check": "400/20",
-          "h": "§9 step 4 — opposite directions, so together they cover one full lap.",
-          "s": "400/(8 + 12) = <b>20 seconds</b>."
-        },
-        {
-          "id": "F2", "t": "mcq",
-          "q": "Two runners on a circular track run at 8 m/s and 12 m/s in the same direction from the same point. The number of distinct meeting points on the track is",
-          "o": ["1", "2", "4", "5"], "a": 0,
-          "h": "§9 step 1 — reduce the ratio first. Same direction gives a − b.",
-          "s": "8 : 12 = 2 : 3 (coprime) ⟹ meeting points = 3 − 2 = <b>1</b>, so they only ever meet at the start. (Not reducing gives 12 − 8 = 4 — the trap.)"
-        },
-        {
-          "id": "F3", "t": "tita",
-          "q": "Two runners on a 600 m track run at 5 m/s and 10 m/s in the same direction from the same point. After how many seconds do they meet at the starting point for the first time?",
-          "a": 120, "ad": "120 seconds", "check": "120",
-          "h": "§9 — \"at the starting point\" is the LCM of the lap times, a completely different formula from \"anywhere\".",
-          "s": "Lap times = 120 s and 60 s ⟹ LCM = <b>120 seconds</b>. (Meeting anywhere would be 600/5 = 120 s too, because the reduced ratio 1 : 2 gives just one meeting point.)"
-        },
-        {
-          "id": "F4", "t": "mcq",
-          "q": "On a 900 m circular track, A runs at 15 m/s and B at 25 m/s in opposite directions from the same point. The number of distinct meeting points is",
-          "o": ["2", "5", "8", "40"], "a": 2,
-          "h": "§9 — reduce 15 : 25 first, then add.",
-          "s": "15 : 25 = 3 : 5 ⟹ 3 + 5 = <b>8 meeting points</b>, spaced 112.5 m apart. (Forgetting to reduce gives 40 — an option, deliberately.)"
-        },
-        {
-          "id": "F5", "t": "tita",
-          "q": "Three runners start together from the same point on a 300 m circular track at 3, 5 and 7 m/s, all in the same direction. After how many seconds are all three together again?",
-          "a": 150, "ad": "150 seconds", "check": "150",
-          "h": "§9, three runners — compute the pairwise meeting times, then take their LCM.",
-          "s": "Pairwise gaps 2, 2 and 4 m/s ⟹ meeting times 150 s, 150 s, 75 s ⟹ LCM = <b>150 seconds</b>. Check: distances 450, 750, 1050 all reduce to the 150 m mark ✓"
-        },
-        {
-          "id": "F6", "t": "mcq",
-          "q": "On a 400 m track, A and B start together in the same direction at 6 m/s and 10 m/s. B first gains a full lap on A after",
-          "o": ["40 s", "66.67 s", "100 s", "200 s"], "a": 2,
-          "h": "§9 — gaining a lap means the relative distance covered equals the circumference.",
-          "s": "400/(10 − 6) = <b>100 seconds</b>."
-        }
-      ]
-    },
-    {
-      "id": "G",
-      "name": "Bouncing meetings and the √ trick",
-      "qs": [
-        {
-          "id": "G1", "t": "tita",
-          "q": "Two runners start from opposite ends of a 400 m stretch at 6 m/s and 10 m/s and keep bouncing back and forth. After how many seconds do they meet for the 4th time?",
-          "a": 175, "ad": "175 seconds", "check": "7*400/16",
-          "h": "§7 — the nth meeting needs a combined distance of (2n − 1)D.",
-          "s": "Combined distance = (2×4 − 1)(400) = 2800 m at 16 m/s ⟹ <b>175 seconds</b>."
-        },
-        {
-          "id": "G2", "t": "mcq",
-          "q": "A and B start toward each other from P and Q. After meeting, A takes 9 hours to reach Q and B takes 16 hours to reach P. They met after",
-          "o": ["10 hours", "12 hours", "12.5 hours", "25 hours"], "a": 1,
-          "h": "§8 — t = √(t₁ t₂). Note that 25 (the sum) is planted as an option.",
-          "s": "t = √(9 × 16) = <b>12 hours</b>."
-        },
-        {
-          "id": "G3", "t": "tita",
-          "q": "A and B move toward each other from P and Q. After they meet, A takes 4 hours to reach Q and B takes 25 hours to reach P. Find the ratio of A's speed to B's speed, as a decimal.",
-          "a": 2.5, "ad": "2.5", "check": "(25**0.5)/(4**0.5)",
-          "h": "§8 — Speed A : Speed B = √t₂ : √t₁. The inversion is the whole question.",
-          "s": "A : B = √25 : √4 = 5 : 2 = <b>2.5</b>. A has the shorter remaining time, so A must be the faster runner — a free sanity check."
-        },
-        {
-          "id": "G4", "t": "mcq",
-          "q": "Two people start from opposite ends of a 240 m track at 4 m/s and 8 m/s and keep bouncing. Their 2nd meeting occurs after",
-          "o": ["20 s", "40 s", "60 s", "80 s"], "a": 2,
-          "h": "§7 — 2nd meeting means a combined distance of 3D, not 2D.",
-          "s": "3 × 240 = 720 m at 12 m/s ⟹ <b>60 seconds</b>. (Using 2D gives 40 s — an option, deliberately.)"
-        },
-        {
-          "id": "G5", "t": "tita",
-          "q": "A and B start toward each other at the same time from P and Q, 210 km apart. After meeting, A takes 4 hours to reach Q. If A's speed is 30 km/h, find B's speed (in km/h).",
-          "a": 40, "ad": "40 km/h", "check": "120/3",
-          "h": "§8 — the leg A still has to cover after meeting is exactly the leg B had already covered. Find it, then find the pre-meeting time.",
-          "s": "After the meeting A covers 4 × 30 = 120 km, so B had covered 120 km before the meeting and A had covered 90 km. Pre-meeting time = 90/30 = 3 hours ⟹ B's speed = 120/3 = <b>40 km/h</b>. Check: 30 + 40 = 70 and 210/70 = 3 ✓"
-        }
-      ]
-    },
-    {
-      "id": "H",
-      "name": "Bearings and perpendicular motion",
-      "qs": [
-        {
-          "id": "H1", "t": "tita",
-          "q": "A cyclist rides north at 9 km/h and another rides east at 12 km/h from the same point at the same time. How far apart are they (in km) after 3 hours?",
-          "a": 45, "ad": "45 km", "check": "3*(9**2+12**2)**0.5",
-          "h": "§3c — perpendicular motion, so use Pythagoras on the positions, not relative speed. Look for the 3-4-5 triple.",
-          "s": "t√(u² + v²) = 3 × √(81 + 144) = 3 × 15 = <b>45 km</b>."
-        },
-        {
-          "id": "H2", "t": "mcq",
-          "q": "Two ships leave the same port at the same time, one sailing due south at 24 km/h and the other due west at 7 km/h. After 2 hours they are",
-          "o": ["31 km apart", "46 km apart", "50 km apart", "62 km apart"], "a": 2,
-          "h": "§3c — 7-24-25 is a Pythagorean triple. Option (a) is the sum of the speeds ×1 — the additive error.",
-          "s": "2 × √(49 + 576) = 2 × 25 = <b>50 km</b>."
-        },
-        {
-          "id": "H3", "t": "tita",
-          "q": "A is at the origin moving north at 12 km/h. B starts 15 km east of A and moves north at 2 km/h. Find the distance between them (in km) after 2 hours.",
-          "a": 25, "ad": "25 km", "check": "(15**2+20**2)**0.5",
-          "h": "§3c, different start points — write both positions, take the coordinate differences, then Pythagoras.",
-          "s": "After 2 h: A = (0, 24), B = (15, 4). Separation = √(15² + 20²) = <b>25 km</b>."
-        },
-        {
-          "id": "H4", "t": "mcq",
-          "q": "Ship P is at (0, 0) sailing east at 10 km/h. Ship Q is at (0, 40) sailing south at 30 km/h. Their separation is least at",
-          "o": ["t = 0.8 h", "t = 1.0 h", "t = 1.2 h", "t = 1.5 h"], "a": 2,
-          "h": "§3c, closest approach — write D² (never D) as a quadratic in t and use t = −b/2a.",
-          "s": "D² = 100t² + (40 − 30t)² = 1000t² − 2400t + 1600 ⟹ minimum at t = 2400/2000 = <b>1.2 hours</b> (D = 4√10 ≈ 12.65 km)."
-        },
-        {
-          "id": "H5", "t": "tita",
-          "q": "Two men start from the same point along roads inclined at 60° to each other, walking at 5 km/h and 8 km/h. Find the distance between them (in km) after 1 hour.",
-          "a": 7, "ad": "7 km", "check": "(25+64-2*5*8*0.5)**0.5",
-          "h": "§3c, non-perpendicular bearings — the cosine rule, with cos 60° = ½.",
-          "s": "D² = 25 + 64 − 2(5)(8)(½) = 89 − 40 = 49 ⟹ D = <b>7 km</b>. (Using Pythagoras here would give √89 ≈ 9.43 — wrong, because the angle isn't 90°.)"
-        }
-      ]
-    },
-    {
-      "id": "M",
-      "name": "exam feel (15 minutes)",
-      "block": 900,
-      "qs": [
-        {
-          "id": "M1", "t": "mcq",
-          "q": "Walking at 6/7 of his usual speed, a man is 12 minutes late. His usual time is",
-          "o": ["60 min", "66 min", "72 min", "84 min"], "a": 2,
-          "h": "Invert the ratio; the 12 minutes is one part.",
-          "s": "Time ratio 7 : 6 ⟹ 1 part = 12 min ⟹ usual = 6 parts = <b>72 min</b>. (84 = 7 parts is the new time — the trap.)"
-        },
-        {
-          "id": "M2", "t": "tita",
-          "q": "A train 300 m long crosses a bridge 500 m long in 40 seconds. Find its speed in km/h.",
-          "a": 72, "ad": "72 km/h", "check": "800/40*18/5",
-          "h": "Both lengths count; convert at the end.",
-          "s": "800/40 = 20 m/s = <b>72 km/h</b>."
-        },
-        {
-          "id": "M3", "t": "mcq",
-          "q": "A man rows 15 km downstream in 1 hour 15 minutes and 15 km upstream in 3 hours. The speed of the stream is",
-          "o": ["2.5 km/h", "3 km/h", "3.5 km/h", "4 km/h"], "a": 2,
-          "h": "Get D and U, then (D − U)/2.",
-          "s": "D = 15/1.25 = 12 km/h, U = 15/3 = 5 km/h ⟹ s = (12 − 5)/2 = <b>3.5 km/h</b>."
-        },
-        {
-          "id": "M4", "t": "tita",
-          "q": "Two trains 130 m and 110 m long move toward each other at 60 km/h and 84 km/h. Find the time (in seconds) to cross each other.",
-          "a": 6, "ad": "6 seconds", "check": "240/(144*5/18)",
-          "h": "Opposite directions; both lengths.",
-          "s": "Relative speed = 144 km/h = 40 m/s; distance = 240 m ⟹ <b>6 seconds</b>."
-        },
-        {
-          "id": "M5", "t": "mcq",
-          "q": "A car covers the first 60 km at 40 km/h and the next 60 km at 60 km/h. Its average speed is",
-          "o": ["46 km/h", "48 km/h", "50 km/h", "52 km/h"], "a": 1,
-          "h": "Equal distances — harmonic mean.",
-          "s": "2(40)(60)/100 = <b>48 km/h</b>. (50 is the arithmetic mean — the standing decoy.)"
-        },
-        {
-          "id": "M6", "t": "tita",
-          "q": "A and B start toward each other from towns 120 km apart at 20 km/h and 30 km/h. How far from A's town (in km) do they meet?",
-          "a": 48, "ad": "48 km", "check": "20*120/50",
-          "h": "Meeting time first, then A's own distance.",
-          "s": "Time = 120/50 = 2.4 h ⟹ A covers 20 × 2.4 = <b>48 km</b>. (72 km is the distance from B's town.)"
-        },
-        {
-          "id": "M7", "t": "mcq",
-          "q": "On a 500 m circular track, A and B run in opposite directions at 20 m/s and 30 m/s from the same point. The number of distinct meeting points is",
-          "o": ["2", "5", "10", "50"], "a": 1,
-          "h": "Reduce the ratio before adding.",
-          "s": "20 : 30 = 2 : 3 ⟹ <b>5 meeting points</b>. (Unreduced gives 50 — an option.)"
-        },
-        {
-          "id": "M8", "t": "tita",
-          "q": "A man walking at 5 km/h reaches his office 6 minutes late; at 6 km/h he is 2 minutes early. Find the distance to his office (in km).",
-          "a": 4, "ad": "4 km", "check": "(8/60)/(1/5-1/6)",
-          "h": "The total time gap is 8 minutes, not 6.",
-          "s": "d/5 − d/6 = 8/60 ⟹ d/30 = 2/15 ⟹ d = <b>4 km</b>."
-        },
-        {
-          "id": "M9", "t": "mcq",
-          "q": "After they meet, A takes 25 hours to complete his journey and B takes 36 hours. The ratio of A's speed to B's speed is",
-          "o": ["5 : 6", "6 : 5", "25 : 36", "36 : 25"], "a": 1,
-          "h": "The square roots, inverted.",
-          "s": "A : B = √36 : √25 = <b>6 : 5</b>. A finishes sooner, so A is faster — the check that catches the inversion."
-        },
-        {
-          "id": "M10", "t": "tita",
-          "q": "Two runners start from opposite ends of a 500 m stretch at 4 m/s and 6 m/s and keep bouncing between the ends. Find the time (in seconds) of their 5th meeting.",
-          "a": 450, "ad": "450 seconds", "check": "9*500/10",
-          "h": "(2n − 1)D with n = 5.",
-          "s": "Combined distance = 9 × 500 = 4500 m at 10 m/s ⟹ <b>450 seconds</b>."
-        }
-      ]
+     "id": "A6",
+     "t": "mcq",
+     "q": "Two men cover the same distance, one at 30 km/h and the other at 40 km/h. The slower one takes 2 hours longer. The distance is",
+     "o": [
+      "120 km",
+      "180 km",
+      "240 km",
+      "300 km"
+     ],
+     "a": 2,
+     "h": "§1 — d/30 − d/40 = 2. Or: time ratio 4 : 3, difference 1 part = 2 hours.",
+     "s": "d/30 − d/40 = 2 ⟹ d/120 = 2 ⟹ d = <b>240 km</b>. Check: 8 hours and 6 hours ✓"
     }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Average speed and multi-sector journeys",
+   "qs": [
+    {
+     "id": "B1",
+     "t": "tita",
+     "q": "A car goes from A to B at 60 km/h and returns at 40 km/h. Find the average speed for the whole trip (in km/h).",
+     "a": 48,
+     "ad": "48 km/h",
+     "check": "2*60*40/100",
+     "h": "§3 — equal distances, so the harmonic mean 2ab/(a + b). The arithmetic mean 50 is the decoy.",
+     "s": "2(60)(40)/(60 + 40) = 4800/100 = <b>48 km/h</b>."
+    },
+    {
+     "id": "B2",
+     "t": "mcq",
+     "q": "A man drives at 30 km/h for 2 hours and then at 50 km/h for 2 hours. His average speed is",
+     "o": [
+      "37.5 km/h",
+      "40 km/h",
+      "41.67 km/h",
+      "45 km/h"
+     ],
+     "a": 1,
+     "h": "§3 — equal times, not equal distances. Here the ordinary average is correct.",
+     "s": "Equal times ⟹ average = (30 + 50)/2 = <b>40 km/h</b>. (37.5 is the harmonic mean — the equal-distance answer, planted as a decoy.)"
+    },
+    {
+     "id": "B3",
+     "t": "tita",
+     "q": "A man covers three equal distances at 10, 20 and 60 km/h. Find his average speed (in km/h).",
+     "a": 18,
+     "ad": "18 km/h",
+     "check": "3*10*20*60/(10*20+20*60+60*10)",
+     "h": "§3 — three equal distances: 3abc/(ab + bc + ca). Or assume the LCM 60 for each leg.",
+     "s": "3(10)(20)(60)/(200 + 1200 + 600) = 36000/2000 = <b>18 km/h</b>. Check with LCM: 60 km legs take 6 + 3 + 1 = 10 hours for 180 km ✓"
+    },
+    {
+     "id": "B4",
+     "t": "mcq",
+     "q": "A person travels 150 km in 5 hours, partly at 20 km/h and partly at 40 km/h. The distance covered at 40 km/h is",
+     "o": [
+      "50 km",
+      "75 km",
+      "100 km",
+      "125 km"
+     ],
+     "a": 2,
+     "h": "§3b, algebraic constraint — let x be the distance at 20 km/h, then answer the question actually asked.",
+     "s": "x/20 + (150 − x)/40 = 5 ⟹ 2x + 150 − x = 200 ⟹ x = 50 km at 20 km/h ⟹ at 40 km/h he covers <b>100 km</b>. (50 km is the other leg — the trap.)"
+    },
+    {
+     "id": "B5",
+     "t": "tita",
+     "q": "A man travels the first half of a 60 km journey at 20 km/h and the second half at 30 km/h. Find the total time taken (in hours).",
+     "a": 2.5,
+     "ad": "2.5 hours",
+     "check": "30/20+30/30",
+     "h": "§3b — tabulate each leg and sum the times. Do not average the speeds first.",
+     "s": "30/20 + 30/30 = 1.5 + 1 = <b>2.5 hours</b>. (Average speed = 60/2.5 = 24 km/h, which is 2ab/(a+b) ✓)"
+    },
+    {
+     "id": "B6",
+     "t": "mcq",
+     "q": "A journey of 90 km is done in three equal legs at 30, 45 and 90 km/h. The average speed is",
+     "o": [
+      "45 km/h",
+      "50 km/h",
+      "55 km/h",
+      "60 km/h"
+     ],
+     "a": 0,
+     "h": "§3 — three equal distances again. Assume 90 km total ⟹ each leg 30 km.",
+     "s": "Times: 1 + 2/3 + 1/3 = 2 hours for 90 km ⟹ <b>45 km/h</b>. (The arithmetic mean of 30, 45, 90 is 55 — the decoy.)"
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "Relative speed, chases and meetings",
+   "qs": [
+    {
+     "id": "C1",
+     "t": "tita",
+     "q": "A thief 300 m ahead runs at 9 km/h; a policeman chases at 12 km/h. After how many seconds is the thief caught?",
+     "a": 360,
+     "ad": "360 seconds",
+     "check": "300/(3*5/18)",
+     "h": "§4 — same direction, so relative speed is the difference. Convert to m/s before dividing.",
+     "s": "Relative speed = 3 km/h = 3 × 5/18 = 5/6 m/s ⟹ time = 300 ÷ 5/6 = <b>360 seconds</b> (6 minutes)."
+    },
+    {
+     "id": "C2",
+     "t": "mcq",
+     "q": "Two cyclists 120 km apart ride toward each other at 15 km/h and 25 km/h. They meet after",
+     "o": [
+      "2 hours",
+      "2.5 hours",
+      "3 hours",
+      "4 hours"
+     ],
+     "a": 2,
+     "h": "§4 — opposite directions, so the speeds add.",
+     "s": "Relative speed = 40 km/h ⟹ time = 120/40 = <b>3 hours</b>."
+    },
+    {
+     "id": "C3",
+     "t": "tita",
+     "q": "Two cars start from the same point in the same direction at 50 km/h and 65 km/h. After how many hours are they 45 km apart?",
+     "a": 3,
+     "ad": "3 hours",
+     "check": "45/15",
+     "h": "§4 — the gap grows at the relative speed.",
+     "s": "Gap grows at 15 km/h ⟹ 45/15 = <b>3 hours</b>."
+    },
+    {
+     "id": "C4",
+     "t": "mcq",
+     "q": "A car overtakes a bus that is 3 km ahead, in 20 minutes. If the bus travels at 45 km/h, the car's speed is",
+     "o": [
+      "48 km/h",
+      "50 km/h",
+      "54 km/h",
+      "60 km/h"
+     ],
+     "a": 2,
+     "h": "§4 — find the relative speed first, then add the bus's speed. 20 minutes is 1/3 hour.",
+     "s": "Relative speed = 3 ÷ (1/3) = 9 km/h ⟹ car = 45 + 9 = <b>54 km/h</b>."
+    },
+    {
+     "id": "C5",
+     "t": "tita",
+     "q": "A and B start walking toward each other from points 84 km apart at 4 km/h and 3 km/h. A dog runs continuously between them at 10 km/h. Find the total distance the dog covers (in km).",
+     "a": 120,
+     "ad": "120 km",
+     "check": "10*84/7",
+     "h": "§4 — you don't need the dog's path at all, only how long it runs. Find the meeting time first.",
+     "s": "They meet after 84/(4 + 3) = 12 hours ⟹ the dog runs for 12 hours at 10 km/h = <b>120 km</b>."
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "name": "Trains",
+   "qs": [
+    {
+     "id": "D1",
+     "t": "tita",
+     "q": "A train 240 m long crosses a pole in 12 seconds. Find its speed in km/h.",
+     "a": 72,
+     "ad": "72 km/h",
+     "check": "240/12*18/5",
+     "h": "§5 — crossing a pole means covering exactly the train's own length. Convert with 18/5.",
+     "s": "Speed = 240/12 = 20 m/s = 20 × 18/5 = <b>72 km/h</b>."
+    },
+    {
+     "id": "D2",
+     "t": "mcq",
+     "q": "A train 180 m long crosses a platform 270 m long in 25 seconds. Its speed is",
+     "o": [
+      "54 km/h",
+      "60 km/h",
+      "64.8 km/h",
+      "72 km/h"
+     ],
+     "a": 2,
+     "h": "§5 — crossing a platform means train length + platform length.",
+     "s": "Distance = 450 m in 25 s = 18 m/s = <b>64.8 km/h</b>. (Using only the 180 m gives 25.92 km/h — the classic slip.)"
+    },
+    {
+     "id": "D3",
+     "t": "tita",
+     "q": "Two trains of lengths 150 m and 250 m travel in opposite directions at 45 km/h and 27 km/h. Find the time (in seconds) to cross each other.",
+     "a": 20,
+     "ad": "20 seconds",
+     "check": "400/(72*5/18)",
+     "h": "§5 — opposite directions, so speeds add; both lengths count.",
+     "s": "Relative speed = 72 km/h = 20 m/s; distance = 400 m ⟹ time = <b>20 seconds</b>."
+    },
+    {
+     "id": "D4",
+     "t": "mcq",
+     "q": "A 250 m train running at 90 km/h overtakes a cyclist riding at 18 km/h in the same direction. The time taken is",
+     "o": [
+      "10 s",
+      "12.5 s",
+      "15 s",
+      "20 s"
+     ],
+     "a": 1,
+     "h": "§5 — the cyclist has no length, so only the train's length is covered, at the relative speed.",
+     "s": "Relative speed = 72 km/h = 20 m/s ⟹ time = 250/20 = <b>12.5 seconds</b>."
+    },
+    {
+     "id": "D5",
+     "t": "tita",
+     "q": "Two trains running in the same direction at 72 km/h and 54 km/h cross each other in 40 seconds. If the faster train is 120 m long, find the length of the slower train (in metres).",
+     "a": 80,
+     "ad": "80 m",
+     "check": "(18*5/18)*40-120",
+     "h": "§5 — same direction, so the relative speed is the difference; the distance covered is the sum of the lengths.",
+     "s": "Relative speed = 18 km/h = 5 m/s ⟹ combined length = 5 × 40 = 200 m ⟹ slower train = 200 − 120 = <b>80 m</b>."
+    },
+    {
+     "id": "D6",
+     "t": "mcq",
+     "q": "A train crosses a pole in 15 seconds and a 300 m platform in 30 seconds. The length of the train is",
+     "o": [
+      "200 m",
+      "250 m",
+      "300 m",
+      "450 m"
+     ],
+     "a": 2,
+     "h": "§5 — the speed is the same in both cases. Equate L/15 and (L + 300)/30.",
+     "s": "L/15 = (L + 300)/30 ⟹ 2L = L + 300 ⟹ L = <b>300 m</b>. (Speed = 20 m/s in both ✓)"
+    }
+   ]
+  },
+  {
+   "id": "E",
+   "name": "Boats and streams",
+   "qs": [
+    {
+     "id": "E1",
+     "t": "tita",
+     "q": "A boat covers 36 km downstream in 3 hours and the same distance upstream in 6 hours. Find the speed of the stream (in km/h).",
+     "a": 3,
+     "ad": "3 km/h",
+     "check": "(12-6)/2",
+     "h": "§6 — get D and U first, then s = (D − U)/2.",
+     "s": "D = 12 km/h, U = 6 km/h ⟹ s = (12 − 6)/2 = <b>3 km/h</b> (and b = 9 km/h)."
+    },
+    {
+     "id": "E2",
+     "t": "mcq",
+     "q": "A man rows at 8 km/h in still water; the stream flows at 2 km/h. He rows to a place 24 km away and returns. The total time is",
+     "o": [
+      "6 hours",
+      "6.4 hours",
+      "6.5 hours",
+      "7 hours"
+     ],
+     "a": 1,
+     "h": "§6 — D = 10, U = 6. Add the two leg times; never average the speeds.",
+     "s": "24/10 + 24/6 = 2.4 + 4 = <b>6.4 hours</b>. (Round-trip average = 48/6.4 = 7.5 km/h = (b² − s²)/b ✓)"
+    },
+    {
+     "id": "E3",
+     "t": "tita",
+     "q": "A boat's downstream speed is 15 km/h and its upstream speed is 9 km/h. Find its speed in still water (in km/h).",
+     "a": 12,
+     "ad": "12 km/h",
+     "check": "(15+9)/2",
+     "h": "§6 — b = (D + U)/2. One of the two formulas worth memorising.",
+     "s": "b = (15 + 9)/2 = <b>12 km/h</b>."
+    },
+    {
+     "id": "E4",
+     "t": "mcq",
+     "q": "A man takes 3 times as long to row upstream as downstream. The ratio of his speed in still water to the speed of the stream is",
+     "o": [
+      "2 : 1",
+      "3 : 1",
+      "4 : 1",
+      "3 : 2"
+     ],
+     "a": 0,
+     "h": "§6 — time ratio m : n gives b : s = (m + n) : (m − n).",
+     "s": "m : n = 3 : 1 ⟹ b : s = 4 : 2 = <b>2 : 1</b>. (Answering 3 : 1 is using the time ratio directly — the trap.)"
+    },
+    {
+     "id": "E5",
+     "t": "tita",
+     "q": "A boat covers 30 km upstream and 44 km downstream in 10 hours; and 40 km upstream and 55 km downstream in 13 hours. Find the speed of the boat in still water (in km/h).",
+     "a": 8,
+     "ad": "8 km/h",
+     "check": "(11+5)/2",
+     "h": "§6 — substitute u = 1/U and d = 1/D to turn this into a linear pair, then solve.",
+     "s": "30u + 44d = 10 and 40u + 55d = 13. Multiply the first by 4/3 and subtract: 11/(3D) = 1/3 ⟹ D = 11. Then 30/U = 6 ⟹ U = 5. b = (11 + 5)/2 = <b>8 km/h</b> (s = 3)."
+    },
+    {
+     "id": "E6",
+     "t": "mcq",
+     "q": "A boat's speed in still water is 10 km/h and the stream flows at 2 km/h. Its average speed for a round trip is",
+     "o": [
+      "9.6 km/h",
+      "10 km/h",
+      "10.4 km/h",
+      "12 km/h"
+     ],
+     "a": 0,
+     "h": "§6 — the round-trip average is (b² − s²)/b, and it is always strictly less than b.",
+     "s": "(100 − 4)/10 = <b>9.6 km/h</b>. It must be below 10 because more time is spent going upstream."
+    }
+   ]
+  },
+  {
+   "id": "F",
+   "name": "Circular tracks",
+   "qs": [
+    {
+     "id": "F1",
+     "t": "tita",
+     "q": "Two runners on a 400 m circular track run at 8 m/s and 12 m/s in opposite directions from the same point. After how many seconds do they first meet?",
+     "a": 20,
+     "ad": "20 seconds",
+     "check": "400/20",
+     "h": "§9 step 4 — opposite directions, so together they cover one full lap.",
+     "s": "400/(8 + 12) = <b>20 seconds</b>."
+    },
+    {
+     "id": "F2",
+     "t": "mcq",
+     "q": "Two runners on a circular track run at 8 m/s and 12 m/s in the same direction from the same point. The number of distinct meeting points on the track is",
+     "o": [
+      "1",
+      "2",
+      "4",
+      "5"
+     ],
+     "a": 0,
+     "h": "§9 step 1 — reduce the ratio first. Same direction gives a − b.",
+     "s": "8 : 12 = 2 : 3 (coprime) ⟹ meeting points = 3 − 2 = <b>1</b>, so they only ever meet at the start. (Not reducing gives 12 − 8 = 4 — the trap.)"
+    },
+    {
+     "id": "F3",
+     "t": "tita",
+     "q": "Two runners on a 600 m track run at 5 m/s and 10 m/s in the same direction from the same point. After how many seconds do they meet at the starting point for the first time?",
+     "a": 120,
+     "ad": "120 seconds",
+     "check": "120",
+     "h": "§9 — \"at the starting point\" is the LCM of the lap times, a completely different formula from \"anywhere\".",
+     "s": "Lap times = 120 s and 60 s ⟹ LCM = <b>120 seconds</b>. (Meeting anywhere would be 600/5 = 120 s too, because the reduced ratio 1 : 2 gives just one meeting point.)"
+    },
+    {
+     "id": "F4",
+     "t": "mcq",
+     "q": "On a 900 m circular track, A runs at 15 m/s and B at 25 m/s in opposite directions from the same point. The number of distinct meeting points is",
+     "o": [
+      "2",
+      "5",
+      "8",
+      "40"
+     ],
+     "a": 2,
+     "h": "§9 — reduce 15 : 25 first, then add.",
+     "s": "15 : 25 = 3 : 5 ⟹ 3 + 5 = <b>8 meeting points</b>, spaced 112.5 m apart. (Forgetting to reduce gives 40 — an option, deliberately.)"
+    },
+    {
+     "id": "F5",
+     "t": "tita",
+     "q": "Three runners start together from the same point on a 300 m circular track at 3, 5 and 7 m/s, all in the same direction. After how many seconds are all three together again?",
+     "a": 150,
+     "ad": "150 seconds",
+     "check": "150",
+     "h": "§9, three runners — compute the pairwise meeting times, then take their LCM.",
+     "s": "Pairwise gaps 2, 2 and 4 m/s ⟹ meeting times 150 s, 150 s, 75 s ⟹ LCM = <b>150 seconds</b>. Check: distances 450, 750, 1050 all reduce to the 150 m mark ✓"
+    },
+    {
+     "id": "F6",
+     "t": "mcq",
+     "q": "On a 400 m track, A and B start together in the same direction at 6 m/s and 10 m/s. B first gains a full lap on A after",
+     "o": [
+      "40 s",
+      "66.67 s",
+      "100 s",
+      "200 s"
+     ],
+     "a": 2,
+     "h": "§9 — gaining a lap means the relative distance covered equals the circumference.",
+     "s": "400/(10 − 6) = <b>100 seconds</b>."
+    }
+   ]
+  },
+  {
+   "id": "G",
+   "name": "Bouncing meetings and the √ trick",
+   "qs": [
+    {
+     "id": "G1",
+     "t": "tita",
+     "q": "Two runners start from opposite ends of a 400 m stretch at 6 m/s and 10 m/s and keep bouncing back and forth. After how many seconds do they meet for the 4th time?",
+     "a": 175,
+     "ad": "175 seconds",
+     "check": "7*400/16",
+     "h": "§7 — the nth meeting needs a combined distance of (2n − 1)D.",
+     "s": "Combined distance = (2×4 − 1)(400) = 2800 m at 16 m/s ⟹ <b>175 seconds</b>."
+    },
+    {
+     "id": "G2",
+     "t": "mcq",
+     "q": "A and B start toward each other from P and Q. After meeting, A takes 9 hours to reach Q and B takes 16 hours to reach P. They met after",
+     "o": [
+      "10 hours",
+      "12 hours",
+      "12.5 hours",
+      "25 hours"
+     ],
+     "a": 1,
+     "h": "§8 — t = √(t₁ t₂). Note that 25 (the sum) is planted as an option.",
+     "s": "t = √(9 × 16) = <b>12 hours</b>."
+    },
+    {
+     "id": "G3",
+     "t": "tita",
+     "q": "A and B move toward each other from P and Q. After they meet, A takes 4 hours to reach Q and B takes 25 hours to reach P. Find the ratio of A's speed to B's speed, as a decimal.",
+     "a": 2.5,
+     "ad": "2.5",
+     "check": "(25**0.5)/(4**0.5)",
+     "h": "§8 — Speed A : Speed B = √t₂ : √t₁. The inversion is the whole question.",
+     "s": "A : B = √25 : √4 = 5 : 2 = <b>2.5</b>. A has the shorter remaining time, so A must be the faster runner — a free sanity check."
+    },
+    {
+     "id": "G4",
+     "t": "mcq",
+     "q": "Two people start from opposite ends of a 240 m track at 4 m/s and 8 m/s and keep bouncing. Their 2nd meeting occurs after",
+     "o": [
+      "20 s",
+      "40 s",
+      "60 s",
+      "80 s"
+     ],
+     "a": 2,
+     "h": "§7 — 2nd meeting means a combined distance of 3D, not 2D.",
+     "s": "3 × 240 = 720 m at 12 m/s ⟹ <b>60 seconds</b>. (Using 2D gives 40 s — an option, deliberately.)"
+    },
+    {
+     "id": "G5",
+     "t": "tita",
+     "q": "A and B start toward each other at the same time from P and Q, 210 km apart. After meeting, A takes 4 hours to reach Q. If A's speed is 30 km/h, find B's speed (in km/h).",
+     "a": 40,
+     "ad": "40 km/h",
+     "check": "120/3",
+     "h": "§8 — the leg A still has to cover after meeting is exactly the leg B had already covered. Find it, then find the pre-meeting time.",
+     "s": "After the meeting A covers 4 × 30 = 120 km, so B had covered 120 km before the meeting and A had covered 90 km. Pre-meeting time = 90/30 = 3 hours ⟹ B's speed = 120/3 = <b>40 km/h</b>. Check: 30 + 40 = 70 and 210/70 = 3 ✓"
+    }
+   ]
+  },
+  {
+   "id": "H",
+   "name": "Bearings and perpendicular motion",
+   "qs": [
+    {
+     "id": "H1",
+     "t": "tita",
+     "q": "A cyclist rides north at 9 km/h and another rides east at 12 km/h from the same point at the same time. How far apart are they (in km) after 3 hours?",
+     "a": 45,
+     "ad": "45 km",
+     "check": "3*(9**2+12**2)**0.5",
+     "h": "§3c — perpendicular motion, so use Pythagoras on the positions, not relative speed. Look for the 3-4-5 triple.",
+     "s": "t√(u² + v²) = 3 × √(81 + 144) = 3 × 15 = <b>45 km</b>."
+    },
+    {
+     "id": "H2",
+     "t": "mcq",
+     "q": "Two ships leave the same port at the same time, one sailing due south at 24 km/h and the other due west at 7 km/h. After 2 hours they are",
+     "o": [
+      "31 km apart",
+      "46 km apart",
+      "50 km apart",
+      "62 km apart"
+     ],
+     "a": 2,
+     "h": "§3c — 7-24-25 is a Pythagorean triple. Option (a) is the sum of the speeds ×1 — the additive error.",
+     "s": "2 × √(49 + 576) = 2 × 25 = <b>50 km</b>."
+    },
+    {
+     "id": "H3",
+     "t": "tita",
+     "q": "A is at the origin moving north at 12 km/h. B starts 15 km east of A and moves north at 2 km/h. Find the distance between them (in km) after 2 hours.",
+     "a": 25,
+     "ad": "25 km",
+     "check": "(15**2+20**2)**0.5",
+     "h": "§3c, different start points — write both positions, take the coordinate differences, then Pythagoras.",
+     "s": "After 2 h: A = (0, 24), B = (15, 4). Separation = √(15² + 20²) = <b>25 km</b>."
+    },
+    {
+     "id": "H4",
+     "t": "mcq",
+     "q": "Ship P is at (0, 0) sailing east at 10 km/h. Ship Q is at (0, 40) sailing south at 30 km/h. Their separation is least at",
+     "o": [
+      "t = 0.8 h",
+      "t = 1.0 h",
+      "t = 1.2 h",
+      "t = 1.5 h"
+     ],
+     "a": 2,
+     "h": "§3c, closest approach — write D² (never D) as a quadratic in t and use t = −b/2a.",
+     "s": "D² = 100t² + (40 − 30t)² = 1000t² − 2400t + 1600 ⟹ minimum at t = 2400/2000 = <b>1.2 hours</b> (D = 4√10 ≈ 12.65 km)."
+    },
+    {
+     "id": "H5",
+     "t": "tita",
+     "q": "Two men start from the same point along roads inclined at 60° to each other, walking at 5 km/h and 8 km/h. Find the distance between them (in km) after 1 hour.",
+     "a": 7,
+     "ad": "7 km",
+     "check": "(25+64-2*5*8*0.5)**0.5",
+     "h": "§3c, non-perpendicular bearings — the cosine rule, with cos 60° = ½.",
+     "s": "D² = 25 + 64 − 2(5)(8)(½) = 89 − 40 = 49 ⟹ D = <b>7 km</b>. (Using Pythagoras here would give √89 ≈ 9.43 — wrong, because the angle isn't 90°.)"
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (15 minutes)",
+   "block": 900,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "mcq",
+     "q": "Walking at 6/7 of his usual speed, a man is 12 minutes late. His usual time is",
+     "o": [
+      "60 min",
+      "66 min",
+      "72 min",
+      "84 min"
+     ],
+     "a": 2,
+     "h": "Invert the ratio; the 12 minutes is one part.",
+     "s": "Time ratio 7 : 6 ⟹ 1 part = 12 min ⟹ usual = 6 parts = <b>72 min</b>. (84 = 7 parts is the new time — the trap.)"
+    },
+    {
+     "id": "M2",
+     "t": "tita",
+     "q": "A train 300 m long crosses a bridge 500 m long in 40 seconds. Find its speed in km/h.",
+     "a": 72,
+     "ad": "72 km/h",
+     "check": "800/40*18/5",
+     "h": "Both lengths count; convert at the end.",
+     "s": "800/40 = 20 m/s = <b>72 km/h</b>."
+    },
+    {
+     "id": "M3",
+     "t": "mcq",
+     "q": "A man rows 15 km downstream in 1 hour 15 minutes and 15 km upstream in 3 hours. The speed of the stream is",
+     "o": [
+      "2.5 km/h",
+      "3 km/h",
+      "3.5 km/h",
+      "4 km/h"
+     ],
+     "a": 2,
+     "h": "Get D and U, then (D − U)/2.",
+     "s": "D = 15/1.25 = 12 km/h, U = 15/3 = 5 km/h ⟹ s = (12 − 5)/2 = <b>3.5 km/h</b>."
+    },
+    {
+     "id": "M4",
+     "t": "tita",
+     "q": "Two trains 130 m and 110 m long move toward each other at 60 km/h and 84 km/h. Find the time (in seconds) to cross each other.",
+     "a": 6,
+     "ad": "6 seconds",
+     "check": "240/(144*5/18)",
+     "h": "Opposite directions; both lengths.",
+     "s": "Relative speed = 144 km/h = 40 m/s; distance = 240 m ⟹ <b>6 seconds</b>."
+    },
+    {
+     "id": "M5",
+     "t": "mcq",
+     "q": "A car covers the first 60 km at 40 km/h and the next 60 km at 60 km/h. Its average speed is",
+     "o": [
+      "46 km/h",
+      "48 km/h",
+      "50 km/h",
+      "52 km/h"
+     ],
+     "a": 1,
+     "h": "Equal distances — harmonic mean.",
+     "s": "2(40)(60)/100 = <b>48 km/h</b>. (50 is the arithmetic mean — the standing decoy.)"
+    },
+    {
+     "id": "M6",
+     "t": "tita",
+     "q": "A and B start toward each other from towns 120 km apart at 20 km/h and 30 km/h. How far from A's town (in km) do they meet?",
+     "a": 48,
+     "ad": "48 km",
+     "check": "20*120/50",
+     "h": "Meeting time first, then A's own distance.",
+     "s": "Time = 120/50 = 2.4 h ⟹ A covers 20 × 2.4 = <b>48 km</b>. (72 km is the distance from B's town.)"
+    },
+    {
+     "id": "M7",
+     "t": "mcq",
+     "q": "On a 500 m circular track, A and B run in opposite directions at 20 m/s and 30 m/s from the same point. The number of distinct meeting points is",
+     "o": [
+      "2",
+      "5",
+      "10",
+      "50"
+     ],
+     "a": 1,
+     "h": "Reduce the ratio before adding.",
+     "s": "20 : 30 = 2 : 3 ⟹ <b>5 meeting points</b>. (Unreduced gives 50 — an option.)"
+    },
+    {
+     "id": "M8",
+     "t": "tita",
+     "q": "A man walking at 5 km/h reaches his office 6 minutes late; at 6 km/h he is 2 minutes early. Find the distance to his office (in km).",
+     "a": 4,
+     "ad": "4 km",
+     "check": "(8/60)/(1/5-1/6)",
+     "h": "The total time gap is 8 minutes, not 6.",
+     "s": "d/5 − d/6 = 8/60 ⟹ d/30 = 2/15 ⟹ d = <b>4 km</b>."
+    },
+    {
+     "id": "M9",
+     "t": "mcq",
+     "q": "After they meet, A takes 25 hours to complete his journey and B takes 36 hours. The ratio of A's speed to B's speed is",
+     "o": [
+      "5 : 6",
+      "6 : 5",
+      "25 : 36",
+      "36 : 25"
+     ],
+     "a": 1,
+     "h": "The square roots, inverted.",
+     "s": "A : B = √36 : √25 = <b>6 : 5</b>. A finishes sooner, so A is faster — the check that catches the inversion."
+    },
+    {
+     "id": "M10",
+     "t": "tita",
+     "q": "Two runners start from opposite ends of a 500 m stretch at 4 m/s and 6 m/s and keep bouncing between the ends. Find the time (in seconds) of their 5th meeting.",
+     "a": 450,
+     "ad": "450 seconds",
+     "check": "9*500/10",
+     "h": "(2n − 1)D with n = 5.",
+     "s": "Combined distance = 9 × 500 = 4500 m at 10 m/s ⟹ <b>450 seconds</b>."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A1, A2, A4, A5, M1",
+   "using the speed ratio as the time ratio, or reading the wrong part as the answer (§1)"
   ],
-  "audit": [
-    ["A1, A2, A4, A5, M1", "using the speed ratio as the time ratio, or reading the wrong part as the answer (§1)"],
-    ["A3, M8", "treating a \"late by x, early by y\" pair as a gap of x instead of x + y"],
-    ["B1, B6, M5", "using the arithmetic mean where equal distances demand the harmonic mean (§3)"],
-    ["B2", "using the harmonic mean where the times, not the distances, are equal"],
-    ["B4", "solving for the wrong leg and reporting it"],
-    ["C1, D1, D3, M2, M4", "mixing km/h with metres instead of converting by 5/18 first (§2)"],
-    ["C5", "trying to sum the dog's zig-zag legs instead of using the total running time"],
-    ["D2, D6", "forgetting the platform length, or the train's own length"],
-    ["D4, D5", "using the wrong relative speed for the stated direction (§5)"],
-    ["E2, E6", "averaging the two leg speeds for a round trip instead of (b² − s²)/b (§6)"],
-    ["E4", "using the time ratio directly as b : s instead of (m + n) : (m − n)"],
-    ["F2, F4, M7", "not reducing the speed ratio to lowest terms before counting meeting points (§9)"],
-    ["F3", "using the \"meet anywhere\" formula where \"meet at the start\" needs the LCM of lap times"],
-    ["G1, G4, M10", "using nD instead of (2n − 1)D for the nth bounce meeting (§7)"],
-    ["G2, G3, M9", "inverting the √ trick — Speed A : Speed B = √t₂ : √t₁, not √t₁ : √t₂ (§8)"],
-    ["H1, H2, H3", "adding distances instead of applying Pythagoras to perpendicular motion (§3c)"],
-    ["H4", "minimising D instead of D², which turns a clean quadratic into a mess"],
-    ["H5", "using Pythagoras where the angle between the paths is not 90° — use the cosine rule"]
+  [
+   "A3, M8",
+   "treating a \"late by x, early by y\" pair as a gap of x instead of x + y"
+  ],
+  [
+   "B1, B6, M5",
+   "using the arithmetic mean where equal distances demand the harmonic mean (§3)"
+  ],
+  [
+   "B2",
+   "using the harmonic mean where the times, not the distances, are equal"
+  ],
+  [
+   "B4",
+   "solving for the wrong leg and reporting it"
+  ],
+  [
+   "C1, D1, D3, M2, M4",
+   "mixing km/h with metres instead of converting by 5/18 first (§2)"
+  ],
+  [
+   "C5",
+   "trying to sum the dog's zig-zag legs instead of using the total running time"
+  ],
+  [
+   "D2, D6",
+   "forgetting the platform length, or the train's own length"
+  ],
+  [
+   "D4, D5",
+   "using the wrong relative speed for the stated direction (§5)"
+  ],
+  [
+   "E2, E6",
+   "averaging the two leg speeds for a round trip instead of (b² − s²)/b (§6)"
+  ],
+  [
+   "E4",
+   "using the time ratio directly as b : s instead of (m + n) : (m − n)"
+  ],
+  [
+   "F2, F4, M7",
+   "not reducing the speed ratio to lowest terms before counting meeting points (§9)"
+  ],
+  [
+   "F3",
+   "using the \"meet anywhere\" formula where \"meet at the start\" needs the LCM of lap times"
+  ],
+  [
+   "G1, G4, M10",
+   "using nD instead of (2n − 1)D for the nth bounce meeting (§7)"
+  ],
+  [
+   "G2, G3, M9",
+   "inverting the √ trick — Speed A : Speed B = √t₂ : √t₁, not √t₁ : √t₂ (§8)"
+  ],
+  [
+   "H1, H2, H3",
+   "adding distances instead of applying Pythagoras to perpendicular motion (§3c)"
+  ],
+  [
+   "H4",
+   "minimising D instead of D², which turns a clean quadratic into a mess"
+  ],
+  [
+   "H5",
+   "using Pythagoras where the angle between the paths is not 90° — use the cosine rule"
   ]
+ ]
 }

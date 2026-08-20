@@ -207,7 +207,7 @@ The sphere-in-cylinder result (Archimedes) is the one CAT reuses: the sphere is 
 - **Dropping a solid into a cylinder:** the level rises by V(solid) / πr², provided the object is fully submerged and does not float
 - **Pouring between containers:** volume is conserved; only the shape of the free surface changes
 - **A partially filled cone, apex down:** the liquid forms a similar cone, so a fill height of ratio k gives a volume ratio **k³**. Half the height is one-eighth the volume, not half.
-- **Emptying/filling rates** belong to `Time-Work-Pipes-Cisterns.md` §7 — this section is only about the geometry
+- **Emptying/filling rates** belong to `11-Time-Work-Pipes-Cisterns.md` §7 — this section is only about the geometry
 
 **Worked example:** A sphere of radius 3 is dropped into a cylinder of radius 6 containing water. By how much does the level rise?
 - Sphere volume = 36π; rise = 36π / (36π) = **1 unit**
@@ -246,4 +246,4 @@ The sphere-in-cylinder result (Archimedes) is the one CAT reuses: the sphere is 
 - For similar shapes, never touch a formula. Go straight to k, k², k³.
 - Check the units line in the question. Mensuration is where CAT hides mm-versus-cm more than anywhere else.
 
-**Where this feeds forward:** `Triangles.md` §3 (triples appear in every cone slant), `Circles.md` §1 (every cross-section is a circle or a sector), `Quadrilaterals-and-Polygons.md` §6 (prism and pyramid bases), `Percentages.md` §5 (a % change in a dimension cubes for volume), `PnC-Probability.md` (the painted-cube counts are positional counting).
+**Where this feeds forward:** `17-Triangles.md` §3 (triples appear in every cone slant), `18-Circles.md` §1 (every cross-section is a circle or a sector), `19-Quadrilaterals-and-Polygons.md` §6 (prism and pyramid bases), `02-Percentages.md` §5 (a % change in a dimension cubes for volume), `23-PnC-Probability.md` (the painted-cube counts are positional counting).

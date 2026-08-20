@@ -1,285 +1,447 @@
 {
-  "key": "races",
-  "order": 62,
-  "name": "Races",
-  "notes": "Races.md",
-  "file": "Races-Practice.md",
-  "perQ": 90,
-  "intro": [
-    "**Every race question is a speed ratio in disguise.** \"A beats B by x metres in a d-metre race\" means that in the same time A covers d while B covers d − x, so the speed ratio is d : (d − x) (§1).",
-    "Read the language carefully: a beat given as a distance and a beat given as a time are different data, and \"gives a start\" reverses who covers what (§2)."
-  ],
-  "sets": [
+ "key": "races",
+ "order": 90,
+ "name": "Races",
+ "notes": "09-Races.md",
+ "file": "09-Races-Practice.md",
+ "perQ": 90,
+ "intro": [
+  "**Every race question is a speed ratio in disguise.** \"A beats B by x metres in a d-metre race\" means that in the same time A covers d while B covers d − x, so the speed ratio is d : (d − x) (§1).",
+  "Read the language carefully: a beat given as a distance and a beat given as a time are different data, and \"gives a start\" reverses who covers what (§2)."
+ ],
+ "sets": [
+  {
+   "id": "A",
+   "name": "Beats given as a distance",
+   "qs": [
     {
-      "id": "A",
-      "name": "Beats given as a distance",
-      "qs": [
-        {
-          "id": "A1", "t": "tita",
-          "q": "In a 100 m race, A beats B by 20 m. When A finishes, how far has B run (in metres)?",
-          "a": 80, "check": "100-20",
-          "h": "§2 — \"beats by 20 m\" describes where B is at the moment A finishes.",
-          "s": "B has covered <b>80 m</b>."
-        },
-        {
-          "id": "A2", "t": "mcq",
-          "q": "In a 500 m race, A beats B by 50 m. The ratio of their speeds is",
-          "o": ["10 : 9", "9 : 10", "10 : 1", "50 : 1"], "a": 0,
-          "h": "§3 — same time, so the speeds are in the ratio of the distances covered.",
-          "s": "500 : 450 = <b>10 : 9</b>."
-        },
-        {
-          "id": "A3", "t": "tita",
-          "q": "In a 200 m race, A beats B by 25 m. If A runs at 8 m/s, find B's speed (in m/s).",
-          "a": 7, "check": "175/25",
-          "h": "§3 — find A's time, then divide B's distance by that same time.",
-          "s": "A takes 200/8 = 25 s, in which B covers 175 m ⟹ B's speed = <b>7 m/s</b>."
-        },
-        {
-          "id": "A4", "t": "mcq",
-          "q": "In a 1 km race, A beats B by 100 m. At the same speeds, in a 2 km race A beats B by",
-          "o": ["100 m", "150 m", "200 m", "250 m"], "a": 2,
-          "h": "§3 — the speed ratio is fixed, so the beat distance scales with the race length.",
-          "s": "Speeds are 10 : 9 ⟹ when A covers 2000 m, B covers 1800 m ⟹ a beat of <b>200 m</b>."
-        },
-        {
-          "id": "A5", "t": "tita",
-          "q": "In a 400 m race, A beats B by 40 m, and in a separate 400 m race B beats C by 50 m. By how many metres does A beat C in a 400 m race?",
-          "a": 85, "check": "400-400*(360/400)*(350/400)",
-          "h": "§5 — chain the two speed ratios. Do not add the two beats.",
-          "s": "A : B = 10 : 9 and B : C = 8 : 7 ⟹ A : C = 80 : 63 ⟹ when A runs 400, C runs 315 ⟹ a beat of <b>85 m</b>. (Adding 40 + 50 = 90 is the planted error.)"
-        }
-      ]
+     "id": "A1",
+     "t": "tita",
+     "q": "In a 100 m race, A beats B by 20 m. When A finishes, how far has B run (in metres)?",
+     "a": 80,
+     "check": "100-20",
+     "h": "§2 — \"beats by 20 m\" describes where B is at the moment A finishes.",
+     "s": "B has covered <b>80 m</b>."
     },
     {
-      "id": "B",
-      "name": "Beats given as a time",
-      "qs": [
-        {
-          "id": "B1", "t": "tita",
-          "q": "In a 500 m race, A beats B by 10 seconds. If B takes 60 seconds, find A's time (in seconds).",
-          "a": 50, "check": "60-10",
-          "h": "§4 — a beat in time is simply the difference of the two finishing times.",
-          "s": "60 − 10 = <b>50 seconds</b>."
-        },
-        {
-          "id": "B2", "t": "mcq",
-          "q": "In a 1000 m race, A beats B by 100 m or 10 seconds. B's speed is",
-          "o": ["8 m/s", "10 m/s", "12 m/s", "12.5 m/s"], "a": 1,
-          "h": "§4 — the two statements describe the same gap, so B covers those 100 m in those 10 seconds.",
-          "s": "100/10 = <b>10 m/s</b>."
-        },
-        {
-          "id": "B3", "t": "tita",
-          "q": "In a 1000 m race, A beats B by 100 m or 10 seconds. Find A's time for the race (in seconds).",
-          "a": 90, "check": "1000/10-10",
-          "h": "§4 — get B's speed from the twin statement, then B's total time, then subtract the beat.",
-          "s": "B's speed = 10 m/s ⟹ B takes 100 s ⟹ A takes <b>90 seconds</b>."
-        },
-        {
-          "id": "B4", "t": "mcq",
-          "q": "In a 300 m race, A beats B by 30 m or 6 seconds. A's speed is",
-          "o": ["5 m/s", "5.56 m/s", "6 m/s", "6.5 m/s"], "a": 1,
-          "h": "§4 — B's speed comes from the twin statement; A's time is B's time minus 6 seconds.",
-          "s": "B: 30/6 = 5 m/s ⟹ B takes 60 s ⟹ A takes 54 s ⟹ A's speed = 300/54 = <b>5.56 m/s</b>."
-        },
-        {
-          "id": "B5", "t": "tita",
-          "q": "A covers a 300 m course in 45 seconds and B in 60 seconds. By how many metres does A beat B?",
-          "a": 75, "check": "300-300*45/60",
-          "h": "§4 — in A's 45 seconds, work out how far B has got.",
-          "s": "B covers 300 × 45/60 = 225 m ⟹ a beat of <b>75 m</b>."
-        }
-      ]
+     "id": "A2",
+     "t": "mcq",
+     "q": "In a 500 m race, A beats B by 50 m. The ratio of their speeds is",
+     "o": [
+      "10 : 9",
+      "9 : 10",
+      "10 : 1",
+      "50 : 1"
+     ],
+     "a": 0,
+     "h": "§3 — same time, so the speeds are in the ratio of the distances covered.",
+     "s": "500 : 450 = <b>10 : 9</b>."
     },
     {
-      "id": "C",
-      "name": "Chaining three runners",
-      "qs": [
-        {
-          "id": "C1", "t": "tita",
-          "q": "In a 100 m race, A beats B by 10 m and B beats C by 10 m. By how many metres does A beat C?",
-          "a": 19, "check": "100-90*0.9",
-          "h": "§5 — multiply the ratios, don't add the beats. The answer is deliberately not 20.",
-          "s": "A : B = 10 : 9 and B : C = 10 : 9 ⟹ when A runs 100, B is at 90 and C at 81 ⟹ a beat of <b>19 m</b>."
-        },
-        {
-          "id": "C2", "t": "mcq",
-          "q": "In a 200 m race, A beats B by 20 m and A beats C by 38 m. In a 180 m race, B beats C by",
-          "o": ["9 m", "18 m", "20 m", "24 m"], "a": 1,
-          "h": "§5 — express both B and C relative to A, then form the B : C ratio directly.",
-          "s": "B = 0.90A and C = 0.81A ⟹ B : C = 10 : 9 ⟹ in a 180 m race C reaches 162 ⟹ a beat of <b>18 m</b>."
-        },
-        {
-          "id": "C3", "t": "tita",
-          "q": "In a 500 m race, A beats B by 50 m, and B beats C by 50 m in a 500 m race. By how many metres does A beat C over 500 m?",
-          "a": 95, "check": "500-450*0.9",
-          "h": "§5 — again the product of the ratios.",
-          "s": "A : B = B : C = 10 : 9 ⟹ when A runs 500, B is at 450 and C at 405 ⟹ a beat of <b>95 m</b>."
-        },
-        {
-          "id": "C4", "t": "mcq",
-          "q": "A runs 1 km in 4 minutes 54 seconds and B in 5 minutes. In a 1 km race A beats B by",
-          "o": ["15 m", "20 m", "25 m", "30 m"], "a": 1,
-          "h": "§4 — convert both to seconds, then find B's position at A's finishing time.",
-          "s": "294 s vs 300 s ⟹ B covers 1000 × 294/300 = 980 m ⟹ a beat of <b>20 m</b>."
-        }
-      ]
+     "id": "A3",
+     "t": "tita",
+     "q": "In a 200 m race, A beats B by 25 m. If A runs at 8 m/s, find B's speed (in m/s).",
+     "a": 7,
+     "check": "175/25",
+     "h": "§3 — find A's time, then divide B's distance by that same time.",
+     "s": "A takes 200/8 = 25 s, in which B covers 175 m ⟹ B's speed = <b>7 m/s</b>."
     },
     {
-      "id": "D",
-      "name": "Dead heats and head starts",
-      "qs": [
-        {
-          "id": "D1", "t": "tita",
-          "q": "A runs 5/4 as fast as B. If A gives B a head start of 60 m, how long (in metres) must the race be so that both finish together?",
-          "a": 300, "check": "60/0.2",
-          "h": "§6 — a dead heat means equal times: A covers d while B covers d − 60.",
-          "s": "0.8d = d − 60 ⟹ 0.2d = 60 ⟹ d = <b>300 m</b>."
-        },
-        {
-          "id": "D2", "t": "mcq",
-          "q": "A can run 1 km in 3 minutes 10 seconds and B in 3 minutes 20 seconds. For a dead heat, the head start A must give B is",
-          "o": ["30 m", "40 m", "50 m", "60 m"], "a": 2,
-          "h": "§6 — the head start equals the beat A would otherwise inflict.",
-          "s": "190 s vs 200 s ⟹ in 190 s B covers 950 m ⟹ head start = <b>50 m</b>."
-        },
-        {
-          "id": "D3", "t": "tita",
-          "q": "In a 200 m race, A gives B a start of 10 seconds and still beats him by 20 m. If B's speed is 5 m/s, find A's time for the race (in seconds).",
-          "a": 26, "check": "180/5-10",
-          "h": "§7 — B runs for A's time plus the 10-second start, and covers 180 m in that period.",
-          "s": "B covers 180 m at 5 m/s = 36 s of running ⟹ A's time = 36 − 10 = <b>26 seconds</b>."
-        },
-        {
-          "id": "D4", "t": "mcq",
-          "q": "A gives B a start of 20 m in a 100 m race and still wins by 5 m. The ratio of their speeds is",
-          "o": ["4 : 3", "5 : 4", "5 : 3", "3 : 2"], "a": 0,
-          "h": "§7 — B only has 80 m to cover, and finishes 5 m short of the line when A arrives.",
-          "s": "A covers 100 m while B covers 75 m ⟹ <b>4 : 3</b>."
-        },
-        {
-          "id": "D5", "t": "tita",
-          "q": "In a 1000 m race A beats B by 50 m. In a race of the same distance where A instead gives B a head start of 50 m, by how many metres does A win? (Enter 0 for a dead heat.)",
-          "a": 0, "ad": "0 — it is a dead heat", "check": "(1000-50)-(19/20)*1000",
-          "h": "§6 — the head start exactly cancels the advantage that produced the original beat.",
-          "s": "Speeds 20 : 19. B must cover 950 m; in A's 1000 m, B covers 19/20 × 1000 = 950 m ⟹ they finish together, so A wins by <b>0 m</b>."
-        }
-      ]
+     "id": "A4",
+     "t": "mcq",
+     "q": "In a 1 km race, A beats B by 100 m. At the same speeds, in a 2 km race A beats B by",
+     "o": [
+      "100 m",
+      "150 m",
+      "200 m",
+      "250 m"
+     ],
+     "a": 2,
+     "h": "§3 — the speed ratio is fixed, so the beat distance scales with the race length.",
+     "s": "Speeds are 10 : 9 ⟹ when A covers 2000 m, B covers 1800 m ⟹ a beat of <b>200 m</b>."
     },
     {
-      "id": "E",
-      "name": "Games of points and laps",
-      "qs": [
-        {
-          "id": "E1", "t": "tita",
-          "q": "In a game of 100 points, A can give B 20 points. In the time A scores 100, how many points does B score?",
-          "a": 80, "check": "100-20",
-          "h": "§8 — \"gives 20 points\" means B is on 80 when A reaches 100.",
-          "s": "<b>80 points</b>."
-        },
-        {
-          "id": "E2", "t": "mcq",
-          "q": "In a game of 80 points, A can give B 10 points and C 20 points. In a game of 100 points, A can give C",
-          "o": ["20 points", "25 points", "30 points", "33.33 points"], "a": 1,
-          "h": "§8 — build the A : C ratio from the 80-point game, then rescale to 100.",
-          "s": "A : C = 80 : 60 = 4 : 3 ⟹ in a 100-point game C scores 75 ⟹ A gives <b>25 points</b>."
-        },
-        {
-          "id": "E3", "t": "tita",
-          "q": "In a game of 100 points, A can give B 20 points and B can give C 25 points. How many points can A give C in a game of 100?",
-          "a": 40, "check": "100-100*0.8*0.75",
-          "h": "§8 + §5 — chain the ratios exactly as with runners.",
-          "s": "A : B = 5 : 4 and B : C = 4 : 3 ⟹ A : C = 5 : 3 ⟹ C scores 60 ⟹ A gives <b>40 points</b>."
-        },
-        {
-          "id": "E4", "t": "mcq",
-          "q": "On a 400 m circular track, A and B run at 8 m/s and 6 m/s in the same direction from the same point. A first laps B after",
-          "o": ["100 s", "150 s", "200 s", "400 s"], "a": 2,
-          "h": "§9 — lapping means gaining a full circumference at the relative speed.",
-          "s": "400/(8 − 6) = <b>200 seconds</b>."
-        },
-        {
-          "id": "E5", "t": "tita",
-          "q": "In a race on a 500 m circular track, A completes 3 laps in the time B completes 2.5 laps. By how many metres does A beat B?",
-          "a": 250, "check": "0.5*500",
-          "h": "§9 — the gap is half a lap.",
-          "s": "A covers 1500 m and B 1250 m ⟹ a beat of <b>250 m</b>."
-        }
-      ]
-    },
-    {
-      "id": "M",
-      "name": "exam feel (13 minutes)",
-      "block": 780,
-      "qs": [
-        {
-          "id": "M1", "t": "tita",
-          "q": "In a 300 m race, A beats B by 30 m. Find the ratio of A's speed to B's speed, as a fraction.",
-          "a": "10/9", "alt": ["10/9"], "check": "300/270",
-          "h": "Distances covered in the same time.",
-          "s": "300 : 270 = <b>10/9</b>."
-        },
-        {
-          "id": "M2", "t": "mcq",
-          "q": "In a 400 m race, A beats B by 25 m and B beats C by 20 m. A beats C by",
-          "o": ["40 m", "42.5 m", "43.75 m", "45 m"], "a": 2,
-          "h": "Chain the ratios; the answer is deliberately not 45.",
-          "s": "A : B = 16 : 15 and B : C = 20 : 19 ⟹ when A runs 400, B is at 375 and C at 356.25 ⟹ a beat of <b>43.75 m</b>."
-        },
-        {
-          "id": "M3", "t": "tita",
-          "q": "A runs 4/3 as fast as B. If A gives B a start of 30 m, how long (in metres) must the course be for a dead heat?",
-          "a": 120, "check": "30/0.25",
-          "h": "Equal times: A covers d while B covers d − 30.",
-          "s": "0.75d = d − 30 ⟹ d = <b>120 m</b>."
-        },
-        {
-          "id": "M4", "t": "mcq",
-          "q": "In a 100 m race, A beats B by 4 seconds. If B takes 25 seconds, A's speed is",
-          "o": ["4 m/s", "4.76 m/s", "5 m/s", "5.25 m/s"], "a": 1,
-          "h": "Subtract to get A's time, then divide.",
-          "s": "A takes 21 s ⟹ 100/21 = <b>4.76 m/s</b>."
-        },
-        {
-          "id": "M5", "t": "tita",
-          "q": "In a game of 100 points, A can give B 25 points. In a game of 60 points, how many points can A give B?",
-          "a": 15, "check": "60-60*0.75",
-          "h": "The ratio is fixed; only the target changes.",
-          "s": "A : B = 4 : 3 ⟹ in 60 points B scores 45 ⟹ A gives <b>15 points</b>."
-        },
-        {
-          "id": "M6", "t": "mcq",
-          "q": "The speeds of A and B are in the ratio 3 : 4. A is given a head start of 140 m and the race ends in a dead heat. The length of the course is",
-          "o": ["420 m", "500 m", "560 m", "600 m"], "a": 2,
-          "h": "Here the slower runner gets the start. A covers d − 140 while B covers d.",
-          "s": "(d − 140)/d = 3/4 ⟹ 4d − 560 = 3d ⟹ d = <b>560 m</b>."
-        },
-        {
-          "id": "M7", "t": "tita",
-          "q": "In a 1 km race, A beats B by 40 m and A beats C by 76 m. By how many metres does B beat C in a 1 km race?",
-          "a": 37.5, "check": "1000-1000*924/960",
-          "h": "Put both B and C against A first.",
-          "s": "B : C = 960 : 924 ⟹ when B runs 1000, C reaches 962.5 ⟹ a beat of <b>37.5 m</b>. (76 − 40 = 36 is the planted error.)"
-        },
-        {
-          "id": "M8", "t": "mcq",
-          "q": "In a 200 m race, A gives B a start of 5 seconds and beats him by 10 m. If A's speed is 8 m/s, B's speed is",
-          "o": ["6 m/s", "6.33 m/s", "6.67 m/s", "7 m/s"], "a": 1,
-          "h": "B runs for A's time plus the 5-second start, and covers 190 m.",
-          "s": "A takes 25 s ⟹ B runs for 30 s covering 190 m ⟹ <b>6.33 m/s</b>."
-        }
-      ]
+     "id": "A5",
+     "t": "tita",
+     "q": "In a 400 m race, A beats B by 40 m, and in a separate 400 m race B beats C by 50 m. By how many metres does A beat C in a 400 m race?",
+     "a": 85,
+     "check": "400-400*(360/400)*(350/400)",
+     "h": "§5 — chain the two speed ratios. Do not add the two beats.",
+     "s": "A : B = 10 : 9 and B : C = 8 : 7 ⟹ A : C = 80 : 63 ⟹ when A runs 400, C runs 315 ⟹ a beat of <b>85 m</b>. (Adding 40 + 50 = 90 is the planted error.)"
     }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Beats given as a time",
+   "qs": [
+    {
+     "id": "B1",
+     "t": "tita",
+     "q": "In a 500 m race, A beats B by 10 seconds. If B takes 60 seconds, find A's time (in seconds).",
+     "a": 50,
+     "check": "60-10",
+     "h": "§4 — a beat in time is simply the difference of the two finishing times.",
+     "s": "60 − 10 = <b>50 seconds</b>."
+    },
+    {
+     "id": "B2",
+     "t": "mcq",
+     "q": "In a 1000 m race, A beats B by 100 m or 10 seconds. B's speed is",
+     "o": [
+      "8 m/s",
+      "10 m/s",
+      "12 m/s",
+      "12.5 m/s"
+     ],
+     "a": 1,
+     "h": "§4 — the two statements describe the same gap, so B covers those 100 m in those 10 seconds.",
+     "s": "100/10 = <b>10 m/s</b>."
+    },
+    {
+     "id": "B3",
+     "t": "tita",
+     "q": "In a 1000 m race, A beats B by 100 m or 10 seconds. Find A's time for the race (in seconds).",
+     "a": 90,
+     "check": "1000/10-10",
+     "h": "§4 — get B's speed from the twin statement, then B's total time, then subtract the beat.",
+     "s": "B's speed = 10 m/s ⟹ B takes 100 s ⟹ A takes <b>90 seconds</b>."
+    },
+    {
+     "id": "B4",
+     "t": "mcq",
+     "q": "In a 300 m race, A beats B by 30 m or 6 seconds. A's speed is",
+     "o": [
+      "5 m/s",
+      "5.56 m/s",
+      "6 m/s",
+      "6.5 m/s"
+     ],
+     "a": 1,
+     "h": "§4 — B's speed comes from the twin statement; A's time is B's time minus 6 seconds.",
+     "s": "B: 30/6 = 5 m/s ⟹ B takes 60 s ⟹ A takes 54 s ⟹ A's speed = 300/54 = <b>5.56 m/s</b>."
+    },
+    {
+     "id": "B5",
+     "t": "tita",
+     "q": "A covers a 300 m course in 45 seconds and B in 60 seconds. By how many metres does A beat B?",
+     "a": 75,
+     "check": "300-300*45/60",
+     "h": "§4 — in A's 45 seconds, work out how far B has got.",
+     "s": "B covers 300 × 45/60 = 225 m ⟹ a beat of <b>75 m</b>."
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "Chaining three runners",
+   "qs": [
+    {
+     "id": "C1",
+     "t": "tita",
+     "q": "In a 100 m race, A beats B by 10 m and B beats C by 10 m. By how many metres does A beat C?",
+     "a": 19,
+     "check": "100-90*0.9",
+     "h": "§5 — multiply the ratios, don't add the beats. The answer is deliberately not 20.",
+     "s": "A : B = 10 : 9 and B : C = 10 : 9 ⟹ when A runs 100, B is at 90 and C at 81 ⟹ a beat of <b>19 m</b>."
+    },
+    {
+     "id": "C2",
+     "t": "mcq",
+     "q": "In a 200 m race, A beats B by 20 m and A beats C by 38 m. In a 180 m race, B beats C by",
+     "o": [
+      "9 m",
+      "18 m",
+      "20 m",
+      "24 m"
+     ],
+     "a": 1,
+     "h": "§5 — express both B and C relative to A, then form the B : C ratio directly.",
+     "s": "B = 0.90A and C = 0.81A ⟹ B : C = 10 : 9 ⟹ in a 180 m race C reaches 162 ⟹ a beat of <b>18 m</b>."
+    },
+    {
+     "id": "C3",
+     "t": "tita",
+     "q": "In a 500 m race, A beats B by 50 m, and B beats C by 50 m in a 500 m race. By how many metres does A beat C over 500 m?",
+     "a": 95,
+     "check": "500-450*0.9",
+     "h": "§5 — again the product of the ratios.",
+     "s": "A : B = B : C = 10 : 9 ⟹ when A runs 500, B is at 450 and C at 405 ⟹ a beat of <b>95 m</b>."
+    },
+    {
+     "id": "C4",
+     "t": "mcq",
+     "q": "A runs 1 km in 4 minutes 54 seconds and B in 5 minutes. In a 1 km race A beats B by",
+     "o": [
+      "15 m",
+      "20 m",
+      "25 m",
+      "30 m"
+     ],
+     "a": 1,
+     "h": "§4 — convert both to seconds, then find B's position at A's finishing time.",
+     "s": "294 s vs 300 s ⟹ B covers 1000 × 294/300 = 980 m ⟹ a beat of <b>20 m</b>."
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "name": "Dead heats and head starts",
+   "qs": [
+    {
+     "id": "D1",
+     "t": "tita",
+     "q": "A runs 5/4 as fast as B. If A gives B a head start of 60 m, how long (in metres) must the race be so that both finish together?",
+     "a": 300,
+     "check": "60/0.2",
+     "h": "§6 — a dead heat means equal times: A covers d while B covers d − 60.",
+     "s": "0.8d = d − 60 ⟹ 0.2d = 60 ⟹ d = <b>300 m</b>."
+    },
+    {
+     "id": "D2",
+     "t": "mcq",
+     "q": "A can run 1 km in 3 minutes 10 seconds and B in 3 minutes 20 seconds. For a dead heat, the head start A must give B is",
+     "o": [
+      "30 m",
+      "40 m",
+      "50 m",
+      "60 m"
+     ],
+     "a": 2,
+     "h": "§6 — the head start equals the beat A would otherwise inflict.",
+     "s": "190 s vs 200 s ⟹ in 190 s B covers 950 m ⟹ head start = <b>50 m</b>."
+    },
+    {
+     "id": "D3",
+     "t": "tita",
+     "q": "In a 200 m race, A gives B a start of 10 seconds and still beats him by 20 m. If B's speed is 5 m/s, find A's time for the race (in seconds).",
+     "a": 26,
+     "check": "180/5-10",
+     "h": "§7 — B runs for A's time plus the 10-second start, and covers 180 m in that period.",
+     "s": "B covers 180 m at 5 m/s = 36 s of running ⟹ A's time = 36 − 10 = <b>26 seconds</b>."
+    },
+    {
+     "id": "D4",
+     "t": "mcq",
+     "q": "A gives B a start of 20 m in a 100 m race and still wins by 5 m. The ratio of their speeds is",
+     "o": [
+      "4 : 3",
+      "5 : 4",
+      "5 : 3",
+      "3 : 2"
+     ],
+     "a": 0,
+     "h": "§7 — B only has 80 m to cover, and finishes 5 m short of the line when A arrives.",
+     "s": "A covers 100 m while B covers 75 m ⟹ <b>4 : 3</b>."
+    },
+    {
+     "id": "D5",
+     "t": "tita",
+     "q": "In a 1000 m race A beats B by 50 m. In a race of the same distance where A instead gives B a head start of 50 m, by how many metres does A win? (Enter 0 for a dead heat.)",
+     "a": 0,
+     "ad": "0 — it is a dead heat",
+     "check": "(1000-50)-(19/20)*1000",
+     "h": "§6 — the head start exactly cancels the advantage that produced the original beat.",
+     "s": "Speeds 20 : 19. B must cover 950 m; in A's 1000 m, B covers 19/20 × 1000 = 950 m ⟹ they finish together, so A wins by <b>0 m</b>."
+    }
+   ]
+  },
+  {
+   "id": "E",
+   "name": "Games of points and laps",
+   "qs": [
+    {
+     "id": "E1",
+     "t": "tita",
+     "q": "In a game of 100 points, A can give B 20 points. In the time A scores 100, how many points does B score?",
+     "a": 80,
+     "check": "100-20",
+     "h": "§8 — \"gives 20 points\" means B is on 80 when A reaches 100.",
+     "s": "<b>80 points</b>."
+    },
+    {
+     "id": "E2",
+     "t": "mcq",
+     "q": "In a game of 80 points, A can give B 10 points and C 20 points. In a game of 100 points, A can give C",
+     "o": [
+      "20 points",
+      "25 points",
+      "30 points",
+      "33.33 points"
+     ],
+     "a": 1,
+     "h": "§8 — build the A : C ratio from the 80-point game, then rescale to 100.",
+     "s": "A : C = 80 : 60 = 4 : 3 ⟹ in a 100-point game C scores 75 ⟹ A gives <b>25 points</b>."
+    },
+    {
+     "id": "E3",
+     "t": "tita",
+     "q": "In a game of 100 points, A can give B 20 points and B can give C 25 points. How many points can A give C in a game of 100?",
+     "a": 40,
+     "check": "100-100*0.8*0.75",
+     "h": "§8 + §5 — chain the ratios exactly as with runners.",
+     "s": "A : B = 5 : 4 and B : C = 4 : 3 ⟹ A : C = 5 : 3 ⟹ C scores 60 ⟹ A gives <b>40 points</b>."
+    },
+    {
+     "id": "E4",
+     "t": "mcq",
+     "q": "On a 400 m circular track, A and B run at 8 m/s and 6 m/s in the same direction from the same point. A first laps B after",
+     "o": [
+      "100 s",
+      "150 s",
+      "200 s",
+      "400 s"
+     ],
+     "a": 2,
+     "h": "§9 — lapping means gaining a full circumference at the relative speed.",
+     "s": "400/(8 − 6) = <b>200 seconds</b>."
+    },
+    {
+     "id": "E5",
+     "t": "tita",
+     "q": "In a race on a 500 m circular track, A completes 3 laps in the time B completes 2.5 laps. By how many metres does A beat B?",
+     "a": 250,
+     "check": "0.5*500",
+     "h": "§9 — the gap is half a lap.",
+     "s": "A covers 1500 m and B 1250 m ⟹ a beat of <b>250 m</b>."
+    }
+   ]
+  },
+  {
+   "id": "M",
+   "name": "exam feel (13 minutes)",
+   "block": 780,
+   "qs": [
+    {
+     "id": "M1",
+     "t": "tita",
+     "q": "In a 300 m race, A beats B by 30 m. Find the ratio of A's speed to B's speed, as a fraction.",
+     "a": "10/9",
+     "alt": [
+      "10/9"
+     ],
+     "check": "300/270",
+     "h": "Distances covered in the same time.",
+     "s": "300 : 270 = <b>10/9</b>."
+    },
+    {
+     "id": "M2",
+     "t": "mcq",
+     "q": "In a 400 m race, A beats B by 25 m and B beats C by 20 m. A beats C by",
+     "o": [
+      "40 m",
+      "42.5 m",
+      "43.75 m",
+      "45 m"
+     ],
+     "a": 2,
+     "h": "Chain the ratios; the answer is deliberately not 45.",
+     "s": "A : B = 16 : 15 and B : C = 20 : 19 ⟹ when A runs 400, B is at 375 and C at 356.25 ⟹ a beat of <b>43.75 m</b>."
+    },
+    {
+     "id": "M3",
+     "t": "tita",
+     "q": "A runs 4/3 as fast as B. If A gives B a start of 30 m, how long (in metres) must the course be for a dead heat?",
+     "a": 120,
+     "check": "30/0.25",
+     "h": "Equal times: A covers d while B covers d − 30.",
+     "s": "0.75d = d − 30 ⟹ d = <b>120 m</b>."
+    },
+    {
+     "id": "M4",
+     "t": "mcq",
+     "q": "In a 100 m race, A beats B by 4 seconds. If B takes 25 seconds, A's speed is",
+     "o": [
+      "4 m/s",
+      "4.76 m/s",
+      "5 m/s",
+      "5.25 m/s"
+     ],
+     "a": 1,
+     "h": "Subtract to get A's time, then divide.",
+     "s": "A takes 21 s ⟹ 100/21 = <b>4.76 m/s</b>."
+    },
+    {
+     "id": "M5",
+     "t": "tita",
+     "q": "In a game of 100 points, A can give B 25 points. In a game of 60 points, how many points can A give B?",
+     "a": 15,
+     "check": "60-60*0.75",
+     "h": "The ratio is fixed; only the target changes.",
+     "s": "A : B = 4 : 3 ⟹ in 60 points B scores 45 ⟹ A gives <b>15 points</b>."
+    },
+    {
+     "id": "M6",
+     "t": "mcq",
+     "q": "The speeds of A and B are in the ratio 3 : 4. A is given a head start of 140 m and the race ends in a dead heat. The length of the course is",
+     "o": [
+      "420 m",
+      "500 m",
+      "560 m",
+      "600 m"
+     ],
+     "a": 2,
+     "h": "Here the slower runner gets the start. A covers d − 140 while B covers d.",
+     "s": "(d − 140)/d = 3/4 ⟹ 4d − 560 = 3d ⟹ d = <b>560 m</b>."
+    },
+    {
+     "id": "M7",
+     "t": "tita",
+     "q": "In a 1 km race, A beats B by 40 m and A beats C by 76 m. By how many metres does B beat C in a 1 km race?",
+     "a": 37.5,
+     "check": "1000-1000*924/960",
+     "h": "Put both B and C against A first.",
+     "s": "B : C = 960 : 924 ⟹ when B runs 1000, C reaches 962.5 ⟹ a beat of <b>37.5 m</b>. (76 − 40 = 36 is the planted error.)"
+    },
+    {
+     "id": "M8",
+     "t": "mcq",
+     "q": "In a 200 m race, A gives B a start of 5 seconds and beats him by 10 m. If A's speed is 8 m/s, B's speed is",
+     "o": [
+      "6 m/s",
+      "6.33 m/s",
+      "6.67 m/s",
+      "7 m/s"
+     ],
+     "a": 1,
+     "h": "B runs for A's time plus the 5-second start, and covers 190 m.",
+     "s": "A takes 25 s ⟹ B runs for 30 s covering 190 m ⟹ <b>6.33 m/s</b>."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  [
+   "A2, A3, A4, M1",
+   "not converting the beat into a speed ratio before doing anything else (§1, §3)"
   ],
-  "audit": [
-    ["A2, A3, A4, M1", "not converting the beat into a speed ratio before doing anything else (§1, §3)"],
-    ["A5, C1, C2, C3, M2, M7", "adding two beats instead of multiplying the two speed ratios (§5)"],
-    ["B2, B3, B4", "treating the distance-beat and time-beat as separate facts rather than as one shared gap (§4)"],
-    ["D1, D2, M3, M6", "getting the direction of a head start backwards — the runner given the start covers less (§6, §7)"],
-    ["D3, M8", "forgetting that a time head start extends the slower runner's running time"],
-    ["D5", "assuming a head start equal to the beat still leaves a winner; it produces a dead heat exactly"],
-    ["E2, E3, M5", "rescaling a points game by subtracting instead of by reapplying the ratio (§8)"],
-    ["E4, E5", "confusing lapping with meeting, or losing a half-lap in the count (§9)"]
+  [
+   "A5, C1, C2, C3, M2, M7",
+   "adding two beats instead of multiplying the two speed ratios (§5)"
+  ],
+  [
+   "B2, B3, B4",
+   "treating the distance-beat and time-beat as separate facts rather than as one shared gap (§4)"
+  ],
+  [
+   "D1, D2, M3, M6",
+   "getting the direction of a head start backwards — the runner given the start covers less (§6, §7)"
+  ],
+  [
+   "D3, M8",
+   "forgetting that a time head start extends the slower runner's running time"
+  ],
+  [
+   "D5",
+   "assuming a head start equal to the beat still leaves a winner; it produces a dead heat exactly"
+  ],
+  [
+   "E2, E3, M5",
+   "rescaling a points game by subtracting instead of by reapplying the ratio (§8)"
+  ],
+  [
+   "E4, E5",
+   "confusing lapping with meeting, or losing a half-lap in the count (§9)"
   ]
+ ]
 }

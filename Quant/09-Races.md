@@ -2,7 +2,7 @@
 
 > CAT quant. Every race statement is a disguised speed ratio. Convert the beat into "when A runs L, B runs L − x", and the whole topic becomes one ratio.
 
-Split out of `Time-Speed-Distance.md`. Circular-track races (laps, meeting points) stay there — see TSD §9.
+Split out of `08-Time-Speed-Distance.md`. Circular-track races (laps, meeting points) stay there — see TSD §9.
 
 ---
 
@@ -158,7 +158,7 @@ The beat scales with the game length, exactly as it does with race length.
 
 ## 9. Type 7 — Multiple laps and overtaking
 
-If the race is several laps on a circular track, it stops being a pure ratio question and becomes a relative-speed question. Use the circular-track machinery in `Time-Speed-Distance.md` §9 instead:
+If the race is several laps on a circular track, it stops being a pure ratio question and becomes a relative-speed question. Use the circular-track machinery in `08-Time-Speed-Distance.md` §9 instead:
 
 - "A laps B" = A has gained one full circumference on B
 - Time to lap = circumference / (difference of speeds)

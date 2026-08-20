@@ -2,7 +2,7 @@
 
 > CAT quant. Every sub-topic traces back to one idea: with distance held constant, speed and time are inversely proportional.
 
-Two sub-topics now live in their own files: `Races.md` and `Clocks.md`.
+Two sub-topics now live in their own files: `09-Races.md` and `10-Clocks.md`.
 
 ---
 
@@ -100,7 +100,7 @@ The harder CAT variant fixes the total time or total distance and asks for an un
 - Let the total be 3d. Times = d/20 + d/30 + d/60 = (3d + 2d + d)/60 = 6d/60 = d/10
 - Average = 3d/(d/10) = **30 km/h**
 
-**The habit:** assume the total distance to be the LCM of the given speeds (or of the denominators). Here 60 makes every leg time an integer. This is the same LCM discipline as `Time-Work-Pipes-Cisterns.md` §1, and it removes fractions from the entire calculation.
+**The habit:** assume the total distance to be the LCM of the given speeds (or of the denominators). Here 60 makes every leg time an integer. This is the same LCM discipline as `11-Time-Work-Pipes-Cisterns.md` §1, and it removes fractions from the entire calculation.
 
 ---
 
@@ -130,7 +130,7 @@ When two bodies move along **perpendicular** directions (north and east, or any 
 - Minimum of a quadratic at t = 2400/(2·1000) = **1.2 hours**
 - D² = 1000(1.44) − 2400(1.2) + 1600 = 1440 − 2880 + 1600 = 160 ⟹ D = **4√10 ≈ 12.65 km**
 
-**The habit:** for "closest approach" questions, write D² (never D) as a quadratic in t and use the vertex formula t = −b/2a. Squaring keeps everything polynomial, and D is minimised exactly where D² is. See `Algebra.md` §2.
+**The habit:** for "closest approach" questions, write D² (never D) as a quadratic in t and use the vertex formula t = −b/2a. Squaring keeps everything polynomial, and D is minimised exactly where D² is. See `13-Algebra.md` §2.
 
 **Non-perpendicular bearings:** if the angle between the paths is θ rather than 90°, use the cosine rule instead: D² = a² + b² − 2ab·cosθ, with a and b the distances covered. The 60° and 120° cases (cos = ½ and −½) are the ones CAT picks.
 
@@ -210,7 +210,7 @@ An escalator question is one of two things, and using the wrong one is the stand
 
 **If the question is about distance or time**, it *is* boats and streams (§6): the escalator is the stream, the person is the boat, effective speed = own speed ± escalator speed.
 
-**If the question counts steps, it is not.** "Walking up a moving escalator a man takes 30 steps; running he takes 40; how many steps are visible when it is stopped?" — nobody's speed in metres is given, and there is no distance. This is a **rate problem in units of steps** (`Time-Work-Pipes-Cisterns.md` §1 is the same machinery).
+**If the question counts steps, it is not.** "Walking up a moving escalator a man takes 30 steps; running he takes 40; how many steps are visible when it is stopped?" — nobody's speed in metres is given, and there is no distance. This is a **rate problem in units of steps** (`11-Time-Work-Pipes-Cisterns.md` §1 is the same machinery).
 
 **Core idea.** The staircase has a fixed number of visible steps N. While the person climbs, the escalator also delivers steps. So
 
@@ -379,4 +379,4 @@ Note the inversion in the ratio: the runner with the *shorter* remaining time is
 
 **The one habit that fixes most errors:** before computing, write down which of the three quantities is being held constant. Distance constant → invert the ratio. Time constant → distances are proportional to speeds. Speed constant → it's a plain proportion. Naming the constant first makes the right tool obvious and eliminates the average-speed and ratio-inversion errors in one move.
 
-*Related files: `Races.md` (beats, head starts, dead heats), `Clocks.md` (the 12 : 1 same-direction case of §9). Companion topic not yet covered: Calendars — pure modular arithmetic on 7, sharing no machinery with TSD.*
+*Related files: `09-Races.md` (beats, head starts, dead heats), `10-Clocks.md` (the 12 : 1 same-direction case of §9). Companion topic not yet covered: Calendars — pure modular arithmetic on 7, sharing no machinery with TSD.*

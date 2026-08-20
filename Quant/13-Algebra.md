@@ -33,7 +33,7 @@
 
 §1 gives (a + b)² and (a + b)³. This is the general case, and CAT asks it as "find the coefficient of xᵏ" or "find the term independent of x" rather than as an expansion.
 
-**(a + b)ⁿ = Σ C(n,r) · a^(n−r) · b^r**, summed over r = 0 to n. C(n,r) is the usual combination (`PnC-Probability.md` §2).
+**(a + b)ⁿ = Σ C(n,r) · a^(n−r) · b^r**, summed over r = 0 to n. C(n,r) is the usual combination (`23-PnC-Probability.md` §2).
 
 **The general term is the whole topic:**
 
@@ -126,7 +126,7 @@ Four substitutions cover almost every "higher-degree" equation CAT sets. Spottin
 | a·m^(2x) + b·mˣ + c = 0 | **t = mˣ** (and t > 0 always) |
 | ax + b√x + c = 0 | **t = √x** (and t ≥ 0) |
 | ax⁴ + bx³ + cx² + bx + a (palindromic) | divide by x², then **t = x + 1/x** |
-| equations in log x | **t = log x** — see `Logarithms.md` §4 |
+| equations in log x | **t = log x** — see `14-Logarithms.md` §4 |
 
 **Worked example:** Solve 2^(2x) − 5·2ˣ + 4 = 0.
 - t = 2ˣ ⟹ t² − 5t + 4 = 0 ⟹ t = 1 or 4 ⟹ **x = 0 or 2**
@@ -164,7 +164,7 @@ The second half of the idea is that differences **telescope**:
 
 **P(b) − P(a) = Q(a) + Q(a+1) + … + Q(b−1)**
 
-So a question that hands you Q and asks for a difference of P values never requires P's coefficients at all. (Telescoping sums in general: `Progressions-AP-GP.md` §7.)
+So a question that hands you Q and asks for a difference of P values never requires P's coefficients at all. (Telescoping sums in general: `15-Progressions-AP-GP.md` §7.)
 
 **Method:**
 1. Read off deg Q = deg P − 1 and its leading coefficient n·a.
@@ -272,7 +272,7 @@ Check with p = 7, q = 3: (49 + 9)/2 = 29 ✓, ((49 − 9)/4)² = 10² = 100 ✓.
 - HCF(100, 70) = 10 ⟹ 2¹⁰⁰ = (2¹⁰)¹⁰ = 1024¹⁰ and 3⁷⁰ = (3⁷)¹⁰ = 2187¹⁰
 - 2187 > 1024 ⟹ **3⁷⁰ is larger**
 
-**The log fallback**, when the exponents share no useful factor: compare n·log a directly (`Logarithms.md` §3). Here 100 log 2 = 30.10 against 70 log 3 = 33.40 ⟹ same conclusion, more arithmetic.
+**The log fallback**, when the exponents share no useful factor: compare n·log a directly (`14-Logarithms.md` §3). Here 100 log 2 = 30.10 against 70 log 3 = 33.40 ⟹ same conclusion, more arithmetic.
 
 **A useful reflex for values near 1:** for a, b > 0, a/b > 1 ⟺ a > b, so a ratio question and a comparison question are the same question. And raising both sides to any **positive** power preserves the inequality — which is what legitimises moves 2 and 3.
 
@@ -426,15 +426,15 @@ That turns a four-case slog into two lines.
 
 ## 7. Functions — moved
 
-Functions, graphs, domain and range, [x] and {x}, transformations, counting solutions graphically and the maxima–minima toolkit now live in **`Functions-and-Graphs.md`**. They outgrew a subsection here.
+Functions, graphs, domain and range, [x] and {x}, transformations, counting solutions graphically and the maxima–minima toolkit now live in **`16-Functions-and-Graphs.md`**. They outgrew a subsection here.
 
-The pieces that stayed in this file, because they are algebraic manipulation rather than function theory, are §2 (quadratics and the vertex), §6 (AM–GM and modulus basics), §6a (AM–GM with split terms) and §6b (sums of moduli). `Functions-and-Graphs.md` §11 routes each kind of maximum to whichever of those applies.
+The pieces that stayed in this file, because they are algebraic manipulation rather than function theory, are §2 (quadratics and the vertex), §6 (AM–GM and modulus basics), §6a (AM–GM with split terms) and §6b (sums of moduli). `16-Functions-and-Graphs.md` §11 routes each kind of maximum to whichever of those applies.
 
 ---
 
 ## 8. Linear equations in word problems
 
-- **Number of equations must match the number of unknowns** — unless the question exploits integer constraints (then see `Number-System.md` §11).
+- **Number of equations must match the number of unknowns** — unless the question exploits integer constraints (then see `01-Number-System.md` §11).
 - For two equations a₁x + b₁y = c₁ and a₂x + b₂y = c₂:
   - Unique solution if a₁/a₂ ≠ b₁/b₂
   - Infinitely many if all three ratios are equal
@@ -535,4 +535,4 @@ The same move covers any "falls short by", "is short of", "needs x more" phrasin
 - Substitute back into the original equation for anything involving squaring, moduli, or logs. It costs ten seconds and catches extraneous roots.
 - If the algebra is getting long, you've missed the intended identity. Stop and re-read the expression's shape.
 
-**Where this feeds forward:** `Functions-and-Graphs.md` (graphs, domain and range, the maxima–minima router), `Number-System.md` §9 and §11 (surd/exponent forms, integer solutions), `Logarithms.md` (log equations use the same substitute-and-check discipline), `Means-and-Weighted-Averages.md` §8 (AM–GM), `Progressions-AP-GP.md` (symmetric term selection), `Quadrilaterals-and-Polygons.md` §7 (AM–GM as geometric optimisation).
+**Where this feeds forward:** `16-Functions-and-Graphs.md` (graphs, domain and range, the maxima–minima router), `01-Number-System.md` §9 and §11 (surd/exponent forms, integer solutions), `14-Logarithms.md` (log equations use the same substitute-and-check discipline), `04-Means-and-Weighted-Averages.md` §8 (AM–GM), `15-Progressions-AP-GP.md` (symmetric term selection), `19-Quadrilaterals-and-Polygons.md` §7 (AM–GM as geometric optimisation).

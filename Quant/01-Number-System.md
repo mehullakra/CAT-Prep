@@ -252,7 +252,7 @@ Each of those 21 is divisible by 3 but not 9 — a follow-up question about divi
 
 **Rule of thumb:** if the question is *pure* divisibility, count multiples directly with an AP. Use digit-sum counting only when a digit condition is also imposed.
 
-The counting engine here is stars-and-bars: non-negative solutions of x₁+…+x_r = n is C(n + r − 1, r − 1). See `PnC-Probability.md` §9.
+The counting engine here is stars-and-bars: non-negative solutions of x₁+…+x_r = n is C(n + r − 1, r − 1). See `23-PnC-Probability.md` §9.
 
 ---
 
@@ -284,7 +284,7 @@ So whenever the exponents in numerator and denominator differ by exactly one and
 
 That last fact (ab = 1, so b = 1/a) is what makes these questions tractable. Rationalise by multiplying by the conjugate: 1/(√3 + √2) = √3 − √2.
 
-More in `Algebra.md` §4.
+More in `13-Algebra.md` §4.
 
 ---
 
@@ -492,7 +492,7 @@ Add and multiply exactly as in decimal, but **carry at b instead of 10**.
 
 In base b, **(b − 1) plays the role that 9 plays in base 10** — because b ≡ 1 (mod b−1), a number is congruent to its digit sum mod (b − 1). So in base 8 the digit sum tests divisibility by 7; in base 16, by 15. Likewise b + 1 plays the role of 11, via the alternating digit sum. This is §2 and §7 generalised.
 
-**Number of digits** of N in base b = ⌊log_b N⌋ + 1 (`Logarithms.md` §3).
+**Number of digits** of N in base b = ⌊log_b N⌋ + 1 (`14-Logarithms.md` §3).
 
 **Traps:**
 - A digit ≥ the base. (49)₇ is not a valid numeral.
@@ -511,7 +511,7 @@ In base b, **(b − 1) plays the role that 9 plays in base 10** — because b �
 
 The same move covers the family: 222…2 = 2·Rₓ, and 999…9 = 10ˣ − 1.
 
-**Method:** replace the pattern by its closed form *before* doing anything else. A sum over x then becomes an ordinary GP (`Progressions-AP-GP.md` §5).
+**Method:** replace the pattern by its closed form *before* doing anything else. A sum over x then becomes an ordinary GP (`15-Progressions-AP-GP.md` §5).
 
 **Worked example:** f(x) = 10ˣ − Rₓ, where Rₓ is the x-digit repunit. Find Σ(x = 1 to 10) f(x).
 
@@ -561,4 +561,4 @@ The answer coming out as the digits 9 down to 0 in order is a strong signal noth
 - For counting questions with digit constraints, translate to an equation and use stars-and-bars rather than listing.
 - If a question mentions "least" or "smallest", you're almost certainly in prime-exponent-parity or Diophantine territory.
 
-**Where this feeds forward:** `PnC-Probability.md` (stars-and-bars counting), `Algebra.md` (surd manipulation, symmetric identities), `Progressions-AP-GP.md` (counting terms in a range).
+**Where this feeds forward:** `23-PnC-Probability.md` (stars-and-bars counting), `13-Algebra.md` (surd manipulation, symmetric identities), `15-Progressions-AP-GP.md` (counting terms in a range).

@@ -2,7 +2,7 @@
 
 > CAT quant. A clock is a circular track with two runners moving in the same direction at a 12 : 1 speed ratio. Every question is relative speed at 5.5° per minute.
 
-Split out of `Time-Speed-Distance.md`. The circular-track machinery it builds on is in TSD §9.
+Split out of `08-Time-Speed-Distance.md`. The circular-track machinery it builds on is in TSD §9.
 
 ---
 

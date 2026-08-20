@@ -6,7 +6,7 @@
 
 ## 1. How to approach a plane-geometry question
 
-This applies to `Circles.md` and `Quadrilaterals-and-Polygons.md` too; it is stated once, here.
+This applies to `18-Circles.md` and `19-Quadrilaterals-and-Polygons.md` too; it is stated once, here.
 
 1. **Draw it, roughly to scale.** A badly drawn figure invents relationships that aren't there; a roughly accurate one lets you eliminate options by eye.
 2. **Mark every equal length and equal angle** the question implies — tangents from a point, radii, folded segments, isosceles triangles.
@@ -14,7 +14,7 @@ This applies to `Circles.md` and `Quadrilaterals-and-Polygons.md` too; it is sta
 4. **Pythagoras, similarity, or an area equation** closes almost every problem. Try them in that order.
 5. If a figure is given, **do not trust it**. CAT figures are schematic; a right angle or an equal length must be stated, not eyeballed.
 
-When perpendiculars, midpoints and a fixed axis all appear at once, stop and consider `Coordinate-Geometry.md` §1 — computing beats hunting for a synthetic argument more often than people expect.
+When perpendiculars, midpoints and a fixed axis all appear at once, stop and consider `21-Coordinate-Geometry.md` §1 — computing beats hunting for a synthetic argument more often than people expect.
 
 ---
 
@@ -130,7 +130,7 @@ In an obtuse triangle the foot of the altitude from a vertex lands on the **exte
 
 ### The altitude on the hypotenuse — three geometric means
 
-Right angle at C, altitude CD onto hypotenuse AB. Equivalently, and this is CAT's usual disguise: **AB is a diameter, C is on the circle** (`Circles.md` §2) **and CD ⊥ AB**.
+Right angle at C, altitude CD onto hypotenuse AB. Equivalently, and this is CAT's usual disguise: **AB is a diameter, C is on the circle** (`18-Circles.md` §2) **and CD ⊥ AB**.
 
 Triangles ACD, CBD and ABC are **all similar**, giving:
 
@@ -213,7 +213,7 @@ Why: write a sin x + b cos x = √(a²+b²) · sin(x + φ), where φ has tan φ 
 |---|---|---|
 | sin x · cos x = ½ sin 2x | **½** | −½ |
 | sin⁴x + cos⁴x = 1 − ½sin²2x | 1 | **½** |
-| sin²x + cosec²x (and the cos/sec pair) | unbounded | **2** (AM–GM, `Algebra.md` §6) |
+| sin²x + cosec²x (and the cos/sec pair) | unbounded | **2** (AM–GM, `13-Algebra.md` §6) |
 | a sin x + b cos x | √(a²+b²) | −√(a²+b²) |
 
 **Traps:**
@@ -254,7 +254,7 @@ A fold is a **reflection**. That single sentence solves the whole family.
 - (12 − x)² = x² + 36 − 6x ⟹ 144 − 24x = 36 − 6x ⟹ x = 6
 - So P and Q are the midpoints, PQ = 6, and the perimeter = 6 + 6 + 6 + 12 = **30**
 
-**For a rectangle fold, coordinates are usually faster** than a synthetic argument — see `Coordinate-Geometry.md` §8, which owns the reflection formulas.
+**For a rectangle fold, coordinates are usually faster** than a synthetic argument — see `21-Coordinate-Geometry.md` §8, which owns the reflection formulas.
 
 ---
 
@@ -287,4 +287,4 @@ A fold is a **reflection**. That single sentence solves the whole family.
 - Coordinate geometry is a legitimate escape hatch for folds, midpoints and perpendiculars.
 - Check your answer against the figure's rough scale. A side longer than the visibly longest one means something is wrong.
 
-**Where this feeds forward:** `Circles.md` (inscribed triangles, the angle in a semicircle), `Quadrilaterals-and-Polygons.md` (every polygon is triangles), `Mensuration.md` (cross-sections of cones and pyramids), `Coordinate-Geometry.md` §6 (shoelace area), `Algebra.md` §6 (AM–GM behind the optimisation cases).
+**Where this feeds forward:** `18-Circles.md` (inscribed triangles, the angle in a semicircle), `19-Quadrilaterals-and-Polygons.md` (every polygon is triangles), `20-Mensuration.md` (cross-sections of cones and pyramids), `21-Coordinate-Geometry.md` §6 (shoelace area), `13-Algebra.md` §6 (AM–GM behind the optimisation cases).

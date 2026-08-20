@@ -2,7 +2,7 @@
 
 > CAT quant. A small, closed set of theorems that get combined rather than extended. The skill is spotting **which** of six or seven facts a figure is pointing at — and the tangent–chord angle is the one students forget and CAT loves.
 
-Approach discipline for any plane figure lives in `Triangles.md` §1.
+Approach discipline for any plane figure lives in `17-Triangles.md` §1.
 
 ---
 
@@ -32,7 +32,7 @@ That last line is the one most often missing from a formula sheet and most often
 ## 2. Chords and angles
 
 - **Angle at the centre = 2 × angle at the circumference** on the same arc
-- **Angle in a semicircle = 90°** — the single most used circle fact in CAT, because it converts a diameter into a right triangle (`Triangles.md` §7)
+- **Angle in a semicircle = 90°** — the single most used circle fact in CAT, because it converts a diameter into a right triangle (`17-Triangles.md` §7)
 - **Angles in the same segment are equal**
 - **The perpendicular from the centre bisects the chord** — and conversely
 - **Equal chords are equidistant from the centre**, and the longer chord is nearer the centre
@@ -93,7 +93,7 @@ Brahmagupta reduces to Heron when one side is 0, which is a good memory hook. It
 
 **Worked example (leaf/petal):** Two quarter-circles of radius a are drawn inside a square of side a, centred at opposite corners. Find the area common to both.
 - Each quarter-circle has area πa²/4; together they cover πa²/2, but the square is only a², so the double-counted overlap is πa²/2 − a² = **a²(π/2 − 1)**
-- This "sum of the parts minus the container" move is inclusion–exclusion (`Set-Theory-Venn.md` §2) applied to areas, and it is far faster than integrating or splitting into segments.
+- This "sum of the parts minus the container" move is inclusion–exclusion (`22-Set-Theory-Venn.md` §2) applied to areas, and it is far faster than integrating or splitting into segments.
 
 **Worked example (segment):** A chord subtends 90° at the centre of a circle of radius 10. Find the minor segment's area.
 - Sector = ¼ · 100π = 25π; triangle = ½ · 10 · 10 = 50
@@ -134,7 +134,7 @@ For circles of radii r₁, r₂ with centre distance d:
 | Any triangle | Area/s | abc/(4·Area) |
 | Right triangle, legs a,b, hyp c | (a + b − c)/2 | c/2 |
 
-For a general regular n-gon the formulas live in `Quadrilaterals-and-Polygons.md` §6.
+For a general regular n-gon the formulas live in `19-Quadrilaterals-and-Polygons.md` §6.
 
 **Circles packed in a square:** n² equal circles in an n × n grid inside a square of side a each have radius a/(2n), and the total circle area is πa²/4 **regardless of n** — a favourite CAT observation, since the packing fraction never changes.
 
@@ -167,4 +167,4 @@ For a general regular n-gon the formulas live in `Quadrilaterals-and-Polygons.md
 - For shaded regions, write the subtraction as an explicit expression before computing any number. Most errors here are bookkeeping, not arithmetic.
 - If the radius is a multiple of 7, the setter intends π = 22/7 and the answer will be clean. If it isn't, expect the answer to stay in terms of π.
 
-**Where this feeds forward:** `Triangles.md` §7 (angle in a semicircle → altitude on the hypotenuse), `Quadrilaterals-and-Polygons.md` §4 (tangential quadrilaterals, Pitot), `Coordinate-Geometry.md` §7 (circle equations and tangency by distance), `Mensuration.md` (every cross-section of a sphere, cone or cylinder is a circle).
+**Where this feeds forward:** `17-Triangles.md` §7 (angle in a semicircle → altitude on the hypotenuse), `19-Quadrilaterals-and-Polygons.md` §4 (tangential quadrilaterals, Pitot), `21-Coordinate-Geometry.md` §7 (circle equations and tangency by distance), `20-Mensuration.md` (every cross-section of a sphere, cone or cylinder is a circle).

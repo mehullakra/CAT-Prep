@@ -231,4 +231,4 @@ Going same-date-to-same-date and summing the odd days of the months you pass thr
 
 **Sanity check that costs 3 seconds:** the answer must be one of seven days, and shifting one calendar year forward moves it by exactly 1 (or 2 across a leap day). If your answer for "same date next year" isn't one day later, recheck the leap-year handling first.
 
-**Connection:** none to Clocks, despite the exam grouping. The real neighbour is remainders — see `Number-System.md` §6 for the modular arithmetic this file leans on.
+**Connection:** none to Clocks, despite the exam grouping. The real neighbour is remainders — see `01-Number-System.md` §6 for the modular arithmetic this file leans on.
